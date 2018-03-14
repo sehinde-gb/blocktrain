@@ -38,9 +38,18 @@ Route::get('/home', function () {
 
 //});
 
+Route::resource('cards', 'CardsController');
 
-/*Route::get('passengers', function() {
-    return ['Clive', 'Jason', 'Sam', 'Harry', 'Osman'];
-});*/
+Route::get('/dashboard' , function () {
 
+    return view('dashboard');
 
+});
+
+#Static
+//Route::get('/swipein', ['as' => 'swipein', 'uses' => 'SwipesController@swipeIn']);
+Route::get('swipe/{id}', function ($id) {
+        return 'Card '.$id;
+})->name('swipein');
+
+Route::get('/swipeout', ['as' => 'swipeout', 'uses' => 'SwipesController@swipeOut']);

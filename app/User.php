@@ -26,4 +26,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    /**
+     * A user can have many zoyacards.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function zoyacards()
+    {
+        return $this->hasMany(\App\ZoyaCard::class);
+    }
 }
