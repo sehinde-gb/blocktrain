@@ -39,17 +39,18 @@ Route::get('/home', function () {
 //});
 
 Route::resource('cards', 'CardsController');
+Route::resource('journeys', 'JourneysController');
 
-Route::get('/dashboard' , function () {
+    Route::get('/dashboard' , function () {
 
     return view('dashboard');
 
 });
 
 #Static
-//Route::get('/swipein', ['as' => 'swipein', 'uses' => 'SwipesController@swipeIn']);
-Route::get('swipe/{id}', function ($id) {
-        return 'Card '.$id;
-})->name('swipein');
 
-Route::get('/swipeout', ['as' => 'swipeout', 'uses' => 'SwipesController@swipeOut']);
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

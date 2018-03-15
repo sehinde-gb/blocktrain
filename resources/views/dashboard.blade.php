@@ -13,7 +13,6 @@
 <a href="/cards" class="btn btn-xs btn-info pull-right"><button type="submit" class="btn btn-white">Card List</button></a>
 
 
-<h3>Top Up</h3>
 
 @endsection
 

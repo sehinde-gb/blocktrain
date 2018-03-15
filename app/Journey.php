@@ -4,20 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Card extends Model
+class Journey extends Model
 {
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'user_id',  'destination'
+          'start', 'destination', 'cost'
     ];
 
-
     /**
-     *  A card belongs to a user.
+     *  A journey belongs to a user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -25,13 +25,6 @@ class Card extends Model
     {
         return $this->belongsTo(\App\User::class);
     }
-
-
-
-
-
-
-
 
 
 }

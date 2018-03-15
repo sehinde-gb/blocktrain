@@ -25,7 +25,9 @@ class CardRequest extends FormRequest
         public function rules()
         {
             return [
-                'destination' => 'required|min:6'
+                'balance' => 'required|min:2',
+                'status' => 'required',
+                'discount' => 'required'
             ];
         }
     }
