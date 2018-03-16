@@ -5,9 +5,10 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 class User extends Authenticatable
 {
-    use Notifiable;
+    use  Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -44,10 +45,10 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function journeys()
-    {
-        return $this->hasMany(\App\Journey::class);
-    }
+    //public function journeys()
+    //{
+      //  return $this->hasMany(\App\Journey::class);
+   // }
 
 
 

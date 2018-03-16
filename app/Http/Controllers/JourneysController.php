@@ -15,11 +15,9 @@ use Illuminate\Support\Facades\DB;
 class JourneysController extends Controller
 {
     /**
-     * @var Card
+     * @var Journey
      */
-    /**
-     * @var Card|User
-     */
+
     public $user;
 
 
@@ -32,44 +30,31 @@ class JourneysController extends Controller
         $this->user = $user;
     }
 
-    /**
-     * Display the form for administering
-     * a Journey
-     *
-     * @return Response
-     * @throws HttpNotFoundException
-     */
-    public function create()
-    {
-
-
-        return view('journeys.create');
-    }
-
 
     /**
      * Store a newly created resource in storage.
      *
      * @param JourneyRequest $request
      *
-     * @param Card $card
      * @return void
      */
-    public function store(JourneyRequest $request, Card $card)
+    public function store(JourneyRequest $request)
     {
+        //$user = Auth::user();
 
-        $user = Auth::user();
-        //$this->createCard($request, $journey, $card);
+        $journey = Journey::create($request->all());
 
-        $journey = $user->journeys()->create($request->all());
-
-        //return redirect('/admin/blogs');
+        return response()->json($journey, 201);
     }
 
+    /**
+     * @return mixed
+     */
     public function index()
     {
-
+        return Journey::latest()->get();
     }
+
 
 
 

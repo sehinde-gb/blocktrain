@@ -13,7 +13,7 @@ class Journey extends Model
      * @var array
      */
     protected $fillable = [
-          'start', 'destination', 'cost'
+          'start', 'station', 'discounts', 'cost'
     ];
 
     /**
@@ -21,10 +21,10 @@ class Journey extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user()
-    {
-        return $this->belongsTo(\App\User::class);
-    }
+    //public function user()
+    //{
+      //  return $this->belongsTo(\App\User::class);
+   // }
 
 
 }

@@ -5,13 +5,27 @@
 @section('content')
 
 
-    <div class="row">
-        {!! Form::model($journey = new \App\Journey,  ['files'=>true, 'url' => 'journeys']) !!}
-        @include('journeys.form', ['submitButtonText' => 'Swipe'])
-        {!! Form::close() !!}
+    <div id="app">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                One of two columns
+            </div>
+            <div class="col-6">
 
-    </div><!-- /.row -->
 
+            <form method="POST" action="{{ url('/journeys/create') }}" @submit.prevent="onSubmit">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+            <div class="control">
+                <label for="start" class="label">Start</label>
+
+                <input type="text" id="start" name="start" class="input" v-model="form.start">
+            </div><!-- /.control -->
+
+        </form>
+            </div>
+        </div>
+    </div><!-- /#app -->
 
 
 

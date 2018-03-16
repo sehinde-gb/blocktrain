@@ -29,7 +29,7 @@
 
                     <div class="form-group form-group-lg">
                         {!! Form::label('cost', 'Cost:', ['class' => 'control-label']) !!}
-                        {!! Form::text('cost', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('cost', , ['class' => 'form-control']) !!}
                     </div><!-- /.form-group -->
 
                     <div class="button-centre">

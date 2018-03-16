@@ -24,9 +24,10 @@ class JourneyRequest extends FormRequest
     public function rules()
     {
         return [
-            'start' => 'required',
-            'destination' => 'required',
-            'cost' => 'required'
+            'journey.start' => 'required',
+            'journey.station' => 'required',
+            'journey.discounts' => 'required',
+            'journey.cost' => 'required'
         ];
     }
 }
