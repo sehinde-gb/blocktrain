@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vue.js Tutorial | API Example</title>
+    <title>BlockTrain  | New Journey</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -21,11 +21,11 @@
                     <hr />
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Starting Zip" v-model="startingZip">
+                            <input type="text" class="form-control" placeholder="From.." v-model="startingFrom">
                             <span class="city-span">@{{startingCity}}</span>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Ending Zip" v-model="endingZip">
+                            <input type="text" class="form-control" placeholder="To.." v-model="endingTo">
                             <span class="city-span">@{{endingCity}}</span>
                         </div>
                     </div>
@@ -49,49 +49,53 @@
     var app = new Vue({
         el: '#app',
         data: {
-            startingZip: '',
+            startingFrom: '',
             startingCity: '',
-            endingZip: '',
+            endingTo: '',
             endingCity: ''
         },
         watch: {
-            startingZip: function() {
+            startingFrom: function() {
                 this.startingCity = ''
-                if (this.startingZip.length == 5) {
-                    this.lookupStartingZip()
+                if (this.startingFrom.length == 8) {
+                    this.lookupStartingFrom()
                 }
             },
-            endingZip: function() {
+            endingTo: function() {
                 this.endingCity = ''
-                if (this.endingZip.length == 5) {
-                    this.lookupEndingZip()
+                if (this.endingTo.length == 5) {
+                    this.lookupEndingTo()
                 }
             }
         },
         methods: {
-            lookupStartingZip: _.debounce(function() {
+            lookupStartingFrom: _.debounce(function() {
                 var app = this
+                const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
                 app.startingCity = "Searching..."
-                axios.get('https://ziptasticapi.com/' + app.startingZip)
+                axios.get(TflBaseUrl + app.startingFrom)
                     .then(function (response) {
-                        app.startingCity = response.data.city + ', ' + response.data.state
+                        app.startingCity =  response.data.matches[0].name
                     })
                     .catch(function (error) {
-                        app.startingCity = "Invalid Zipcode"
+                        app.startingCity = "Invalid Station"
                     })
             }, 500),
-            lookupEndingZip: _.debounce(function() {
+            lookupEndingTo: _.debounce(function() {
                 var app = this
+                const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
                 app.endingCity = "Searching..."
-                axios.get('https://ziptasticapi.com/' + app.endingZip)
+                axios.get(TflBaseUrl + app.endingTo)
                     .then(function (response) {
-                        app.endingCity = response.data.city + ', ' + response.data.state
+                        app.endingCity = response.data.matches[0].name
                     })
                     .catch(function (error) {
-                        app.endingCity = "Invalid Zipcode"
+                        app.endingCity = "Invalid Station"
                     })
             }, 500)
         }
+
+
     })
 </script>
 </html>
