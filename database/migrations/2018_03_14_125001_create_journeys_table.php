@@ -15,11 +15,12 @@ class CreateJourneysTable extends Migration
     {
         Schema::create('journeys', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->index();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->unsigned();
-            $table->string('start');
-            $table->string('station');
-            $table->string('discounts');
+            //$table->integer('user_id')->unsigned()->index();
+            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->unsigned();
+            $table->string('from');
+            $table->string('to');
+            $table->string('passengerType');
+            $table->string('description');
             $table->string('cost');
             $table->timestamps();
         });

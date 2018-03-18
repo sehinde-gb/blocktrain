@@ -4,7 +4,7 @@
 
 @section('content')
 
-<show-journey></show-journey>
+<show-blogs></show-blogs>
 
 
 

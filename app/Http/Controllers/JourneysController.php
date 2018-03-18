@@ -4,32 +4,47 @@ namespace App\Http\Controllers;
 
 use App\Card;
 use App\Http\Requests\JourneyRequest;
-use App\Http\Utilities\Station;
+use App\Http\Resources\JourneyCollection;
 use App\Journey;
-use App\User;
-use App\Destination;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use App\Http\Resources\Journey as JourneyResource;
+
+
+
 
 class JourneysController extends Controller
 {
-    /**
-     * @var Journey
-     */
 
-    public $user;
 
 
     /**
-     * JourneysController constructor.
-     * @param User $user
+     * Display a listing of journeys
+     *
+     * @return mixed
      */
-    public function __construct(User $user)
+    public function index()
     {
-        $this->user = $user;
+        $journeys = Journey::paginate(15);
+
+        return JourneyResource::collection($journeys);
+
     }
 
+
+    /**
+     * Display the journey
+     *
+     * @param $id
+     * @return JourneyResource
+     */
+    public function show($id)
+    {
+
+        $journey = Journey::findOrFail($id);
+
+        return new JourneyResource($journey);
+
+
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -42,18 +57,39 @@ class JourneysController extends Controller
     {
         //$user = Auth::user();
 
-        $journey = Journey::create($request->all());
+        $journey = $request->isMethod('put') ? Journey::findOrFail
+        ($request->journey_id) : new Journey;
 
-        return response()->json($journey, 201);
+        $journey->id = $request->input('journey_id');
+        $journey->start = $request->input('start');
+        $journey->station = $request->input('station');
+        $journey->discount = $request->input('discounts');
+        $journey->cost = $request->input('cost');
+
+        //if($journey->save()) {
+          //  return new JourneyResource($journey);
+        //}
     }
 
     /**
-     * @return mixed
+     * Delete a journey
+     *
+     * @param $id
+     * @return JourneyResource
      */
-    public function index()
+    public function destroy($id)
     {
-        return Journey::latest()->get();
+
+        $journey = Journey::findOrFail($id);
+
+        if($journey->delete()) {
+            return new JourneyResource($journey);
+        }
+
+
     }
+
+
 
 
 

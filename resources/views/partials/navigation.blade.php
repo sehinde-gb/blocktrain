@@ -1,37 +1,53 @@
-<header role="banner">
-    <nav role="navigation" class="logo-left">
-        @if (Auth::guest())
+<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url('/') }}">
+            {{ config('app.name', 'Home') }}
+        </a>
+        <a class="navbar-brand" href="{{ url('/dashboard') }}">
+            Dashboard
+        </a>
+        <a class="navbar-brand" href="{{ url('/journeys/create') }}">
+            Swipe
+        </a>
+        <a class="navbar-brand" href="{{ url('/cards/create') }}">
+            Create Card
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="menu">
-                <ul>
-                    <li><a href="/home">Dashboard</a></li>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">Register</a></li>
-                </ul>
-            </div><!-- /.right-menu -->
-        @else
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav mr-auto">
 
+            </ul>
 
-
-            <div class="menu">
-                <ul>
-                    <li><a href="/home">Dashboard</a></li>
-                    <li><a href="{{ url('/logout') }}"
-
-                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            Logout
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Authentication Links -->
+                @guest
+                    <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                    <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
-                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
                     </li>
-                </ul>
-            </div><!-- /.right-menu -->
-
-
-        @endif
-
-    </nav>
-</header>
-
+                @endguest
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -13808,8 +13808,8 @@ window.Vue = __webpack_require__(36);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('show-journey', __webpack_require__(52));
-Vue.component('form-component', __webpack_require__(39));
+//Vue.component('show-blogs', require('./components/ShowBlogs.vue'));
+Vue.component('journey-form', __webpack_require__(39));
 
 if (document.getElementById("app")) {
   var app = new Vue({
@@ -47038,7 +47038,7 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-a19a5b86"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -47049,7 +47049,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/FormComponent.vue"
+Component.options.__file = "resources/assets/js/components/JourneyForm.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -47058,9 +47058,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-70be8f72", Component.options)
+    hotAPI.createRecord("data-v-a19a5b86", Component.options)
   } else {
-    hotAPI.reload("data-v-70be8f72", Component.options)
+    hotAPI.reload("data-v-a19a5b86", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47081,13 +47081,13 @@ var content = __webpack_require__(41);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(43)("017fa99c", content, false, {});
+var update = __webpack_require__(43)("488c6bf3", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-70be8f72\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FormComponent.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-70be8f72\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FormComponent.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a19a5b86\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./JourneyForm.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-a19a5b86\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./JourneyForm.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -47105,7 +47105,7 @@ exports = module.exports = __webpack_require__(42)(false);
 
 
 // module
-exports.push([module.i, "\n#app * {\n    -webkit-box-sizing: border-box;\n            box-sizing: border-box;\n}\n#app {\n    margin: 20px auto;\n    max-width: 500px;\n}\nlabel {\n    display: block;\n    margin: 20px 0 10px;\n}\ninput[type=\"text\"], textarea {\n    display: block;\n    width: 100%;\n    padding: 8px;\n}\n#preview {\n    padding: 10px 20px;\n    border: 1px dotted #ccc;\n    margin: 30px 0;\n}\nh3 {\n    margin-top: 10px;\n}\n#checkboxes input {\n    display: inline-block;\n    margin-right: 10px;\n}\n#checkboxes label {\n    display: inline-block;\n}\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -47598,58 +47598,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            journey: {
-                start: '',
-                cost: '',
-                discounts: [],
-                station: '',
-                userId: 1
-            },
-            stations: ['Mill Hill Broadway', 'New Barnet', 'Cricklewood'],
-            submitted: false
-        };
-    },
-
-    methods: {
-        post: function post() {
-
-            axios.post('https://jsonplaceholder.typicode.com/posts', {
-                start: this.journey.start,
-                cost: this.journey.cost,
-                discounts: this.journey.discounts,
-                station: this.journey.station,
-                userId: 1
-
-            }).then(function (data) {
-                console.log(data);
-                this.submitted = true;
-            });
-        }
-    }
+    name: ""
 });
 
 /***/ }),
@@ -47660,225 +47612,71 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "app" } }, [
-    _c("h2", [_vm._v("Add a Journey")]),
-    _vm._v(" "),
-    !_vm.submitted
-      ? _c("form", [
-          _c("label", [_vm._v("Start")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.lazy",
-                value: _vm.journey.start,
-                expression: "journey.start",
-                modifiers: { lazy: true }
-              }
-            ],
-            attrs: { type: "text", required: "" },
-            domProps: { value: _vm.journey.start },
-            on: {
-              change: function($event) {
-                _vm.$set(_vm.journey, "start", $event.target.value)
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("label", [_vm._v("Cost")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.lazy",
-                value: _vm.journey.cost,
-                expression: "journey.cost",
-                modifiers: { lazy: true }
-              }
-            ],
-            attrs: { type: "text", required: "" },
-            domProps: { value: _vm.journey.cost },
-            on: {
-              change: function($event) {
-                _vm.$set(_vm.journey, "cost", $event.target.value)
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { attrs: { id: "checkboxes" } }, [
-            _c("label", [_vm._v("Young Persons Railcard")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.journey.discounts,
-                  expression: "journey.discounts"
-                }
-              ],
-              attrs: { type: "checkbox", value: "young" },
-              domProps: {
-                checked: Array.isArray(_vm.journey.discounts)
-                  ? _vm._i(_vm.journey.discounts, "young") > -1
-                  : _vm.journey.discounts
-              },
-              on: {
-                change: function($event) {
-                  var $$a = _vm.journey.discounts,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = "young",
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 &&
-                        _vm.$set(_vm.journey, "discounts", $$a.concat([$$v]))
-                    } else {
-                      $$i > -1 &&
-                        _vm.$set(
-                          _vm.journey,
-                          "discounts",
-                          $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                        )
-                    }
-                  } else {
-                    _vm.$set(_vm.journey, "discounts", $$c)
-                  }
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", [_vm._v("Freedom Pass")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.journey.discounts,
-                  expression: "journey.discounts"
-                }
-              ],
-              attrs: { type: "checkbox", value: "freedom" },
-              domProps: {
-                checked: Array.isArray(_vm.journey.discounts)
-                  ? _vm._i(_vm.journey.discounts, "freedom") > -1
-                  : _vm.journey.discounts
-              },
-              on: {
-                change: function($event) {
-                  var $$a = _vm.journey.discounts,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = "freedom",
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 &&
-                        _vm.$set(_vm.journey, "discounts", $$a.concat([$$v]))
-                    } else {
-                      $$i > -1 &&
-                        _vm.$set(
-                          _vm.journey,
-                          "discounts",
-                          $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                        )
-                    }
-                  } else {
-                    _vm.$set(_vm.journey, "discounts", $$c)
-                  }
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("label", [_vm._v("Station:")]),
-          _vm._v(" "),
-          _c(
-            "select",
-            {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.journey.station,
-                  expression: "journey.station"
-                }
-              ],
-              on: {
-                change: function($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function(o) {
-                      return o.selected
-                    })
-                    .map(function(o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.$set(
-                    _vm.journey,
-                    "station",
-                    $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-                  )
-                }
-              }
-            },
-            _vm._l(_vm.stations, function(station) {
-              return _c("option", [_vm._v(_vm._s(station))])
-            })
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.post($event)
-                }
-              }
-            },
-            [_vm._v("Swipe")]
-          )
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.submitted
-      ? _c("div", [_c("h3", [_vm._v("Thanks for swiping your card")])])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("div", { attrs: { id: "preview" } }, [
-      _c("h3", [_vm._v("Preview Journey")]),
-      _vm._v(" "),
-      _c("p", [_vm._v("Journey start " + _vm._s(_vm.journey.start))]),
-      _vm._v(" "),
-      _c("p", [_vm._v("Journey content ")]),
-      _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.journey.cost))]),
-      _vm._v(" "),
-      _c("p", [_vm._v("Journey Discounts:")]),
-      _vm._v(" "),
-      _c(
-        "ul",
-        _vm._l(_vm.journey.discounts, function(discount) {
-          return _c("li", [_vm._v(_vm._s(discount))])
-        })
-      ),
-      _vm._v(" "),
-      _c("p", [_vm._v("Station: " + _vm._s(_vm.journey.station))])
-    ])
-  ])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "app" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6 col-md-offset-3" }, [
+            _c("div", { staticClass: "lead-form" }, [
+              _c("h1", { staticClass: "text-center" }, [
+                _vm._v("Fill Out This Form")
+              ]),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: { type: "text", placeholder: "From:" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "from-span" }, [
+                    _vm._v("Canons Park")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: { type: "text", placeholder: "To:" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "to-span" })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary btn-block",
+                      attrs: { id: "submit-form" }
+                    },
+                    [_vm._v("Submit")]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-70be8f72", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-a19a5b86", module.exports)
   }
 }
 
@@ -47887,174 +47685,6 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(53)
-}
-var normalizeComponent = __webpack_require__(45)
-/* script */
-var __vue_script__ = __webpack_require__(55)
-/* template */
-var __vue_template__ = __webpack_require__(56)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-142a401c"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/ShowJourney.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-142a401c", Component.options)
-  } else {
-    hotAPI.reload("data-v-142a401c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(54);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(43)("5153d056", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-142a401c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowJourney.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-142a401c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShowJourney.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(42)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 55 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            blogs: []
-
-        };
-    },
-    mounted: function mounted() {
-        this.created();
-    },
-
-    methods: {
-        created: function created() {
-            var _this = this;
-
-            axios.get('https://jsonplaceholder.typicode.com/posts').then(function (result) {
-                _this.blogs = result.data;
-            });
-        }
-    }
-});
-
-/***/ }),
-/* 56 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { attrs: { id: "show" } },
-    [
-      _c("h2", [_vm._v("All Journeys")]),
-      _vm._v(" "),
-      _vm._l(_vm.blogs, function(blog) {
-        return _c("div", [
-          _c("h2", [_vm._v(_vm._s(blog.title))]),
-          _vm._v(" "),
-          _c("article", [_vm._v(_vm._s(blog.body))])
-        ])
-      })
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-142a401c", module.exports)
-  }
-}
 
 /***/ })
 /******/ ]);

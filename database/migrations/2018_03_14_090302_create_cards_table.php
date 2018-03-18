@@ -18,10 +18,8 @@ class CreateCardsTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->unsigned();
             $table->double('balance', 8, 2);
-
             $table->string('status');
             $table->integer('discount');
-
             $table->timestamps();
         });
     }

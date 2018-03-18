@@ -21,7 +21,7 @@ Route::get('/home', function () {
 });
 
     Route::get('/', function () {
-        return view('test');
+        return view('journey');
 
     });
 
@@ -42,14 +42,9 @@ Route::get('/home', function () {
 
 Route::resource('cards', 'CardsController');
 
-Route::prefix('api')->group(function() {
-  Route::resource('journeys', 'JourneysController');
-});
 
 
-//Route::middleware('auth:api')->group( function () {
-  //Route::resource('journeys', 'API\JourneysController');
-//});
+
 
     Route::get('/dashboard' , function () {
 
@@ -60,6 +55,10 @@ Route::prefix('api')->group(function() {
 #Static
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

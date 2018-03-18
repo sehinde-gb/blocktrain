@@ -16,3 +16,19 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// List journeys
+Route::get('journeys', 'JourneysController@index');
+
+// List single journey
+Route::get('journey/{id}', 'JourneysController@show');
+
+// Create new journey
+Route::post('journey', 'JourneysController@store');
+
+// Update journey
+Route::put('journey', 'JourneysController@update');
+
+// Delete journey
+Route::delete('journey/{id}', 'JourneysController@destroy');
+

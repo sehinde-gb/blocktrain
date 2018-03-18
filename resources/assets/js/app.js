@@ -15,8 +15,8 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('show-journey', require('./components/ShowJourney.vue'));
-Vue.component('form-component', require('./components/FormComponent.vue'));
+//Vue.component('show-blogs', require('./components/ShowBlogs.vue'));
+Vue.component('journey-form', require('./components/JourneyForm.vue'));
 
 if( document.getElementById("app") ) {
     const app = new Vue({
