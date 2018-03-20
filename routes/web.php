@@ -15,15 +15,28 @@
 
 Auth::routes();
 
+Route::get('/{any}', 'SpaController@index')-> where('any', '.*');
+
 Route::get('/journey', function () {
-    return view('journey');
+    if (rand(1, 10) < 3) {
+        abort(500, 'We could not retrieve the journey');
+    }
 
+    return factory('App\Journey', 10)->make();
 });
 
-Route::get('/', function () {
-    return view('fare');
 
-});
+
+
+//Route::get('/fare', function () {
+  //  return view('journey');
+
+//});
+
+//Route::get('/', function () {
+//    return view('fare');
+//
+//});
 
 
 
@@ -62,6 +75,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

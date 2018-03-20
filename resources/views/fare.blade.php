@@ -55,6 +55,8 @@
 <script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
 
 <script>
+
+
     var app = new Vue({
         el: '#app',
         data: {
