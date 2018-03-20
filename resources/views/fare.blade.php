@@ -19,28 +19,30 @@
                 <div class="lead-form">
                     <h1 class="text-center">Fill Out This Form</h1>
                     <hr />
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="From.." v-model="startingFrom">
-                            <span class="city-span">@{{startingCity}}</span>
+                    <form method="post" action="/api/journey" @submit.prevent="onSubmit">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="From.." v-model="startingFrom" required>
+                                <span class="city-span">@{{startingCity}}</span>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="To.." v-model="endingTo" required>
+                                <span class="city-span">@{{endingCity}}</span>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="To.." v-model="endingTo">
-                            <span class="city-span">@{{endingCity}}</span>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Fares" v-model="fare">
-                            <span class="city-span">@{{endingFare}}</span>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Fares" v-model="fare" required>
+                                <span class="city-span">@{{endingFare}}</span>
+                            </div>
+                        </div><!-- /.row -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-primary btn-block" id="submit-form">Submit</button>
+                            </div>
                         </div>
-                    </div><!-- /.row -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button class="btn btn-primary btn-block" id="submit-form">Submit</button>
-                        </div>
-                    </div>
+                </form>
                 </div><!-- end of .lead-form -->
             </div> <!-- end of .col-md-6.col-md-offset-3 -->
         </div> <!-- end of .row -->
@@ -74,8 +76,11 @@
                 this.endingCity = ''
                 if (this.endingTo.length == 8) {
                     this.lookupEndingTo()
+                    this.lookupFareTo()
                 }
             }
+
+
         },
         methods: {
             lookupStartingFrom: _.debounce(function() {
@@ -84,8 +89,8 @@
                 app.startingCity = "Searching..."
                 axios.get(TflBaseUrl + app.startingFrom)
                     .then(function (response) {
-                        //app.startingCity =  response.data.matches[0].name
                         app.startingCity = response.data.matches[0].id
+                        //app.startingCity =  response.data.matches[0].name
                     })
                     .catch(function (error) {
                         app.startingCity = "Invalid Station"
@@ -98,31 +103,42 @@
                 axios.get(TflBaseUrl + app.endingTo)
                     .then(function (response) {
                         app.endingCity = response.data.matches[0].id
+                        //app.endingCity = response.data.matches[0].name
                     })
                     .catch(function (error) {
                         app.endingCity = "Invalid Station"
                     })
             }, 500),
 
+            onSubmit: function() {
+
+                axios.post('https://blocktrain.test/api/journey', this.$data);
+
+             },
+
             lookupFareTo: _.debounce(function() {
                 var app = this
                 const TflStopUrl = 'https://api.tfl.gov.uk/Stoppoint/'
                 const FareUrl = '/FareTo/'
-                app.endingFare = "Searching.."
+                const AppKey = '/?app_id=51a876af&app_key=a1c609db4f3994924e7eb19199a08289'
+                app.fare = "Searching.."
 
 
-                axios.get(TflStopUrl + app.startingCity + FareUrl + endingCity)
+                axios.get(TflStopUrl + app.startingCity + FareUrl + app.endingCity + AppKey)
+
                     .then(function (response){
-                        response.data.rows.ticketsAvailable[0].cost
+                        app.fare = response.data[0].rows[0].ticketsAvailable[0].cost
                     })
                     .catch(function (error){
-                      app.endingFare = "Invalid Fare"
+                        app.endingFare = "Invalid Fare"
                     })
 
-            },500)
+            },1000)
         }
 
 
     })
 </script>
 </html>
+
+

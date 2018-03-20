@@ -17,11 +17,9 @@ class CreateJourneysTable extends Migration
             $table->increments('id');
             //$table->integer('user_id')->unsigned()->index();
             //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->unsigned();
-            $table->string('from');
-            $table->string('to');
-            $table->string('passengerType');
-            $table->string('description');
-            $table->string('cost');
+            $table->string('startingCity');
+            $table->string('endingCity');
+            $table->string('fare');
             $table->timestamps();
         });
     }

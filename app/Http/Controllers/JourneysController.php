@@ -7,13 +7,11 @@ use App\Http\Requests\JourneyRequest;
 use App\Http\Resources\JourneyCollection;
 use App\Journey;
 use App\Http\Resources\Journey as JourneyResource;
-
-
+use Illuminate\Http\Request;
 
 
 class JourneysController extends Controller
 {
-
 
 
     /**
@@ -49,11 +47,11 @@ class JourneysController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param JourneyRequest $request
+     * @param Request $request
      *
-     * @return void
+     * @return JourneyResource
      */
-    public function store(JourneyRequest $request)
+    public function store(Request $request)
     {
         //$user = Auth::user();
 
@@ -61,14 +59,13 @@ class JourneysController extends Controller
         ($request->journey_id) : new Journey;
 
         $journey->id = $request->input('journey_id');
-        $journey->start = $request->input('start');
-        $journey->station = $request->input('station');
-        $journey->discount = $request->input('discounts');
-        $journey->cost = $request->input('cost');
+        $journey->startingCity = $request->input('startingCity');
+        $journey->endingCity = $request->input('endingCity');
+        $journey->fare = $request->input('fare');
 
-        //if($journey->save()) {
-          //  return new JourneyResource($journey);
-        //}
+        if($journey->save()) {
+            return new JourneyResource($journey);
+        }
     }
 
     /**

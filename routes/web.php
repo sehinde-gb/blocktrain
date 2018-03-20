@@ -15,15 +15,17 @@
 
 Auth::routes();
 
-Route::get('/home', function () {
-    return view('home');
+Route::get('/journey', function () {
+    return view('journey');
 
 });
 
-    Route::get('/', function () {
-        return view('journey');
+Route::get('/', function () {
+    return view('fare');
 
-    });
+});
+
+
 
 
 //Route::get('/', function () {
