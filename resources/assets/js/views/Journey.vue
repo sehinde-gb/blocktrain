@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BlockTrain  | New Journey</title>
-    <meta id="csrf-token" name="csrf-token" value="{{ csrf_token() }}">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-
-<body>
-<div id="app">
+<template>
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
@@ -23,18 +9,18 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <input type="text" class="form-control" placeholder="From.." v-model="startingFrom" required>
-                                <span class="city-span">@{{startingCity}}</span>
+                                <span class="city-span">{{startingCity}}</span>
                             </div>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" placeholder="To.." v-model="endingTo" required>
-                                <span class="city-span">@{{endingCity}}</span>
+                                <span class="city-span">{{endingCity}}</span>
                             </div>
                         </div>
-
+                        
                         <div class="row">
                             <div class="col-md-6">
                                 <input type="text" class="form-control" placeholder="Fares" v-model="endingFare" required>
-                                <span class="city-span">@{{endingFare}}</span>
+                                <span class="city-span">{{endingFare}}</span>
                             </div>
                         </div><!-- /.row -->
                         <div class="row">
@@ -42,30 +28,30 @@
                                 <button class="btn btn-primary btn-block" id="submit-form">Submit</button>
                             </div>
                         </div>
-                </form>
+                    </form>
                 </div><!-- end of .lead-form -->
             </div> <!-- end of .col-md-6.col-md-offset-3 -->
         </div> <!-- end of .row -->
     </div> <!-- end of .container -->
-</div> <!-- end of #app -->
-</body>
-
-<script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
-<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
-<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+    </div> <!-- end of #app -->
+</template>
 
 <script>
+    
+    import axios from 'axios';
+    import _ from 'lodash';
+   
 
-
-    var app = new Vue({
-        el: '#app',
-        data: {
-            startingFrom: '',
-            startingCity: '',
-            endingTo: '',
-            endingCity: '',
-            fare: '',
-            endingFare: ''
+    export default {
+        data: function () {
+            return {
+                startingFrom: '',
+                startingCity: '',
+                endingTo: '',
+                endingCity: '',
+                fare: '',
+                endingFare: ''
+            }
         },
         watch: {
             startingFrom: function() {
@@ -116,7 +102,7 @@
 
                 axios.post('https://blocktrain.test/api/journey', this.$data);
 
-             },
+            },
 
             lookupFareTo: _.debounce(function() {
                 var app = this
@@ -139,8 +125,9 @@
         }
 
 
-    })
+    }
 </script>
-</html>
 
+<style scoped>
 
+</style>

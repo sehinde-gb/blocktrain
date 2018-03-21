@@ -4,7 +4,7 @@
         
         <p>
             <router-link :to="{ name: 'home' }">Home</router-link>
-            <router-link :to="{ name: 'hello' }">Hello World</router-link>
+            <router-link :to="{ name: 'journey' }">Create Journey</router-link>
             <router-link :to="{ name: 'journeys.index' }">Journeys</router-link>
         </p>
         <div class="container">

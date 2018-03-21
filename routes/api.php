@@ -34,3 +34,5 @@ Route::put('journey', 'JourneysController@update');
 // Delete journey
 Route::delete('journey/{id}', 'JourneysController@destroy');
 
+
+

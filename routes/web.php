@@ -26,17 +26,16 @@ Route::get('/journey', function () {
 });
 
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
-//Route::get('/fare', function () {
-  //  return view('journey');
+/*Route::get('/journey', function () {
+    return view('fare');
+});*/
 
-//});
 
-//Route::get('/', function () {
-//    return view('fare');
-//
-//});
 
 
 
@@ -57,21 +56,10 @@ Route::get('/journey', function () {
 
 Route::resource('cards', 'CardsController');
 
-
-
-
-
-    Route::get('/dashboard' , function () {
-
+Route::get('/dashboard' , function () {
     return view('dashboard');
-
 });
 
-#Static
-
-
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 

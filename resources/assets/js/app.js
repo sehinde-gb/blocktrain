@@ -12,9 +12,10 @@ import VueRouter from 'vue-router'
 window.Vue = require('vue');
 
 Vue.use(VueRouter)
+window._ = require('lodash');
 
 import App from './views/App'
-import Hello from './views/Hello'
+import Journey from './views/Journey'
 import Home from './views/Home'
 import JourneysIndex from './views/JourneysIndex'
 
@@ -25,7 +26,7 @@ import JourneysIndex from './views/JourneysIndex'
  */
 
 //Vue.component('show-blogs', require('./components/ShowBlogs.vue'));
-Vue.component('journey-form', require('./components/JourneyForm.vue'));
+//Vue.component('journey-form', require('./components/JourneyForm.vue'));
 
 
 const router = new VueRouter({
@@ -37,9 +38,9 @@ const router = new VueRouter({
             component: Home
         },
         {
-            path: '/hello',
-            name: 'hello',
-            component: Hello,
+            path: '/journey',
+            name: 'journey',
+            component: Journey,
         },
         {
             path: '/journeys',

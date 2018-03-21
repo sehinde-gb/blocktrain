@@ -19,7 +19,7 @@ class CreateJourneysTable extends Migration
             //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->unsigned();
             $table->string('startingCity');
             $table->string('endingCity');
-            $table->string('fare');
+            $table->string('endingFare');
             $table->timestamps();
         });
     }

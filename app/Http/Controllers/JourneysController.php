@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Card;
-use App\Http\Requests\JourneyRequest;
-use App\Http\Resources\JourneyCollection;
+
 use App\Journey;
 use App\Http\Resources\Journey as JourneyResource;
 use Illuminate\Http\Request;
@@ -61,7 +59,7 @@ class JourneysController extends Controller
         $journey->id = $request->input('journey_id');
         $journey->startingCity = $request->input('startingCity');
         $journey->endingCity = $request->input('endingCity');
-        $journey->fare = $request->input('fare');
+        $journey->endingFare = $request->input('endingFare');
 
         if($journey->save()) {
             return new JourneyResource($journey);
@@ -85,6 +83,7 @@ class JourneysController extends Controller
 
 
     }
+
 
 
 
