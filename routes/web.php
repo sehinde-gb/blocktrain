@@ -15,7 +15,7 @@
 
 Auth::routes();
 
-Route::get('/{any}', 'SpaController@index')-> where('any', '.*');
+//Route::get('/{any}', 'SpaController@index')-> where('any', '.*');
 
 Route::get('/journey', function () {
     if (rand(1, 10) < 3) {
@@ -31,9 +31,9 @@ Route::get('/', function () {
 });
 
 
-/*Route::get('/journey', function () {
+Route::get('/fare', function () {
     return view('fare');
-});*/
+});
 
 
 

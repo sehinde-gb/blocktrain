@@ -28,6 +28,10 @@
                                 <button class="btn btn-primary btn-block" id="submit-form">Submit</button>
                             </div>
                         </div>
+    
+                        <passport-clients></passport-clients>
+                        <passport-authorized-clients></passport-authorized-clients>
+                        <passport-personal-access-tokens></passport-personal-access-tokens>
                     </form>
                 </div><!-- end of .lead-form -->
             </div> <!-- end of .col-md-6.col-md-offset-3 -->
