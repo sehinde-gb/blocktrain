@@ -20,6 +20,10 @@ class CreateJourneysTable extends Migration
             $table->string('startingCity');
             $table->string('endingCity');
             $table->string('endingFare');
+            $table->string('description');
+            $table->string('type');
+            $table->string('passengerType');
+            $table->string('mode');
             $table->timestamps();
         });
     }
