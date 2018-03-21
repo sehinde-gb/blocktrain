@@ -19,6 +19,8 @@ import Journey from './views/Journey'
 import Home from './views/Home'
 import JourneysIndex from './views/JourneysIndex'
 
+
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
