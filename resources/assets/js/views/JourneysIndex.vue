@@ -53,9 +53,8 @@
             fetchData() {
                 this.error = this.journeys = null;
                 this.loading = true;
-                axios
-                    .get('/api/journeys')
-                    .then(response => {
+                axios.get('/api/journeys')
+                   .then(response => {
                         this.loading = false;
                         this.journeys = response.data.data;
                     }).catch(error => {

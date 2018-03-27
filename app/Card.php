@@ -12,7 +12,7 @@ class Card extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id',  'destination'
+         'current_balance', 'balance','startingCity', 'endingCity', 'description', 'type', 'passengerType', 'mode', 'endingFare'
     ];
 
 
@@ -25,13 +25,6 @@ class Card extends Model
     {
         return $this->belongsTo(\App\User::class);
     }
-
-
-
-
-
-
-
 
 
 }

@@ -15,15 +15,17 @@
 
 Auth::routes();
 
-//Route::get('/{any}', 'SpaController@index')-> where('any', '.*');
+//Route::get('/{any}', 'SpaController@index', ['middleware' => 'cors'])->where('any', '.*');
 
-Route::get('/journey', function () {
+
+
+/*Route::get('/journey', function () {
     if (rand(1, 10) < 3) {
         abort(500, 'We could not retrieve the journey');
     }
 
     return factory('App\Journey', 10)->make();
-});
+});*/
 
 
 Route::get('/', function () {
@@ -35,7 +37,13 @@ Route::get('/fare', function () {
     return view('fare');
 });
 
+Route::get('/balance', function () {
+    return view('blance');
+});
 
+Route::get('/swipe', function () {
+    return view('swipein');
+});
 
 
 
@@ -54,7 +62,7 @@ Route::get('/fare', function () {
 
 //});
 
-Route::resource('cards', 'CardsController');
+//Route::resource('cards', 'CardsController');
 
 Route::get('/dashboard' , function () {
     return view('dashboard');

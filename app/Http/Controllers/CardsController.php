@@ -3,30 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Card;
-use App\Http\Requests\CardRequest;
-use App\Http\Requests\DetailsRequest;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\Card as CardResource;
 
 
 class CardsController extends Controller
 {
 
-    /**
-     * @var User
-     */
-    public $user;
 
-    /**
-     * BlogsController constructor.
-     * @param User $user
-     */
-    public function __construct(User $user)
-    {
-        $this->middleware('auth');
-        $this->user = $user;
-    }
 
 
     /**
@@ -41,9 +26,9 @@ class CardsController extends Controller
     public function index()
     {
 
-        $cards = Card::all();
+        $cards = Card::paginate(15);
 
-        return view('cards.index', compact('cards'));
+        return CardResource::collection($cards);
     }
 
 
@@ -53,13 +38,15 @@ class CardsController extends Controller
      * of a station.
      *
      *
-     * @param Card $card
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param $id
+     * @return CardResource
      */
-    public function show(Card $card)
+    public function show($id)
     {
 
-        return view('cards.show', compact('card'));
+        $card = Card::findOrFail($id);
+
+        return new CardResource($card);
 
     }
 
@@ -80,74 +67,53 @@ class CardsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param CardRequest $request
-     * @param Card $card
-     * @return void
+     * @param Request $request
+     * @return CardResource
      */
-    public function store(CardRequest $request, Card $card)
+    public function store(Request $request)
     {
+        //$user = Auth::user();
 
-        $this->createCard($request, $card);
+        $card = $request->isMethod('put') ? Card::findOrFail
+        ($request->card_id) : new Card;
 
+        $card->id = $request->input('card_id');
+        $card->startingCity = $request->input('startingCity');
+        $card->endingCity = $request->input('endingCity');
+        $card->endingFare = $request->input('endingFare');
+        $card->description = $request->input('description');
+        $card->type = $request->input('type');
+        $card->passengerType = $request->input('passengerType');
+        $card->mode = $request->input('mode');
+        //$journey->old_balance = $request->input('old_balance');
+        $card->balance = $request->input('balance');
 
-        //return redirect('/admin/blogs');
+        if($card->save()) {
+            return new CardResource($card);
+        }
     }
 
 
     /**
-     * Assign the results of the PostRequest and assign
-     * the user_id to publish the post.
+     * Delete a journey
      *
-     * @param CardRequest $request
-     * @return mixed
+     * @param $id
+     * @return CardResource
      */
-    protected function createCard(CardRequest $request)
+    public function destroy($id)
     {
 
-        $user = Auth::user();
+        $card = Card::findOrFail($id);
 
-        $card = $user->cards()->create($request->all());
+        if($card->delete()) {
+            return new CardResource($card);
+        }
 
-        return $card;
+
     }
 
 
 
-    /**
-     * Passenger enters the destination station this simulates
-     * the swipe out of a station.
-     *
-     *
-     * @param Card $card
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function edit(Card $card)
-    {
-
-        return view('cards.edit', compact('card'));
-    }
 
 
-    /**
-     * Update the card with the destination station.
-     *
-     * @param CardRequest $request
-     * @param Card $card
-     * @return void
-     *
-     */
-    public function update(CardRequest $request, Card $card)
-    {
-        $user = Auth::user();
-
-        $card = $user->cards()->update(request()->input());
-        //$card->update(request()->input());
-
-        //dd($request);
-
-        return view('cards.thankyou', compact('card'));
-
-
-
-    }
 }

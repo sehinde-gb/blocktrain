@@ -77,9 +77,11 @@
                 var app = this
                 const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
                 app.startingCity = "Searching..."
+               
                 axios.get(TflBaseUrl + app.startingFrom)
                     .then(function (response) {
-                        app.startingCity = response.data.matches[0].id
+                        console.log(response)
+                        //app.startingCity = response.data.matches[0].id
                         //app.startingCity =  response.data.matches[0].name
                     })
                     .catch(function (error) {

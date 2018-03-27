@@ -9,16 +9,18 @@ require('./bootstrap');
 
 import VueRouter from 'vue-router'
 
+
 window.Vue = require('vue');
 
+
 Vue.use(VueRouter)
-window._ = require('lodash');
+
+
 
 import App from './views/App'
 import Journey from './views/Journey'
 import Home from './views/Home'
 import JourneysIndex from './views/JourneysIndex'
-
 
 
 /**
@@ -27,12 +29,12 @@ import JourneysIndex from './views/JourneysIndex'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-//Vue.component('show-blogs', require('./components/ShowBlogs.vue'));
-//Vue.component('journey-form', require('./components/JourneyForm.vue'));
+Vue.component('balance-form', require('./components/Balance.vue'));
+Vue.component('cardsindex-form', require('./components/CardsIndex.vue'));
 
 
 
-
+/*
 const router = new VueRouter({
     mode: 'history',
     routes: [
@@ -54,11 +56,11 @@ const router = new VueRouter({
         },
     ],
 });
-
+*/
 const app = new Vue({
-    el: '#app',
-    components: { App },
-    router,
+    el: '#app'
+    //components: { App },
+    //router,
 });
 
 
