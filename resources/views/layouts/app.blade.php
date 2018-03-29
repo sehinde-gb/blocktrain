@@ -18,6 +18,6 @@
 
 
 <script src="{{ asset('js/app.js') }}"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
 </body>
 </html>

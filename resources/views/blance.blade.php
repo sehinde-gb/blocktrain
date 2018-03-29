@@ -5,7 +5,7 @@
 @section('content')
 
         <div id="app">
-            <cardsindex-form></cardsindex-form>
+           <fares-form></fares-form>
         </div><!-- /#app -->
 
 

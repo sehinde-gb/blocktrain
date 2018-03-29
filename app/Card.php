@@ -12,7 +12,7 @@ class Card extends Model
      * @var array
      */
     protected $fillable = [
-         'current_balance', 'balance','startingCity', 'endingCity', 'description', 'type', 'passengerType', 'mode', 'endingFare'
+         'current_balance', 'balance'
     ];
 
 

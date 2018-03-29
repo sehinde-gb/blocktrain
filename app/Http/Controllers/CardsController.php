@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Card;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\Card as CardResource;
 
 
@@ -27,6 +26,8 @@ class CardsController extends Controller
     {
 
         $cards = Card::paginate(15);
+
+
 
         return CardResource::collection($cards);
     }
@@ -78,14 +79,14 @@ class CardsController extends Controller
         ($request->card_id) : new Card;
 
         $card->id = $request->input('card_id');
-        $card->startingCity = $request->input('startingCity');
+        /*$card->startingCity = $request->input('startingCity');
         $card->endingCity = $request->input('endingCity');
         $card->endingFare = $request->input('endingFare');
         $card->description = $request->input('description');
         $card->type = $request->input('type');
         $card->passengerType = $request->input('passengerType');
-        $card->mode = $request->input('mode');
-        //$journey->old_balance = $request->input('old_balance');
+        $card->mode = $request->input('mode');*/
+        $card->current_balance = $request->input('current_balance');
         $card->balance = $request->input('balance');
 
         if($card->save()) {

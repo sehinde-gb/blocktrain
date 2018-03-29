@@ -37,9 +37,11 @@ Route::get('/fare', function () {
     return view('fare');
 });
 
-Route::get('/balance', function () {
-    return view('blance');
-});
+    Route::middleware('cors')->group(function() {
+        Route::get('/balance', function () {
+            return view('blance');
+        });
+    });
 
 Route::get('/swipe', function () {
     return view('swipein');
