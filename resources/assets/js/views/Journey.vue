@@ -1,70 +1,141 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="lead-form">
-                    <h1 class="text-center">Swipe Your Card</h1>
-                    <hr />
-                    <form method="post" action="/api/journey" @submit.prevent="onSubmit">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="From.." v-model="startingFrom" required>
-                                <span class="city-span">{{startingCity}}</span>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="To.." v-model="endingTo" required>
-                                <span class="city-span">{{endingCity}}</span>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Fares" v-model="endingFare" required>
-                                <span class="city-span">{{endingFare}}</span>
-                            </div>
-                        </div><!-- /.row -->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <button class="btn btn-primary btn-block" id="submit-form">Submit</button>
-                            </div>
-                        </div>
-    
-                       
-                    </form>
-                </div><!-- end of .lead-form -->
-            </div> <!-- end of .col-md-6.col-md-offset-3 -->
-        </div> <!-- end of .row -->
-    </div> <!-- end of .container -->
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="lead-form">
+                        <h1 class="text-center">Swipe Your Card</h1>
+                        <hr />
+                        <form method="post" action="/api/journey" @submit.prevent="onSubmit">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input name="from" v-validate="'required|min:8'" type="text"  class="form-control" placeholder="From.." v-model="from">
+                                    <p class="help is-danger" v-show="errors.has('from')">
+                                        {{ errors.first('from') }}
+                                    </p>
+                                    <span class="city-span">{{startingCity}}</span>
+                                </div><!-- /.col-md-6 -->
+                                
+                                <div class="col-md-6">
+                                    <input name="to" v-validate="'required|min:8'" type="text" class="form-control" placeholder="To.." v-model="to">
+                                    <p class="help is-danger" v-show="errors.has('from')">
+                                        {{ errors.first('to') }}
+                                    </p>
+                                    <span class="city-span">{{endingCity}}</span>
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Fares" v-model="endingFare" readonly="readonly">
+                                    <span class="city-span">{{endingFare}}</span>
+                                </div><!-- /.col-md-6 -->
+                                
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Description" v-model="description" readonly="readonly">
+                                    <span class="city-span">{{description}}</span>
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                            
+                            
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Passenger Type" v-model="passengerType" readonly="readonly">
+                                    <span class="city-span">{{passengerType}}</span>
+                                </div><!-- /.col-md-6 -->
+                                
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Mode" v-model="mode" readonly="readonly">
+                                    <span class="city-span">{{mode}}</span>
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Type" v-model="type" readonly="readonly">
+                                    <span class="city-span">{{type}}</span>
+                                </div><!-- /.col-md-6 -->
+                                
+                                <div class="col-md-6"></div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                            
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Balance" v-model="current_balance" readonly="readonly">
+                                    <span class="city-span">{{current_balance}}</span>
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                            
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="/balance"><button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form">Swipe</button></a>
+                                </div><!-- /.col-md-12 -->
+                            </div><!-- /.row -->
+                        </form>
+                    </div><!-- end of .lead-form -->
+                </div> <!-- end of .col-md-6.col-md-offset-3 -->
+            </div> <!-- end of .row -->
+        </div> <!-- end of .container -->
     </div> <!-- end of #app -->
 </template>
 
 <script>
     
-    import axios from 'axios';
+   
     import _ from 'lodash';
    
 
     export default {
-        data: function () {
+        data: function() {
             return {
-                startingFrom: '',
+                from: '',
                 startingCity: '',
-                endingTo: '',
+                to: '',
                 endingCity: '',
                 fare: '',
-                endingFare: ''
+                endingFare: '',
+                description: '',
+                passengerType: '',
+                mode: '',
+                type: '',
+                balance: '',
+                current_balance: ''
             }
+
         },
+
+        mounted() {
+            var app = this
+            const Url = 'https://blocktrain.test/api/cards'
+
+            //app.balance = "Searching.."
+
+
+            axios.get(Url)
+                .then(function (response){
+                    console.log(response)
+                    //app.balance = response.data.balance
+                })
+                .catch(function (error){
+                    //app.balance = "Invalid Fare"
+                })
+        },
+
+
+
         watch: {
-            startingFrom: function() {
+            from: function() {
                 this.startingCity = ''
-                if (this.startingFrom.length == 8) {
+                if (this.from.length == 8) {
                     this.lookupStartingFrom()
                 }
             },
-            endingTo: function() {
+            to: function() {
                 this.endingCity = ''
-                if (this.endingTo.length == 8) {
+                if (this.to.length == 8) {
                     this.lookupEndingTo()
                     this.lookupFareTo()
                 }
@@ -75,13 +146,12 @@
         methods: {
             lookupStartingFrom: _.debounce(function() {
                 var app = this
+
                 const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
                 app.startingCity = "Searching..."
-               
-                axios.get(TflBaseUrl + app.startingFrom)
+                this.$http.get(TflBaseUrl + app.from)
                     .then(function (response) {
-                        console.log(response)
-                        //app.startingCity = response.data.matches[0].id
+                        app.startingCity = response.data.matches[0].id
                         //app.startingCity =  response.data.matches[0].name
                     })
                     .catch(function (error) {
@@ -92,8 +162,9 @@
                 var app = this
                 const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
                 app.endingCity = "Searching..."
-                axios.get(TflBaseUrl + app.endingTo)
+                this.$http.get(TflBaseUrl + app.to)
                     .then(function (response) {
+
                         app.endingCity = response.data.matches[0].id
                         //app.endingCity = response.data.matches[0].name
                     })
@@ -104,7 +175,7 @@
 
             onSubmit: function() {
 
-                axios.post('https://blocktrain.test/api/journey', this.$data);
+                this.$http.post('https://blocktrain.test/api/journey', this.$data);
 
             },
 
@@ -116,10 +187,14 @@
                 app.endingFare = "Searching.."
 
 
-                axios.get(TflStopUrl + app.startingCity + FareUrl + app.endingCity + AppKey)
+                this.$http.get(TflStopUrl + app.startingCity + FareUrl + app.endingCity + AppKey)
 
                     .then(function (response){
                         app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost
+                        app.description = response.data[0].rows[0].ticketsAvailable[0].description
+                        app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType
+                        app.mode = response.data[0].rows[0].ticketsAvailable[0].mode
+                        app.type= response.data[0].rows[0].ticketsAvailable[0].ticketTime.type
                     })
                     .catch(function (error){
                         app.endingFare = "Invalid Fare"

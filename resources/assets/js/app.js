@@ -9,12 +9,14 @@ require('./bootstrap');
 
 import VueRouter from 'vue-router';
 import VeeValidate from 'vee-validate';
+import VueResource from 'vue-resource';
 
 window.Vue = require('vue');
 
 
 Vue.use(VueRouter);
 Vue.use(VeeValidate);
+Vue.use(VueResource);
 
 
 import App from './views/App'
@@ -29,12 +31,12 @@ import JourneysIndex from './views/JourneysIndex'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('balance-form', require('./components/balance.vue'));
-Vue.component('index-form', require('./components/index.vue'));
-Vue.component('fares-form', require('./components/fares.vue'));
-Vue.component('card-form', require('./components/new-card.vue'));
+//Vue.component('balance-form', require('./components/balance.vue'));
+//Vue.component('index-form', require('./components/index.vue'));
+//Vue.component('fares-form', require('./components/fares.vue'));
+//Vue.component('card-form', require('./components/new-card.vue'));
 
-/*
+
 const router = new VueRouter({
     mode: 'history',
     routes: [
@@ -56,11 +58,11 @@ const router = new VueRouter({
         },
     ],
 });
-*/
+
 const app = new Vue({
-    el: '#app'
-    //components: { App },
-    //router,
+    el: '#app',
+    components: { App },
+    router,
 });
 
 

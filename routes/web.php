@@ -15,7 +15,7 @@
 
 Auth::routes();
 
-//Route::get('/{any}', 'SpaController@index', ['middleware' => 'cors'])->where('any', '.*');
+Route::get('/{any}', 'SpaController@index')->where('any', '.*');
 
 
 
@@ -32,7 +32,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+/*
 Route::get('/fare', function () {
     return view('fare');
 });
@@ -45,7 +45,7 @@ Route::get('/fare', function () {
 
 Route::get('/swipe', function () {
     return view('swipein');
-});
+});*/
 
 
 
