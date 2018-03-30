@@ -22,7 +22,9 @@ Vue.use(VueResource);
 import App from './views/App'
 import Journey from './views/Journey'
 import Home from './views/Home'
-import JourneysIndex from './views/JourneysIndex'
+import Parent from './views/Parent'
+
+
 
 
 /**
@@ -31,7 +33,7 @@ import JourneysIndex from './views/JourneysIndex'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-//Vue.component('balance-form', require('./components/balance.vue'));
+//Vue.component('child-form', require('./components/Parent.vue'));
 //Vue.component('index-form', require('./components/index.vue'));
 //Vue.component('fares-form', require('./components/fares.vue'));
 //Vue.component('card-form', require('./components/new-card.vue'));
@@ -51,11 +53,11 @@ const router = new VueRouter({
             component: Journey,
         },
         {
-            path: '/journeys',
-            name: 'journeys.index',
-            component: JourneysIndex,
-
+            path: '/parent',
+            name: 'parent',
+            component: Parent,
         },
+
     ],
 });
 

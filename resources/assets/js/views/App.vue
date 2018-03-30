@@ -1,11 +1,11 @@
 <template>
     <div>
         <h1>Block Train Demo App</h1>
-        
+     
         <p>
             <router-link :to="{ name: 'home' }">Home</router-link>
             <router-link :to="{ name: 'journey' }">Create Journey</router-link>
-            <router-link :to="{ name: 'journeys.index' }">Journeys</router-link>
+            <router-link :to="{ name: 'parent' }">Parent</router-link>
         </p>
         <div class="container">
             <router-view></router-view>
