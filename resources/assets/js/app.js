@@ -11,6 +11,7 @@ import VueRouter from 'vue-router';
 import VeeValidate from 'vee-validate';
 import VueResource from 'vue-resource';
 
+
 window.Vue = require('vue');
 window.Event = new Vue();
 
@@ -25,8 +26,9 @@ import Home from './views/Home'
 import Parent from './views/Parent'
 import CheckIn from './views/CheckIn'
 import CheckOut from './views/CheckOut'
-
 import Journey from './views/Journey'
+//import Greeter from './views/Greeter'
+
 
 
 
@@ -37,7 +39,7 @@ import Journey from './views/Journey'
  */
 
 
-//Vue.component('child-form', require('./components/Parent.vue'));
+//Vue.component('app-greeter', require('./views/Greeter.vue'));
 //Vue.component('index-form', require('./components/index.vue'));
 //Vue.component('fares-form', require('./components/fares.vue'));
 //Vue.component('card-form', require('./components/new-card.vue'));
@@ -74,11 +76,8 @@ const router = new VueRouter({
             component: Journey,
         },
 
-        {
-            path: '/:name',
-            component: NewComponent,
-            props: true
-        },
+
+
 
 
 

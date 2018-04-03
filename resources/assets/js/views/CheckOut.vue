@@ -91,12 +91,7 @@
 
 
     export default {
-        props: {
-            cost: {
-                type: Number,
-                default: 0
-            }
-        },
+       
         data: function() {
             return {
                

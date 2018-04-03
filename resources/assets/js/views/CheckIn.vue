@@ -9,6 +9,8 @@
                 {{ errors.first('from') }}
             </p>
             <span class="city-span">{{startingCity}}</span>
+            
+          
         </div><!-- /.container -->
        
     </div><!-- /.app -->
@@ -27,7 +29,8 @@
             return {
                 
                 from: '',
-                startingCity: '',
+                startingCity: ''
+              
                
                 
             }
