@@ -1,26 +1,22 @@
-</* src/components/Child.vue */
+
 <template>
-    <div class="counter-block">
-        <h3>{{ childCounter }}</h3>
-        <button @click="Increase">Increase Me</button>
-        <button @click="deCrease">Decrease Me </button>
-    </div>
+        
+        <h3>{{ text }}</h3>
+    
 </template>
 
 <script type="text/javascript">
     export default{
+        props: ['text'],
+        
         data () {
             return {
-                childCounter: 0
+            
+                message: ''
             }
         },
         methods : {
-            Increase: function(){
-                this.childCounter = this.childCounter + 1;
-            },
-            deCrease(){
-                this.childCounter = this.childCounter - 1;
-            },
+        
         }
     }
 </script>

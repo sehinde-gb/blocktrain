@@ -20,10 +20,11 @@ Vue.use(VueResource);
 
 
 import App from './views/App'
-import Journey from './views/Journey'
 import Home from './views/Home'
 import Parent from './views/Parent'
-
+import CheckIn from './views/CheckIn'
+import CheckOut from './views/CheckOut'
+import NewComponent from './views/NewComponent'
 
 
 
@@ -32,6 +33,7 @@ import Parent from './views/Parent'
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
 
 //Vue.component('child-form', require('./components/Parent.vue'));
 //Vue.component('index-form', require('./components/index.vue'));
@@ -47,19 +49,35 @@ const router = new VueRouter({
             name: 'home',
             component: Home
         },
-        {
-            path: '/journey',
-            name: 'journey',
-            component: Journey,
-        },
+
         {
             path: '/parent',
             name: 'parent',
             component: Parent,
         },
+        {
+            path: '/checkin',
+            name: 'checkin',
+            component: CheckIn,
+        },
+        {
+            path: '/checkout',
+            name: 'checkout',
+            component: CheckOut,
+        },
+
+        {
+            path: '/:name',
+            component: NewComponent,
+            props: true
+        },
+
+
 
     ],
 });
+
+
 
 const app = new Vue({
     el: '#app',
