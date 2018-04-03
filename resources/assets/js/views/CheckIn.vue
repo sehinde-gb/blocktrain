@@ -4,7 +4,7 @@
     <div id="app">
          <div class="container">
             <h1 class="text-center">Checkin: Swipe your card</h1>
-            <input name="from" v-validate="'required|min:8'" type="text"  class="form-control" placeholder="From.." v-model="from">
+            <input name="from" v-validate="'required|min:8'" type="text"  class="form-control" placeholder="Enter your station" v-model="from" @blur="onApplied">
             <p class="help is-danger" v-show="errors.has('from')">
                 {{ errors.first('from') }}
             </p>
@@ -21,17 +21,11 @@
     export default {
         from: "CheckIn",
         
-        props: {
-            from: {
-                type: String,
-            }
-           
-            
-        },
+        
         
         data: function() {
             return {
-             
+                
                 from: '',
                 startingCity: '',
                
@@ -48,10 +42,14 @@
                 }
             }
         },
-        components: {
-            //Journey,
-        },
+        
         methods: {
+        
+        onApplied() {
+            //this.$emit("applied");
+            Event.$emit('applied');
+        },
+        
             lookupStartingFrom: _.debounce(function () {
                 var app = this
 

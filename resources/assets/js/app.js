@@ -12,6 +12,7 @@ import VeeValidate from 'vee-validate';
 import VueResource from 'vue-resource';
 
 window.Vue = require('vue');
+window.Event = new Vue();
 
 
 Vue.use(VueRouter);
@@ -24,7 +25,8 @@ import Home from './views/Home'
 import Parent from './views/Parent'
 import CheckIn from './views/CheckIn'
 import CheckOut from './views/CheckOut'
-import NewComponent from './views/NewComponent'
+
+import Journey from './views/Journey'
 
 
 
@@ -64,6 +66,12 @@ const router = new VueRouter({
             path: '/checkout',
             name: 'checkout',
             component: CheckOut,
+        },
+
+        {
+            path: '/journey',
+            name: 'journey',
+            component: Journey,
         },
 
         {

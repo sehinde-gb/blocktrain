@@ -7,7 +7,7 @@
             <router-link :to="{ name: 'parent' }">Parent</router-link>
             <router-link :to="{ name: 'checkin' }">Check In</router-link>
             <router-link :to="{ name: 'checkout' }">Check Out</router-link>
-            
+            <router-link :to="{ name: 'journey' }">Journey</router-link>
             
         </p>
         <div class="container">

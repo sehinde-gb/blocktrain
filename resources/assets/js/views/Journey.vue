@@ -1,3 +1,4 @@
+/* Child */
 <template>
     <div id="app">
         
@@ -64,8 +65,9 @@
                             
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Balance" v-model="current_balance" readonly="readonly">
-                                    <span class="city-span">{{current_balance}}</span>
+                                    <input type="text" class="form-control" placeholder="Balance" v-model="balance" readonly="readonly">
+                                    
+                                    <span class="city-span">{{formattedCost}}</span>
                                 </div><!-- /.col-md-6 -->
                             </div><!-- /.row -->
                             
@@ -81,11 +83,10 @@
             </div> <!-- end of .row -->
         </div> <!-- end of .container -->
     </div> <!-- end of #app -->
+
 </template>
 
 <script>
-
-
     import _ from 'lodash';
 
 
@@ -102,8 +103,8 @@
                 passengerType: '',
                 mode: '',
                 type: '',
-                balance: '',
-                current_balance: ''
+                balance: '100'
+
             }
 
         },
@@ -125,6 +126,11 @@
                 })
         },
 
+        computed: {
+            formattedCost () {
+                return this.balance - this.endingFare;
+            }
+        },
 
 
         watch: {
@@ -206,6 +212,7 @@
 
 
     }
+
 </script>
 
 <style scoped>

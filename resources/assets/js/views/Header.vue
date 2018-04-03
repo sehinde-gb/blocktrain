@@ -1,14 +1,16 @@
 <template>
     <header>
-        <h1>{{ title }}</h1>
+        <h1>{{ text }}</h1>
     </header>
 </template>
 
 <script>
     export default {
+        props: ['text'],
+        
         data() {
             return {
-                title: "Vue Trains"
+            
             }
         }
     }

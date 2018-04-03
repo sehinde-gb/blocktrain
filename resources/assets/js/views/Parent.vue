@@ -23,7 +23,6 @@
         name: 'Parent',
         data () {
             return {
-               
                 message: ''
             }
         },
