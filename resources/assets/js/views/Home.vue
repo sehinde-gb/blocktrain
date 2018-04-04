@@ -4,8 +4,8 @@
         <p>This is the homepage</p>
         <app-header text="Vue Trains"></app-header>
         <check-in></check-in>
-        
-        <greeter></greeter>
+        <input type="text" v-model="name">
+        <greeter :name="name"></greeter>
         <app-footer></app-footer>
     </div>
    
@@ -23,7 +23,11 @@
 
     
     export default {
-        
+        data() {
+          return {
+            name: ''
+          }
+        },
         
         components: {
              CheckIn, Greeter,

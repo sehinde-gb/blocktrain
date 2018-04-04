@@ -30,10 +30,7 @@
                 
                 from: '',
                 startingCity: ''
-              
-               
-                
-            }
+             }
 
         },
 
