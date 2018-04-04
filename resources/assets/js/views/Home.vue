@@ -3,9 +3,9 @@
     <div id="app">
         <p>This is the homepage</p>
         <app-header text="Vue Trains"></app-header>
-        <check-in></check-in>
+        
         <input type="text" v-model="name">
-        <greeter :name="name"></greeter>
+        <greeter @alertName="alertName($event)" :name="name"></greeter>
         <app-footer></app-footer>
     </div>
    
@@ -18,19 +18,24 @@
  
     import Header from './Header.vue'
     import Footer from './Footer.vue'
-    import CheckIn from './CheckIn.vue'
+    
     import Greeter from './Greeter.vue'
 
     
     export default {
         data() {
           return {
-            name: ''
+            name: 0
           }
+        },
+        methods: {
+            alertName(name) {
+                alert(name)
+            }
         },
         
         components: {
-             CheckIn, Greeter,
+             Greeter,
             'app-footer': Footer,
             'app-header': Header
             

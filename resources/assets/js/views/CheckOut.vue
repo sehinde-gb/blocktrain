@@ -10,14 +10,8 @@
                         <hr />
                         <form method="post" action="/api/journey" @submit.prevent="onSubmit">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <input name="from" v-validate="'required|min:8'" type="text"  class="form-control" placeholder="From.." v-model="from">
-                                    <p class="help is-danger" v-show="errors.has('from')">
-                                        {{ errors.first('from') }}
-                                    </p>
-                                    <span class="city-span">{{startingCity}}</span>
-                                </div><!-- /.col-md-6 -->
                                 
+                                <checkin></checkin>
                                 <div class="col-md-6">
                                     <input name="to" v-validate="'required|min:8'" type="text" class="form-control" placeholder="To.." v-model="to">
                                     <p class="help is-danger" v-show="errors.has('from')">
@@ -88,7 +82,7 @@
 
 <script>
     import _ from 'lodash';
-
+    import Checkin from './CheckIn.vue'
 
     export default {
        
@@ -110,6 +104,9 @@
                 
             }
 
+        },
+        components: {
+          Checkin
         },
 
         mounted() {
