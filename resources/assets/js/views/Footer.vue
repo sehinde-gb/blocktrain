@@ -1,7 +1,7 @@
 <template>
     
    <footer>
-       <h1 v-on:click="changeTitle">{{ title }}</h1>
+       <h3>{{ title }}</h3>
         <router-link to="/parent">Parent</router-link>
         <router-link to="/checkin">Checkin</router-link>
         <router-link to="/parent">Checkout</router-link>
@@ -11,6 +11,8 @@
 </template>
 
 <script>
+    import { bus } from '../app';
+    
     export default {
         props: {
             title: {
@@ -20,17 +22,31 @@
         },
         data() {
             return {
-                copyright: 'Copyright 2018 Vue Ninjas'
+                copyright: 'Copyright 2018'
             }
         },
-        methods: {
-            changeTitle: function() {
-                this.$emit('changeTitle', 'Vue Wizards')
-            }
+        created() {
+            bus.$on('titleChanged',(data) => {
+                this.title = data;
+            })
         }
     }
 </script>
 
 <style scoped>
 
+footer {
+    background-color: black;
+    color: green;
+    
+}
+
+h3 {
+    padding: 10px;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
 </style>

@@ -15,6 +15,7 @@ import VueResource from 'vue-resource';
 window.Vue = require('vue');
 window.Event = new Vue();
 
+export const bus = new Vue();
 
 Vue.use(VueRouter);
 Vue.use(VeeValidate);

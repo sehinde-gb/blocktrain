@@ -2,12 +2,12 @@
     
     <div id="app">
         
-        <app-header v-bind:title="title" v-on:changeTitle="updateTitle($event)"></app-header>
+        <app-header v-bind:title="title" v-on:changedTitle="updateTitle($event)"></app-header>
         <app-navigation></app-navigation>
         <input type="text" v-model="name">
         <greeter @alertName="alertName($event)" :name="name"></greeter>
         <app-main></app-main>
-        <app-footer v-bind:title="title" v-on:changeTitle="updateTitle($event)"></app-footer>
+        <app-footer v-bind:title="title" v-on:changedTitle="updateTitle($event)"></app-footer>
     </div>
    
    

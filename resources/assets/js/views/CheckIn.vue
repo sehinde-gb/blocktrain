@@ -28,8 +28,6 @@
     export default {
         from: "CheckIn",
         
-        
-        
         data: function() {
             return {
                 
@@ -43,7 +41,6 @@
          
             'app-footer': Footer,
             'app-header': Header
-
         },
 
 
