@@ -11,7 +11,9 @@
                         <form method="post" action="/api/journey" @submit.prevent="onSubmit">
                             <div class="row">
                                 
-                                <checkin></checkin>
+                                
+                                <checkin @onApplied="onApplied($event)" :from="from"></checkin>
+                                
                                 <div class="col-md-6">
                                     <input name="to" v-validate="'required|min:8'" type="text" class="form-control" placeholder="To.." v-model="to">
                                     <p class="help is-danger" v-show="errors.has('from')">
@@ -185,6 +187,11 @@
                 this.$http.post('https://blocktrain.test/api/journey', this.$data);
 
             },
+        
+        onApplied(from) {
+            onApplied(from)
+        },
+    
 
             lookupFareTo: _.debounce(function() {
                 var app = this
@@ -209,6 +216,8 @@
 
             },1000)
         }
+
+        
 
 
     }

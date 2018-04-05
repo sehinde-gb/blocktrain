@@ -27,7 +27,7 @@ import Parent from './views/Parent'
 import CheckIn from './views/CheckIn'
 import CheckOut from './views/CheckOut'
 import Journey from './views/Journey'
-//import Greeter from './views/Greeter'
+
 
 
 
@@ -39,7 +39,7 @@ import Journey from './views/Journey'
  */
 
 
-//Vue.component('app-greeter', require('./views/Greeter.vue'));
+
 //Vue.component('index-form', require('./components/index.vue'));
 //Vue.component('fares-form', require('./components/fares.vue'));
 //Vue.component('card-form', require('./components/new-card.vue'));

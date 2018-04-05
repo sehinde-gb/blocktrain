@@ -1,7 +1,9 @@
 /* Parent */
 
 <template>
-    <div id="app">
+    <div>
+        <app-header text="Vue Trains"></app-header>
+    
          <div class="container">
             <h1 class="text-center">Checkin: Swipe your card</h1>
             <input name="from" v-validate="'required|min:8'" type="text"  class="form-control" placeholder="Enter your station" v-model="from" @blur="onApplied">
@@ -19,6 +21,9 @@
 
 <script>
     var _ = require('lodash');
+
+    import Header from './Header.vue'
+    import Footer from './Footer.vue'
     
     export default {
         from: "CheckIn",
@@ -34,6 +39,14 @@
 
         },
 
+        components: {
+         
+            'app-footer': Footer,
+            'app-header': Header
+
+        },
+
+
         watch: {
             from: function () {
                 this.startingCity = ''
@@ -47,7 +60,7 @@
         
         onApplied() {
             //this.$emit("applied");
-            Event.$emit('applied');
+            Event.$emit('onApplied');
         },
         
             lookupStartingFrom: _.debounce(function () {

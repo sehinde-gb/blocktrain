@@ -11,8 +11,7 @@
         props: {
             name: {
                 type: [String],
-                required: true,
-                validator: value => value.length > 10,
+                required: true
             }
         
         },
