@@ -1,6 +1,5 @@
 <template>
     <div id="app">
-        
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
@@ -9,16 +8,17 @@
                         <hr />
                         <form method="post" action="/api/end" @submit.prevent="onSubmit">
                             <div class="row">
-                                
                                 <div class="col-md-6">
-                                    <span class="city-span" v-model="startingCity">{{ station.startingCity }}</span>
-                                    
+                                    <span class="city-span" v-model="from">From: {{ station.from }}</span>
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <span class="city-span" v-model="startingCity">From Code: {{ station.startingCity }}</span>
                                 </div><!-- /.col-md-6 -->
                                 
                                 
                                 <div class="col-md-6">
                                     <input name="to" v-validate="'required|min:8'" type="text" class="form-control" placeholder="To.." v-model="to">
-                                    <p class="help is-danger" v-show="errors.has('from')">
+                                    <p class="help is-danger" v-show="errors.has('to')">
                                         {{ errors.first('to') }}
                                     </p>
                                     <span class="city-span">{{endingCity}}</span>
@@ -72,7 +72,7 @@
                             
                             <div class="row">
                                 <div class="col-md-12">
-                                    <a href="/balance"><button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form">Next</button></a>
+                                    <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form">Next</button>
                                 </div><!-- /.col-md-12 -->
                             </div><!-- /.row -->
                         </form>
@@ -93,7 +93,7 @@
         
         data: function() {
             return {
-                //from: '',
+                from: '',
                 startingCity: '',
                 to: '',
                 endingCity: '',
@@ -109,7 +109,6 @@
             }
 
         },
-
 
 
         computed: {
@@ -132,9 +131,6 @@
         },
         methods: {
             
-            
-            
-            
             lookupEndingTo: _.debounce(function() {
                 var app = this
                 const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
@@ -154,11 +150,9 @@
             onSubmit: function() {
 
                 this.$http.post('https://blocktrain.test/api/end', this.$data);
+                this.$router.push('journey')
 
             },
-
-           
-
 
             lookupFareTo: _.debounce(function() {
                 var app = this
@@ -167,9 +161,6 @@
                 const AppKey = '/?app_id=51a876af&app_key=a1c609db4f3994924e7eb19199a08289'
                 app.endingFare = "Searching.."
                 
-                
-             
-
                 this.$http.get(TflStopUrl + app.startingCity + FareUrl + app.endingCity + AppKey)
 
                     .then(function (response){

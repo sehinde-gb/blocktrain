@@ -28,7 +28,7 @@ import Start from './views/Start'
 import End from './views/End'
 import Journey from './views/Journey'
 import store from './store';
-
+import Listings from './views/Listings'
 
 
 
@@ -54,6 +54,11 @@ const router = new VueRouter({
             name: 'home',
             component: Home
         },
+        {
+            path: '/listings',
+            name: 'listings',
+            component: Listings,
+        },
 
         {
             path: '/start',
@@ -65,6 +70,7 @@ const router = new VueRouter({
             name: 'end',
             component: End,
         },
+
 
         {
             path: '/journey',

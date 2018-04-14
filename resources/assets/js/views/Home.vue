@@ -6,7 +6,7 @@
         <input type="text" v-model="name">
         <greeter @alertName="alertName($event)" :name="name"></greeter>
         
-        <li v-for=""></li>
+        
        
     </div>
    
@@ -20,8 +20,7 @@
     
     
     import Greeter from './Greeter.vue'
-    import SwipeIn from './SwipeIn'
-    import SwipeOut from './SwipeOut'
+    
 
     
     export default {
@@ -42,8 +41,7 @@
         },
         
         components: {
-             Greeter,
-             SwipeIn, SwipeOut
+             Greeter
             
         }
         

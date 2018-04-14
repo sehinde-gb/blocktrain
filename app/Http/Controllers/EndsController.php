@@ -54,7 +54,7 @@ class EndsController extends Controller
         ($request->end_id) : new End;
 
         $end->id = $request->input('end_id');
-
+        $end->to = $request->input('to');
         $end->endingCity = $request->input('endingCity');
         $end->endingFare = $request->input('endingFare');
         $end->description = $request->input('description');

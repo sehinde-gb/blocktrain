@@ -30,7 +30,6 @@
 
 
     export default {
-        //props: ['stations'],
         
         data: function() {
             
@@ -70,7 +69,8 @@
             onSubmit: function() {
                 this.station.push(this.startingCity);
                 this.$http.post('https://blocktrain.test/api/start', this.$data);
-                
+                this.$router.push('end')
+
             }
         }
     }
