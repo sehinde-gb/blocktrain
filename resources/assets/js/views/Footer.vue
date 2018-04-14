@@ -2,9 +2,9 @@
     
    <footer>
        <h3>{{ title }}</h3>
-        <router-link to="/parent">Parent</router-link>
+        
         <router-link to="/checkin">Checkin</router-link>
-        <router-link to="/parent">Checkout</router-link>
+       
         <p>{{ copyright }}</p>
     </footer>
 

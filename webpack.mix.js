@@ -11,5 +11,21 @@ let mix = require('laravel-mix');
  |
  */
 
+require('dotenv').config();
+
+
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+    .styles([
+        'node_modules/open-sans-all/css/open-sans.css',
+        'node_modules/font-awesome/css/font-awesome.css'
+    ], 'public/css/style.css')
+    .copy('node_modules/open-sans-all/fonts', 'public/fonts')
+    .copy('node_modules/font-awesome/fonts', 'public/fonts')
+    .copy('resources/assets/images', 'public/images')
+    .browserSync({
+        //proxy: process.env.APP_URL,
+        proxy: 'blocktrain.test',
+        host: 'blocktrain.test',
+        open: 'external'
+        })
+   //.sass('resources/assets/sass/app.scss', 'public/css');

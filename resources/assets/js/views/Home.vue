@@ -2,12 +2,12 @@
     
     <div id="app">
         
-        <app-header v-bind:title="title" v-on:changedTitle="updateTitle($event)"></app-header>
-        <app-navigation></app-navigation>
+       
         <input type="text" v-model="name">
         <greeter @alertName="alertName($event)" :name="name"></greeter>
-        <app-main></app-main>
-        <app-footer v-bind:title="title" v-on:changedTitle="updateTitle($event)"></app-footer>
+        
+        <li v-for=""></li>
+       
     </div>
    
    
@@ -17,11 +17,11 @@
 
 <script>
  
-    import Header from './Header.vue'
-    import Navigation from './Navigation.vue'
-    import Footer from './Footer.vue'
+    
+    
     import Greeter from './Greeter.vue'
-    import Main from './Main.vue'
+    import SwipeIn from './SwipeIn'
+    import SwipeOut from './SwipeOut'
 
     
     export default {
@@ -43,10 +43,7 @@
         
         components: {
              Greeter,
-             'app-header': Header,
-             'app-navigation': Navigation,
-             'app-main': Main,
-             'app-footer': Footer
+             SwipeIn, SwipeOut
             
         }
         

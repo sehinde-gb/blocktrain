@@ -24,10 +24,10 @@ Vue.use(VueResource);
 
 import App from './views/App'
 import Home from './views/Home'
-import Parent from './views/Parent'
-import CheckIn from './views/CheckIn'
-import CheckOut from './views/CheckOut'
+import Start from './views/Start'
+import End from './views/End'
 import Journey from './views/Journey'
+import store from './store';
 
 
 
@@ -56,19 +56,14 @@ const router = new VueRouter({
         },
 
         {
-            path: '/parent',
-            name: 'parent',
-            component: Parent,
+            path: '/start',
+            name: 'start',
+            component: Start,
         },
         {
-            path: '/checkin',
-            name: 'checkin',
-            component: CheckIn,
-        },
-        {
-            path: '/checkout',
-            name: 'checkout',
-            component: CheckOut,
+            path: '/end',
+            name: 'end',
+            component: End,
         },
 
         {
@@ -76,11 +71,6 @@ const router = new VueRouter({
             name: 'journey',
             component: Journey,
         },
-
-
-
-
-
 
     ],
 });
@@ -91,6 +81,7 @@ const app = new Vue({
     el: '#app',
     components: { App },
     router,
+    store
 });
 
 

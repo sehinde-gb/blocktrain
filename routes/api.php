@@ -20,22 +20,40 @@ Route::middleware(['auth:api', 'cors'])->get('/user', function (Request $request
     return $request->user();
 });
 
+// List end journeys
+Route::get('ends', 'EndsController@index');
 
-    Route::middleware('cors')->group(function(){
-        // List journeys
-        Route::get('journeys', 'JourneysController@index');
+// List single end journey
+Route::get('end/{id}', 'EndsController@show');
 
-// List single journey
-        Route::get('journey/{id}', 'JourneysController@show');
+// Create new end journey
+Route::post('end', 'EndsController@store');
 
-// Create new journey
-        Route::post('journey', 'JourneysController@store');
+// Update end journey
+Route::put('end', 'EndsController@update');
 
-// Update journey
-        Route::put('journey', 'JourneysController@update');
+// Delete end journey
+Route::delete('end/{id}', 'EndsController@destroy');
 
-// Delete journey
-        Route::delete('journey/{id}', 'JourneysController@destroy');
+// List start journeys
+Route::get('starts', 'StartsController@index');
+
+// List single start journey
+Route::get('start/{id}', 'StartsController@show');
+
+// Create new start journey
+Route::post('start', 'StartsController@store');
+
+// Update start journey
+Route::put('start', 'StartsController@update');
+
+// Delete start journey
+Route::delete('start/{id}', 'StartsController@destroy');
+
+
+
+Route::middleware('cors')->group(function(){
+
 
 
 // List cards

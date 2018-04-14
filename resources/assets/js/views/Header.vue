@@ -16,7 +16,6 @@
         
         methods: {
             changeTitle: function() {
-                //this.$emit('changeTitle', 'Vue Wizards')
                 this.title = 'Vue Wizards';
                 bus.$emit('titleChanged', this.title);
             }
@@ -28,5 +27,14 @@
  header {
     background: lightgreen;
     padding: 10px;
+ }
+
+ h3 {
+     padding: 10px;
+     text-align: center;
+ }
+
+ p {
+     text-align: center;
  }
 </style>

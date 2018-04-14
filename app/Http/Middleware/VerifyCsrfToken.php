@@ -14,7 +14,9 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         '/api/journey',
         'https://api.tfl.gov.uk/StopPoint/Search?query=',
-        '/api/cards'
+        '/api/cards',
+        '/api/end',
+        '/api/start'
 
     ];
 }
