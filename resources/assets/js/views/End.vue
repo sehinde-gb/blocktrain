@@ -16,7 +16,7 @@
         
 
         created() {
-            this.error = this.station = null;
+            //this.error = this.station = null;
             this.loading = true;
             this.$http.get('/api/start/1').then(response => this.station = response.data);
            

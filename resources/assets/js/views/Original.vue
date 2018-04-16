@@ -1,24 +1,25 @@
 <template>
     <div id="app">
+        
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="lead-form">
-                        <h1 class="text-center">Swipe Out</h1>
+                        <h1 class="text-center">Swipe Your Card</h1>
                         <hr />
-                        <form method="post" action="/api/end" @submit.prevent="onSubmit">
+                        <form method="post" action="/api/journey" @submit.prevent="onSubmit">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <span class="city-span" v-model="from">From: {{ station.from }}</span>
+                                    <input name="from" v-validate="'required|min:8'" type="text"  class="form-control" placeholder="From.." v-model="from">
+                                    <p class="help is-danger" v-show="errors.has('from')">
+                                        {{ errors.first('from') }}
+                                    </p>
+                                    <span class="city-span">{{startingCity}}</span>
                                 </div><!-- /.col-md-6 -->
-                                <div class="col-md-6">
-                                    <span class="city-span" v-model="startingCity">From Code: {{ station.startingCity }}</span>
-                                </div><!-- /.col-md-6 -->
-                                
                                 
                                 <div class="col-md-6">
                                     <input name="to" v-validate="'required|min:8'" type="text" class="form-control" placeholder="To.." v-model="to">
-                                    <p class="help is-danger" v-show="errors.has('to')">
+                                    <p class="help is-danger" v-show="errors.has('from')">
                                         {{ errors.first('to') }}
                                     </p>
                                     <span class="city-span">{{endingCity}}</span>
@@ -63,7 +64,7 @@
                             
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Balance" v-model="current_balance" readonly="readonly">
+                                    <input type="text" class="form-control" placeholder="Balance" v-model="balance" readonly="readonly">
                                     
                                     <span class="city-span">{{formattedCost}}</span>
                                 </div><!-- /.col-md-6 -->
@@ -72,7 +73,7 @@
                             
                             <div class="row">
                                 <div class="col-md-12">
-                                    <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form">Next</button>
+                                    <a href="/balance"><button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form">Swipe</button></a>
                                 </div><!-- /.col-md-12 -->
                             </div><!-- /.row -->
                         </form>
@@ -89,8 +90,6 @@
 
 
     export default {
-        props: ['station'],
-        
         data: function() {
             return {
                 from: '',
@@ -109,6 +108,23 @@
 
         },
 
+        mounted() {
+            var app = this
+            const Url = 'https://blocktrain.test/api/cards'
+
+            //app.balance = "Searching.."
+
+
+            axios.get(Url)
+                .then(function (response){
+                    console.log(response)
+                    //app.balance = response.data.balance
+                })
+                .catch(function (error){
+                    //app.balance = "Invalid Fare"
+                })
+        },
+
         computed: {
             formattedCost () {
                 return this.balance - this.endingFare;
@@ -117,6 +133,12 @@
 
 
         watch: {
+            from: function() {
+                this.startingCity = ''
+                if (this.from.length == 8) {
+                    this.lookupStartingFrom()
+                }
+            },
             to: function() {
                 this.endingCity = ''
                 if (this.to.length == 8) {
@@ -125,8 +147,23 @@
                 }
             }
 
+
         },
         methods: {
+            lookupStartingFrom: _.debounce(function() {
+                var app = this
+
+                const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
+                app.startingCity = "Searching..."
+                this.$http.get(TflBaseUrl + app.from)
+                    .then(function (response) {
+                        app.startingCity = response.data.matches[0].id
+                        //app.startingCity =  response.data.matches[0].name
+                    })
+                    .catch(function (error) {
+                        app.startingCity = "Invalid Station"
+                    })
+            }, 500),
             lookupEndingTo: _.debounce(function() {
                 var app = this
                 const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
@@ -136,7 +173,6 @@
 
                         app.endingCity = response.data.matches[0].id
                         //app.endingCity = response.data.matches[0].name
-                        app.startingCity = this.station.startingCity
                     })
                     .catch(function (error) {
                         app.endingCity = "Invalid Station"
@@ -145,8 +181,7 @@
 
             onSubmit: function() {
 
-                this.$http.post('https://blocktrain.test/api/end', this.$data);
-                this.$router.push('journey')
+                this.$http.post('https://blocktrain.test/api/journey', this.$data);
 
             },
 
@@ -156,7 +191,8 @@
                 const FareUrl = '/FareTo/'
                 const AppKey = '/?app_id=51a876af&app_key=a1c609db4f3994924e7eb19199a08289'
                 app.endingFare = "Searching.."
-                
+
+
                 this.$http.get(TflStopUrl + app.startingCity + FareUrl + app.endingCity + AppKey)
 
                     .then(function (response){
@@ -172,6 +208,7 @@
 
             },1000)
         }
+
 
     }
 

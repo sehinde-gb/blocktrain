@@ -5,9 +5,10 @@
                 <h2>Your Journey</h2>
                 <div class="col-md-6 col-md-offset-3">
     
-                    <span class="city-span" v-model="from">From: {{  }}</span>
-                    <span class="city-span" v-model="startingCity">{{  }}</span>
-                    <span class="city-span" v-model="to">To {{ end.balance }}</span>
+                    <span class="city-span" v-model="from">From: {{ result.from }}</span>
+                    <span class="city-span" v-model="startingCity">ID {{ result.id }}</span>
+                    <span class="city-span" v-model="to">To {{ result.startingCity }}</span>
+                   
                 </div>
                 
                 <div class="col-md-6">
@@ -24,8 +25,8 @@
 
 <script>
     export default {
-        props: ['result', 'end'],
-
+        props: ['result'],
+        
         data: function() {
             return {
                 from: '',
@@ -35,14 +36,6 @@
                 
                 
             }
-        },
-        computed: {
-            //to: function() {
-              //  return this.end.to;
-            //},
-            //from: function() {
-              //  return this.result.from;
-            //}
         }
        
     }

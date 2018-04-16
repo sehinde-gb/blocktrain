@@ -16,9 +16,27 @@ use Illuminate\Http\Request;
 
 
 
-Route::middleware(['auth:api', 'cors'])->get('/user', function (Request $request) {
+Route::middleware(['auth:api'])->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// List Journeys
+Route::get('journeys', 'JourneysController@index');
+
+// List single journey
+Route::get('journey/{id}', 'JourneysController@show');
+
+// Create new journey
+Route::post('journey', 'JourneysController@store');
+
+// Update journey
+Route::put('journey', 'JourneysController@update');
+
+// Delete  journey
+Route::delete('journey/{id}', 'JourneysController@destroy');
+
+
+
 
 // List end journeys
 Route::get('ends', 'EndsController@index');
@@ -34,6 +52,8 @@ Route::put('end', 'EndsController@update');
 
 // Delete end journey
 Route::delete('end/{id}', 'EndsController@destroy');
+
+
 
 // List start journeys
 Route::get('starts', 'StartsController@index');
@@ -52,7 +72,7 @@ Route::delete('start/{id}', 'StartsController@destroy');
 
 
 
-Route::middleware('cors')->group(function(){
+
 
 
 
@@ -71,6 +91,6 @@ Route::middleware('cors')->group(function(){
 // Delete journey
         Route::delete('card/{id}', 'CardsController@destroy');
 
-    });
+
 
 

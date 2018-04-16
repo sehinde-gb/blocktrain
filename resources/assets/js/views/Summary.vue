@@ -1,25 +1,16 @@
 <template>
     <div>
      
-            
+            <h1>All Journeys</h1>
             <ul class="list-group">
-                
-                <li class="list-group-item" v-for="(start, index) in starts">
-                    <div class="card">
-                        <div class="card-section">
-                            <p> {{ index }} </p>
-                        </div>
-                        <div class="card-divider">
-                            <p>From {{ start }}</p>
-                        </div>
-                    </div>
-               
-                
-                    <button @click="deleteStart(start.id)" class="btn btn-danger btn-xs pull-right">Delete</button>
-                </li>
+                <div class="card">
+                    <li class="list-group-item" v-for="start in starts" v-text="start">
+                        <button @click="deleteStart(start.id)" class="btn btn-danger btn-xs pull-right">Delete</button>
+                        </li>
+                </div>
             </ul>
        
-    </div>
+
     
     </div>
 </template>
@@ -27,8 +18,20 @@
 <script>
     
 export default {
-    
+
     props: ['starts']
+    
+    /*data: function () {
+        return {
+            stations: [
+                {from: 'Stanmore', to: 'Chigwell'},
+                {from: 'Stanmore', to: 'Chigwell'},
+                {from: 'Stanmore', to: 'Chigwell'},
+                {from: 'Stanmore', to: 'Chigwell'}
+            ]
+
+        }
+    }*/
 
 }
 </script>

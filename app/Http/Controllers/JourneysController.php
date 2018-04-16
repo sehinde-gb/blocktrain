@@ -57,15 +57,17 @@ class JourneysController extends Controller
         ($request->journey_id) : new Journey;
 
         $journey->id = $request->input('journey_id');
+        $journey->from = $request->input('from');
         $journey->startingCity = $request->input('startingCity');
+        $journey->to = $request->input('to');
         $journey->endingCity = $request->input('endingCity');
         $journey->endingFare = $request->input('endingFare');
         $journey->description = $request->input('description');
         $journey->type = $request->input('type');
         $journey->passengerType = $request->input('passengerType');
         $journey->mode = $request->input('mode');
-        //$journey->old_balance = $request->input('old_balance');
-        //$journey->new_balance = $request->input('new_balance');
+        $journey->balance = $request->input('balance');
+
 
         if($journey->save()) {
             return new JourneyResource($journey);

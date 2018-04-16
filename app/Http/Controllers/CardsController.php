@@ -79,15 +79,7 @@ class CardsController extends Controller
         ($request->card_id) : new Card;
 
         $card->id = $request->input('card_id');
-        /*$card->startingCity = $request->input('startingCity');
-        $card->endingCity = $request->input('endingCity');
-        $card->endingFare = $request->input('endingFare');
-        $card->description = $request->input('description');
-        $card->type = $request->input('type');
-        $card->passengerType = $request->input('passengerType');
-        $card->mode = $request->input('mode');*/
-        $card->current_balance = $request->input('current_balance');
-        $card->balance = $request->input('balance');
+
 
         if($card->save()) {
             return new CardResource($card);
