@@ -20,58 +20,11 @@ Route::middleware(['auth:api'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// List Journeys
-Route::get('journeys', 'JourneysController@index');
 
-// List single journey
-Route::get('journey/{id}', 'JourneysController@show');
-
-// Create new journey
-Route::post('journey', 'JourneysController@store');
-
-// Update journey
-Route::put('journey', 'JourneysController@update');
-
-// Delete  journey
-Route::delete('journey/{id}', 'JourneysController@destroy');
+Route::resource('journeys', 'JourneysController');
 
 
-
-
-// List end journeys
-Route::get('ends', 'EndsController@index');
-
-// List single end journey
-Route::get('end/{id}', 'EndsController@show');
-
-// Create new end journey
-Route::post('end', 'EndsController@store');
-
-// Update end journey
-Route::put('end', 'EndsController@update');
-
-// Delete end journey
-Route::delete('end/{id}', 'EndsController@destroy');
-
-
-
-// List start journeys
-Route::get('starts', 'StartsController@index');
-
-// List single start journey
-Route::get('start/{id}', 'StartsController@show');
-
-// Create new start journey
-Route::post('start', 'StartsController@store');
-
-// Update start journey
-Route::put('start', 'StartsController@update');
-
-// Delete start journey
-Route::delete('start/{id}', 'StartsController@destroy');
-
-
-
+//Route::resource('cards.journeys', 'CardsJourneysController');
 
 
 

@@ -5,19 +5,26 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="lead-form">
-                        <h1 class="text-center">Swipe Your Card</h1>
+                    
+                        <h1 class="text-center">Your Journey</h1>
                         <hr />
+    
+                        <h1 class="text-center">Swipe In</h1>
+                        <div class="col-4">
+                            <input name="from" v-validate="'required|min:8'" type="text"  class="form-control" placeholder="Enter your station" v-model="from">
+                            <p class="help is-danger" v-show="errors.has('from')">
+                                {{ errors.first('from') }}
+                            </p>
+                            <span class="city-span" v-model="startingCity">{{startingCity}}</span>
+                            <button v-on:click="addStation" :disabled="errors.any()"  class="btn btn-primary btn-block">Swipe In</button>
+                        </div>
+                        
                         <form method="post" action="/api/journey" @submit.prevent="onSubmit">
                             <div class="row">
+    
+                                <h1 class="text-center">Swipe Out</h1>
                                 <div class="col-md-6">
-                                    <input name="from" v-validate="'required|min:8'" type="text"  class="form-control" placeholder="From.." v-model="from">
-                                    <p class="help is-danger" v-show="errors.has('from')">
-                                        {{ errors.first('from') }}
-                                    </p>
-                                    <span class="city-span">{{startingCity}}</span>
-                                </div><!-- /.col-md-6 -->
-                                
-                                <div class="col-md-6">
+                                    <h1 id="swipeout"></h1>
                                     <input name="to" v-validate="'required|min:8'" type="text" class="form-control" placeholder="To.." v-model="to">
                                     <p class="help is-danger" v-show="errors.has('from')">
                                         {{ errors.first('to') }}
@@ -73,7 +80,7 @@
                             
                             <div class="row">
                                 <div class="col-md-12">
-                                    <a href="/balance"><button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form">Swipe</button></a>
+                                    <a href="/journey"><button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form">Swipe Out</button></a>
                                 </div><!-- /.col-md-12 -->
                             </div><!-- /.row -->
                         </form>
@@ -102,28 +109,15 @@
                 passengerType: '',
                 mode: '',
                 type: '',
-                balance: '100'
+                balance: '100',
+                startStation: [],
+                
 
             }
 
         },
 
-        mounted() {
-            var app = this
-            const Url = 'https://blocktrain.test/api/cards'
-
-            //app.balance = "Searching.."
-
-
-            axios.get(Url)
-                .then(function (response){
-                    console.log(response)
-                    //app.balance = response.data.balance
-                })
-                .catch(function (error){
-                    //app.balance = "Invalid Fare"
-                })
-        },
+        
 
         computed: {
             formattedCost () {
@@ -150,6 +144,11 @@
 
         },
         methods: {
+            addStation() {
+                this.startStation.push(this.startingCity);
+                alert('You have swiped in');
+            },
+            
             lookupStartingFrom: _.debounce(function() {
                 var app = this
 
@@ -181,8 +180,10 @@
 
             onSubmit: function() {
 
+                this.$router.push('journey')
                 this.$http.post('https://blocktrain.test/api/journey', this.$data);
-
+                alert('You have swiped out');
+                
             },
 
             lookupFareTo: _.debounce(function() {
@@ -215,5 +216,9 @@
 </script>
 
 <style scoped>
-
+    .container {
+        height: 420px;
+    }
+    
+    
 </style>

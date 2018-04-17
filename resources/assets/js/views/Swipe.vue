@@ -1,24 +1,24 @@
 <template>
     <div>
-        <app-swipeout v-bind:station="station"></app-swipeout>
+        
+        <app-original v-bind:station="station"></app-original>
     </div>
 </template>
 
 <script>
-   
-    import SwipeOut from './SwipeOut.vue'
+    
+    import Original from './Original.vue'
 
     export default {
         components: {
-            'app-swipeout': SwipeOut
+            'app-original': Original
         },
 
         
 
         created() {
-            //this.error = this.station = null;
             this.loading = true;
-            this.$http.get('/api/start/1').then(response => this.station = response.data);
+            
            
         },
 

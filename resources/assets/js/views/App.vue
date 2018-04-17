@@ -2,11 +2,10 @@
     <div>
         <nav>
             <router-link :to="{ name: 'home' }">Home</router-link>
-            <router-link :to="{ name: 'listings' }">Listings</router-link>
-            <router-link :to="{ name: 'start'}">Start</router-link>
-            <router-link :to="{ name: 'end'}">End</router-link>
-            <router-link :to="{ name: 'journey' }">Journey</router-link>
-    
+            <router-link :to="{ name: 'swipe'}">Swipe</router-link>
+            <router-link :to="{ name: 'cards' }">Card</router-link>
+            <router-link to="/route-one/route-one-child">Link to route one, child one</router-link>
+            
         </nav>
         <div id="app">
             <app-header v-bind:title="title" v-on:changedTitle="updateTitle($event)"></app-header>

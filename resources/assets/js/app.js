@@ -24,14 +24,11 @@ Vue.use(VueResource);
 
 import App from './views/App'
 import Home from './views/Home'
-import Start from './views/Start'
-import End from './views/End'
-import Journey from './views/Journey'
+import Swipe from './views/Swipe'
 import store from './store';
-import Listings from './views/Listings'
-
-
-
+import Cards from './views/Cards'
+import FirstRoute from './views/FirstRoute'
+import FirstRouteChild from './views/FirstRouteChild'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -54,29 +51,34 @@ const router = new VueRouter({
             name: 'home',
             component: Home
         },
-        {
-            path: '/listings',
-            name: 'listings',
-            component: Listings,
-        },
-
-        {
-            path: '/start',
-            name: 'start',
-            component: Start,
-        },
-        {
-            path: '/end',
-            name: 'end',
-            component: End,
-        },
 
 
         {
-            path: '/journey',
-            name: 'journey',
-            component: Journey,
+            path: '/cards',
+            name: 'cards',
+            component: Cards,
         },
+
+        {
+            path: '/firstroute/:name',
+            name: 'FirstRoute',
+            component: FirstRoute,
+            children: [
+                {
+                    path: 'child',
+                    component: FirstRouteChild
+                }
+            ]
+        },
+
+
+        {
+            path: '/swipe',
+            name: 'swipe',
+            component: Swipe,
+        }
+
+
 
     ],
 });
