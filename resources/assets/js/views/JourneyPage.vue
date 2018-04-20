@@ -1,7 +1,6 @@
 <template>
     <div>
-        
-        <app-original v-bind:station="station"></app-original>
+    <app-original v-bind:station="station"></app-original>
     </div>
 </template>
 

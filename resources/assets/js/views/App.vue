@@ -1,14 +1,19 @@
 <template>
     <div>
         <nav>
+            <router-link :to="{ name: 'dashboard' }">Dashboard</router-link>
             <router-link :to="{ name: 'home' }">Home</router-link>
-            <router-link :to="{ name: 'swipe'}">Swipe</router-link>
-            <router-link :to="{ name: 'cards' }">Card</router-link>
-            <router-link to="/route-one/route-one-child">Link to route one, child one</router-link>
+            <router-link :to="{ name: 'journey'}">Journey</router-link>
+            <router-link :to="{ name: 'confirmation' }">Confirmation</router-link>
+            <router-link :to="{ name: 'rating' }">Rating</router-link>
+            <router-link :to="{ name: 'users' }">Users</router-link>
+            <router-link :to="{ name: 'user', params: { userId: 1} }">User One</router-link>
+            <router-link :to="{ name: 'user', params: { userId: 2} }">User Two</router-link>
+            <router-link :to="{ name: 'user', params: { userId: 3} }">User Three</router-link>
             
         </nav>
         <div id="app">
-            <app-header v-bind:title="title" v-on:changedTitle="updateTitle($event)"></app-header>
+            
             <router-view></router-view>
             <app-footer v-bind:title="title" v-on:changedTitle="updateTitle($event)"></app-footer>
             
@@ -43,21 +48,11 @@
             'app-header': Header,
             'app-footer': Footer
             
-
         }
-    
+        
     }
 </script>
 
 <style scoped>
-    .listing-summary {
-        position: relative;
-    }
 
-@media (max-width: 400px) {
-    .listing-summary .listing-save {
-        left: 15px;
-        right: auto;
-    }
-}
 </style>

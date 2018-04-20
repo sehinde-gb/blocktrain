@@ -20,9 +20,10 @@ Route::middleware(['auth:api'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::resource('journeys', 'JourneysController');
 
+//Route::post('/login', 'LoginController@login');
+//Route::post('/login/refresh', 'LoginController@refresh');
 
 //Route::resource('cards.journeys', 'CardsJourneysController');
 

@@ -1,12 +1,9 @@
 <template>
+    <footer class="container py-5">
     
-   <footer>
-       <h3>{{ title }}</h3>
-        
-        <router-link to="/checkin">Checkin</router-link>
-       
-        <p>{{ copyright }}</p>
     </footer>
+    
+   
 
 </template>
 
@@ -35,18 +32,5 @@
 
 <style scoped>
 
-footer {
-    background-color: black;
-    color: green;
-    
-}
 
-h3 {
-    padding: 10px;
-    text-align: center;
-}
-
-p {
-    text-align: center;
-}
 </style>

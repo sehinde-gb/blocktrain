@@ -5,21 +5,21 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="lead-form">
-                    
-                        <h1 class="text-center">Your Journey</h1>
-                        <hr />
-    
-                        <h1 class="text-center">Swipe In</h1>
-                        <div class="col-4">
-                            <input name="from" v-validate="'required|min:8'" type="text"  class="form-control" placeholder="Enter your station" v-model="from">
-                            <p class="help is-danger" v-show="errors.has('from')">
-                                {{ errors.first('from') }}
-                            </p>
-                            <span class="city-span" v-model="startingCity">{{startingCity}}</span>
-                            <button v-on:click="addStation" :disabled="errors.any()"  class="btn btn-primary btn-block">Swipe In</button>
-                        </div>
                         
                         <form method="post" action="/api/journey" @submit.prevent="onSubmit">
+                            <h1 class="text-center">Your Journey</h1>
+                            <hr />
+    
+                            <h1 class="text-center">Swipe In</h1>
+                            <div class="col-4">
+                                <input name="from" v-validate="'required|min:8'" type="text"  class="form-control" placeholder="Enter your station" v-model="from">
+                                <p class="help is-danger" v-show="errors.has('from')">
+                                    {{ errors.first('from') }}
+                                </p>
+                                <span class="city-span" v-model="startingCity">{{startingCity}}</span>
+                                <button v-on:click="addStation" :disabled="errors.any()"  class="btn btn-primary btn-block">Swipe In</button>
+                            </div>
+                            
                             <div class="row">
     
                                 <h1 class="text-center">Swipe Out</h1>
@@ -80,7 +80,7 @@
                             
                             <div class="row">
                                 <div class="col-md-12">
-                                    <a href="/journey"><button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form">Swipe Out</button></a>
+                                    <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form">Swipe Out</button>
                                 </div><!-- /.col-md-12 -->
                             </div><!-- /.row -->
                         </form>
@@ -180,8 +180,8 @@
 
             onSubmit: function() {
 
-                this.$router.push('journey')
-                this.$http.post('https://blocktrain.test/api/journey', this.$data);
+                this.$router.push('dashboard')
+                this.$http.post('https://blocktrain.test/api/journeys', this.$data);
                 alert('You have swiped out');
                 
             },

@@ -23,12 +23,14 @@ Vue.use(VueResource);
 
 
 import App from './views/App'
-import Home from './views/Home'
-import Swipe from './views/Swipe'
+import DashboardPage from './views/DashboardPage'
+import HomePage from './views/HomePage'
+import JourneyPage from './views/JourneyPage'
 import store from './store';
-import Cards from './views/Cards'
-import FirstRoute from './views/FirstRoute'
-import FirstRouteChild from './views/FirstRouteChild'
+import ConfirmationPage from './views/ConfirmationPage'
+import User from './views/User'
+import Rating from './views/Rating'
+import Users from './views/Users'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -47,41 +49,108 @@ const router = new VueRouter({
     mode: 'history',
     routes: [
         {
+            path: '/dashboard',
+            name: 'dashboard',
+            component: DashboardPage
+        },
+        {
             path: '/',
             name: 'home',
-            component: Home
-        },
-
-
-        {
-            path: '/cards',
-            name: 'cards',
-            component: Cards,
+            component: HomePage
         },
 
         {
-            path: '/firstroute/:name',
-            name: 'FirstRoute',
-            component: FirstRoute,
-            children: [
-                {
-                    path: 'child',
-                    component: FirstRouteChild
+            path: '/journey',
+            name: 'journey',
+            component: JourneyPage,
+        },
+
+        {
+            path: '/confirmation',
+            name: 'confirmation',
+            component: ConfirmationPage,
+        },
+
+        {
+            path: '/rating',
+            name: 'rating',
+            component: Rating,
+
+        },
+
+        {
+            path: '/users',
+            name: 'users',
+            component: Users,
+
+        },
+
+        {
+            path: "/user/:userId",
+            name: "user",
+            component: User,
+            props: true,
+            // set nav guard on the route definition object:
+            beforeEnter: (to, from, next) => {
+                console.log('Entering User', to.params.userId)
+                to.params.myCustomizations = {
+
                 }
-            ]
-        },
-
-
-        {
-            path: '/swipe',
-            name: 'swipe',
-            component: Swipe,
+                next()
+            }
         }
 
-
-
     ],
+
 });
+
+/* ===========================================
+              GLOBAL GUARDS
+ =========================================== */
+
+    router.beforeEach((to, from, next) => {
+     //console.log('Global -- beforeEach - fired')
+
+    // re-route
+    if (to.path === '/journey') {
+        next('/')
+    }
+    // Abort navigation based on some criteria:
+    //else if (to.path === '/user/1') {
+      // next(false)
+    //}
+    else if (to.path === '/error') {
+        const err = new Error('My Error Message')
+
+        // pass the error to onError() callback.
+        next(err)
+    }
+    else {
+        next()
+    }
+})
+
+// Global beforeResolve
+router.beforeResolve((to, from, next) => {
+//console.log('Global -- beforeResolve - fired.')
+    next()
+})
+
+// GLobal AFTER hooks:
+router.afterEach((to, from) => {
+    // This fires after each route is entered.
+    //console.log(`Global -- afterEach - Just moved from '${from.path}' to '${to.path}'`)
+})
+
+// Register an Error Handler:
+router.onError(err => {
+    console.error('Handling this error', err.message)
+})
+
+
+
+
+
 
 
 
