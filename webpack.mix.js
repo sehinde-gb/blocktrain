@@ -21,11 +21,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
     ], 'public/css/style.css')
     .copy('node_modules/open-sans-all/fonts', 'public/fonts')
     .copy('node_modules/font-awesome/fonts', 'public/fonts')
-    .copy('resources/assets/images', 'public/images')
-    .browserSync({
-        //proxy: process.env.APP_URL,
-        proxy: 'blocktrain.test',
-        host: 'blocktrain.test',
-        open: 'external'
-        })
+    .copy('resources/assets/images', 'public/images');
+
    //.sass('resources/assets/sass/app.scss', 'public/css');

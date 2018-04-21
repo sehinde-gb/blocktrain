@@ -5,34 +5,45 @@
                 <h5 class="card-title" v-text="thecardtitle"></h5>
                 <p class="card-text">I am the  <b>enter component</b>.</p>
                 <button @click="messageLeave" class="btn btn-warning">Message Leave</button>
-                <div v-if="messageenter" class="mt-3 alert alert-secondary" v-html="messageenter"></div>
-
+                <div v-if="fromleave" class="mt-3 alert alertsecondary" v-html="fromleave"></div>
+    
+                <div class="col-4">
+                    <h1 class="text-center">Swipe In</h1>
+                    <input name="from" v-validate="'required|min:8'" type="text"  class="form-control" placeholder="Enter your station" v-model="from">
+                    <p class="help is-danger" v-show="errors.has('from')">
+                        {{ errors.first('from') }}
+                    </p>
+                    <span class="city-span" v-model="startingCity">{{startingCity}}</span>
+                    <button v-on:click="stationLeave" :disabled="errors.any()"  class="btn btn-primary btn-block">Swipe In</button>
+                </div>
+                
             </div>
         </div>
         
         
-        <div class="col-4">
-            <h1 class="text-center">Swipe In</h1>
-            <input name="from" v-validate="'required|min:8'" type="text"  class="form-control" placeholder="Enter your station" v-model="from">
-            <p class="help is-danger" v-show="errors.has('from')">
-                {{ errors.first('from') }}
-            </p>
-            <span class="city-span" v-model="startingCity">{{startingCity}}</span>
-            <button v-on:click="addStation" :disabled="errors.any()"  class="btn btn-primary btn-block">Swipe In</button>
-        </div>
+        
 
     </div>
 </template>
 
 <script>
+    import {EventBus} from '../app.js';
+    
     export default {
-        props: ['messageenter'],
+      
+        created() {
+            EventBus.$on('leavesaid', (message) => {
+                this.fromleave = message;
+            });
+        
+        },
         
         data: function() {
             return {
                 from: '',
                 startingCity: '',
-                thecardtitle: 'Child Component!'
+                thecardtitle: 'Child Component!',
+                fromleave: ''
             }
         },
 
@@ -46,9 +57,15 @@
         },
 
         methods: {
-            addStation() {
-                this.startStation.push(this.startingCity);
-                alert('You have swiped in');
+            messageLeave() {
+                //this.$emit('entersaid', 'Swipe said do your homework!')
+                EventBus.$emit('entersaid', 'Enter said do your homework!')
+            },
+            stationLeave() {
+                EventBus.$emit('firststation', this.startingCity)
+                
+                //this.startStation.push(this.startingCity);
+                //alert('You have swiped in');
             },
 
             lookupStartingFrom: _.debounce(function () {
@@ -64,11 +81,9 @@
                     .catch(function (error) {
                         app.startingCity = "Invalid Station"
                     })
-            }, 500),
+            }, 500)
 
-            messageLeave() {
-                this.$emit('entersaid', 'Swipe said do your homework!')
-            }
+           
         }
     }
 </script>
