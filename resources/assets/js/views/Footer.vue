@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import { bus } from '../app';
+    //import { EventBus } from '../app';
     
     export default {
         props: {
@@ -17,15 +17,16 @@
                 default: ''
             }
         },
+        
         data() {
             return {
                 copyright: 'Copyright 2018'
             }
         },
         created() {
-            bus.$on('titleChanged',(data) => {
-                this.title = data;
-            })
+            //$bus.$on('titleChanged',(data) => {
+              //  this.title = data;
+           // })
         }
     }
 </script>

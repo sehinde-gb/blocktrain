@@ -15,7 +15,18 @@ import VueResource from 'vue-resource';
 window.Vue = require('vue');
 window.Event = new Vue();
 
-export const bus = new Vue();
+export const EventBus = new Vue();
+
+Object.defineProperties(Vue.prototype, {
+    $bus: {
+        get: function () {
+            return EventBus
+        }
+    }
+})
+
+
+
 
 Vue.use(VueRouter);
 Vue.use(VeeValidate);
@@ -29,8 +40,11 @@ import JourneyPage from './views/JourneyPage'
 import store from './store';
 import ConfirmationPage from './views/ConfirmationPage'
 import User from './views/User'
-import Rating from './views/Rating'
 import Users from './views/Users'
+import Message from './views/Message'
+import Input from './views/Input'
+import ParentCard from './views/ParentCard'
+import Swipe from './views/Swipe'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -66,16 +80,33 @@ const router = new VueRouter({
         },
 
         {
-            path: '/confirmation',
-            name: 'confirmation',
-            component: ConfirmationPage,
+            path: '/message',
+            name: 'message',
+            component: Message
+        },
+        {
+            path: '/input',
+            name: 'input',
+            component: Input
         },
 
         {
-            path: '/rating',
-            name: 'rating',
-            component: Rating,
+            path: '/parent',
+            name: 'parent',
+            component: ParentCard
+        },
 
+        {
+            path: '/swipe',
+            name: 'swipe',
+            component: Swipe
+        },
+
+
+        {
+            path: '/confirmation',
+            name: 'confirmation',
+            component: ConfirmationPage,
         },
 
         {
@@ -112,18 +143,18 @@ const router = new VueRouter({
      //console.log('Global -- beforeEach - fired')
 
     // re-route
-    if (to.path === '/journey') {
-        next('/')
+    if (to.path === '/') {
+      //  next('/journey')
     }
     // Abort navigation based on some criteria:
     //else if (to.path === '/user/1') {
       // next(false)
     //}
-    else if (to.path === '/error') {
-        const err = new Error('My Error Message')
+   else if (to.path === '/error') {
+     //   const err = new Error('My Error Message')
 
         // pass the error to onError() callback.
-        next(err)
+       // next(err)
     }
     else {
         next()
@@ -155,7 +186,9 @@ router.onError(err => {
 
 
 const app = new Vue({
+
     el: '#app',
+
     components: { App },
     router,
     store

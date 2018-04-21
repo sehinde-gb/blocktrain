@@ -5,7 +5,8 @@
 </template>
 
 <script>
-    import { bus } from '../app';
+    import { EventBus } from '../app';
+    
     export default {
         props: {
             title: {
@@ -14,10 +15,16 @@
             }
         },
         
+        mounted() {
+            //this.title = this.selectedTitle;
+        },
+        
         methods: {
             changeTitle: function() {
+                //this.selectedTitle = 'Vue Wizards';
+               
                 this.title = 'Vue Wizards';
-                bus.$emit('titleChanged', this.title);
+                $bus.$emit('titleChanged', this.title);
             }
         }
     }
