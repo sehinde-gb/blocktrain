@@ -36,15 +36,15 @@ Vue.use(VueResource);
 import App from './views/App'
 import DashboardPage from './views/DashboardPage'
 import HomePage from './views/HomePage'
-import JourneyPage from './views/JourneyPage'
+import OriginalPage from './views/OriginalPage'
 import store from './store';
-import ConfirmationPage from './views/ConfirmationPage'
 import User from './views/User'
 import Users from './views/Users'
-import Message from './views/Message'
-import Input from './views/Input'
 import ParentCard from './views/ParentCard'
-import Swipe from './views/Swipe'
+import Journeys from './views/Journeys'
+import SingleCard from './views/SingleCard'
+import ListCards from './views/ListCards'
+import ListJourneys from './views/ListJourneys'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -74,39 +74,35 @@ const router = new VueRouter({
         },
 
         {
-            path: '/journey',
-            name: 'journey',
-            component: JourneyPage,
+            path: '/original',
+            name: 'original',
+            component: OriginalPage,
         },
 
         {
-            path: '/message',
-            name: 'message',
-            component: Message
+            path: '/journeys',
+            name: 'journeys',
+            component: Journeys
+
         },
         {
-            path: '/input',
-            name: 'input',
-            component: Input
+            path: '/cards/:id',
+            name: 'card',
+            component: SingleCard
+        },
+
+
+        {
+            path: '/cards',
+            name: 'cards',
+            component: ListCards
+
         },
 
         {
             path: '/parent',
             name: 'parent',
             component: ParentCard
-        },
-
-        {
-            path: '/swipe',
-            name: 'swipe',
-            component: Swipe
-        },
-
-
-        {
-            path: '/confirmation',
-            name: 'confirmation',
-            component: ConfirmationPage,
         },
 
         {

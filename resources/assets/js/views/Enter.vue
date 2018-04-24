@@ -1,23 +1,25 @@
 <template>
     <div>
-        <div class="card m-3" style="width: 15rem;">
-            <div class="card-body">
-                <h5 class="card-title" v-text="thecardtitle"></h5>
-                <p class="card-text">I am the  <b>enter component</b>.</p>
-                <button @click="messageLeave" class="btn btn-warning">Message Leave</button>
-                <div v-if="fromleave" class="mt-3 alert alertsecondary" v-html="fromleave"></div>
-    
-                <div class="col-4">
-                    <h1 class="text-center">Swipe In</h1>
-                    <input name="from" v-validate="'required|min:8'" type="text"  class="form-control" placeholder="Enter your station" v-model="from">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="lead-form">
+                        <h1 class="text-center">Your Journey</h1>
+                        <hr />
+                        <h2 class="text-center">Swipe In</h2>
+                    <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Enter your station" v-model="from">
                     <p class="help is-danger" v-show="errors.has('from')">
                         {{ errors.first('from') }}
                     </p>
                     <span class="city-span" v-model="startingCity">{{startingCity}}</span>
                     <button v-on:click="stationLeave" :disabled="errors.any()"  class="btn btn-primary btn-block">Swipe In</button>
-                </div>
+
+                    </div><!-- end of .lead-form -->
+                </div> <!-- end of .col-md-6.col-md-offset-3 -->
+            </div> <!-- end of .row -->
+        </div> <!-- end of .container -->
                 
-            </div>
+            
         </div>
         
         
@@ -32,9 +34,9 @@
     export default {
       
         created() {
-            EventBus.$on('leavesaid', (message) => {
-                this.fromleave = message;
-            });
+            //EventBus.$on('leavesaid', (message) => {
+                //this.fromleave = message;
+            //});
         
         },
         
@@ -43,31 +45,28 @@
                 from: '',
                 startingCity: '',
                 thecardtitle: 'Child Component!',
-                fromleave: ''
+                fromleave: '',
+                firstStations: []
             }
         },
 
         watch: {
             from: function () {
                 this.startingCity = ''
-                if (this.from.length == 8) {
+                if (this.from.length == 6) {
                     this.lookupStartingFrom()
                 }
             }
         },
 
         methods: {
-            messageLeave() {
-                //this.$emit('entersaid', 'Swipe said do your homework!')
-                EventBus.$emit('entersaid', 'Enter said do your homework!')
-            },
+            
             stationLeave() {
-                EventBus.$emit('firststation', this.startingCity)
                 
-                //this.startStation.push(this.startingCity);
+                EventBus.$emit('firststation', this.startingCity)
                 //alert('You have swiped in');
             },
-
+            
             lookupStartingFrom: _.debounce(function () {
                 var app = this
 

@@ -20,30 +20,16 @@ Route::middleware(['auth:api'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('journeys', 'JourneysController');
+Route::resource('journeys', 'JourneysController')->only([
+    'index', 'store'
+]);
 
-//Route::post('/login', 'LoginController@login');
-//Route::post('/login/refresh', 'LoginController@refresh');
+Route::resource('cards', 'CardsController');
 
 //Route::resource('cards.journeys', 'CardsJourneysController');
 
 
 
-
-// List cards
-        Route::get('cards', 'CardsController@index');
-
-// List single journey
-        Route::get('card/{id}', 'CardsController@show');
-
-// Create new journey
-        Route::post('card', 'CardsController@store');
-
-// Update journey
-        Route::put('card', 'CardsController@update');
-
-// Delete journey
-        Route::delete('card/{id}', 'CardsController@destroy');
 
 
 

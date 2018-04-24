@@ -12,6 +12,17 @@ class Journey extends Model
      * @var array
      */
     protected $fillable = [
-        'from', 'startingCity', 'endingCity', 'description', 'type', 'passengerType', 'mode', 'endingFare', 'balance'
+        'from', 'to', 'startingCity', 'endingCity', 'description', 'type', 'passengerType', 'mode', 'endingFare', 'balance'
     ];
+
+    /**
+     *  A journey belongs to a card.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function card()
+    {
+        return $this->belongsTo(\App\Card::class);
+    }
+
 }
