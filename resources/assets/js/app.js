@@ -78,6 +78,11 @@ const router = new VueRouter({
             component: DashboardPage
         },
 
+        {
+            path: '/',
+            name: 'home',
+            component: HomePage
+        },
 
         {
             path: '/original',

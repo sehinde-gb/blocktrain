@@ -917,6 +917,10 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
         name: 'dashboard',
         component: __WEBPACK_IMPORTED_MODULE_4__views_DashboardPage___default.a
     }, {
+        path: '/',
+        name: 'home',
+        component: __WEBPACK_IMPORTED_MODULE_5__views_HomePage___default.a
+    }, {
         path: '/original',
         name: 'original',
         component: __WEBPACK_IMPORTED_MODULE_6__views_OriginalPage___default.a
@@ -66367,6 +66371,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -66381,8 +66389,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         this.$http.get('api/cards').then(function (response) {
-
-            _this.cards = response.data.data;
+            //console.log(response.data)
+            _this.cards = response.data;
         });
     },
 

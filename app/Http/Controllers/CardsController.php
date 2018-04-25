@@ -27,7 +27,7 @@ class CardsController extends Controller
 
         return new CardJourneyResource($cards);
 
-        //return CardResource::collection($cards);
+        //return CardJourney::collection($cards);
     }
 
 

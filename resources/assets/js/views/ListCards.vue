@@ -1,12 +1,16 @@
 <template>
     <div id="show-cards">
         <h1>All Card Listings</h1>
-         <input type="text" v-model="search" placeholder="search cards">
-                <div v-for="card in filteredCards" class="single-card">
-                    <router-link v-bind:to="'/cards/' + card.id"><h4>Card Number: {{ card.id }}</h4></router-link>
-                    
-                </div>
-         
+    
+        <input type="text" v-model="search" placeholder="search cards">
+        <div v-for="card in filteredCards" class="single-card">
+    
+            <router-link v-bind:to="'/cards/' + card.id"><h4>Card Number: {{ card.id }}</h4></router-link>
+
+
+        </div>
+
+
     </div>
 </template>
 
@@ -22,8 +26,8 @@
         },
         created() {
             this.$http.get('api/cards').then((response) => {
-              
-              this.cards = response.data.data;
+              //console.log(response.data)
+              this.cards = response.data;
               
             });
         },
