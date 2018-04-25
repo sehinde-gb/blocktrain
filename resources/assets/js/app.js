@@ -41,10 +41,11 @@ import store from './store';
 import User from './views/User'
 import Users from './views/Users'
 import ParentCard from './views/ParentCard'
-import Journeys from './views/Journeys'
-import SingleCard from './views/SingleCard'
+import MakeJourney from './views/MakeJourney'
+import CardDetail from './views/CardDetail'
 import ListCards from './views/ListCards'
 import ListJourneys from './views/ListJourneys'
+import JourneyDetail from './views/JourneyDetail'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -52,11 +53,20 @@ import ListJourneys from './views/ListJourneys'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component(
+    'passport-clients',
+    require('./components/passport/Clients.vue')
+);
 
+Vue.component(
+    'passport-authorized-clients',
+    require('./components/passport/AuthorizedClients.vue')
+);
 
-//Vue.component('index-form', require('./components/index.vue'));
-//Vue.component('fares-form', require('./components/fares.vue'));
-//Vue.component('card-form', require('./components/new-card.vue'));
+Vue.component(
+    'passport-personal-access-tokens',
+    require('./components/passport/PersonalAccessTokens.vue')
+);
 
 
 const router = new VueRouter({
@@ -67,11 +77,7 @@ const router = new VueRouter({
             name: 'dashboard',
             component: DashboardPage
         },
-        {
-            path: '/',
-            name: 'home',
-            component: HomePage
-        },
+
 
         {
             path: '/original',
@@ -80,18 +86,29 @@ const router = new VueRouter({
         },
 
         {
-            path: '/journeys',
-            name: 'journeys',
-            component: Journeys
+            path: '/journey/make',
+            name: 'makejourney',
+            component: MakeJourney
 
         },
+
+        {
+            path: '/journeys',
+            name: 'listjourneys',
+            component: ListJourneys
+        },
+
+        {
+            path: '/journeys/:id',
+            name: 'journey',
+            component: JourneyDetail
+        },
+
         {
             path: '/cards/:id',
             name: 'card',
-            component: SingleCard
+            component: CardDetail
         },
-
-
         {
             path: '/cards',
             name: 'cards',

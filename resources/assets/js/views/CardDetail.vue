@@ -19,7 +19,7 @@
         },
         created() {
             this.$http.get('https://blocktrain.test/api/cards/' + this.id).then((response) => {
-                console.log(response);
+                //console.log(response);
                 this.card = response.body;
             });
         },

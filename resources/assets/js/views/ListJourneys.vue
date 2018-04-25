@@ -4,12 +4,10 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="lead-form">
-                        <h2 class="text-center">Journey History</h2>
-                        <ul>
-                            <li v-for="journey in journeys" v-text="journey">
-                            
-                            </li>
-                        </ul>
+                        <h2 class="text-center">Journey Listings</h2>
+                        <div v-for="journey in journeys" class="single-card">
+                            <router-link v-bind:to="'/journeys/' + journey.id"><h4>Id: {{ journey.id }}</h4></router-link>
+                        </div>
                     </div>
                 </div> <!-- end of .col-md-6.col-md-offset-3 -->
             </div> <!-- end of .row -->
@@ -24,20 +22,18 @@
             this.fetchJourneyList();
         },
 
+        data() {
+            return {
+                journeys: []
+            }
+
+        },
         methods: {
             fetchJourneyList() {
                 this.$http.get('api/journeys').then((response) => {
-                    this.list = response.data;
+                    //console.log(response.data.data);
+                    this.journeys = response.data.data;
                 });
-            },
-
-
-            data() {
-                return {
-                    journeys: []
-                    //journeys: ['Stratford', 'Canons Park', 'Harrow on the Hill', 'North Harrow']
-                }
-
             }
         }
     }

@@ -5,17 +5,15 @@ namespace App\Http\Controllers;
 use App\Card;
 use Illuminate\Http\Request;
 use App\Http\Resources\Card as CardResource;
-
+use App\Http\Resources\CardJourney as CardJourneyResource;
 
 class CardsController extends Controller
 {
 
-
-
-
     /**
      * Display's a listing of all the cards on
-     * the database.
+     * the database and eager load the journeys associated with
+     * the card.
      *
      * Clicking on a ticket swipes that ticket in to
      * a hard coded station.
@@ -27,9 +25,9 @@ class CardsController extends Controller
 
         $cards = Card::paginate(15);
 
+        return new CardJourneyResource($cards);
 
-
-        return CardResource::collection($cards);
+        //return CardResource::collection($cards);
     }
 
 
@@ -60,7 +58,6 @@ class CardsController extends Controller
      */
     public function create()
     {
-
         return view('cards.create');
     }
 

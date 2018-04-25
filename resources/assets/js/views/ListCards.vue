@@ -1,7 +1,7 @@
 <template>
     <div id="show-cards">
         <h1>All Card Listings</h1>
-         <input type="text" v-model="search" placeholder="search card numbers">
+         <input type="text" v-model="search" placeholder="search cards">
                 <div v-for="card in filteredCards" class="single-card">
                     <router-link v-bind:to="'/cards/' + card.id"><h4>Card Number: {{ card.id }}</h4></router-link>
                     
@@ -18,14 +18,13 @@
             return {
                 cards: [],
                 search: ''
-                
             }
         },
         created() {
             this.$http.get('api/cards').then((response) => {
-                //console.log(response.data.data);
+              
               this.cards = response.data.data;
-                //this.cards = data.body;
+              
             });
         },
         mixins: [searchMixin]

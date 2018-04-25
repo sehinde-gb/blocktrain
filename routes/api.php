@@ -20,9 +20,9 @@ Route::middleware(['auth:api'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('journeys', 'JourneysController')->only([
-    'index', 'store'
-]);
+
+
+Route::resource('journeys', 'JourneysController');
 
 Route::resource('cards', 'CardsController');
 

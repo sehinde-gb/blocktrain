@@ -5,12 +5,11 @@
             <router-link :to="{ name: 'home' }">Home</router-link>
             <router-link :to="{ name: 'parent' }">Parent</router-link>
             <router-link :to="{ name: 'original'}">Original</router-link>
-            <router-link :to="{ name: 'journeys'}">Journeys</router-link>
-            
-            <router-link :to="{ name: 'cards'}">Cards</router-link>
+            <router-link :to="{ name: 'makejourney'}">Make Journey</router-link>
+            <router-link :to="{ name: 'listjourneys'}">List Journeys</router-link>
+            <router-link :to="{ name: 'cards'}">List Cards</router-link>
             <router-link :to="{ name: 'users' }">Users</router-link>
-            <router-link :to="{ name: 'user', params: { userId: 1} }">User One</router-link>
-            <router-link :to="{ name: 'user', params: { userId: 2} }">User Two</router-link>
+           
             
         </nav>
         <div id="app">
