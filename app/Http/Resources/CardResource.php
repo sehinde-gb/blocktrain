@@ -3,8 +3,9 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\JourneyResource;
 
-class Card extends JsonResource
+class CardResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

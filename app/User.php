@@ -48,7 +48,7 @@ class User extends Authenticatable
      */
     //public function journeys()
     //{
-      //  return $this->hasMany(\App\Journey::class);
+      //  return $this->hasMany(\App\JourneyResource::class);
    // }
 
 

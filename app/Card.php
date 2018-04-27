@@ -12,7 +12,7 @@ class Card extends Model
      * @var array
      */
     protected $fillable = [
-         'current_balance', 'balance'
+        'from', 'to', 'startingCity', 'endingCity', 'description', 'type', 'passengerType', 'mode', 'endingFare', 'balance','current_balance'
     ];
 
 
@@ -26,15 +26,7 @@ class Card extends Model
       //  return $this->belongsTo(\App\User::class);
     //}
 
-    /**
-     * A card can have many journeys.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-        public function journeys()
-        {
-            return $this->hasMany(\App\Journey::class);
-        }
+
 
 
 }

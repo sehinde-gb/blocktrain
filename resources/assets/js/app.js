@@ -40,12 +40,12 @@ import OriginalPage from './views/OriginalPage'
 import store from './store';
 import User from './views/User'
 import Users from './views/Users'
-import ParentCard from './views/ParentCard'
 import MakeJourney from './views/MakeJourney'
 import CardDetail from './views/CardDetail'
-import ListCards from './views/ListCards'
+import CardHome from './views/CardHome'
 import ListJourneys from './views/ListJourneys'
 import JourneyDetail from './views/JourneyDetail'
+import CardJourney from './views/CardJourney'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -91,10 +91,30 @@ const router = new VueRouter({
         },
 
         {
+            path: '/cards',
+            name: 'cards',
+            component: CardHome
+        },
+
+        {
+            path: '/cards/:id',
+            name: 'carddetail',
+            component: CardDetail,
+            children: [
+
+                {
+                    // CardJourney will be rendered inside Card's <router-view>
+                    // when /cards/:id/journeys is matched
+                    path: 'journeys',
+                    component: CardJourney
+                }
+            ]
+        },
+
+        {
             path: '/journey/make',
             name: 'makejourney',
             component: MakeJourney
-
         },
 
         {
@@ -107,24 +127,6 @@ const router = new VueRouter({
             path: '/journeys/:id',
             name: 'journey',
             component: JourneyDetail
-        },
-
-        {
-            path: '/cards/:id',
-            name: 'card',
-            component: CardDetail
-        },
-        {
-            path: '/cards',
-            name: 'cards',
-            component: ListCards
-
-        },
-
-        {
-            path: '/parent',
-            name: 'parent',
-            component: ParentCard
         },
 
         {

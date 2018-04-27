@@ -6,7 +6,7 @@
         <div v-for="card in filteredCards" class="single-card">
     
             <router-link v-bind:to="'/cards/' + card.id"><h4>Card Number: {{ card.id }}</h4></router-link>
-
+            
 
         </div>
 
@@ -27,7 +27,7 @@
         created() {
             this.$http.get('api/cards').then((response) => {
               //console.log(response.data)
-              this.cards = response.data;
+              this.cards = response.data.data;
               
             });
         },

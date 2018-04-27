@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Card;
 use Illuminate\Http\Request;
-use App\Http\Resources\Card as CardResource;
-use App\Http\Resources\CardJourney as CardJourneyResource;
+use App\Http\Resources\CardResource as CardResource;
+
+
 
 class CardsController extends Controller
 {
@@ -25,9 +26,10 @@ class CardsController extends Controller
 
         $cards = Card::paginate(15);
 
-        return new CardJourneyResource($cards);
 
-        //return CardJourney::collection($cards);
+        return CardResource::collection($cards);
+
+
     }
 
 
@@ -51,7 +53,7 @@ class CardsController extends Controller
 
     /**
      * Display the form for creating
-     * a Card
+     * a CardResource
      *
      * @return Response
      * @throws HttpNotFoundException
@@ -76,8 +78,17 @@ class CardsController extends Controller
         ($request->card_id) : new Card;
 
         $card->id = $request->input('card_id');
-
-
+        $card->from = $request->input('from');
+        $card->startingCity = $request->input('startingCity');
+        $card->to = $request->input('to');
+        $card->endingCity = $request->input('endingCity');
+        $card->endingFare = $request->input('endingFare');
+        $card->description = $request->input('description');
+        $card->type = $request->input('type');
+        $card->passengerType = $request->input('passengerType');
+        $card->mode = $request->input('mode');
+        $card->balance = $request->input('balance');
+        $card->current_balance = $request->input('current_balance');
         if($card->save()) {
             return new CardResource($card);
         }

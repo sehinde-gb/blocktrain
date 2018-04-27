@@ -26,7 +26,7 @@ Route::resource('journeys', 'JourneysController');
 
 Route::resource('cards', 'CardsController');
 
-//Route::resource('cards.journeys', 'CardsJourneysController');
+Route::resource('cards.journeys', 'CardsJourneysController');
 
 
 

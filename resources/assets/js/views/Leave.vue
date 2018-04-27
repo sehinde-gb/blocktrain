@@ -98,7 +98,6 @@
         
         data() {
             return {
-                thecardtitle: 'Child Component!',
                 from: '',
                 fromenter: '',
                 startingCity: '',
@@ -110,8 +109,7 @@
                 passengerType: '',
                 mode: '',
                 type: '',
-                balance: '100',
-                startStation: [],
+                balance: '100'
             }
         },
         computed: {
@@ -148,6 +146,7 @@
             
             lookupFareTo: _.debounce(function() {
                 var app = this
+          
                 const TflStopUrl = 'https://api.tfl.gov.uk/Stoppoint/'
                 const FareUrl = '/FareTo/'
                 const AppKey = '/?app_id=51a876af&app_key=a1c609db4f3994924e7eb19199a08289'
@@ -163,7 +162,10 @@
                         app.mode = response.data[0].rows[0].ticketsAvailable[0].mode
                         app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type
                         app.from = response.data[0].rows[0].from
-                        app.to = response.data[0].rows[0].to
+                        
+                        //app.to = response.data[0].rows[0].to
+                        //app.endingCity = response.data[0].rows[0].toStation
+                        
                     })
                     .catch(function (error){
                         app.endingFare = "Invalid Fare"
@@ -173,7 +175,7 @@
             
             onSubmit: function() {
                 this.$http.post('https://blocktrain.test/api/journeys', this.$data);
-                this.$router.push('dashboard')
+                //this.$router.push('dashboard')
                 //alert('You have swiped out');
             }
            
