@@ -41,10 +41,10 @@ import store from './store';
 import User from './views/User'
 import Users from './views/Users'
 import MakeJourney from './views/MakeJourney'
-import CardDetail from './views/CardDetail'
 import CardHome from './views/CardHome'
 import JourneyDetail from './views/JourneyDetail'
-import ListJourneys from './views/ListJourneys'
+import CardListing from './views/CardListing'
+import CardDetail from './views/CardDetail'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -97,21 +97,21 @@ const router = new VueRouter({
 
         {
             path: '/cards/:id',
-            name: 'carddetail',
+            name: 'card',
             component: CardDetail,
             children: [
 
                 {
                     // CardJourney will be rendered inside Card's <router-view>
                     // when /cards/:id/journeys is matched
-                    path: '/journeys',
-                    component: ListJourneys
+                    path: 'journeys',
+                    component: CardListing
                 }
             ]
         },
 
         {
-            path: '/journey/make',
+            path: '/journeys/create',
             name: 'makejourney',
             component: MakeJourney
         },

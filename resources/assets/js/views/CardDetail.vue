@@ -3,6 +3,7 @@
         <div id="single-card">
             <h1>Card Number: {{ card.id }}</h1>
             <h2>Balance: {{ card.balance }}</h2>
+            <h2>From: {{ card.from }}</h2>
             <h2>Current Balance: {{ card.current_balance }}</h2>
         </div><!-- /#single-card -->
         
@@ -18,7 +19,7 @@
             }
         },
         created() {
-            this.$http.get('https://blocktrain.test/api/cards/' + this.id).then((response) => {
+            this.$http.get('/api/cards/' + this.id).then((response) => {
                 //console.log(response);
                 this.card = response.body;
             });

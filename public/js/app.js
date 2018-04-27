@@ -844,14 +844,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_Users___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_Users__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_MakeJourney__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_MakeJourney___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_MakeJourney__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_CardDetail__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_CardDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_CardDetail__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_CardHome__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_CardHome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__views_CardHome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_JourneyDetail__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_JourneyDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__views_JourneyDetail__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_ListJourneys__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_ListJourneys___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__views_ListJourneys__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_CardHome__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_CardHome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_CardHome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_JourneyDetail__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_JourneyDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__views_JourneyDetail__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_CardListing__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_CardListing___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__views_CardListing__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_CardDetail__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_CardDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__views_CardDetail__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -905,7 +905,7 @@ Vue.component('passport-clients', __webpack_require__(17));
 
 Vue.component('passport-authorized-clients', __webpack_require__(18));
 
-Vue.component('passport-personal-access-tokens', __webpack_require__(150));
+Vue.component('passport-personal-access-tokens', __webpack_require__(140));
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
     mode: 'history',
@@ -924,25 +924,25 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
     }, {
         path: '/cards',
         name: 'cards',
-        component: __WEBPACK_IMPORTED_MODULE_12__views_CardHome___default.a
+        component: __WEBPACK_IMPORTED_MODULE_11__views_CardHome___default.a
     }, {
         path: '/cards/:id',
-        name: 'carddetail',
-        component: __WEBPACK_IMPORTED_MODULE_11__views_CardDetail___default.a,
+        name: 'card',
+        component: __WEBPACK_IMPORTED_MODULE_14__views_CardDetail___default.a,
         children: [{
             // CardJourney will be rendered inside Card's <router-view>
             // when /cards/:id/journeys is matched
-            path: '/journeys',
-            component: __WEBPACK_IMPORTED_MODULE_14__views_ListJourneys___default.a
+            path: 'journeys',
+            component: __WEBPACK_IMPORTED_MODULE_13__views_CardListing___default.a
         }]
     }, {
-        path: '/journey/make',
+        path: '/journeys/create',
         name: 'makejourney',
         component: __WEBPACK_IMPORTED_MODULE_10__views_MakeJourney___default.a
     }, {
         path: '/journeys/:id',
         name: 'journey',
-        component: __WEBPACK_IMPORTED_MODULE_13__views_JourneyDetail___default.a
+        component: __WEBPACK_IMPORTED_MODULE_12__views_JourneyDetail___default.a
     }, {
         path: '/users',
         name: 'users',
@@ -59018,7 +59018,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -59066,7 +59066,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Header_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Footer_vue__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Footer_vue__);
-//
 //
 //
 //
@@ -59453,14 +59452,12 @@ var render = function() {
           _vm._v("Cards")
         ]),
         _vm._v(" "),
-        _c(
-          "router-link",
-          { attrs: { to: { name: "carddetail", params: { id: "id" } } } },
-          [_vm._v("Card Journeys")]
-        ),
-        _vm._v(" "),
         _c("router-link", { attrs: { to: { name: "users" } } }, [
           _vm._v("Users")
+        ]),
+        _vm._v(" "),
+        _c("router-link", { attrs: { to: "/cards/1/journeys" } }, [
+          _vm._v("Journeys")
         ])
       ],
       1
@@ -65141,7 +65138,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }, 1200),
 
         onSubmit: function onSubmit() {
-            this.$http.post('https://blocktrain.test/api/journeys', this.$data);
+
+            this.$http.post('/api/cards', this.$data);
             //this.$router.push('dashboard')
             //alert('You have swiped out');
         }
@@ -65165,7 +65163,7 @@ var render = function() {
             _c(
               "form",
               {
-                attrs: { method: "post", action: "/api/journey" },
+                attrs: { method: "post", action: "/api/cards" },
                 on: {
                   submit: function($event) {
                     $event.preventDefault()
@@ -65614,6 +65612,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -65625,7 +65624,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     created: function created() {
         var _this = this;
 
-        this.$http.get('https://blocktrain.test/api/cards/' + this.id).then(function (response) {
+        this.$http.get('/api/cards/' + this.id).then(function (response) {
             //console.log(response);
             _this.card = response.body;
         });
@@ -65652,6 +65651,8 @@ var render = function() {
       _c("h1", [_vm._v("Card Number: " + _vm._s(_vm.card.id))]),
       _vm._v(" "),
       _c("h2", [_vm._v("Balance: " + _vm._s(_vm.card.balance))]),
+      _vm._v(" "),
+      _c("h2", [_vm._v("From: " + _vm._s(_vm.card.from))]),
       _vm._v(" "),
       _c("h2", [_vm._v("Current Balance: " + _vm._s(_vm.card.current_balance))])
     ])
@@ -65901,194 +65902,6 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-623acb78"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/views/ListJourneys.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-623acb78", Component.options)
-  } else {
-    hotAPI.reload("data-v-623acb78", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 136 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(137);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(1)("3623d270", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-623acb78\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ListJourneys.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-623acb78\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ListJourneys.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 137 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 138 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    created: function created() {
-        this.fetchJourneyList();
-    },
-    data: function data() {
-        return {
-            journeys: []
-        };
-    },
-
-    methods: {
-        fetchJourneyList: function fetchJourneyList() {
-            var id = this.$route.params.id;
-            this.$http.get('api/cards/' + id + '/journeys').then(function (response) {
-                console.log(response.data.data);
-                //this.journeys = response.data.data;
-            });
-        }
-    }
-});
-
-/***/ }),
-/* 139 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-6 col-md-offset-3" }, [
-          _c(
-            "div",
-            { staticClass: "lead-form" },
-            [
-              _c("h2", { staticClass: "text-center" }, [
-                _vm._v("Journey Listings")
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.journeys, function(journey) {
-                return _c(
-                  "div",
-                  { staticClass: "single-card" },
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: "/journeys/" + journey.id } },
-                      [_c("h4", [_vm._v("Id: " + _vm._s(journey.id))])]
-                    )
-                  ],
-                  1
-                )
-              })
-            ],
-            2
-          )
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-623acb78", module.exports)
-  }
-}
-
-/***/ }),
-/* 140 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(141)
-}
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(143)
-/* template */
-var __vue_template__ = __webpack_require__(144)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
 var __vue_scopeId__ = "data-v-2dcd04ee"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
@@ -66122,13 +65935,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 141 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(142);
+var content = __webpack_require__(137);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -66148,7 +65961,7 @@ if(false) {
 }
 
 /***/ }),
-/* 142 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -66162,7 +65975,7 @@ exports.push([module.i, "\n#single-journey[data-v-2dcd04ee] {\n    max-width: 96
 
 
 /***/ }),
-/* 143 */
+/* 138 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66210,7 +66023,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 144 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66250,24 +66063,19 @@ if (false) {
 }
 
 /***/ }),
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(151)
+  __webpack_require__(141)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(153)
+var __vue_script__ = __webpack_require__(143)
 /* template */
-var __vue_template__ = __webpack_require__(154)
+var __vue_template__ = __webpack_require__(144)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -66306,13 +66114,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 151 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(152);
+var content = __webpack_require__(142);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -66332,7 +66140,7 @@ if(false) {
 }
 
 /***/ }),
-/* 152 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -66346,7 +66154,7 @@ exports.push([module.i, "\n.action-link[data-v-89c53f18] {\n    cursor: pointer;
 
 
 /***/ }),
-/* 153 */
+/* 143 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66668,7 +66476,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 });
 
 /***/ }),
-/* 154 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -67042,6 +66850,179 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-89c53f18", module.exports)
+  }
+}
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(146)
+}
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(148)
+/* template */
+var __vue_template__ = __webpack_require__(149)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-4568fc5e"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/CardListing.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4568fc5e", Component.options)
+  } else {
+    hotAPI.reload("data-v-4568fc5e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(147);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("13a19550", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4568fc5e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CardListing.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4568fc5e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CardListing.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 148 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    created: function created() {
+        this.fetchCardList();
+    },
+    data: function data() {
+        return {
+            id: this.$route.params.id,
+            cards: []
+        };
+    },
+
+    methods: {
+        fetchCardList: function fetchCardList() {
+            var _this = this;
+
+            this.$http.get('/api/cards/' + this.id + '/journeys').then(function (response) {
+                //console.log(response.data.data);
+                _this.cards = response.data.data;
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 149 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6 col-md-offset-3" }, [
+            _c("div", { staticClass: "lead-form" }, [
+              _c("h1", [_vm._v("Card Listings")])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4568fc5e", module.exports)
   }
 }
 

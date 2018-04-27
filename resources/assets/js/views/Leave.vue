@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="lead-form">
-                        <form method="post" action="/api/journey" @submit.prevent="onSubmit">
+                        <form method="post" action="/api/cards" @submit.prevent="onSubmit">
                            
                             <span class="city-span">{{ startingCity }}</span>
                             <div class="row">
@@ -174,7 +174,8 @@
             },1200),
             
             onSubmit: function() {
-                this.$http.post('https://blocktrain.test/api/journeys', this.$data);
+            
+                this.$http.post('/api/cards', this.$data);
                 //this.$router.push('dashboard')
                 //alert('You have swiped out');
             }
