@@ -37,7 +37,7 @@
         },
         methods: {
             fetchJourneyList() {
-                this.$http.get('https://blocktrain.test/api/journeys').then((response) => {
+                this.$http.get('api/journeys').then((response) => {
                     console.log(response.data.data);
                     //this.journeys = response.data.data;
                 });

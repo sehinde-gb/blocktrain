@@ -66622,7 +66622,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         fetchJourneyList: function fetchJourneyList() {
-            this.$http.get('https://blocktrain.test/api/journeys').then(function (response) {
+            this.$http.get('api/journeys').then(function (response) {
                 console.log(response.data.data);
                 //this.journeys = response.data.data;
             });
