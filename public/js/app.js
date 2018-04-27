@@ -854,6 +854,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_ListJourneys___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__views_ListJourneys__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_JourneyDetail__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_JourneyDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__views_JourneyDetail__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_Card__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_Card___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__views_Card__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -898,6 +900,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vue_resource__["a" /* default */]);
 
 
 
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -908,7 +911,7 @@ Vue.component('passport-clients', __webpack_require__(17));
 
 Vue.component('passport-authorized-clients', __webpack_require__(18));
 
-Vue.component('passport-personal-access-tokens', __webpack_require__(160));
+Vue.component('passport-personal-access-tokens', __webpack_require__(165));
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
     mode: 'history',
@@ -929,6 +932,14 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
         name: 'makejourney',
         component: __WEBPACK_IMPORTED_MODULE_11__views_MakeJourney___default.a
 
+    }, {
+        path: '/cards/:id', component: __WEBPACK_IMPORTED_MODULE_16__views_Card___default.a,
+        children: [{
+            // CardsJourneys will be rendered inside Cards <router-view>
+            // when /cards/:id/journeys is matched
+            path: 'journeys',
+            component: __WEBPACK_IMPORTED_MODULE_14__views_ListJourneys___default.a
+        }]
     }, {
         path: '/journeys',
         name: 'listjourneys',
@@ -65667,7 +65678,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            thecardtitle: 'Child Component!',
             from: '',
             fromenter: '',
             startingCity: '',
@@ -65679,8 +65689,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             passengerType: '',
             mode: '',
             type: '',
-            balance: '100',
-            startStation: []
+            balance: '100'
+
         };
     },
 
@@ -65727,8 +65737,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType;
                 app.mode = response.data[0].rows[0].ticketsAvailable[0].mode;
                 app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type;
-                app.from = response.data[0].rows[0].from;
-                app.to = response.data[0].rows[0].to;
+                //app.from = response.data[0].rows[0].from
+                //app.to = response.data[0].rows[0].to
             }).catch(function (error) {
                 app.endingFare = "Invalid Fare";
             });
@@ -65736,7 +65746,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         onSubmit: function onSubmit() {
             this.$http.post('https://blocktrain.test/api/journeys', this.$data);
-            this.$router.push('dashboard');
+            //this.$router.push('dashboard')
             //alert('You have swiped out');
         }
 
@@ -66863,6 +66873,144 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
+var __vue_scopeId__ = "data-v-eef18d3a"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/Card.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-eef18d3a", Component.options)
+  } else {
+    hotAPI.reload("data-v-eef18d3a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 161 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(162);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(1)("0a1c8443", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-eef18d3a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Card.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-eef18d3a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Card.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 163 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: ""
+});
+
+/***/ }),
+/* 164 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "user" },
+    [
+      _c("h2", [_vm._v("Card " + _vm._s(_vm.$route.params.id))]),
+      _vm._v(" "),
+      _c("router-view")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-eef18d3a", module.exports)
+  }
+}
+
+/***/ }),
+/* 165 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(166)
+}
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(168)
+/* template */
+var __vue_template__ = __webpack_require__(169)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
 var __vue_scopeId__ = "data-v-89c53f18"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
@@ -66896,13 +67044,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 161 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(162);
+var content = __webpack_require__(167);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -66922,7 +67070,7 @@ if(false) {
 }
 
 /***/ }),
-/* 162 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -66936,7 +67084,7 @@ exports.push([module.i, "\n.action-link[data-v-89c53f18] {\n    cursor: pointer;
 
 
 /***/ }),
-/* 163 */
+/* 168 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67258,7 +67406,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 });
 
 /***/ }),
-/* 164 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

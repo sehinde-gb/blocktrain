@@ -98,7 +98,6 @@
         
         data() {
             return {
-                thecardtitle: 'Child Component!',
                 from: '',
                 fromenter: '',
                 startingCity: '',
@@ -111,7 +110,7 @@
                 mode: '',
                 type: '',
                 balance: '100',
-                startStation: [],
+                
             }
         },
         computed: {
@@ -162,8 +161,8 @@
                         app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType
                         app.mode = response.data[0].rows[0].ticketsAvailable[0].mode
                         app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type
-                        app.from = response.data[0].rows[0].from
-                        app.to = response.data[0].rows[0].to
+                        //app.from = response.data[0].rows[0].from
+                        //app.to = response.data[0].rows[0].to
                     })
                     .catch(function (error){
                         app.endingFare = "Invalid Fare"
@@ -173,7 +172,7 @@
             
             onSubmit: function() {
                 this.$http.post('https://blocktrain.test/api/journeys', this.$data);
-                this.$router.push('dashboard')
+                //this.$router.push('dashboard')
                 //alert('You have swiped out');
             }
            
