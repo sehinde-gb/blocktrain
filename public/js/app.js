@@ -65690,7 +65690,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             mode: '',
             type: '',
             balance: '100'
-
         };
     },
 
@@ -65726,6 +65725,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         lookupFareTo: __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.debounce(function () {
             var app = this;
+
             var TflStopUrl = 'https://api.tfl.gov.uk/Stoppoint/';
             var FareUrl = '/FareTo/';
             var AppKey = '/?app_id=51a876af&app_key=a1c609db4f3994924e7eb19199a08289';
@@ -65737,8 +65737,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType;
                 app.mode = response.data[0].rows[0].ticketsAvailable[0].mode;
                 app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type;
-                //app.from = response.data[0].rows[0].from
+                app.from = response.data[0].rows[0].from;
+
                 //app.to = response.data[0].rows[0].to
+                //app.endingCity = response.data[0].rows[0].toStation
             }).catch(function (error) {
                 app.endingFare = "Invalid Fare";
             });
@@ -65833,9 +65835,9 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                                        " +
+                          "\n                                    " +
                             _vm._s(_vm.errors.first("to")) +
-                            "\n                                    "
+                            "\n                                "
                         )
                       ]
                     ),
@@ -66572,7 +66574,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -66600,24 +66602,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     created: function created() {
         this.fetchJourneyList();
+        this.fetchCardList();
     },
     data: function data() {
         return {
-            journeys: []
+            journeys: [],
+            cards: []
         };
     },
 
     methods: {
         fetchJourneyList: function fetchJourneyList() {
-            var _this = this;
-
-            this.$http.get('api/journeys').then(function (response) {
-                //console.log(response.data.data);
-                _this.journeys = response.data.data;
+            this.$http.get('https://blocktrain.test/api/journeys').then(function (response) {
+                console.log(response.data.data);
+                //this.journeys = response.data.data;
+            });
+        },
+        fetchCardList: function fetchCardList() {
+            this.$http.get('api/cards').then(function (response) {
+                console.log(response.data.data);
+                //this.cards = response.data.data;
             });
         }
     }
@@ -66656,6 +66669,20 @@ var render = function() {
                   ],
                   1
                 )
+              }),
+              _vm._v(" "),
+              _c("h2", { staticClass: "text-center" }, [
+                _vm._v("Card Listings")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.cards, function(card) {
+                return _c("div", { staticClass: "single-card" }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(card) +
+                      "\n                    "
+                  )
+                ])
               })
             ],
             2
