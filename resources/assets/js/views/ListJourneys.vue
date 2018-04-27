@@ -30,9 +30,10 @@
         },
         methods: {
             fetchJourneyList() {
-                this.$http.get('api/journeys').then((response) => {
-                    //console.log(response.data.data);
-                    this.journeys = response.data.data;
+                var id = this.$route.params.id;
+                this.$http.get('api/cards/' + id + '/journeys').then((response) => {
+                    console.log(response.data.data);
+                    //this.journeys = response.data.data;
                 });
             }
         }
