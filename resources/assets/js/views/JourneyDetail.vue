@@ -2,7 +2,7 @@ j<template>
     <div>
         <div id="single-journey">
                 <h2>Your Journey </h2>
-          
+            <h1>Card: {{ card }}</h1>
             <h3>From: {{ journey.from }}</h3>
             <h3>Destination: {{ journey.to }}</h3>
             <h3>Description: {{ journey.description }}</h3>
@@ -17,9 +17,11 @@ j<template>
 
 <script>
     export default {
+        props: ['card'],
+        
         data() {
             return {
-                id: this.$route.params.id,
+                
                 journey: {}
             }
         },

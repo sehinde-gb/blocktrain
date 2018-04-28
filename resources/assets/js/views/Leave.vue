@@ -110,6 +110,7 @@
                 mode: '',
                 type: '',
                 balance: '100'
+                
             }
         },
         computed: {
@@ -162,7 +163,7 @@
                         app.mode = response.data[0].rows[0].ticketsAvailable[0].mode
                         app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type
                         app.from = response.data[0].rows[0].from
-
+                        
                         //app.to = response.data[0].rows[0].to
                         //app.endingCity = response.data[0].rows[0].toStation
 

@@ -3,6 +3,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm">
+                       
                         <enter></enter>
                     </div><!-- /.col -->
                     <div class="col-sm">
@@ -22,17 +23,19 @@
     import Leave from './Leave.vue';
     
 
-    props: ["cardId"]
+  
     
     export default {
-        components: {Enter, Leave},
         
+        props: ['card'],
+        
+        components: {Enter, Leave},
+       
         data() {
             return {
                 thecardtitle: 'Parent component',
                 from: ''
             }
-
         }
     }
 </script>

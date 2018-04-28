@@ -7,6 +7,8 @@
                         <h1 class="text-center">Your Journey</h1>
                         <hr />
                         <h2 class="text-center">Swipe In</h2>
+                       
+                        
                     <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Enter your station" v-model="from">
                     <p class="help is-danger" v-show="errors.has('from')">
                         {{ errors.first('from') }}
@@ -32,19 +34,13 @@
     import {EventBus} from '../app.js';
     
     export default {
-      
-        created() {
-            //EventBus.$on('leavesaid', (message) => {
-                //this.fromleave = message;
-            //});
-        
-        },
+        props: ['card.id'],
         
         data: function() {
             return {
+              
                 from: '',
                 startingCity: '',
-                thecardtitle: 'Child Component!',
                 fromleave: '',
                 firstStations: []
             }

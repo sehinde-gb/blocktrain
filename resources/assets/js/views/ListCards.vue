@@ -1,11 +1,10 @@
 <template>
     <div id="show-cards">
         <h1>All Card Listings</h1>
-    
-        <input type="text" v-model="search" placeholder="search cards">
-        <div v-for="card in filteredCards" class="single-card">
-    
-            <router-link v-bind:to="'/cards/' + card.id"><h4>Card Number: {{ card.id }}</h4></router-link>
+            <input type="text" v-model="search" placeholder="search cards">
+            <div v-for="card in cards" class="single-card">
+              <h2>CardHome</h2>
+            <router-link v-bind:to="'/cards/' + card.id"><h4>Card Number: {{ card.balance }}</h4></router-link>
 
 
         </div>

@@ -41,12 +41,15 @@ import store from './store';
 import User from './views/User'
 import Users from './views/Users'
 import ParentCard from './views/ParentCard'
-import MakeJourney from './views/MakeJourney'
+import CreateJourney from './views/CreateJourney'
 import CardDetail from './views/CardDetail'
 import ListCards from './views/ListCards'
 import ListJourneys from './views/ListJourneys'
 import JourneyDetail from './views/JourneyDetail'
 import Card from './views/Card'
+import JourneyMenu from './views/JourneyMenu'
+import PageTwo from './views/PageTwo'
+import PageTwoMenu from './views/PageTwoMenu'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -91,48 +94,44 @@ const router = new VueRouter({
             component: OriginalPage,
         },
 
-        {
-            path: '/journey/make',
-            name: 'makejourney',
-            component: MakeJourney
-
-        },
-
-        {
-            path: '/cards/:id', component: Card,
-            children: [
-                {
-                    // CardsJourneys will be rendered inside Cards <router-view>
-                    // when /cards/:id/journeys is matched
-                    path: 'journeys',
-                    component: ListJourneys
-                },
-            ]
-        },
-
-        {
-            path: '/journeys',
-            name: 'listjourneys',
-            component: ListJourneys
-        },
-
-        {
-            path: '/journeys/:id',
-            name: 'journey',
-            component: JourneyDetail
-        },
-
-        {
-            path: '/cards/:id',
-            name: 'card',
-            component: CardDetail
-        },
-        {
-            path: '/cards',
+        {   path: '/cards',
             name: 'cards',
             component: ListCards
+        },
+
+
+
+        {
+            path: '/page-two', component: PageTwo, props: true,
+
+            children: [
+
+                {   path: '',
+                    component: JourneyMenu
+                },
+
+                {
+                    path: 'journeys/create',
+                    component: CreateJourney
+                },
+
+                {
+                    path: 'journeys',
+                    name: 'cards.journeys',
+                    component: ListJourneys
+                },
+
+                {
+                    path: 'journeys/:journey',
+                    name: 'cards.journey',
+                    component: JourneyDetail
+                },
+
+
+            ]
 
         },
+
 
         {
             path: '/parent',
@@ -170,45 +169,45 @@ const router = new VueRouter({
               GLOBAL GUARDS
  =========================================== */
 
-    router.beforeEach((to, from, next) => {
-     //console.log('Global -- beforeEach - fired')
-
-    // re-route
-    if (to.path === '/') {
-      //  next('/journey')
-    }
-    // Abort navigation based on some criteria:
-    //else if (to.path === '/user/1') {
-      // next(false)
-    //}
-   else if (to.path === '/error') {
-     //   const err = new Error('My Error Message')
-
-        // pass the error to onError() callback.
-       // next(err)
-    }
-    else {
-        next()
-    }
-})
-
-// Global beforeResolve
-router.beforeResolve((to, from, next) => {
-//console.log('Global -- beforeResolve - fired.')
-    next()
-})
-
-// GLobal AFTER hooks:
-router.afterEach((to, from) => {
-    // This fires after each route is entered.
-    //console.log(`Global -- afterEach - Just moved from '${from.path}' to '${to.path}'`)
-})
-
-// Register an Error Handler:
-router.onError(err => {
-    console.error('Handling this error', err.message)
-})
-
+//     /*router.beforeEach((to, from, next) => {
+//      //console.log('Global -- beforeEach - fired')
+//
+//     // re-route
+//     if (to.path === '/') {
+//       //  next('/journey')
+//     }
+//     // Abort navigation based on some criteria:
+//     //else if (to.path === '/user/1') {
+//       // next(false)
+//     //}
+//    else if (to.path === '/error') {
+//      //   const err = new Error('My Error Message')
+//
+//         // pass the error to onError() callback.
+//        // next(err)
+//     }
+//     else {
+//         next()
+//     }
+// })
+//
+// // Global beforeResolve
+// router.beforeResolve((to, from, next) => {
+// //console.log('Global -- beforeResolve - fired.')
+//     next()
+// })
+//
+// // GLobal AFTER hooks:
+// router.afterEach((to, from) => {
+//     // This fires after each route is entered.
+//     //console.log(`Global -- afterEach - Just moved from '${from.path}' to '${to.path}'`)
+// })
+//
+// // Register an Error Handler:
+// router.onError(err => {
+//     console.error('Handling this error', err.message)
+// })
+// */
 
 
 

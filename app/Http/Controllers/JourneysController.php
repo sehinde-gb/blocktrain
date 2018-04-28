@@ -57,6 +57,7 @@ class JourneysController extends Controller
         ($request->journey_id) : new Journey;
 
         $journey->id = $request->input('journey_id');
+        $journey->card_id = 1;
         $journey->from = $request->input('from');
         $journey->startingCity = $request->input('startingCity');
         $journey->to = $request->input('to');

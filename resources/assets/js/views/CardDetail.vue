@@ -1,9 +1,11 @@
 <template>
     <div>
         <div id="single-card">
+            <h2>Card {{ card.id }}</h2>
             <h1>Card Number: {{ card.id }}</h1>
             <h2>Balance: {{ card.balance }}</h2>
             <h2>Current Balance: {{ card.current_balance }}</h2>
+            <p>I have a dynamic id value of {{id}}</p>
         </div><!-- /#single-card -->
         
     </div>

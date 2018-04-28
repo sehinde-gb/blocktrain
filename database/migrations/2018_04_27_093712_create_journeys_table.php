@@ -16,7 +16,7 @@ class CreateJourneysTable extends Migration
         Schema::create('journeys', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('card_id')->unsigned()->index();
-            $table->foreign('card_id')->references('id')->on('cards')->onDelete('cascade')->unsigned();
+            //$table->foreign('card_id')->references('id')->on('cards')->onDelete('cascade')->unsigned();
             $table->string('from');
             $table->string('startingCity');
             $table->string('to');
@@ -28,6 +28,7 @@ class CreateJourneysTable extends Migration
             $table->decimal('endingFare', 8, 2);
             $table->decimal('balance', 8, 2);
             $table->timestamps();
+
         });
     }
 
