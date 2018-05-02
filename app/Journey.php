@@ -22,7 +22,7 @@ class Journey extends Model
      */
     public function card()
     {
-        return $this->belongsTo(\App\Card::class);
+        return $this->belongsTo(\App\Card::class, 'card_id');
     }
 
 }

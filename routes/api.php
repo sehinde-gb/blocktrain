@@ -22,11 +22,14 @@ Route::middleware(['auth:api'])->get('/user', function (Request $request) {
 
 
 
-Route::resource('journeys', 'JourneysController');
+//Route::resource('journeys', 'JourneyController');
 
-Route::resource('cards', 'CardsController');
 
-//Route::resource('cards.journeys', 'CardsJourneysController');
+Route::apiResource('card', 'CardController');
+
+Route::apiResource('card.journey', 'CardJourneyController');
+
+
 
 
 

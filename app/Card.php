@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Journey;
 
 class Card extends Model
 {
@@ -12,29 +13,20 @@ class Card extends Model
      * @var array
      */
     protected $fillable = [
-         'current_balance', 'balance'
+         'journey_id','current_balance', 'balance'
     ];
 
 
     /**
-     *  A card belongs to a user.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    //public function user()
-    //{
-      //  return $this->belongsTo(\App\User::class);
-    //}
-
-    /**
-     * A card can have many journeys.
+     *  A card has many journeys.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-        public function journeys()
-        {
-            return $this->hasMany(\App\Journey::class);
-        }
+    public function journeys()
+    {
+        return $this->hasMany(\App\Journey::class);
+    }
+
 
 
 }

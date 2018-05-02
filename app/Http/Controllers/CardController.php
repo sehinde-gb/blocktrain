@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Card;
 use Illuminate\Http\Request;
-use App\Http\Resources\Card as CardResource;
-use App\Http\Resources\CardJourney as CardJourneyResource;
+use App\Http\Resources\CardResource;
 
-class CardsController extends Controller
+
+class CardController extends Controller
 {
 
     /**
@@ -23,11 +23,12 @@ class CardsController extends Controller
     public function index()
     {
 
-        $cards = Card::paginate(15);
 
-        return new CardJourneyResource($cards);
+        $cards = Card::all();
 
-        //return CardJourney::collection($cards);
+
+        return CardResource::collection($cards);
+
     }
 
 
@@ -49,17 +50,7 @@ class CardsController extends Controller
 
     }
 
-    /**
-     * Display the form for creating
-     * a Card
-     *
-     * @return Response
-     * @throws HttpNotFoundException
-     */
-    public function create()
-    {
-        return view('cards.create');
-    }
+
 
 
     /**
@@ -76,11 +67,22 @@ class CardsController extends Controller
         ($request->card_id) : new Card;
 
         $card->id = $request->input('card_id');
-
+        $card->balance = $request->input('balance');
+        $card->current_balance = $request->input('current_balance');
 
         if($card->save()) {
             return new CardResource($card);
         }
+    }
+
+
+    /**
+     * @param $id
+     */
+    public function edit($id)
+    {
+
+
     }
 
 

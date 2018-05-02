@@ -30,26 +30,9 @@ class User extends Authenticatable
     ];
 
 
-    /**
-     * A user can have many cards.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function Cards()
-    {
-        return $this->hasMany(\App\Card::class);
-    }
 
 
-    /**
-     * A user can have many journeys.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    //public function journeys()
-    //{
-      //  return $this->hasMany(\App\Journey::class);
-   // }
+
 
 
 

@@ -12,7 +12,7 @@
                 </router-link>
                 <router-link
                         tag="li"
-                        to="/page-two/b"
+                        to="/page-two/b?status=awesome"
                         class="list-group-item"
                         style="cursor: pointer">Page Two B
                 </router-link>

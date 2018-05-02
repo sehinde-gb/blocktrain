@@ -15,8 +15,13 @@ class CreateCardsTable extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('journey_id')->unsigned()->index();
+            $table->string('name');
+            $table->string('address');
+            $table->integer('home_phone');
+            $table->integer('mobile_phone');
+            $table->integer('email');
             $table->decimal('balance', 8, 2);
-            $table->decimal('current_balance', 8, 2);
             $table->timestamps();
         });
     }

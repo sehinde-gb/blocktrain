@@ -42,7 +42,8 @@
                 from: '',
                 startingCity: '',
                 fromleave: '',
-                firstStations: []
+                firstStations: [],
+                card_id: ''
             }
         },
 

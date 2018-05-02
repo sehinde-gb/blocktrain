@@ -4,7 +4,8 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Card extends JsonResource
+
+class JourneyResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,5 +16,6 @@ class Card extends JsonResource
     public function toArray($request)
     {
         return parent::toArray($request);
+
     }
 }

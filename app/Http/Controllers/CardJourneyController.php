@@ -2,32 +2,47 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Card;
+use App\Http\Resources\JourneyCollection;
+use App\Http\Resources\JourneyResource;
 use App\Journey;
-use App\Http\Resources\Journey as JourneyResource;
 use Illuminate\Http\Request;
 
 
-class JourneysController extends Controller
+
+
+class CardJourneyController extends Controller
 {
 
-
     /**
-     * Display a listing of journeys
+     * Display's a listing of all the journeys
+     * and the card associated with those journeys.
+     *
      *
      * @return mixed
      */
     public function index()
     {
-        $journeys = Journey::paginate(15);
 
-        return JourneyResource::collection($journeys);
+        //$journeys = Journey::paginate(3);
+
+        $journeys = Journey::with('card')->get();
+
+        //dd($journeys);
+        //return new JourneyResource($journeys);
+
+
+        return new JourneyCollection($journeys);
+
 
     }
 
 
     /**
-     * Display the journey
+     * Display's a card details together with
+     * a button that simulates swiping out
+     * of a station.
+     *
      *
      * @param $id
      * @return JourneyResource
@@ -35,7 +50,10 @@ class JourneysController extends Controller
     public function show($id)
     {
 
+
+
         $journey = Journey::findOrFail($id);
+
 
         return new JourneyResource($journey);
 
@@ -47,27 +65,27 @@ class JourneysController extends Controller
      *
      * @param Request $request
      *
-     * @return JourneyResource
+     * @return CardResource|JourneyResource
      */
     public function store(Request $request)
     {
-        //$user = Auth::user();
+
+
 
         $journey = $request->isMethod('put') ? Journey::findOrFail
         ($request->journey_id) : new Journey;
-
-        $journey->id = $request->input('journey_id');
         $journey->card_id = 1;
         $journey->from = $request->input('from');
         $journey->startingCity = $request->input('startingCity');
         $journey->to = $request->input('to');
         $journey->endingCity = $request->input('endingCity');
-        $journey->endingFare = $request->input('endingFare');
         $journey->description = $request->input('description');
         $journey->type = $request->input('type');
         $journey->passengerType = $request->input('passengerType');
         $journey->mode = $request->input('mode');
+        $journey->endingFare = $request->input('endingFare');
         $journey->balance = $request->input('balance');
+
 
 
         if($journey->save()) {
@@ -76,29 +94,13 @@ class JourneysController extends Controller
     }
 
     /**
-     * Delete a journey
-     *
      * @param $id
-     * @return JourneyResource
      */
-    public function destroy($id)
+    public function edit($id)
     {
-
-        $journey = Journey::findOrFail($id);
-
-        if($journey->delete()) {
-            return new JourneyResource($journey);
-        }
 
 
     }
-
-
-
-
-
-
-
 
 
 

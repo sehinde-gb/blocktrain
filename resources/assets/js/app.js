@@ -36,20 +36,22 @@ Vue.use(VueResource);
 import App from './views/App'
 import DashboardPage from './views/DashboardPage'
 import HomePage from './views/HomePage'
-import OriginalPage from './views/OriginalPage'
+import OriginalPage from './views/Original/OriginalPage'
 import store from './store';
 import User from './views/User'
-import Users from './views/Users'
-import ParentCard from './views/ParentCard'
+import Users from './views/Ratings/Users'
+import ParentCard from './views/Sibling/ParentCard'
 import CreateJourney from './views/CreateJourney'
-import CardDetail from './views/CardDetail'
-import ListCards from './views/ListCards'
-import ListJourneys from './views/ListJourneys'
-import JourneyDetail from './views/JourneyDetail'
-import Card from './views/Card'
-import JourneyMenu from './views/JourneyMenu'
-import PageTwo from './views/PageTwo'
-import PageTwoMenu from './views/PageTwoMenu'
+import CardListings from './views/Cards/CardListings'
+import CardDetail from './views/Cards/CardDetail'
+import JourneyListings from './views/Journeys/JourneyListings'
+import JourneyDetail from './views/Journeys/JourneyDetail'
+import PageOne from './views/Router/PageOne'
+import PageTwo from './views/Router/PageTwo'
+import PageTwoMenu from './views/Router/PageTwoMenu'
+import TwoA from './views/Router/TwoA'
+import TwoB from './views/Router/TwoB'
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -94,44 +96,50 @@ const router = new VueRouter({
             component: OriginalPage,
         },
 
-        {   path: '/cards',
-            name: 'cards',
-            component: ListCards
-        },
-
-
+        {path: '/page-one/:id', name: 'one', component: PageOne},
 
         {
-            path: '/page-two', component: PageTwo, props: true,
+            path: '/page-two',  component: PageTwo,
 
             children: [
-
-                {   path: '',
-                    component: JourneyMenu
-                },
-
-                {
-                    path: 'journeys/create',
-                    component: CreateJourney
-                },
-
-                {
-                    path: 'journeys',
-                    name: 'cards.journeys',
-                    component: ListJourneys
-                },
-
-                {
-                    path: 'journeys/:journey',
-                    name: 'cards.journey',
-                    component: JourneyDetail
-                },
-
-
+                {path: '', name: 'two', component: PageTwoMenu},
+                {path: 'a', component: TwoA},
+                {path: 'b', component: TwoB}
             ]
-
         },
 
+        //{path: '/redirect-user', redirect: '/page-two'},
+        //{path: '*', redirect: '/'},
+
+        {
+            path: '/card',
+            name: 'card.listings',
+            component: CardListings
+        },
+
+        {   path: '/card/:id',
+            name: 'card.detail',
+            component: CardDetail
+        },
+
+        {
+            path: '/card/:id/journey',
+            name: 'journey.listings',
+            props: true,
+            component:JourneyListings,
+        },
+
+        {
+            path: '/card/:id/journey/:journey',
+            name: 'journey.detail',
+            component:JourneyDetail,
+        },
+
+        {   path: '/card/:id/create/journey',
+            name: 'journey.create',
+            props: true,
+            component: CreateJourney,
+        },
 
         {
             path: '/parent',

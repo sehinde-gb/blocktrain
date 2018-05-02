@@ -5,6 +5,7 @@
         </h1>
         <p>An example of using this.$router.push()</p>
         <button @click="pushHome" class="btn">Go Home</button>
+        <p>Status = {{$route.query.status}}</p>
         <hr>
         <router-view></router-view>
     </div>

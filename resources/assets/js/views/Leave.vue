@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="lead-form">
-                        <form method="post" action="/api/journey" @submit.prevent="onSubmit">
+                        <form method="post" action="/api/cards/1/journeys" @submit.prevent="onSubmit">
                             
                             <span class="city-span">{{ startingCity }}</span>
                             <div class="row">
@@ -61,6 +61,7 @@
                                     <input type="text" class="form-control" placeholder="Balance" v-model="balance" readonly="readonly">
                                     
                                     <span class="city-span">{{formattedCost}}</span>
+                                    <span class="city-span">{{ balance }}</span>
                                 </div><!-- /.col-md-6 -->
                             </div><!-- /.row -->
                             
@@ -99,7 +100,6 @@
         data() {
             return {
                 from: '',
-                fromenter: '',
                 startingCity: '',
                 to: '',
                 endingCity: '',
@@ -109,7 +109,9 @@
                 passengerType: '',
                 mode: '',
                 type: '',
-                balance: '100'
+                balance: '100',
+                id: this.$route.params.id
+               
                 
             }
         },
@@ -163,7 +165,7 @@
                         app.mode = response.data[0].rows[0].ticketsAvailable[0].mode
                         app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type
                         app.from = response.data[0].rows[0].from
-                        
+                        app.card_id = 'hello'
                         //app.to = response.data[0].rows[0].to
                         //app.endingCity = response.data[0].rows[0].toStation
 
@@ -174,8 +176,11 @@
 
             },1200),
 
+            
+
             onSubmit: function() {
-                this.$http.post('https://blocktrain.test/api/journeys', this.$data);
+                
+                this.$http.post('https://blocktrain.test/api/card/' + this.id + '/journey', this.$data);
                 //this.$router.push('dashboard')
                 //alert('You have swiped out');
             }
