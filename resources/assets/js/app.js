@@ -26,8 +26,6 @@ Object.defineProperties(Vue.prototype, {
 })
 
 
-
-
 Vue.use(VueRouter);
 Vue.use(VeeValidate);
 Vue.use(VueResource);
@@ -40,7 +38,6 @@ import OriginalPage from './views/Original/OriginalPage'
 import store from './store';
 import User from './views/User'
 import Users from './views/Ratings/Users'
-import ParentCard from './views/Sibling/ParentCard'
 import CreateJourney from './views/CreateJourney'
 import CardListings from './views/Cards/CardListings'
 import CardDetail from './views/Cards/CardDetail'
@@ -51,7 +48,7 @@ import PageTwo from './views/Router/PageTwo'
 import PageTwoMenu from './views/Router/PageTwoMenu'
 import TwoA from './views/Router/TwoA'
 import TwoB from './views/Router/TwoB'
-
+import Register from './views/Cards/Register'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -74,15 +71,12 @@ Vue.component(
     require('./components/passport/PersonalAccessTokens.vue')
 );
 
+Vue.component('example-component', require('./components/ExampleComponent.vue'));
+
 
 const router = new VueRouter({
     mode: 'history',
     routes: [
-        {
-            path: '/dashboard',
-            name: 'dashboard',
-            component: DashboardPage
-        },
 
         {
             path: '/',
@@ -91,28 +85,25 @@ const router = new VueRouter({
         },
 
         {
+            path: '/dashboard',
+            name: 'dashboard',
+            component: DashboardPage
+        },
+
+        {
             path: '/original',
             name: 'original',
             component: OriginalPage,
         },
 
-        {path: '/page-one/:id', name: 'one', component: PageOne},
-
         {
-            path: '/page-two',  component: PageTwo,
-
-            children: [
-                {path: '', name: 'two', component: PageTwoMenu},
-                {path: 'a', component: TwoA},
-                {path: 'b', component: TwoB}
-            ]
+            path: '/register',
+            name: 'card.register',
+            component: Register
         },
 
-        //{path: '/redirect-user', redirect: '/page-two'},
-        //{path: '*', redirect: '/'},
-
         {
-            path: '/card',
+            path: '/cards',
             name: 'card.listings',
             component: CardListings
         },
@@ -141,11 +132,6 @@ const router = new VueRouter({
             component: CreateJourney,
         },
 
-        {
-            path: '/parent',
-            name: 'parent',
-            component: ParentCard
-        },
 
         {
             path: '/users',

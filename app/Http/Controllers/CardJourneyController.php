@@ -74,7 +74,7 @@ class CardJourneyController extends Controller
 
         $journey = $request->isMethod('put') ? Journey::findOrFail
         ($request->journey_id) : new Journey;
-        $journey->card_id = 1;
+        $journey->card_id = $request->input('card_id');
         $journey->from = $request->input('from');
         $journey->startingCity = $request->input('startingCity');
         $journey->to = $request->input('to');

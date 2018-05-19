@@ -27,7 +27,9 @@ Route::middleware(['auth:api'])->get('/user', function (Request $request) {
 
 Route::apiResource('card', 'CardController');
 
-Route::apiResource('card.journey', 'CardJourneyController');
+Route::apiResource('card.journey', 'CardJourneyController')->except([
+ 'update', 'destroy'
+]);;
 
 
 

@@ -1,13 +1,10 @@
 <template>
     <div>
         <nav>
+            <router-link :to="{ name:'home' }">Home</router-link>
             <router-link :to="{ name: 'dashboard' }">Dashboard</router-link>
-            <router-link :to="{name:'home', query:{status:'awesome'}}">Home</router-link>
-            <router-link :to="{ name: 'parent' }">Parent</router-link>
-            <router-link :to="{ name: 'original'}">Original</router-link>
-            <router-link :to="{ name: 'users' }">Users</router-link>
-            <router-link :to="{ name: 'card.listings' }">Cards</router-link>
-           
+            <router-link :to="{ name: 'card.register' }">Card Register</router-link>
+            <router-link :to="{ name: 'card.listings' }">View Cards</router-link>
             <router-link :to="{ name: 'journey.create' }">Create</router-link>
         </nav>
         <div id="app">

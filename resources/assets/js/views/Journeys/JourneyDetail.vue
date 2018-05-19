@@ -3,6 +3,7 @@ j<template>
         <div id="single-journey">
             
             <h2>Your Journey </h2>
+            <h3>Card: {{ journey.card_id }}</h3>
             
             <h3>From: {{ journey.from }}</h3>
             <h3>Destination: {{ journey.to }}</h3>
@@ -39,6 +40,8 @@ j<template>
         methods: {
             fetchJourneyDetail() {
                 this.$http.get('https://blocktrain.test/api/card/' + this.id + '/journey/' + this.journey).then
+                
+             
                 ((response) => {
                     //console.log(response.data);
                     this.journey = response.data;

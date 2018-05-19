@@ -67,7 +67,7 @@
                             
                             
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class=".col-md-3 .offset-md-3">
                                     <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form">Swipe Out</button>
                                 </div><!-- /.col-md-12 -->
                             </div><!-- /.row -->
@@ -83,6 +83,7 @@
 
 <script>
     import {EventBus} from '../app.js';
+  
     import _ from 'lodash';
 
 
@@ -110,7 +111,7 @@
                 mode: '',
                 type: '',
                 balance: '100',
-                id: this.$route.params.id
+                card_id: this.$route.params.id
                
                 
             }
@@ -165,7 +166,7 @@
                         app.mode = response.data[0].rows[0].ticketsAvailable[0].mode
                         app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type
                         app.from = response.data[0].rows[0].from
-                        app.card_id = 'hello'
+                        
                         //app.to = response.data[0].rows[0].to
                         //app.endingCity = response.data[0].rows[0].toStation
 
@@ -180,7 +181,8 @@
 
             onSubmit: function() {
                 
-                this.$http.post('https://blocktrain.test/api/card/' + this.id + '/journey', this.$data);
+                this.$http.post('https://blocktrain.test/api/card/' + this.card_id + '/journey', this.$data);
+                //this.$http.post('http://localhost:3000/journey', this.$data);
                 //this.$router.push('dashboard')
                 //alert('You have swiped out');
             }

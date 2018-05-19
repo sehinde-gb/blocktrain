@@ -20,7 +20,7 @@ class CreateCardsTable extends Migration
             $table->string('address');
             $table->integer('home_phone');
             $table->integer('mobile_phone');
-            $table->integer('email');
+            $table->string('email');
             $table->decimal('balance', 8, 2);
             $table->timestamps();
         });
