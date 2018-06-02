@@ -4,11 +4,22 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="lead-form">
-                        <h2 class="text-center">Card Listings</h2>
+                        <h2 class="text-center">Card Dashboard</h2>
                       
                             <div v-for="card in cards" class="single-card">
                              
-                                <router-link v-bind:to="  '/card/' + card.id"><h4>Card Number: {{ card.id }} </h4></router-link>
+                             <ul class="list-group">
+                             
+                                 <router-link class="list-group-item active" v-bind:to="  '/card/' + card.id"><h4>Card {{ card.id }}: Show Details  </h4></router-link>
+    
+                                 <router-link class="list-group-item" v-bind:to="  '/card/' + card.id + '/create/journey'"><h4>Card {{ card.id }}: Start</h4></router-link>
+    
+                                 <router-link class="list-group-item" v-bind:to="  '/card/' + card.id + '/journeys'"><h4>Card {{ card.id }} View Journeys</h4></router-link>
+
+                             </ul>
+                             
+                             
+                                
                             </div>
                     </div>
                 </div> <!-- end of .col-md-6.col-md-offset-3 -->

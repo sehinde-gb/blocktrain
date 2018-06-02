@@ -12,7 +12,7 @@
 */
 
 
-
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -40,9 +40,9 @@ Route::get('/{any}', 'SpaController@index')->where('any', '.*');
 
 
 
-//Route::get('/', function () {
-  //  return view('passenger');
-    /*$client = new Client(); //GuzzleHttp\Client
+/*Route::get('/', function () {
+    return view('passenger');
+    $client = new Client(); //GuzzleHttp\Client
     $result = $client->post('http://localhost:3000/api/org.blocktrain.model.Passenger', [
         'form_params' => [
             'passengerId' => '5',
@@ -52,13 +52,13 @@ Route::get('/{any}', 'SpaController@index')->where('any', '.*');
         ]
     ]);*/
 
-//});
+//}*/
 
 
 
 
 
 
-Auth::routes();
+
 
 

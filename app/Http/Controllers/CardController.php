@@ -61,14 +61,17 @@ class CardController extends Controller
      */
     public function store(Request $request)
     {
-        //$user = Auth::user();
 
         $card = $request->isMethod('put') ? Card::findOrFail
         ($request->card_id) : new Card;
 
         $card->id = $request->input('card_id');
-        $card->balance = $request->input('balance');
-        $card->current_balance = $request->input('current_balance');
+        $card->journey_id = 1;
+        $card->name  = $request->input('name');
+        $card->address = $request->input('address');
+        $card->home_phone = $request->input('home_phone');
+        $card->mobile_phone = $request->input('mobile_phone');
+        $card->email = $request->input('email');
 
         if($card->save()) {
             return new CardResource($card);

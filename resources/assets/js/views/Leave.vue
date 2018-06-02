@@ -72,6 +72,9 @@
                                 </div><!-- /.col-md-12 -->
                             </div><!-- /.row -->
                         </form>
+    
+                        <a class="btn btn-outline-primary btn-lg" role="button"><router-link to="/cards">Back </router-link></a>
+                        
                     </div><!-- end of .lead-form -->
                 </div> <!-- end of .col-md-6.col-md-offset-3 -->
             </div> <!-- end of .row -->
@@ -139,7 +142,7 @@
                 app.endingCity = "Searching..."
                 this.$http.get(TflBaseUrl + app.to)
                     .then(function (response) {
-
+                        //app.endingCity = console.log(response.data);
                         app.endingCity = response.data.matches[0].id
                         //app.endingCity = response.data.matches[0].name
                     })

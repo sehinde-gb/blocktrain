@@ -13,7 +13,7 @@ class Card extends Model
      * @var array
      */
     protected $fillable = [
-         'journey_id','current_balance', 'balance'
+         'journey_id','name', 'address', 'home_phone','mobile_phone','email', 'balance'
     ];
 
 

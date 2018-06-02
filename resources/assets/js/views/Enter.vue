@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="lead-form">
-                        <h1 class="text-center">Your Journey</h1>
+                        <h1 class="text-center">Start Your Journey</h1>
                         <hr />
                         <h2 class="text-center">Swipe In</h2>
                        

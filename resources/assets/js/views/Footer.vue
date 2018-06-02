@@ -8,25 +8,15 @@
 </template>
 
 <script>
-    //import { EventBus } from '../app';
+    
     
     export default {
-        props: {
-            title: {
-                type: String,
-                default: ''
-            }
-        },
+        
         
         data() {
             return {
                 copyright: 'Copyright 2018'
             }
-        },
-        created() {
-            //$bus.$on('titleChanged',(data) => {
-              //  this.title = data;
-           // })
         }
     }
 </script>

@@ -16,7 +16,7 @@ j<template>
     
        
     
-        <a class="btn btn-outline-primary btn-lg" role="button"><router-link v-bind:to="  '/card/' + journey.card_id + '/journey/'">Back</router-link></a>
+        <a class="btn btn-outline-primary btn-lg" role="button"><router-link v-bind:to="  '/card/' + journey.card_id + '/journeys'">Back</router-link></a>
       
     </div>
 </template>

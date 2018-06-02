@@ -5,15 +5,14 @@
             <router-link :to="{ name: 'dashboard' }">Dashboard</router-link>
             <router-link :to="{ name: 'card.register' }">Card Register</router-link>
             <router-link :to="{ name: 'card.listings' }">View Cards</router-link>
-            <router-link :to="{ name: 'journey.create' }">Create</router-link>
         </nav>
         <div id="app">
            
-            <app-header v-bind:title="title" v-on:changedTitle="updateTitle($event)"></app-header>
+            <app-header></app-header>
             <transition name="slide">
                 <router-view :key="$route.fullPath"></router-view>
             </transition>
-            <app-footer v-bind:title="title" v-on:changedTitle="updateTitle($event)"></app-footer>
+            <app-footer></app-footer>
            
         </div><!-- /app -->
     </div>
@@ -30,25 +29,11 @@
         data() {
             return {
                 name: '',
-                title: "Block Train Ninjas",
+                title: "Block Train",
                 id: this.$route.params.id
-                //id: 1
+              
             }
         },
-        methods: {
-            getCardsLink: function() {
-                return 'cards/'
-            },
-            
-            alertName(name) {
-                alert(name)
-            },
-
-            updateTitle: function(updatedTitle) {
-                this.title = updatedTitle;
-            }
-        },
-
         components: {
           
             'app-header': Header,

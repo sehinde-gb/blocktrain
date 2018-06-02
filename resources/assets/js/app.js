@@ -10,6 +10,7 @@ require('./bootstrap');
 import VueRouter from 'vue-router';
 import VeeValidate from 'vee-validate';
 import VueResource from 'vue-resource';
+import Vuex from 'vuex';
 
 
 window.Vue = require('vue');
@@ -29,13 +30,13 @@ Object.defineProperties(Vue.prototype, {
 Vue.use(VueRouter);
 Vue.use(VeeValidate);
 Vue.use(VueResource);
+Vue.use(Vuex);
 
 
 import App from './views/App'
 import DashboardPage from './views/DashboardPage'
 import HomePage from './views/HomePage'
 import OriginalPage from './views/Original/OriginalPage'
-import store from './store';
 import User from './views/User'
 import Users from './views/Ratings/Users'
 import CreateJourney from './views/CreateJourney'
@@ -43,12 +44,8 @@ import CardListings from './views/Cards/CardListings'
 import CardDetail from './views/Cards/CardDetail'
 import JourneyListings from './views/Journeys/JourneyListings'
 import JourneyDetail from './views/Journeys/JourneyDetail'
-import PageOne from './views/Router/PageOne'
-import PageTwo from './views/Router/PageTwo'
-import PageTwoMenu from './views/Router/PageTwoMenu'
-import TwoA from './views/Router/TwoA'
-import TwoB from './views/Router/TwoB'
-import Register from './views/Cards/Register'
+import CardRegister from './views/Cards/CardRegister'
+import StoreData from './store'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -56,23 +53,11 @@ import Register from './views/Cards/Register'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component(
-    'passport-clients',
-    require('./components/passport/Clients.vue')
-);
 
-Vue.component(
-    'passport-authorized-clients',
-    require('./components/passport/AuthorizedClients.vue')
-);
-
-Vue.component(
-    'passport-personal-access-tokens',
-    require('./components/passport/PersonalAccessTokens.vue')
-);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
+const store = new Vuex.Store(StoreData);
 
 const router = new VueRouter({
     mode: 'history',
@@ -99,7 +84,7 @@ const router = new VueRouter({
         {
             path: '/register',
             name: 'card.register',
-            component: Register
+            component: CardRegister
         },
 
         {
@@ -114,7 +99,7 @@ const router = new VueRouter({
         },
 
         {
-            path: '/card/:id/journey',
+            path: '/card/:id/journeys',
             name: 'journey.listings',
             props: true,
             component:JourneyListings,
@@ -202,12 +187,6 @@ const router = new VueRouter({
 //     console.error('Handling this error', err.message)
 // })
 // */
-
-
-
-
-
-
 
 const app = new Vue({
 
