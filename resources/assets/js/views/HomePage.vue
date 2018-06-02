@@ -1,6 +1,7 @@
 <template>
     <div class="jumbotron">
-        <h1 class="display-4">Block Train Home!</h1>
+        <h1 class="display-4">Welcome Home</h1>
+        <h4>Your Train is Blocked !</h4>
         <p class="lead">You are on the home page of the Vue application</p>
         <hr class="my-4">
         <p>This text is not important, but thanks for reading it.</p>
@@ -13,18 +14,8 @@
 
 <script>
 
-import Clients from '../components/passport/Clients';
-import AuthorizedClients from '../components/passport/AuthorizedClients';
-    
-    
-
-    
 export default {
     
-    components: {
-        'passport-clients': Clients,
-        'passport-authorized-clients': AuthorizedClients
-    },
     computed: {
         welcome() {
             return this.$store.getters.welcome;

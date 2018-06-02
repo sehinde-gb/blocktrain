@@ -1,11 +1,6 @@
 <template>
     <div>
-        <nav>
-            <router-link :to="{ name:'home' }">Home</router-link>
-            <router-link :to="{ name: 'dashboard' }">Dashboard</router-link>
-            <router-link :to="{ name: 'card.register' }">Card Register</router-link>
-            <router-link :to="{ name: 'card.listings' }">View Cards</router-link>
-        </nav>
+        
         <div id="app">
            
             <app-header></app-header>

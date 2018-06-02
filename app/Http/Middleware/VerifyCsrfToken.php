@@ -16,6 +16,7 @@ class VerifyCsrfToken extends Middleware
         '/api/card',
         'api/card/*/journey',
         'api/card/*/journey/*',
+        'auth/login'
 
 
     ];
