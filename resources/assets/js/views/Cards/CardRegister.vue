@@ -33,7 +33,7 @@
                         
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input name="home_phone"  v-validate="'required|numeric'" type="home_phone" class="form-control" placeholder="Home Phone" v-model="home_phone" autocomplete="nope">
+                                    <input name="home_phone"  v-validate="'required|numeric'" type="text" class="form-control" placeholder="Home Phone" v-model="home_phone" autocomplete="nope">
                                     <p class="help is-danger" v-show="errors.has('home_phone')">
                                         {{ errors.first('home_phone') }}
                                     </p>
@@ -42,7 +42,7 @@
     
                             
                                 <div class="col-md-6">
-                                    <input name="mobile_phone"  v-validate="'required|numeric'" type="mobile_phone" class="form-control" placeholder="Mobile Phone" v-model="mobile_phone" autocomplete="nope">
+                                    <input name="mobile_phone"  v-validate="'required|numeric'" type="text" class="form-control" placeholder="Mobile Phone" v-model="mobile_phone" autocomplete="nope">
                                     <p class="help is-danger" v-show="errors.has('mobile_phone')">
                                         {{ errors.first('mobile_phone') }}
                                     </p>
@@ -60,7 +60,7 @@
     
                           
                                 <div class="col-md-6">
-                                    <input name="balance"  v-validate="'required|decimal'" type="email" class="form-control" placeholder="Balance" v-model="balance" autocomplete="nope">
+                                    <input name="balance"  v-validate="'required|decimal'" type="text" class="form-control" placeholder="Balance" v-model="balance" autocomplete="nope">
                                     <p class="help is-danger" v-show="errors.has('balance')">
                                         {{ errors.first('balance') }}
                                     </p>
@@ -103,6 +103,9 @@
                 //this.$http.post('https://blocktrain.test/api/card').then(response => console.log(response));
 
                 this.$http.post('https://blocktrain.test/api/card', this.$data);
+                alert('Your card has been registered successfully');
+                this.$router.push('dashboard')
+                
             }
 
         }

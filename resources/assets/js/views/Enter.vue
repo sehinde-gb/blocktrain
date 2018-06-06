@@ -24,9 +24,6 @@
             
         </div>
         
-        
-        
-
     </div>
 </template>
 
@@ -38,7 +35,6 @@
         
         data: function() {
             return {
-              
                 from: '',
                 startingCity: '',
                 fromleave: '',

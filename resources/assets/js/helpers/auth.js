@@ -19,3 +19,15 @@ export function getLocalUser() {
 
     return JSON.parse(userStr);
 }
+
+export function register(credentials) {
+    return new Promise((res, rej) => {
+        axios.post('/api/auth/register', credentials)
+            .then((response) => {
+                res(response.data);
+            })
+            .catch((err) =>{
+                rej("Incorrect Registration Details");
+            })
+    })
+}

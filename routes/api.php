@@ -30,7 +30,9 @@ use Illuminate\Http\Request;
 
     Route::apiResource('card.journey', 'CardJourneyController')->except([
         'update', 'destroy'
-    ]);;
+    ]);
+
+    Route::post('auth/register', 'AuthController@register');
 
     Route::group(['prefix' => 'auth'], function ($router) {
         Route::post('login', 'AuthController@login');

@@ -12,7 +12,7 @@
                             </div><!-- /.form group row -->
                             <div class="form group row">
                                 <label for="password">Password:</label>
-                                <input type="password" v-model="form.password" class="form-control" placeholder="Password">
+                                <input type="password" v-model="form.password" class="form-control" placeholder="Password" autocomplete="off">
                             </div><!-- /.form group row -->
                             <div class="form group row">
                                 

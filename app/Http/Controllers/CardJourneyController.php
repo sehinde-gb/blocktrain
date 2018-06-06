@@ -24,16 +24,10 @@ class CardJourneyController extends Controller
     public function index()
     {
 
-        //$journeys = Journey::paginate(3);
-
         $journeys = Journey::with('card')->get();
-
-        //dd($journeys);
-        //return new JourneyResource($journeys);
 
 
         return new JourneyCollection($journeys);
-
 
     }
 
@@ -71,7 +65,6 @@ class CardJourneyController extends Controller
     {
 
 
-
         $journey = $request->isMethod('put') ? Journey::findOrFail
         ($request->journey_id) : new Journey;
         $journey->card_id = $request->input('card_id');
@@ -93,14 +86,7 @@ class CardJourneyController extends Controller
         }
     }
 
-    /**
-     * @param $id
-     */
-    public function edit($id)
-    {
 
-
-    }
 
 
 
