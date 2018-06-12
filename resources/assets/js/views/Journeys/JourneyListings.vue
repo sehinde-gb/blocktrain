@@ -47,7 +47,7 @@
         },
         methods: {
             fetchJourneyList() {
-                this.$http.get('https://blocktrain.test/api/card/' + this.id + '/journey').then((response) => {
+                axios.get('/api/card/' + this.id + '/journey').then((response) => {
                     //console.log(response.data.data.data);
                     
                     this.journeys = response.data.data.data;

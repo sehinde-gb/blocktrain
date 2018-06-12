@@ -184,7 +184,7 @@
 
             onSubmit: function() {
                 
-                this.$http.post('https://blocktrain.test/api/card/' + this.card_id + '/journey', this.$data);
+                this.$http.post('/api/card/' + this.card_id + '/journey', this.$data);
                 alert('Thanks for swiping');
                 this.$router.push('dashboard')
                 

@@ -44,7 +44,7 @@
         methods: {
 
             fetchCardList() {
-                this.$http.get('https://blocktrain.test/api/card').then((response) => {
+                axios.get('/api/card').then((response) => {
                     //console.log(response.data);
                     this.cards = response.data;
                 });

@@ -39,7 +39,7 @@ j<template>
         
         methods: {
             fetchJourneyDetail() {
-                this.$http.get('https://blocktrain.test/api/card/' + this.id + '/journey/' + this.journey).then
+                axios.get('/api/card/' + this.id + '/journey/' + this.journey).then
                 
              
                 ((response) => {

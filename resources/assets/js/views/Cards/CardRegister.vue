@@ -102,7 +102,7 @@
 
                 //this.$http.post('https://blocktrain.test/api/card').then(response => console.log(response));
 
-                this.$http.post('https://blocktrain.test/api/card', this.$data);
+                axios.post('/api/card', this.$data);
                 alert('Your card has been registered successfully');
                 this.$router.push('dashboard')
                 

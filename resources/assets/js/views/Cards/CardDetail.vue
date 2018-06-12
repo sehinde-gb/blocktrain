@@ -42,7 +42,7 @@
         },
         methods: {
             fetchACard() {
-                this.$http.get('https://blocktrain.test/api/card/' + this.id).then((response) => {
+                axios.get('/api/card/' + this.id).then((response) => {
                     //console.log(response);
                     this.card = response.body;
                 });
