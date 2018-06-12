@@ -8,7 +8,7 @@ describe ('CardRegister', () => {
 
       let wrapper = mount(CardRegister);    
        
-      // let newCard = wrapper.find('.name');
+       //let newCard = wrapper.find('.name');
 
       // newCard.element.value = 'Paul';
       // newCard.trigger('input');

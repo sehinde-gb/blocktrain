@@ -58,7 +58,7 @@
     
                             <div class="row">
                                 <div class=".col-md-3 .offset-md-3">
-                                    <button :disabled="errors.any()"  class="btn btn-primary btn-block" id="onSubmit">Submit</button>
+                                    <button class="btn btn-primary btn-block" id="onSubmit">Submit</button>
                                 </div><!-- /.col-md-12 -->
                             </div><!-- /.row -->
                     
