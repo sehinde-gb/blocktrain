@@ -85,7 +85,7 @@
 </template>
 
 <script>
-    import {EventBus} from '../app.js';
+    import {EventBus} from '../../app.js';
   
     import _ from 'lodash';
 
@@ -184,7 +184,7 @@
 
             onSubmit: function() {
                 
-                this.$http.post('/api/card/' + this.card_id + '/journey', this.$data);
+                axios.post('/api/card/' + this.card_id + '/journey', this.$data);
                 alert('Thanks for swiping');
                 this.$router.push('dashboard')
                 

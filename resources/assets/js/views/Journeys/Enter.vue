@@ -28,7 +28,7 @@
 </template>
 
 <script>
-    import {EventBus} from '../app.js';
+    import {EventBus} from '../../app.js';
     
     export default {
         props: ['card.id'],

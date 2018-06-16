@@ -1,9 +1,6 @@
 <template>
     <div id="app">
         <div class="container">
-          
-            
-            
             <!-- MENU SECTION END-->
             <div class="content-wrapper">
                 <div class="container">

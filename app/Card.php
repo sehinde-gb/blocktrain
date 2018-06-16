@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Journey;
 
 class Card extends Model
 {
@@ -13,9 +12,8 @@ class Card extends Model
      * @var array
      */
     protected $fillable = [
-         'journey_id','name', 'address', 'home_phone','mobile_phone','email', 'balance'
+         'journey_id', 'name', 'address', 'home_phone', 'mobile_phone', 'email', 'balance'
     ];
-
 
     /**
      *  A card has many journeys.
@@ -26,7 +24,4 @@ class Card extends Model
     {
         return $this->hasMany(\App\Journey::class);
     }
-
-
-
 }
