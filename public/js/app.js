@@ -63547,10 +63547,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
-var _name$created$data$co;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+//
+//
+//
 //
 //
 //
@@ -63643,7 +63642,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (_name$created$data$co = {
+/* harmony default export */ __webpack_exports__["default"] = ({
     name: "swipe",
 
     created: function created() {
@@ -63667,14 +63666,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             mode: '',
             type: '',
             balance: '100',
-            card_id: this.$route.params.id,
-            formattedCost: ''
+            card_id: this.$route.params.id
         };
     },
 
     computed: {
         formattedCost: function formattedCost() {
             return this.balance - this.endingFare;
+        },
+        swipeError: function swipeError() {
+            return this.$store.getters.swipeError;
         }
     },
     watch: {
@@ -63725,6 +63726,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             });
         }, 1200),
 
+        onSubmit: function onSubmit() {
+
+            this.$http.post('/api/card/' + this.card_id + '/journey', this.$data);
+            alert('Thanks for swiping');
+            this.$router.push('dashboard');
+        },
+
         upload: function upload() {
             var _this2 = this;
 
@@ -63738,16 +63746,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
     }
 
-}, _defineProperty(_name$created$data$co, 'computed', {
-    swipeError: function swipeError() {
-        return this.$store.getters.swipeError;
-    }
-}), _defineProperty(_name$created$data$co, 'onSubmit', function onSubmit() {
-
-    this.$http.post('/api/card/' + this.card_id + '/journey', this.$data);
-    alert('Thanks for swiping');
-    this.$router.push('dashboard');
-}), _name$created$data$co);
+});
 
 /***/ }),
 /* 104 */
@@ -64057,9 +64056,9 @@ var render = function() {
                         attrs: {
                           disabled: _vm.errors.any(),
                           type: "submit",
-                          id: "submit-form",
-                          value: "onSubmit"
-                        }
+                          id: "submit-form"
+                        },
+                        on: { click: _vm.onSubmit }
                       },
                       [_vm._v("Swipe Out")]
                     )

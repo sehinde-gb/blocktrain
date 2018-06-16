@@ -68,7 +68,10 @@
                             
                             <div class="row">
                                 <div class=".col-md-3 .offset-md-3">
-                                    <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form" value="onSubmit">Swipe Out</button>
+                                
+    
+                                    <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form" @click="onSubmit">Swipe Out</button>
+                                    
                                 </div><!-- /.col-md-12 -->
                             </div><!-- /.row -->
                         </form>
@@ -116,13 +119,15 @@
                     mode: '',
                     type: '',
                     balance: '100',
-                    card_id: this.$route.params.id,
-                    formattedCost: ''
+                    card_id: this.$route.params.id
             }
         },
         computed: {
             formattedCost () {
                 return this.balance - this.endingFare;
+            },
+            swipeError() {
+                return this.$store.getters.swipeError;
             }
         },
         watch: {
@@ -181,6 +186,14 @@
 
             },1200),
 
+            onSubmit: function() {
+
+                this.$http.post('/api/card/' + this.card_id + '/journey', this.$data);
+                alert('Thanks for swiping');
+                this.$router.push('dashboard')
+
+            },
+
             upload() {
                 this.$store.dispatch('swipe');
                 swipe(this.$data.form)
@@ -194,19 +207,9 @@
             }
         },
 
-        computed: {
-            swipeError() {
-                return this.$store.getters.swipeError;
-            }
-        },
+        
 
-            onSubmit: function() {
-                
-                this.$http.post('/api/card/' + this.card_id + '/journey', this.$data);
-                alert('Thanks for swiping');
-                this.$router.push('dashboard')
-                
-           }
+        
 
        
     }
