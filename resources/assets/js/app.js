@@ -9,7 +9,7 @@ require('./bootstrap');
 
 import VueRouter from 'vue-router';
 import VeeValidate from 'vee-validate';
-//import VueResource from 'vue-resource';
+import VueResource from 'vue-resource';
 import Vuex from 'vuex';
 
 
@@ -29,7 +29,7 @@ Object.defineProperties(Vue.prototype, {
 
 Vue.use(VueRouter);
 Vue.use(VeeValidate);
-//Vue.use(VueResource);
+Vue.use(VueResource);
 Vue.use(Vuex);
 
 

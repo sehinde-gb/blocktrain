@@ -31,3 +31,16 @@ export function register(credentials) {
             })
     })
 }
+
+
+export function submit(credentials) {
+    return new Promise((res, rej) => {
+        axios.post('/api/card/' + this.card_id + '/journey', this.$data)
+            .then((response) => {
+                res(response.data);
+            })
+            .catch((err) =>{
+                rej("Incorrect Swipe Details");
+            })
+    })
+}

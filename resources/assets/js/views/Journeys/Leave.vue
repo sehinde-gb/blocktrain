@@ -68,7 +68,7 @@
                             
                             <div class="row">
                                 <div class=".col-md-3 .offset-md-3">
-                                    <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form">Swipe Out</button>
+                                    <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form" value="onSubmit">Swipe Out</button>
                                 </div><!-- /.col-md-12 -->
                             </div><!-- /.row -->
                         </form>
@@ -86,12 +86,14 @@
 
 <script>
     import {EventBus} from '../../app.js';
+    //import {submit} from '../../helpers/auth';
   
     import _ from 'lodash';
 
 
     export default {
-
+        name: "swipe",
+        
         created() {
 
             EventBus.$on('firststation', (message) => {
@@ -103,20 +105,19 @@
 
         data() {
             return {
-                from: '',
-                startingCity: '',
-                to: '',
-                endingCity: '',
-                fare: '',
-                endingFare: '',
-                description: '',
-                passengerType: '',
-                mode: '',
-                type: '',
-                balance: '100',
-                card_id: this.$route.params.id
-               
-                
+                    from: '',
+                    startingCity: '',
+                    to: '',
+                    endingCity: '',
+                    fare: '',
+                    endingFare: '',
+                    description: '',
+                    passengerType: '',
+                    mode: '',
+                    type: '',
+                    balance: '100',
+                    card_id: this.$route.params.id,
+                    formattedCost: ''
             }
         },
         computed: {
@@ -180,17 +181,34 @@
 
             },1200),
 
-            
+            upload() {
+                this.$store.dispatch('swipe');
+                swipe(this.$data.form)
+                    .then((res) => {
+                        this.$store.commit("swipeSuccess", res);
+                        this.$router.push({path: 'dashboard'});
+                    })
+                    .catch((error) => {
+                        this.$store.commit('swipeFailed', {error});
+                    });
+            }
+        },
+
+        computed: {
+            swipeError() {
+                return this.$store.getters.swipeError;
+            }
+        },
 
             onSubmit: function() {
                 
-                axios.post('/api/card/' + this.card_id + '/journey', this.$data);
+                this.$http.post('/api/card/' + this.card_id + '/journey', this.$data);
                 alert('Thanks for swiping');
                 this.$router.push('dashboard')
                 
-            }
+           }
 
-        }
+       
     }
 </script>
 

@@ -10,6 +10,7 @@ export default {
         loading: false,
         auth_error: null,
         reg_error: null,
+        swipe_error: null
     },
     mutations: {
         login(state) {
@@ -55,6 +56,26 @@ export default {
             state.reg_error = payload.error;
         },
 
+        swipe(state) {
+            state.loading = true;
+            state.swipe_error = null;
+        },
+
+        swipeSuccess(state, payload) {
+            state.swipe_error = null;
+            state.isLoggedIn = true;
+            state.loading = false;
+
+            state.currentUser = Object.assign({}, payload.user, {token: payload.access_token});
+
+            localStorage.setItem('user', JSON.stringify(state.currentUser));
+        },
+
+        swipeFailed(state, payload){
+            state.loading = false,
+                state.swipe_error = payload.error;
+        }
+
     },
     getters: {
         isLoading(state) {
@@ -72,6 +93,9 @@ export default {
         regError(state) {
             return state.reg_error;
         },
+        swipeError(state) {
+            return state.swipe_error;
+        },
     },
     actions: {
         login(context) {
@@ -80,6 +104,10 @@ export default {
 
         register(context) {
             context.commit("register");
+        },
+
+        swipe(context) {
+            context.commit("swipe");
         }
     }
 
