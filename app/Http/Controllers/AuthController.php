@@ -25,6 +25,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $user = new User;
+        $user->card_id = 1;
         $user->email = $request->email;
         $user->name = $request->name;
         $user->password = bcrypt($request->password);

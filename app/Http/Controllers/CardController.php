@@ -67,6 +67,7 @@ class CardController extends Controller
 
         $card->id = $request->input('card_id');
         $card->journey_id = 1;
+        $card->user_id = 1;
         $card->name  = $request->input('name');
         $card->address = $request->input('address');
         $card->home_phone = $request->input('home_phone');

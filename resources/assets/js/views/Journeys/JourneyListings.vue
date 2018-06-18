@@ -2,34 +2,43 @@
     <div>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-8">
                     <div class="lead-form">
                         <h2 class="text-center">Journey Listings</h2>
+                        <hr/>
                           
                           <div v-for="journey in journeys">
     
                               <ul class="list-group">
-                                  <router-link  class="list-group-item active" v-bind:to="  '/card/' + journey.card_id + '/journey/' + journey.id"><h4>Journey: {{ journey.id }} </h4></router-link>
+                                  <router-link  class="list-group-item" v-bind:to="  '/cards/' + journey.card_id + '/journey/' + journey.id"><h6>{{ moment(journey.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a") }} </h6></router-link>
     
                                   
-                              </ul>
+                              </ul><!-- end list-group -->
                               
-                          </div>
-                            
-                       
-                    </div>
+                          </div><!-- end of div -->
+                    </div><!-- .lead-form -->
+                </div><!-- .col-8 -->
+                <div class="col-4">
+                    <h2>My Account</h2>
+                    <ul>
+                        <a href="#">Contactless</a>
+        
+                    </ul>
+                </div><!-- .col-4 -->
+            </div><!-- .row -->
+            
     
-    
-                    <a class="btn btn-outline-primary btn-lg" role="button"><router-link to=" '/card/' journey.card_id">Back</router-link></a>
-                    <a class="btn btn-outline-primary btn-lg" role="button"><router-link to="/cards">View Cards </router-link></a>
+    <hr/>
+            <a class="btn btn-outline-primary btn-lg" role="button"><router-link to="/cards">Back </router-link></a>
                     
-                </div> <!-- end of .col-md-6.col-md-offset-3 -->
-            </div> <!-- end of .row -->
+            
         </div> <!-- end of .container -->
     </div>
 </template>
 
 <script>
+    var moment = require('moment');
+    
     export default {
 
         created() {
@@ -39,6 +48,7 @@
 
         data() {
             return {
+                moment: moment,
                 journeys: [],
                 id: this.$route.params.id
                

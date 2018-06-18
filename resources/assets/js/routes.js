@@ -1,4 +1,4 @@
-import DashboardPage from './views/Dash/Dashboard'
+
 import HomePage from './views/Home/Home'
 import OriginalPage from './views/Original/OriginalPage'
 import Register from './views/Auth/Register'
@@ -9,6 +9,7 @@ import JourneyListings from './views/Journeys/JourneyListings'
 import JourneyDetail from './views/Journeys/JourneyDetail'
 import CardRegister from './views/Cards/CardRegister'
 import Login from './views/Auth/Login'
+
 
 export const routes = [
 
@@ -29,14 +30,7 @@ export const routes = [
     },
 
 
-    {
-        path: '/dashboard',
-        name: 'dashboard',
-        component: DashboardPage,
-        meta: {
-            requiresAuth: true
-        }
-    },
+
 
     {
         path: '/original',
@@ -45,7 +39,7 @@ export const routes = [
     },
 
     {
-        path: '/newcard',
+        path: '/cards/register',
         name: 'card.register',
         component: CardRegister,
         meta: {
@@ -62,7 +56,7 @@ export const routes = [
         }
     },
 
-    {   path: '/card/:id',
+    {   path: '/cards/:id',
         name: 'card.detail',
         component: CardDetail,
         meta: {
@@ -71,7 +65,7 @@ export const routes = [
     },
 
     {
-        path: '/card/:id/journeys',
+        path: '/cards/:id/journeys',
         name: 'journey.listings',
         props: true,
         component:JourneyListings,
@@ -81,7 +75,7 @@ export const routes = [
     },
 
     {
-        path: '/card/:id/journey/:journey',
+        path: '/cards/:id/journey/:journey',
         name: 'journey.detail',
         component:JourneyDetail,
         meta: {
@@ -89,7 +83,8 @@ export const routes = [
         }
     },
 
-    {   path: '/card/:id/create/journey',
+
+    {   path: '/cards/:id/create/journey',
         name: 'journey.create',
         props: true,
         component: CreateJourney,
@@ -97,6 +92,7 @@ export const routes = [
             requiresAuth: true
         }
     },
+
 
     {
         path: '/register',

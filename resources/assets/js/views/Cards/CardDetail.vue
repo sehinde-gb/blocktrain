@@ -1,34 +1,53 @@
 <template>
     <div>
+    
         <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <div class="lead-form">
+                        <h2 class="text-center">View Change Details</h2>
+                            <div class="card text-center">
+                                <div class="card-header">
+                                    {{ card.id }}
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">View Details</h5>
+                                    <p class="card-text">Address: {{ card.address }}</p>
+                                    <p class="card-text">Land Phone: {{ card.home_phone }}</p>
+                                    <p class="card-text">Mobile Phone: {{ card.mobile_phone }}</p>
+                                    <p class="card-text">Email: {{ card.email }}</p>
+                                    <p class="card-text">Balance: {{ card.balance }}</p>
+                                    <a class="btn btn-outline-primary"><router-link to="/cards">Back </router-link></a>
+                                    <a class="btn btn-outline-primary"><router-link to="/dashboard">Dashboard </router-link></a>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    2 days ago
+                                </div>
+                            </div><!-- .card -->
     
-            <div class="card mb-3">
-                
-                <div class="card-body">
-                    <h5 class="card-title">Your Card Details</h5>
-                    <p class="card-text">Card {{ card.id }} is registered to {{ card.name }} your address is {{ card.name }}.</p>
-                    <p class="card-text">Your home phone number is {{ card.home_phone }} and your mobile number is {{ card.mobile_phone }} and your email is {{ card.email }}</p>
-                    <p class="card-text">The balance on your card is {{ card.balance }}</p>
-    
-                    <p class="card-text"><a class="btn btn-outline-primary btn-lg" role="button"><router-link to="/cards">Back </router-link></a>
-                        <a class="btn btn-outline-primary btn-lg" role="button"><router-link to="/dashboard">Dashboard</router-link></a>
-                        <a class="btn btn-outline-primary btn-lg" role="button"><router-link to="/">Home</router-link></a>
-                    
-                    </p>
-                    
-                    
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        
+                    </div><!-- end of .col-8 -->
                 </div>
-            </div>
-            
-        </div><!-- /.container -->
-    
+                    <div class="col-4">
+                        <h2>My Account</h2>
+                        <ul>
+                            <a href="#">Contactless</a>
         
+                        </ul>
+    
+                    </div><!-- end of .col-4 -->
+
+                
+            </div> <!-- end of .row -->
+        
+        </div><!-- end of .container -->
         
     </div>
 </template>
 
 <script>
+    import axios from 'axios';
+    
     export default {
         data() {
             return {
@@ -42,7 +61,7 @@
         },
         methods: {
             fetchACard() {
-                axios.get('/api/card/' + this.id).then((response) => {
+                this.$http.get('/api/cards/' + this.id).then((response) => {
                     //console.log(response);
                     this.card = response.body;
                 });

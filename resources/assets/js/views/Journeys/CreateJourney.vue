@@ -3,15 +3,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm">
-                       
                         <enter></enter>
                     </div><!-- /.col -->
-                    <div class="col-sm">
-                          <leave></leave>
-                    </div><!-- /.col -->
+                   
                     
                     
                 </div><!-- /.row -->
+    
+                <div class="row">
+                    <div class="col-sm">
+                        <leave></leave>
+                    </div><!--  -->
+                </div>
+                <!-- /.row -->
+               
             </div><!-- /.container -->
             
           
@@ -34,7 +39,8 @@
         data() {
             return {
                 thecardtitle: 'Parent component',
-                from: ''
+                from: '',
+                complete: false
             }
         }
     }

@@ -1,218 +1,217 @@
 <template>
     <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="lead-form">
-                        <form method="post"  @submit.prevent="onSubmit">
-                            
-                            <span class="city-span">{{ startingCity }}</span>
-                            <div class="row">
-                                
-                                <h1 class="text-center">Swipe Out</h1>
-                                <div class="col-md-6">
-                                    <h1 id="swipeout"></h1>
-                                    <input name="to" v-validate="'required|min:6'" type="text" class="form-control" placeholder="To.." v-model="to">
-                                    <p class="help is-danger" v-show="errors.has('from')">
-                                        {{ errors.first('to') }}
-                                    </p>
-                                    <span class="city-span">{{endingCity}}</span>
-                                </div><!-- /.col-md-6 -->
-                            </div><!-- /.row -->
-                            
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Fares" v-model="endingFare" readonly="readonly">
-                                    <span class="city-span">{{endingFare}}</span>
-                                </div><!-- /.col-md-6 -->
-                                
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Description" v-model="description" readonly="readonly">
-                                    <span class="city-span">{{description}}</span>
-                                </div><!-- /.col-md-6 -->
-                            </div><!-- /.row -->
-                            
-                            
-                            
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Passenger Type" v-model="passengerType" readonly="readonly">
-                                    <span class="city-span">{{passengerType}}</span>
-                                </div><!-- /.col-md-6 -->
-                                
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Mode" v-model="mode" readonly="readonly">
-                                    <span class="city-span">{{mode}}</span>
-                                </div><!-- /.col-md-6 -->
-                            </div><!-- /.row -->
-                            
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Type" v-model="type" readonly="readonly">
-                                    <span class="city-span">{{type}}</span>
-                                </div><!-- /.col-md-6 -->
-                                
-                                <div class="col-md-6"></div><!-- /.col-md-6 -->
-                            </div><!-- /.row -->
-                            
-                            
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Balance" v-model="balance" readonly="readonly">
+         <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="lead-form">
+                            <form method="post"  @submit.prevent="onSubmit">
+                                    <hr/>
                                     
-                                    <span class="city-span">{{formattedCost}}</span>
-                                    <span class="city-span">{{ balance }}</span>
-                                </div><!-- /.col-md-6 -->
-                            </div><!-- /.row -->
-                            
-                            
-                            <div class="row">
-                                <div class=".col-md-3 .offset-md-3">
+                                    <span class="city-span">{{ startingCity }}</span>
+                                   
+        
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h1 class="text-center">Approach Barrier</h1>
+                                            <hr/>
+                                            <h2 class="text-center">Place Card on Reader</h2>
+                                            
+                                            <hr />
+                                            <div class="form-group">
+                                                <h3>Swipe Out</h3>
+                                                <label for="to">To</label>
+                                                <input name="to" v-validate="'required|min:6'" type="text" class="form-control" placeholder="To.." v-model="to" id="to">
+                                                <p class="help is-danger" v-show="errors.has('from')">
+                                                    {{ errors.first('to') }}
+                                                </p>
+                                                <span class="city-span">{{endingCity}}</span>
+                                            </div><!-- /.form-group -->
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Fares" v-model="endingFare" readonly="readonly" id="endingFare">
+                                                <span class="city-span">{{endingFare}}</span>
+                                            </div><!-- /.form-group -->
+                                            
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Description" v-model="description" readonly="readonly">
+                                                <span class="city-span">{{description}}</span>
+                                            </div><!-- /.form-group -->
+                                            
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Passenger Type" v-model="passengerType" readonly="readonly">
+                                                <span class="city-span">{{passengerType}}</span>
+                                            </div><!-- /.form-group -->
+                                            
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Mode" v-model="mode" readonly="readonly">
+                                                <span class="city-span">{{mode}}</span>
+                                            </div><!-- /.form-group -->
+                                            
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Type" v-model="type" readonly="readonly">
+                                                <span class="city-span">{{type}}</span>
+                                            </div><!-- /.form-group -->
+                                            
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Balance" v-model="balance" readonly="readonly">
+    
+                                                <span class="city-span">{{formattedCost}}</span>
+                                                <span class="city-span">{{ balance }}</span>
+                                            </div><!-- /.form-group -->
+    
+                                            <div class="row">
+                                                <div class="col-sm"></div>
+                                                <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" value="swipe">Exit</button>
+                                                
+                                                <div class="col-sm"></div>
+                                            </div>
+    
+                                                <div class="row">
+                                                    <div class="col-sm"></div>
+                                                    
+                                                    <a class="btn btn-light" role="button"><router-link to="/cards">Back </router-link></a>
+                                                    <div class="col-sm"></div>
+                                                </div><!-- /.row -->
+                                            
+    
+                                           
+                                            
+                                        </div><!-- /.col-8 -->
+                                        
+                                    </div><!-- /.row -->
                                 
-    
-                                    <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-block" id="submit-form" @click="onSubmit">Swipe Out</button>
-                                    
-                                </div><!-- /.col-md-12 -->
-                            </div><!-- /.row -->
-                        </form>
-    
-                        <a class="btn btn-outline-primary btn-lg" role="button"><router-link to="/cards">Back </router-link></a>
-                        
-                    </div><!-- end of .lead-form -->
-                </div> <!-- end of .col-md-6.col-md-offset-3 -->
-            </div> <!-- end of .row -->
-        </div> <!-- end of .container -->
-    
-    
+                            </form>
+        
+                            
+                            
+                        </div><!-- end of .lead-form -->
+                    </div> <!-- end of .col-8 -->
+                </div> <!-- end of .row -->
+            </div> <!-- end of .container -->
+   
     </div>
 </template>
 
 <script>
-    import {EventBus} from '../../app.js';
-    //import {submit} from '../../helpers/auth';
-  
-    import _ from 'lodash';
+
+import {EventBus} from '../../app.js';
+import { swipe } from '../../helpers/auth';
+import _ from 'lodash';
 
 
-    export default {
-        name: "swipe",
-        
-        created() {
+export default {
+    
+    name: "swipe",
+    
+    created() {
 
-            EventBus.$on('firststation', (message) => {
-                this.startingCity = message;
-                this.from = message;
-            })
+        EventBus.$on('firststation', (message) => {
+            this.startingCity = message;
+            this.from = message;
+        })
 
+    },
+
+    data() {
+        return {
+                from: '',
+                startingCity: '',
+                to: '',
+                endingCity: '',
+                fare: '',
+                endingFare: '',
+                description: '',
+                passengerType: '',
+                mode: '',
+                type: '',
+                balance: '100',
+                card_id: this.$route.params.id
+        }
+    },
+    computed: {
+        formattedCost () {
+            return this.balance - this.endingFare;
         },
-
-        data() {
-            return {
-                    from: '',
-                    startingCity: '',
-                    to: '',
-                    endingCity: '',
-                    fare: '',
-                    endingFare: '',
-                    description: '',
-                    passengerType: '',
-                    mode: '',
-                    type: '',
-                    balance: '100',
-                    card_id: this.$route.params.id
+        swipeError() {
+            return this.$store.getters.swipeError;
+        }
+    },
+    watch: {
+        to: function () {
+            this.endingCity = ''
+            if (this.to.length == 6) {
+                this.lookupEndingTo()
+                this.lookupFareTo()
             }
-        },
-        computed: {
-            formattedCost () {
-                return this.balance - this.endingFare;
-            },
-            swipeError() {
-                return this.$store.getters.swipeError;
-            }
-        },
-        watch: {
-            to: function () {
-                this.endingCity = ''
-                if (this.to.length == 6) {
-                    this.lookupEndingTo()
-                    this.lookupFareTo()
-                }
-            }
-        },
+        }
+    },
 
-        methods: {
+    methods: {
 
-            lookupEndingTo: _.debounce(function() {
-                var app = this
-                const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
-                app.endingCity = "Searching..."
-                this.$http.get(TflBaseUrl + app.to)
-                    .then(function (response) {
-                        //app.endingCity = console.log(response.data);
-                        app.endingCity = response.data.matches[0].id
-                        //app.endingCity = response.data.matches[0].name
-                    })
-                    .catch(function (error) {
-                        app.endingCity = "Invalid Station"
-                    })
-            }, 600),
+        lookupEndingTo: _.debounce(function() {
+            var app = this
+            const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
+            app.endingCity = "Searching..."
+            this.$http.get(TflBaseUrl + app.to)
+                .then(function (response) {
+                   
+                    app.endingCity = response.data.matches[0].id
+                    //app.endingCity = response.data.matches[0].name
+                })
+                .catch(function (error) {
+                    app.endingCity = "Invalid Station"
+                })
+        }, 600),
 
-            lookupFareTo: _.debounce(function() {
-                var app = this
+        lookupFareTo: _.debounce(function() {
+            var app = this
 
-                const TflStopUrl = 'https://api.tfl.gov.uk/Stoppoint/'
-                const FareUrl = '/FareTo/'
-                const AppKey = '/?app_id=51a876af&app_key=a1c609db4f3994924e7eb19199a08289'
-                app.endingFare = "Searching.."
+            const TflStopUrl = 'https://api.tfl.gov.uk/Stoppoint/'
+            const FareUrl = '/FareTo/'
+            const AppKey = '/?app_id=51a876af&app_key=a1c609db4f3994924e7eb19199a08289'
+            app.endingFare = "Searching.."
 
 
-                this.$http.get(TflStopUrl +  app.startingCity + FareUrl + app.endingCity + AppKey)
+            this.$http.get(TflStopUrl +  app.startingCity + FareUrl + app.endingCity + AppKey)
 
-                    .then(function (response){
-                        app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost
-                        app.description = response.data[0].rows[0].ticketsAvailable[0].description
-                        app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType
-                        app.mode = response.data[0].rows[0].ticketsAvailable[0].mode
-                        app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type
-                        app.from = response.data[0].rows[0].from
-                        
-                        //app.to = response.data[0].rows[0].to
-                        //app.endingCity = response.data[0].rows[0].toStation
+                .then(function (response){
+                    app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost
+                    app.description = response.data[0].rows[0].ticketsAvailable[0].description
+                    app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType
+                    app.mode = response.data[0].rows[0].ticketsAvailable[0].mode
+                    app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type
+                    app.from = response.data[0].rows[0].from
+                    
+                
 
-                    })
-                    .catch(function (error){
-                        app.endingFare = "Invalid Fare"
-                    })
+                })
+                .catch(function (error){
+                    app.endingFare = "Invalid Fare"
+                })
 
-            },1200),
+        },1200),
 
-            onSubmit: function() {
+        onSubmit: function() {
 
-                this.$http.post('/api/card/' + this.card_id + '/journey', this.$data);
-                alert('Thanks for swiping');
-                this.$router.push('dashboard')
+            this.$http.post('/api/card/' + this.card_id + '/journey', this.$data);
+            alert('Thanks for swiping');
+            this.$router.push('dashboard')
 
-            },
-
-            upload() {
-                this.$store.dispatch('swipe');
-                swipe(this.$data.form)
-                    .then((res) => {
-                        this.$store.commit("swipeSuccess", res);
-                        this.$router.push({path: 'dashboard'});
-                    })
-                    .catch((error) => {
-                        this.$store.commit('swipeFailed', {error});
-                    });
-            }
         },
 
-        
-
-        
-
-       
+        upload() {
+            this.$store.dispatch('swipe');
+            swipe(this.$data.form)
+                .then((res) => {
+                    this.$store.commit("swipeSuccess", res);
+                    this.$router.push({path: 'dashboard'});
+                })
+                .catch((error) => {
+                    this.$store.commit('swipeFailed', {error});
+                });
+        }
     }
+   
+}
 </script>
 
 <style scoped>

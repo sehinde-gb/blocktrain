@@ -20,20 +20,17 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                                     {{ currentUser.name }} <span class="caret"></span>
+                                    
                                 </a>
         
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a href="#!" @click.prevent="logout" class="dropdown-item">Logout</a>
                                 </div>
                             </li>
+                            
+                            
                             <li>
-                                <router-link to="/dashboard" class="nav-link">Dashboard</router-link>
-                            </li>
-                            <li>
-                                <router-link to="/newcard" class="nav-link">New Card</router-link>
-                            </li>
-                            <li>
-                                <router-link to="/cards" class="nav-link">Card Listings</router-link>
+                                <router-link to="/cards" class="nav-link">Dashboard</router-link>
                             </li>
                             
                         </template>
@@ -56,6 +53,10 @@
         computed: {
             currentUser() {
                 return this.$store.getters.currentUser;
+            },
+            
+            currentCard() {
+                return this.$store.getters.currentCard;
             }
         }
     }

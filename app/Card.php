@@ -24,4 +24,15 @@ class Card extends Model
     {
         return $this->hasMany(\App\Journey::class);
     }
+
+
+    /**
+     *  A card belongs to a user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(\App\User::class, 'user_id');
+    }
 }

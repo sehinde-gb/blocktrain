@@ -26,7 +26,7 @@ use Illuminate\Http\Request;
 
 
 
-    Route::apiResource('card', 'CardController');
+    Route::apiResource('cards', 'CardController');
 
     Route::apiResource('card.journey', 'CardJourneyController')->except([
         'update', 'destroy'

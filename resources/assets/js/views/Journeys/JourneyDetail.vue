@@ -1,29 +1,64 @@
 j<template>
     <div>
-        <div id="single-journey">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <div class="lead-form">
+                        <h2 class="text-center">Journey History</h2>
+                        <div class="card text-center">
+                            <div class="card-header">
+                                {{ moment(journey.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a") }}
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">View Details</h5>
+                                
+                                <p class="card-text">From: {{ journey.from }}</p>
+                                <p class="card-text">To: {{ journey.to }}</p>
+                                <p class="card-text">Description: {{ journey.description }}</p>
+                                <p class="card-text">Type of Journey: {{ journey.type }}</p>
+                                <p class="card-text">Passenger Type: {{ journey.passengerType }}</p>
+                                <p class="card-text">Mode: {{ journey.mode }}</p>
+                                <p class="card-text">Ending Fare: {{ journey.endingFare }}</p>
+                                <a class="btn btn-outline-primary"><router-link v-bind:to="  '/cards/' + journey.card_id + '/journeys'">Back</router-link></a>
+                               
+                                <a class="btn btn-outline-primary"><router-link to="/cards">Cards </router-link></a>
+                            </div>
+                            <div class="card-footer text-muted">
+                                {{ moment(journey.created_at).fromNow() }}
+                            </div>
+                        </div><!-- .card -->
+                
+                
+                    </div><!-- end of .col-8 -->
+                </div>
+                <div class="col-4">
+                    <h2>My Account</h2>
+                    <ul>
+                        <a href="#">Contactless</a>
+                
+                    </ul>
             
-            <h2>Your Journey </h2>
-            <h3>Card: {{ journey.card_id }}</h3>
-            
-            <h3>From: {{ journey.from }}</h3>
-            <h3>Destination: {{ journey.to }}</h3>
-            <h3>Description: {{ journey.description }}</h3>
-            <h3>Type: {{ journey.type }}</h3>
-            <h3>Passenger Type: {{ journey.passengerType }}</h3>
-            <h4>Mode: {{ journey.mode }}</h4>
-            <h4>Fare: {{ journey.endingFare }}</h4>
-        </div><!-- /#single-journey -->
+                </div><!-- end of .col-4 -->
+        
+        
+            </div> <!-- end of .row -->
+    
+        </div><!-- end of .container -->
+    
+        
     
        
     
-        <a class="btn btn-outline-primary btn-lg" role="button"><router-link v-bind:to="  '/card/' + journey.card_id + '/journeys'">Back</router-link></a>
+        
       
     </div>
 </template>
 
 <script>
+    var moment = require('moment');
+    
     export default {
-        
+    
         created() {
             this.fetchJourneyDetail();
             
@@ -32,7 +67,8 @@ j<template>
         data() {
             return {
                 journey: {},
-                id: this.$route.params.id
+                id: this.$route.params.id,
+                moment: moment
               
             }
         },

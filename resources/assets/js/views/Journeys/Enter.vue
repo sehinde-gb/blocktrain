@@ -1,29 +1,46 @@
 <template>
     <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <div class="lead-form">
-                        <h1 class="text-center">Start Your Journey</h1>
-                        <hr />
-                        <h2 class="text-center">Swipe In</h2>
-                       
-                        
-                    <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Enter your station" v-model="from">
-                    <p class="help is-danger" v-show="errors.has('from')">
-                        {{ errors.first('from') }}
-                    </p>
-                    <span class="city-span" v-model="startingCity">{{startingCity}}</span>
-                    <button v-on:click="stationLeave" :disabled="errors.any()"  class="btn btn-primary btn-block">Swipe In</button>
-
-                    </div><!-- end of .lead-form -->
-                </div> <!-- end of .col-md-6.col-md-offset-3 -->
-            </div> <!-- end of .row -->
-        </div> <!-- end of .container -->
-                
-            
-        </div>
+        <div class="test" v-show="complete">
+            <div class="container">
+                <div class="row">
+                        <div class="col-8">
+                            <div class="lead-form">
+                                <h1 class="text-center">Enter Station</h1>
+                                <hr/>
+                                <h2 class="text-center">Place Card on Reader</h2>
+                                <hr />
+                               
+                                <div class="form-group">
+                                    <h3>Swipe In</h3>
+                                    <label for="from">From</label>
+                                    <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Enter your station" v-model="from" id="from">
+                                    <p class="help is-danger" v-show="errors.has('from')">
+                                        {{ errors.first('from') }}
+                                    </p>
+                                    <span class="city-span" v-model="startingCity">{{startingCity}}</span>
+                                    <hr/>
+                                </div><!-- /.form-group -->
+                            
+                            <div class="row">
+                                <div class="col-sm"></div>
+                                <div class="col-sm"><button v-on:click="stationLeave" :disabled="errors.any()"  class="btn btn-primary btn-lg">Enter</button></div>
+                                <div class="col-sm"></div>
+                            </div><!-- /.row -->
+                        </div><!-- end of .lead-form -->
+                    </div> <!-- end of .col-8 -->
+                    <div class="col-4">
+                        <h2>My Account</h2>
+                        <ul>
+                            <a href="#">Contactless</a>
         
+                        </ul>
+    
+                    </div><!-- end of .col-4 -->
+                </div> <!-- end of .row -->
+            </div> <!-- end of .container -->
+
+        </div><!-- end of .test -->
+    
     </div>
 </template>
 
@@ -39,7 +56,8 @@
                 startingCity: '',
                 fromleave: '',
                 firstStations: [],
-                card_id: ''
+                card_id: '',
+                complete: true
             }
         },
 
@@ -55,9 +73,11 @@
         methods: {
             
             stationLeave() {
-                
                 EventBus.$emit('firststation', this.startingCity)
-                //alert('You have swiped in');
+                alert('You have swiped in');
+                this.complete = false;
+                
+                
             },
             
             lookupStartingFrom: _.debounce(function () {

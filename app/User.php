@@ -17,7 +17,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email',  'password', 'password_confirmation'
+        'name', 'email',  'password', 'password_confirmation', 'user_id'
     ];
 
     /**
@@ -48,6 +48,17 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+
+    /**
+     *  A user can have many cards
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function cards()
+    {
+        return $this->hasMany(\App\Card::class);
     }
 
 

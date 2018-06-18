@@ -1,5 +1,6 @@
 import { getLocalUser } from "./helpers/auth";
 
+
 const user = getLocalUser();
 
 
@@ -87,6 +88,7 @@ export default {
         currentUser(state) {
             return state.currentUser;
         },
+
         authError(state) {
             return state.auth_error;
         },

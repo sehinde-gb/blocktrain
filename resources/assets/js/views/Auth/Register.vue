@@ -19,9 +19,6 @@
                             </div><!-- /.row justify-content-center-->
                             
                             
-                            
-                            
-                            
                             <div class="row justify-content-center">
                                 <div class="form group row">
                                     <label for="email">Email:</label>
