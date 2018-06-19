@@ -52,13 +52,13 @@ class JourneyController extends Controller
      */
     public function store(Request $request)
     {
-        //$user = Auth::user();
+
 
         $journey = $request->isMethod('put') ? Journey::findOrFail
         ($request->journey_id) : new Journey;
 
         $journey->id = $request->input('journey_id');
-        $journey->card_id = 1;
+        $journey->user_id = $request->input('user_id');
         $journey->from = $request->input('from');
         $journey->startingCity = $request->input('startingCity');
         $journey->to = $request->input('to');

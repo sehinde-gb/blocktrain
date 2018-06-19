@@ -1,18 +1,18 @@
 
 import HomePage from './views/Home/Home'
 import OriginalPage from './views/Original/OriginalPage'
+import Login from './views/Auth/Login'
 import Register from './views/Auth/Register'
 import CreateJourney from './views/Journeys/CreateJourney'
-import CardListings from './views/Cards/CardListings'
-import CardDetail from './views/Cards/CardDetail'
+import Users from './views/Users/Users'
+import UserDetail from './views/Users/UserDetail'
+import UserRegister from './views/Users/UserRegister'
 import JourneyListings from './views/Journeys/JourneyListings'
 import JourneyDetail from './views/Journeys/JourneyDetail'
-import CardRegister from './views/Cards/CardRegister'
-import Login from './views/Auth/Login'
+
 
 
 export const routes = [
-
 
     {
         path: '/',
@@ -43,53 +43,36 @@ export const routes = [
     },
 
     {
-        path: '/cards/register',
-        name: 'card.register',
-        component: CardRegister,
+        path: '/users/register',
+        name: 'user.register',
+        component: UserRegister,
         meta: {
             requiresAuth: true
-        }
-    },
-
-    /*{
-        path: '/users/:userId/cards',
-        name: 'card.listings',
-        component: CardListings,
-        meta: {
-            requiresAuth: true
-        }
-
+        },
     },
 
     {
-        path: '/users/:userId/cards/:id',
-        name: 'card.detail',
-        component: CardDetail,
+
+        path: '/users',
+        name: 'users',
+        component: Users,
         meta: {
             requiresAuth: true
-        }
+        },
 
-    },*/
-
-    {
-        path: '/cards',
-        name: 'card.listings',
-        component: CardListings,
-        meta: {
-            requiresAuth: true
-        }
     },
 
-    {   path: '/cards/:id',
-        name: 'card.detail',
-        component: CardDetail,
+
+    {   path: '/users/:id',
+        name: 'user.detail',
+        component: UserDetail,
         meta: {
             requiresAuth: true
         }
     },
 
     {
-        path: '/cards/:id/journeys',
+        path: '/users/:id/journeys',
         name: 'journey.listings',
         props: true,
         component:JourneyListings,
@@ -99,7 +82,7 @@ export const routes = [
     },
 
     {
-        path: '/cards/:id/journey/:journey',
+        path: '/users/:id/journey/:journey',
         name: 'journey.detail',
         component:JourneyDetail,
         meta: {
@@ -108,8 +91,8 @@ export const routes = [
     },
 
 
-    {   path: '/cards/:id/create/journey',
-        name: 'journey.create',
+    {   path: '/users/:id/make/journey',
+        name: 'journey.make',
         props: true,
         component: CreateJourney,
         meta: {

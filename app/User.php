@@ -17,7 +17,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email',  'password', 'password_confirmation', 'user_id'
+        'name', 'email',  'password', 'password_confirmation', 'user_id','journey_id', 'name', 'address', 'home_phone', 'mobile_phone', 'email', 'balance'
     ];
 
     /**
@@ -51,14 +51,16 @@ class User extends Authenticatable implements JWTSubject
     }
 
 
+
+
     /**
-     *  A user can have many cards
+     *  A user can have many journeys.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function cards()
+    public function journeys()
     {
-        return $this->hasMany(\App\Card::class);
+        return $this->hasMany(\App\Journey::class);
     }
 
 

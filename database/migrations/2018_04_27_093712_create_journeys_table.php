@@ -15,7 +15,7 @@ class CreateJourneysTable extends Migration
     {
         Schema::create('journeys', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('card_id')->unsigned()->index();
+            $table->integer('user_id')->unsigned()->index();
             //$table->foreign('card_id')->references('id')->on('cards')->onDelete('cascade')->unsigned();
             $table->string('from');
             $table->string('startingCity');

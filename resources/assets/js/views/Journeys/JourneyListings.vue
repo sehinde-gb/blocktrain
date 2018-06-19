@@ -10,7 +10,7 @@
                           <div v-for="journey in journeys">
     
                               <ul class="list-group">
-                                  <router-link  class="list-group-item" v-bind:to="  '/cards/' + journey.card_id + '/journey/' + journey.id"><h6>{{ moment(journey.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a") }} </h6></router-link>
+                                  <router-link  class="list-group-item" v-bind:to="  '/users/' + journey.user_id + '/journey/' + journey.id"><h6>{{ moment(journey.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a") }} </h6></router-link>
     
                                   
                               </ul><!-- end list-group -->
@@ -29,7 +29,7 @@
             
     
     <hr/>
-            <a class="btn btn-outline-primary btn-lg" role="button"><router-link to="/cards">Back </router-link></a>
+            <a class="btn btn-outline-primary btn-lg" role="button"><router-link to="/users">Back </router-link></a>
                     
             
         </div> <!-- end of .container -->
@@ -57,7 +57,7 @@
         },
         methods: {
             fetchJourneyList() {
-                axios.get('/api/card/' + this.id + '/journey').then((response) => {
+                axios.get('/api/user/' + this.id + '/journey').then((response) => {
                     //console.log(response.data.data.data);
                     
                     this.journeys = response.data.data.data;

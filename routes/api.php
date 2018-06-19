@@ -21,9 +21,9 @@ use Illuminate\Http\Request;
 //});
 
 
-    Route::apiResource('cards', 'CardController');
+    Route::apiResource('user', 'UserController');
 
-    Route::apiResource('card.journey', 'CardJourneyController')->except([
+    Route::apiResource('user.journey', 'UserJourneyController')->except([
         'update', 'destroy'
     ]);
 

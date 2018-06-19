@@ -5,26 +5,26 @@
             <div class="row">
                 <div class="col-8">
                     <div class="lead-form">
-                        <h2 class="text-center">View Change Details</h2>
+                        <h2 class="text-center">View or Change Details</h2>
+                        <br/>
+                        <h5 class="text-center">Welcome {{ user.name }}</h5>
+                        <br/>
                             <div class="card text-center">
-                                <p>Welcome </p>
-                         
                                 <div class="card-header">
-                                    {{ card.id }}
+                                    Card No: {{ user.id }}
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="card-title">View Details</h5>
-                                    <p class="card-text">Address: {{ card.address }}</p>
-                                    <p class="card-text">Land Phone: {{ card.home_phone }}</p>
-                                    <p class="card-text">Mobile Phone: {{ card.mobile_phone }}</p>
-                                    <p class="card-text">Email: {{ card.email }}</p>
-                                    <p class="card-text">Balance: {{ card.balance }}</p>
-                                    <a class="btn btn-outline-primary"><router-link to="/cards">Back </router-link></a>
+                                    <p class="card-text">Address: {{ user.address }}</p>
+                                    <p class="card-text">Land Phone: {{ user.home_phone }}</p>
+                                    <p class="card-text">Mobile Phone: {{ user.mobile_phone }}</p>
+                                    <p class="card-text">Email: {{ user.email }}</p>
+                                    <p class="card-text">Balance: {{ user.balance }}</p>
+                                    <a class="btn btn-outline-primary"><router-link to="/users">Back </router-link></a>
 
                                    
                                 </div>
                                 <div class="card-footer text-muted">
-                                    2 days ago
+                                    Created {{ moment(user.created_at).fromNow() }}
                                 </div>
                             </div><!-- .card -->
     
@@ -49,19 +49,19 @@
 </template>
 
 <script>
-    
+
+    var moment = require('moment');
     
     export default {
         data() {
             return {
                 id: this.$route.params.id,
-                //user: this.currentUser.id,
-                
-                card: {}
+                moment: moment,
+                user: {}
             }
         },
         created() {
-            this.fetchACard();
+            this.fetchAUser();
             
         },
     computed: {
@@ -70,10 +70,10 @@
         }
     },
         methods: {
-            fetchACard() {
-                this.$http.get('/api/cards/' + this.id).then((response) => {
+            fetchAUser() {
+                this.$http.get('/api/user/' + this.id).then((response) => {
                     //console.log(response);
-                    this.card = response.body;
+                    this.user = response.body;
                 });
             }
         },

@@ -1,6 +1,6 @@
 import { mount } from 'vue-test-utils';
 import expect from 'expect';
-import CardRegister from '../../resources/assets/js/views/Cards/CardRegister.vue';
+import CardRegister from '../../resources/assets/js/views/Cards/UserRegister.vue';
 
 // describe ('CardRegister', () => {
     

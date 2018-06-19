@@ -16,23 +16,19 @@
                             </div><!-- /.form group row -->
                             <div class="form group row">
                                 
-                                <input type="submit" value="login">
+                                <button :disabled="errors.any()" type="submit" value="login" class="btn btn-primary btn-lg">Login</button>
                             </div><!-- /.form group row -->
     
                             <div class="form group row" v-if="authError">
                                 <p class="error">
                                     {{ authError }}
-                                </p>
-                                <!-- /.error -->
+                                </p><!-- /.error -->
                                
                             </div><!-- /.form group row -->
                         </form>
-                    </div>
-                    <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
-            </div>
-            <!-- /.col-md-4 -->
+                    </div><!-- /.card-body -->
+                </div><!-- /.card -->
+            </div><!-- /.col-md-4 -->
         </div><!-- /.login row justify-content-center -->
     </div>
 </template>
@@ -57,7 +53,7 @@
                 login(this.$data.form)
                     .then((res) => {
                         this.$store.commit("loginSuccess", res);
-                        this.$router.push({path: '/cards'});
+                        this.$router.push({path: '/users'});
                     })
                     .catch((error) => {
                         this.$store.commit('loginFailed', {error});

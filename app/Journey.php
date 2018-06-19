@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Journey extends Model
 {
+
     /**
      * The attributes that are mass assignable.
      *
@@ -16,13 +17,13 @@ class Journey extends Model
     ];
 
     /**
-     *  A journey belongs to a card.
+     *  A journey belongs to a user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function card()
+    public function user()
     {
-        return $this->belongsTo(\App\Card::class, 'card_id');
+        return $this->belongsTo(\App\User::class, 'user_id');
     }
 
 }

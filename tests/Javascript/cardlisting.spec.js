@@ -1,6 +1,6 @@
 import { mount } from 'vue-test-utils';
 import expect from 'expect';
-import CardListings from '../../resources/assets/js/views/Cards/CardListings.vue';
+import CardListings from '../../resources/assets/js/views/Cards/Users.vue';
 import moxios from 'moxios';
 
 

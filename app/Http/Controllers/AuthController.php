@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Http\Requests\RegisterFormRequest;
+use App\Http\Resources\UserResource;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -19,17 +20,25 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
+     *
+     * @param RegisterFormRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function register(Request $request)
+    public function register(RegisterFormRequest $request)
     {
         $user = new User;
-        $user->card_id = 1;
-        $user->email = $request->email;
-        $user->name = $request->name;
+        $request->input('card_id');
+        $user->name  = $request->input('name');
+        $user->email = $request->input('email');
         $user->password = bcrypt($request->password);
-        $user->save();
+        $user->address = $request->input('address');
+        $user->home_phone = $request->input('home_phone');
+        $user->mobile_phone = $request->input('mobile_phone');
+        $user->balance = $request->input('balance');
+
+        if($user->save()) {
+            return new UserResource($user);
+        }
 
         return response([
             'status' => 'success',
@@ -102,6 +111,9 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * @return mixed
+     */
     public function guard()
     {
         return \Auth::Guard('api');

@@ -19,9 +19,9 @@ j<template>
                                 <p class="card-text">Passenger Type: {{ journey.passengerType }}</p>
                                 <p class="card-text">Mode: {{ journey.mode }}</p>
                                 <p class="card-text">Ending Fare: {{ journey.endingFare }}</p>
-                                <a class="btn btn-outline-primary"><router-link v-bind:to="  '/cards/' + journey.card_id + '/journeys'">Back</router-link></a>
+                                <a class="btn btn-outline-primary"><router-link v-bind:to="  '/users/' + journey.user_id + '/journeys'">Back</router-link></a>
                                
-                                <a class="btn btn-outline-primary"><router-link to="/cards">Cards </router-link></a>
+                                <a class="btn btn-outline-primary"><router-link to="/users">Dashboard </router-link></a>
                             </div>
                             <div class="card-footer text-muted">
                                 {{ moment(journey.created_at).fromNow() }}
@@ -75,7 +75,7 @@ j<template>
         
         methods: {
             fetchJourneyDetail() {
-                axios.get('/api/card/' + this.id + '/journey/' + this.journey).then
+                axios.get('/api/user/' + this.id + '/journey/' + this.journey).then
                 
              
                 ((response) => {

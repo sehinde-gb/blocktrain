@@ -14,63 +14,71 @@
                                         <div class="col-8">
                                             <h1 class="text-center">Approach Barrier</h1>
                                             <hr/>
-                                            <h2 class="text-center">Place Card on Reader</h2>
+                                            <h3 class="text-center">Place Card on Reader</h3>
                                             
                                             <hr />
-                                            <div class="form-group">
-                                                <h3>Swipe Out</h3>
-                                                <label for="to">To</label>
-                                                <input name="to" v-validate="'required|min:6'" type="text" class="form-control" placeholder="To.." v-model="to" id="to">
-                                                <p class="help is-danger" v-show="errors.has('from')">
-                                                    {{ errors.first('to') }}
-                                                </p>
-                                                <span class="city-span">{{endingCity}}</span>
-                                            </div><!-- /.form-group -->
-                                            <div class="form-group">
+                                            <div class="card bg-dark text-white">
+                                                <img class="card-img"  alt="Card image">
+                                                <div class="card-img-overlay">
+                                                    <h5 class="card-title">Swipe Out</h5>
+                                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                    <p class="card-text">Last updated 3 mins ago</p>
+                                                </div>
+                                            </div>
+                                            
+                                        
+                                        <div class="form group row">
+                                            <label for="to">To</label>
+                                            <input name="to" v-validate="'required|min:6'" type="text" class="form-control" placeholder="To.." v-model="to" id="to" autocomplete="nope">
+                                            <span class="city-span">{{endingCity}}</span>
+                                        </div><!-- /.form group row -->
+                                        <br/>
+                                        
+                                        <div class="form group row">
                                                 <input type="text" class="form-control" placeholder="Fares" v-model="endingFare" readonly="readonly" id="endingFare">
                                                 <span class="city-span">{{endingFare}}</span>
-                                            </div><!-- /.form-group -->
-                                            
-                                            <div class="form-group">
+                                        </div><!-- /.form group row -->
+                                        <br>
+                                            <div class="form group row">
                                                 <input type="text" class="form-control" placeholder="Description" v-model="description" readonly="readonly">
                                                 <span class="city-span">{{description}}</span>
-                                            </div><!-- /.form-group -->
-                                            
-                                            <div class="form-group">
+                                            </div><!-- /.form group row -->
+                                            <br/>
+                                            <div class="form group row">
                                                 <input type="text" class="form-control" placeholder="Passenger Type" v-model="passengerType" readonly="readonly">
                                                 <span class="city-span">{{passengerType}}</span>
-                                            </div><!-- /.form-group -->
-                                            
-                                            <div class="form-group">
+                                            </div><!-- /.form group row -->
+                                            <br/>
+                                            <div class="form group row">
                                                 <input type="text" class="form-control" placeholder="Mode" v-model="mode" readonly="readonly">
                                                 <span class="city-span">{{mode}}</span>
-                                            </div><!-- /.form-group -->
-                                            
-                                            <div class="form-group">
+                                            </div><!-- /.form group row -->
+                                            <br/>
+                                            <div class="form group row">
                                                 <input type="text" class="form-control" placeholder="Type" v-model="type" readonly="readonly">
                                                 <span class="city-span">{{type}}</span>
-                                            </div><!-- /.form-group -->
-                                            
-                                            <div class="form-group">
+                                            </div><!-- /.form group row -->
+                                            <br/>
+                                            <div class="form group row">
                                                 <input type="text" class="form-control" placeholder="Balance" v-model="balance" readonly="readonly">
     
                                                 <span class="city-span">{{formattedCost}}</span>
                                                 <span class="city-span">{{ balance }}</span>
-                                            </div><!-- /.form-group -->
-    
+                                            </div><!-- /.form group row -->
+                                            <br/>
                                             <div class="row">
                                                 <div class="col-sm"></div>
                                                 <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" value="swipe">Exit</button>
                                                 
                                                 <div class="col-sm"></div>
                                             </div>
-    
-                                                <div class="row">
-                                                    <div class="col-sm"></div>
-                                                    
-                                                    <a class="btn btn-light" role="button"><router-link to="/cards">Back </router-link></a>
-                                                    <div class="col-sm"></div>
-                                                </div><!-- /.row -->
+                                            <br/>
+                                            <div class="row">
+                                                <div class="col-sm"></div>
+                                                
+                                                <a class="btn btn-light" role="button"><router-link to="/users">Users </router-link></a>
+                                                <div class="col-sm"></div>
+                                            </div><!-- /.row -->
                                             
     
                                            
@@ -124,7 +132,7 @@ export default {
                 mode: '',
                 type: '',
                 balance: '100',
-                card_id: this.$route.params.id
+                user_id: this.$route.params.id
         }
     },
     computed: {
@@ -191,8 +199,7 @@ export default {
         },1200),
 
         onSubmit: function() {
-
-            this.$http.post('/api/card/' + this.card_id + '/journey', this.$data);
+            this.$http.post('/api/user/' + this.user_id + '/journey', this.$data);
             alert('Thanks for swiping');
             this.$router.push('dashboard')
 
@@ -203,7 +210,9 @@ export default {
             swipe(this.$data.form)
                 .then((res) => {
                     this.$store.commit("swipeSuccess", res);
-                    this.$router.push({path: 'dashboard'});
+                    this.$router.push({ path: '/users'});
+                   
+                    
                 })
                 .catch((error) => {
                     this.$store.commit('swipeFailed', {error});

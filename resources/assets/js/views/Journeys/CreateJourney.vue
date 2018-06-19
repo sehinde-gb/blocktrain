@@ -27,10 +27,7 @@
     import Enter from './Enter.vue';
     import Leave from './Leave.vue';
     
-
-  
-    
-    export default {
+ export default {
         
         props: ['card'],
         

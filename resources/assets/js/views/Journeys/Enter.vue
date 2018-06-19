@@ -9,9 +9,16 @@
                                 <hr/>
                                 <h2 class="text-center">Place Card on Reader</h2>
                                 <hr />
-                               
+                                <div class="card bg-dark text-white">
+                                    <img class="card-img" src="" alt="Card image">
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title">Swipe Out</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text">Last updated 3 mins ago</p>
+                                    </div>
+                                </div>
                                 <div class="form-group">
-                                    <h3>Swipe In</h3>
+                                    
                                     <label for="from">From</label>
                                     <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Enter your station" v-model="from" id="from">
                                     <p class="help is-danger" v-show="errors.has('from')">
@@ -48,7 +55,7 @@
     import {EventBus} from '../../app.js';
     
     export default {
-        props: ['card.id'],
+        props: ['user.id'],
         
         data: function() {
             return {
@@ -56,7 +63,7 @@
                 startingCity: '',
                 fromleave: '',
                 firstStations: [],
-                card_id: '',
+                user_id: '',
                 complete: true
             }
         },

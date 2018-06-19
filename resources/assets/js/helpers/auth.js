@@ -5,10 +5,12 @@ export function login(credentials) {
                 res(response.data);
             })
             .catch((err) =>{
-                rej("Wrong email or password");
+                rej("Incorrect email or password entered");
             })
     })
 }
+
+
 
 export function getLocalUser() {
     const userStr = localStorage.getItem("user");
@@ -20,16 +22,6 @@ export function getLocalUser() {
     return JSON.parse(userStr);
 }
 
-export function getLocalCard() {
-    const cardStr = localStorage.getItem("card");
-
-    if(!cardStr) {
-        return null;
-    }
-
-    return JSON.parse(cardStr);
-}
-
 
 export function register(credentials) {
     return new Promise((res, rej) => {
@@ -38,7 +30,7 @@ export function register(credentials) {
                 res(response.data);
             })
             .catch((err) =>{
-                rej("Incorrect Registration Details");
+                rej("Your Registration Details are Incomplete !");
             })
     })
 }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Resources;
 
+use App\User;
 use Illuminate\Http\Resources\Json\ResourceCollection;
-use App\Http\Resources\CardResource;
 
-class CardCollection extends ResourceCollection
+class UserCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
@@ -16,11 +16,11 @@ class CardCollection extends ResourceCollection
     public function toArray($request)
     {
         //return parent::toArray($request);
-        $this->collection->transform(function (Card $card) {
-            return (new CardResource($card));
+
+        $this->collection->transform(function (User $user) {
+            return (new UserResource($user));
         });
 
         return parent::toArray($request);
-
     }
 }

@@ -2,18 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Card;
 use App\Http\Resources\JourneyCollection;
 use App\Http\Resources\JourneyResource;
 use App\Journey;
 use Illuminate\Http\Request;
 
-
-
-
-class CardJourneyController extends Controller
+class UserJourneyController extends Controller
 {
-
     /**
      * Display's a listing of all the journeys
      * and the card associated with those journeys.
@@ -24,7 +19,7 @@ class CardJourneyController extends Controller
     public function index()
     {
 
-        $journeys = Journey::with('card')->get();
+        $journeys = Journey::with('user')->get();
 
 
         return new JourneyCollection($journeys);
@@ -33,7 +28,7 @@ class CardJourneyController extends Controller
 
 
     /**
-     * Display's a card details together with
+     * Display's user details together with
      * a button that simulates swiping out
      * of a station.
      *
@@ -44,13 +39,10 @@ class CardJourneyController extends Controller
     public function show($id)
     {
 
-
-
         $journey = Journey::findOrFail($id);
 
 
         return new JourneyResource($journey);
-
 
     }
 
@@ -59,15 +51,14 @@ class CardJourneyController extends Controller
      *
      * @param Request $request
      *
-     * @return CardResource|JourneyResource
+     * @return JourneyResource
      */
     public function store(Request $request)
     {
 
-
         $journey = $request->isMethod('put') ? Journey::findOrFail
         ($request->journey_id) : new Journey;
-        $journey->card_id = $request->input('card_id');
+        $journey->user_id = $request->input('user_id');
         $journey->from = $request->input('from');
         $journey->startingCity = $request->input('startingCity');
         $journey->to = $request->input('to');
@@ -79,16 +70,9 @@ class CardJourneyController extends Controller
         $journey->endingFare = $request->input('endingFare');
         $journey->balance = $request->input('balance');
 
-
-
         if($journey->save()) {
             return new JourneyResource($journey);
         }
     }
-
-
-
-
-
 
 }
