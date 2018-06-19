@@ -29,8 +29,12 @@ export const routes = [
         component: Login
     },
 
+    {
+        path: '/register',
+        name: 'register',
+        component: Register
 
-
+    },
 
     {
         path: '/original',
@@ -46,6 +50,26 @@ export const routes = [
             requiresAuth: true
         }
     },
+
+    /*{
+        path: '/users/:userId/cards',
+        name: 'card.listings',
+        component: CardListings,
+        meta: {
+            requiresAuth: true
+        }
+
+    },
+
+    {
+        path: '/users/:userId/cards/:id',
+        name: 'card.detail',
+        component: CardDetail,
+        meta: {
+            requiresAuth: true
+        }
+
+    },*/
 
     {
         path: '/cards',
@@ -91,15 +115,9 @@ export const routes = [
         meta: {
             requiresAuth: true
         }
-    },
+    }
 
 
-    {
-        path: '/register',
-        name: 'register',
-        component: Register
-
-    },
 
 
 

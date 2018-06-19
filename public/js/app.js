@@ -76405,9 +76405,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: {
         currentUser: function currentUser() {
             return this.$store.getters.currentUser;
-        },
-        currentCard: function currentCard() {
-            return this.$store.getters.currentCard;
         }
     }
 });
@@ -76920,6 +76917,11 @@ var routes = [{
     name: 'login',
     component: __WEBPACK_IMPORTED_MODULE_9__views_Auth_Login___default.a
 }, {
+    path: '/register',
+    name: 'register',
+    component: __WEBPACK_IMPORTED_MODULE_2__views_Auth_Register___default.a
+
+}, {
     path: '/original',
     name: 'original',
     component: __WEBPACK_IMPORTED_MODULE_1__views_Original_OriginalPage___default.a
@@ -76930,7 +76932,26 @@ var routes = [{
     meta: {
         requiresAuth: true
     }
-}, {
+},
+
+/*{
+    path: '/users/:userId/cards',
+    name: 'card.listings',
+    component: CardListings,
+    meta: {
+        requiresAuth: true
+    }
+  },
+  {
+    path: '/users/:userId/cards/:id',
+    name: 'card.detail',
+    component: CardDetail,
+    meta: {
+        requiresAuth: true
+    }
+  },*/
+
+{
     path: '/cards',
     name: 'card.listings',
     component: __WEBPACK_IMPORTED_MODULE_4__views_Cards_CardListings___default.a,
@@ -76965,11 +76986,6 @@ var routes = [{
     meta: {
         requiresAuth: true
     }
-}, {
-    path: '/register',
-    name: 'register',
-    component: __WEBPACK_IMPORTED_MODULE_2__views_Auth_Register___default.a
-
 }];
 
 /***/ }),
@@ -80045,8 +80061,6 @@ exports.push([module.i, "\n#single-card[data-v-37aba520] {\n    max-width: 960px
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -80094,13 +80108,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             id: this.$route.params.id,
+            //user: this.currentUser.id,
+
             card: {}
         };
     },
@@ -80108,6 +80126,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.fetchACard();
     },
 
+    computed: {
+        currentUser: function currentUser() {
+            return this.$store.getters.currentUser;
+        }
+    },
     methods: {
         fetchACard: function fetchACard() {
             var _this = this;
@@ -80144,6 +80167,8 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card text-center" }, [
+              _c("p", [_vm._v("Welcome ")]),
+              _vm._v(" "),
               _c("div", { staticClass: "card-header" }, [
                 _vm._v(
                   "\n                                " +
@@ -80183,17 +80208,6 @@ var render = function() {
                   [
                     _c("router-link", { attrs: { to: "/cards" } }, [
                       _vm._v("Back ")
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "btn btn-outline-primary" },
-                  [
-                    _c("router-link", { attrs: { to: "/dashboard" } }, [
-                      _vm._v("Dashboard ")
                     ])
                   ],
                   1

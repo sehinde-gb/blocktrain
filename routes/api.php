@@ -21,11 +21,6 @@ use Illuminate\Http\Request;
 //});
 
 
-
-//Route::resource('journeys', 'JourneyController');
-
-
-
     Route::apiResource('cards', 'CardController');
 
     Route::apiResource('card.journey', 'CardJourneyController')->except([

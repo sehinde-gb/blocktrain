@@ -53,10 +53,6 @@
         computed: {
             currentUser() {
                 return this.$store.getters.currentUser;
-            },
-            
-            currentCard() {
-                return this.$store.getters.currentCard;
             }
         }
     }
