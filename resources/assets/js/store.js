@@ -11,14 +11,9 @@ export default {
         loading: false,
         auth_error: null,
         reg_error: null,
-        swipe_error: null,
-        endingFare: "10.00",
-        journeys: [],
-        links: [
-            'http://google.com',
-            'http://coursetro.com',
-            'http://youtube.com'
-        ]
+        users: [
+            { id: 1, name: 'Sehinde', email: 'ormrepo@gmail.com', 'password': 'password' }
+        ]        
     },
     mutations: {
         login(state) {
@@ -62,31 +57,9 @@ export default {
         registerFailed(state, payload){
             state.loading = false,
             state.reg_error = payload.error;
-        },
-
-        swipe(state) {
-            state.loading = true;
-            state.swipe_error = null;
-        },
-
-        swipeSuccess(state, payload) {
-            state.swipe_error = null;
-            state.isLoggedIn = true;
-            state.loading = false;
-
-            state.currentUser = Object.assign({}, payload.user, {token: payload.access_token});
-
-            localStorage.setItem('user', JSON.stringify(state.currentUser));
-        },
-
-        swipeFailed(state, payload){
-            state.loading = false,
-                state.swipe_error = payload.error;
-        },
-
-        ADD_STATION: (state, station) => {
-            state.stations.push(station)
         }
+
+        
 
     },
     getters: {
@@ -105,13 +78,9 @@ export default {
         },
         regError(state) {
             return state.reg_error;
-        },
-        swipeError(state) {
-            return state.swipe_error;
-        },
-        endingFare(state) {
-            return state.endingFare;
         }
+        
+        
     },
     actions: {
         login(context) {
@@ -120,11 +89,9 @@ export default {
 
         register(context) {
             context.commit("register");
-        },
-
-        swipe(context) {
-            context.commit("swipe");
         }
+
+        
     }
 
 }

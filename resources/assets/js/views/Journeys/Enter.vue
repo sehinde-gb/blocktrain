@@ -19,18 +19,20 @@
                             </div><!-- end of .lead-form -->
                                 <br>
                                 <div class="form-group">
-                                   
-                                    <label for="from">From</label>
+                                   <label for="from">From</label>
                                     <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Enter your station" v-model="from" id="from">
                                     <p class="help is-danger" v-show="errors.has('from')">
                                         {{ errors.first('from') }}
                                     </p>
+
+
+                                    
                                     <span class="city-span" v-model="startingCity">{{startingCity}}</span>
                                     <hr/>
                                 </div><!-- /.form-group -->
                             
                             <div class="row">
-                                <div class="col-sm"><button v-on:click="stationEnter" :disabled="errors.any()"  class="btn btn-primary btn-lg">Swipe In & Enter</button></div>
+                                <div class="col-sm"><button v-on:click="toSwipe" :disabled="errors.any()"  class="btn btn-primary btn-lg">Add Journey</button></div>
                                 <div class="col-sm"></div>
                             </div><!-- /.row -->
                       
@@ -53,8 +55,11 @@
 
 <script>
     import {EventBus} from '../../app.js';
-    
+    //import {mapState, mapMutations} from 'vuex';
+    //import { enter } from '../../helpers/auth';
     export default {
+        name: 'enter',
+
         props: ['user.id'],
         
         data: function() {
@@ -64,8 +69,10 @@
                 firstStations: [],
                 user_id: '',
                 complete: true
+                             
             }
         },
+        
 
         watch: {
             from: function () {
@@ -78,11 +85,11 @@
         
 
         methods: {
-            
+             
             stationEnter() {
-                EventBus.$emit('firststation', this.startingCity)
-                alert('You have swiped in');
-                this.complete = false;
+                 EventBus.$emit('firststation', this.startingCity)
+                 alert('You have swiped in');
+                 this.complete = false;
             },
             
             lookupStartingFrom: _.throttle(function () {
