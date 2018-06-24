@@ -68,7 +68,7 @@ class JourneyController extends Controller
         $journey->type = $request->input('type');
         $journey->passengerType = $request->input('passengerType');
         $journey->mode = $request->input('mode');
-        $journey->balance = $request->input('balance');
+
 
 
         if($journey->save()) {

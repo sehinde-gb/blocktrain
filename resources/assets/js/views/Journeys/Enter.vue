@@ -7,18 +7,19 @@
                             <div class="lead-form">
                                 <h1 class="text-center">Enter Station</h1>
                                 <hr/>
-                                <h2 class="text-center">Place Card on Reader</h2>
+                                <h4 class="text-center">Place Card on Reader</h4>
                                 <hr />
-                                <div class="card bg-dark text-white">
-                                    <img class="card-img" src="" alt="Card image">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title">Swipe Out</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text">Last updated 3 mins ago</p>
+                               
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="" alt="Card image cap">
+                                    <div class="card-body">
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     </div>
                                 </div>
+                            </div><!-- end of .lead-form -->
+                                <br>
                                 <div class="form-group">
-                                    
+                                   
                                     <label for="from">From</label>
                                     <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Enter your station" v-model="from" id="from">
                                     <p class="help is-danger" v-show="errors.has('from')">
@@ -29,11 +30,10 @@
                                 </div><!-- /.form-group -->
                             
                             <div class="row">
-                                <div class="col-sm"></div>
-                                <div class="col-sm"><button v-on:click="stationLeave" :disabled="errors.any()"  class="btn btn-primary btn-lg">Enter</button></div>
+                                <div class="col-sm"><button v-on:click="stationEnter" :disabled="errors.any()"  class="btn btn-primary btn-lg">Swipe In & Enter</button></div>
                                 <div class="col-sm"></div>
                             </div><!-- /.row -->
-                        </div><!-- end of .lead-form -->
+                      
                     </div> <!-- end of .col-8 -->
                     <div class="col-4">
                         <h2>My Account</h2>
@@ -61,7 +61,6 @@
             return {
                 from: '',
                 startingCity: '',
-                fromleave: '',
                 firstStations: [],
                 user_id: '',
                 complete: true
@@ -71,23 +70,22 @@
         watch: {
             from: function () {
                 this.startingCity = ''
-                if (this.from.length == 6) {
+                if (this.from.length == 10) {
                     this.lookupStartingFrom()
                 }
             }
         },
+        
 
         methods: {
             
-            stationLeave() {
+            stationEnter() {
                 EventBus.$emit('firststation', this.startingCity)
                 alert('You have swiped in');
                 this.complete = false;
-                
-                
             },
             
-            lookupStartingFrom: _.debounce(function () {
+            lookupStartingFrom: _.throttle(function () {
                 var app = this
 
                 const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
@@ -112,4 +110,14 @@
         color: #856404;
         border: 4px solid #ffeeba;
     }
+    
+    .help  {
+        color: red;
+    }
+    
+    .is-danger {
+        color: red;
+    }
+    
+    
 </style>

@@ -11,7 +11,14 @@ export default {
         loading: false,
         auth_error: null,
         reg_error: null,
-        swipe_error: null
+        swipe_error: null,
+        endingFare: "10.00",
+        journeys: [],
+        links: [
+            'http://google.com',
+            'http://coursetro.com',
+            'http://youtube.com'
+        ]
     },
     mutations: {
         login(state) {
@@ -75,6 +82,10 @@ export default {
         swipeFailed(state, payload){
             state.loading = false,
                 state.swipe_error = payload.error;
+        },
+
+        ADD_STATION: (state, station) => {
+            state.stations.push(station)
         }
 
     },
@@ -98,6 +109,9 @@ export default {
         swipeError(state) {
             return state.swipe_error;
         },
+        endingFare(state) {
+            return state.endingFare;
+        }
     },
     actions: {
         login(context) {

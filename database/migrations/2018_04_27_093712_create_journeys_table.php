@@ -26,7 +26,6 @@ class CreateJourneysTable extends Migration
             $table->string('passengerType');
             $table->string('mode');
             $table->decimal('endingFare', 8, 2);
-            $table->decimal('balance', 8, 2);
             $table->timestamps();
 
         });

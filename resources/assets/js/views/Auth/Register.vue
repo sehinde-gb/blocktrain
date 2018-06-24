@@ -67,7 +67,7 @@
                             
                             
                                 <div class="form group row">
-                                    <button :disabled="errors.any()" type="submit" class="btn btn-primary" id="submit" value="register">Register</button>
+                                    <button  type="submit" class="btn btn-primary" id="submit" value="register">Register</button>
                                 
                                 </div><!-- /.form group row -->
     
@@ -115,7 +115,7 @@
                     .then((res) => {
                         this.$store.commit("registerSuccess", res);
                         alert('Your card has been registered successfully');
-                        this.$router.push({path: '/dashboard'});
+                        this.$router.push({path: '/users'});
                     })
                     .catch((error) => {
                         this.$store.commit('registerFailed', {error});

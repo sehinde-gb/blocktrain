@@ -68,7 +68,7 @@ class UserJourneyController extends Controller
         $journey->passengerType = $request->input('passengerType');
         $journey->mode = $request->input('mode');
         $journey->endingFare = $request->input('endingFare');
-        $journey->balance = $request->input('balance');
+
 
         if($journey->save()) {
             return new JourneyResource($journey);

@@ -3,7 +3,7 @@ import HomePage from './views/Home/Home'
 import OriginalPage from './views/Original/OriginalPage'
 import Login from './views/Auth/Login'
 import Register from './views/Auth/Register'
-import CreateJourney from './views/Journeys/CreateJourney'
+import Journey from './views/Journeys/Journey'
 import Users from './views/Users/Users'
 import UserDetail from './views/Users/UserDetail'
 import UserRegister from './views/Users/UserRegister'
@@ -94,7 +94,7 @@ export const routes = [
     {   path: '/users/:id/make/journey',
         name: 'journey.make',
         props: true,
-        component: CreateJourney,
+        component: Journey,
         meta: {
             requiresAuth: true
         }

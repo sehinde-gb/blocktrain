@@ -13,7 +13,7 @@ class Journey extends Model
      * @var array
      */
     protected $fillable = [
-        'from', 'to', 'startingCity', 'endingCity', 'description', 'type', 'passengerType', 'mode', 'endingFare', 'balance'
+        'from', 'to', 'startingCity', 'endingCity', 'description', 'type', 'passengerType', 'mode', 'endingFare'
     ];
 
     /**

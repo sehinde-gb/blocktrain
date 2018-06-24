@@ -7,6 +7,12 @@
                         <br>
                         <h2>My Zorra Cards</h2>
                             <hr/>
+                            <ul>
+                                <li v-for="(link, index) in links" v-bind:key="index">
+                                    {{ link }}
+                                </li>
+                            </ul>
+
                             <div v-for="user in users" class="single-card">
                                 <br>
                                  <ul class="list-group">
@@ -15,6 +21,8 @@
                                          <div class="card-body">
                                              <h5 class="card-title">Card Number:  {{ user.id }}</h5>
                                              <h6 class="card-subtitle mb-2 text-muted">Balance: {{ user.balance }}</h6>
+                                             
+                                             <h2>{{ endingFare }}</h2>
                                              <p class="card-text">Card Management</p>
                                              <router-link class="card-link" v-bind:to="  '/users/' + user.id"><h6>View / Change Card  </h6></router-link>
                                              <router-link class="card-link" to="/users/register"> New Card</router-link>
@@ -24,8 +32,8 @@
                                              <router-link class="card-link" v-bind:to="  '/users/' + user.id + '/journeys'"><h6>Journey History</h6></router-link>
                                          </div>
                                      </div>
-                                     
-                                 </ul>
+                                    
+                                </ul>
                             </div><!-- .single-card -->
                     </div><!-- .lead-form -->
                 </div> <!-- .col-8 -->
@@ -51,17 +59,31 @@
 <script>
 
     import axios from 'axios';
+    import { mapState } from 'vuex';
 
     export default {
       
         created() {
             this.fetchUserList();
         },
-
+        computed: {
+            endingFare() {
+                return this.$store.getters.endingFare
+            },
+          
+                ...mapState([
+                    'links'
+                ])
+            
+            
+        },
+        
         data() {
             return {
                 users: [],
                 id: ''
+                
+                
             }
         },
         methods: {
