@@ -1,4 +1,4 @@
-export function swipe_enter(credentials) {
+export function leave(credentials) {
     return new Promise((res, rej) => {
         axios.post('/api/user/' + this.user_id + '/journey', this.$data)
             .then((response) => {

@@ -95,8 +95,8 @@
 
 <script>
 
-//import {EventBus} from '../../app.js';
-import { swipe_enter } from '../../helpers/journey';
+import {EventBus} from '../../app.js';
+import { leave } from '../../helpers/journey';
 import _ from 'lodash';
 
 
@@ -204,14 +204,14 @@ export default {
         },
 */
         upload() {
-            this.$store.dispatch('swipe');
-            swipe_enter(this.$data.form)
+            this.$store.dispatch('leave');
+            leave(this.$data.form)
                 .then((res) => {
-                    this.$store.commit("swipeSuccess", res);
-                    this.$router.push({ path: '/users'});
+                    this.$store.commit("leaveSuccess", res);
+                    this.$router.push({ path: '/'});
                 })
                 .catch((error) => {
-                    this.$store.commit('swipeFailed', {error});
+                    this.$store.commit('leaveFailed', {error});
                 });
         }
 

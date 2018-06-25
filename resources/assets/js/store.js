@@ -11,7 +11,7 @@ export default {
         loading: false,
         auth_error: null,
         reg_error: null,
-        swipe_error: null,
+        leave_error: null,
         users: []        
     },
     mutations: {
@@ -60,7 +60,28 @@ export default {
 
         SET_USERS(state, users) {
             state.users = users
+        },
+
+        leave(state) {
+            state.loading = true;
+            state.leave_error = null;
+        },
+
+        leaveSuccess(state, payload) {
+            state.leave_error = null;
+            state.isLoggedIn = true;
+            state.loading = false;
+
+            state.currentUser = Object.assign({}, payload.user, {token: payload.access_token});
+
+            localStorage.setItem('user', JSON.stringify(state.currentUser));
+        },
+
+        leaveFailed(state, payload){
+            state.loading = false,
+                state.leave_error = payload.error;
         }
+
 
         
 
@@ -81,6 +102,9 @@ export default {
         },
         regError(state) {
             return state.reg_error;
+        },
+        leaveError(state) {
+            return state.swipe_error;
         }
         
         
@@ -101,6 +125,10 @@ export default {
                       commit('SET_USERS', users)
                   })
                 //this.users = response.data;    
+        },
+
+        leave(context) {
+            context.commit("leave");
         }
         
 
