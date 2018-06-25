@@ -1,20 +1,14 @@
 <template>
     <div>
-        <nav>
-            <router-link :to="{ name: 'dashboard' }">Dashboard</router-link>
-            <router-link :to="{ name: 'home' }">Home</router-link>
-            <router-link :to="{ name: 'original'}">Original</router-link>
-            <router-link :to="{ name: 'makejourney'}">Make Journey</router-link>
-            <router-link :to="{ name: 'cards'}">Cards</router-link>
-            <router-link :to="{ name: 'users' }">Users</router-link>
-            <router-link to="/cards/1/journeys">Journeys</router-link>
-            
-        </nav>
+        
         <div id="app">
-            <app-header v-bind:title="title" v-on:changedTitle="updateTitle($event)"></app-header>
-            <router-view></router-view>
-            <app-footer v-bind:title="title" v-on:changedTitle="updateTitle($event)"></app-footer>
-            
+           
+            <app-header></app-header>
+            <transition name="slide">
+                <router-view :key="$route.fullPath"></router-view>
+            </transition>
+            <app-footer></app-footer>
+           
         </div><!-- /app -->
     </div>
 </template>
@@ -25,22 +19,16 @@
     
     
     export default {
+       
+       
         data() {
             return {
                 name: '',
-                title: "Block Train Ninjas"
+                title: "Block Train",
+                id: this.$route.params.id
+              
             }
         },
-        methods: {
-            alertName(name) {
-                alert(name)
-            },
-
-            updateTitle: function(updatedTitle) {
-                this.title = updatedTitle;
-            }
-        },
-
         components: {
           
             'app-header': Header,
@@ -51,6 +39,37 @@
     }
 </script>
 
-<style scoped>
-
+<style>
+    .slide-leave-active {
+        transition: opacity 1s ease;
+        opacity: 0;
+        animation: slide-out 1s ease-out forwards;
+    }
+    
+    .slide-leave {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .slide-enter-active {
+        animation: slide-in 1s ease-out forwards;
+    }
+    
+    @keyframes slide-out {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-30px);
+        }
+    }
+    
+    @keyframes slide-in {
+        0% {
+            transform: translateY(-30px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
 </style>

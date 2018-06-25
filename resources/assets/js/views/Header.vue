@@ -1,30 +1,58 @@
 <template>
-    <header>
-        <h3 v-on:click="changeTitle">{{ title }}</h3>
-    </header>
+    <div>
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+            <div class="container">
+                <router-link class="navbar-brand" to="/">Block Train</router-link>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <template v-if="!currentUser">
+                            <li>
+                                <router-link to="/login" class="nav-link">Login</router-link>
+                            </li>
+                            <li>
+                                <router-link to="/register" class="nav-link">Register</router-link>
+                            </li>
+                        </template>
+                        <template v-else>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                                    {{ currentUser.name }} <span class="caret"></span>
+                                    
+                                </a>
+        
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a href="#!" @click.prevent="logout" class="dropdown-item">Logout</a>
+                                </div>
+                            </li>
+                            
+                            
+                            <li>
+                                <router-link to="/users" class="nav-link">Dashboard</router-link>
+                            </li>
+                            
+                        </template>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
 </template>
 
 <script>
-    import { EventBus } from '../app';
-    
+
     export default {
-        props: {
-            title: {
-                type: String,
-                default: ''
+        methods: {
+            logout() {
+                this.$store.commit('logout');
+                this.$router.push('/login');
             }
         },
-        
-        mounted() {
-            //this.title = this.selectedTitle;
-        },
-        
-        methods: {
-            changeTitle: function() {
-                //this.selectedTitle = 'Vue Wizards';
-               
-                this.title = 'Vue Wizards';
-                $bus.$emit('titleChanged', this.title);
+        computed: {
+            currentUser() {
+                return this.$store.getters.currentUser;
             }
         }
     }

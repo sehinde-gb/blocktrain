@@ -16,14 +16,26 @@ use Illuminate\Http\Request;
 
 
 
-Route::middleware(['auth:api'])->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware(['auth:api'])->get('/user', function (Request $request) {
+  //  return $request->user();
+//});
 
 
+    Route::apiResource('user', 'UserController');
 
+    Route::apiResource('user.journey', 'UserJourneyController')->except([
+        'update', 'destroy'
+    ]);
 
-Route::resource('cards', 'CardsController');
+    Route::post('auth/register', 'AuthController@register');
+
+    Route::group(['prefix' => 'auth'], function ($router) {
+        Route::post('login', 'AuthController@login');
+        Route::post('logout', 'AuthController@logout');
+        Route::post('refresh', 'AuthController@refresh');
+        Route::post('me', 'AuthController@me');
+    });
+
 
 
 

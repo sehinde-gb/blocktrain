@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Laravel\Passport\HasApiTokens;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
-    use   Notifiable, HasApiTokens;
+    use   Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'firstName', 'lastName', 'email', 'password', 'password_confirmation',
+        'name', 'email',  'password', 'password_confirmation', 'user_id','journey_id', 'name', 'address', 'home_phone', 'mobile_phone', 'email', 'balance'
     ];
 
     /**
@@ -31,25 +31,41 @@ class User extends Authenticatable
 
 
     /**
-     * A user can have many cards.
+     * Get the identifier that will be stored in the subject claim of the JWT.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return mixed
      */
-    public function Cards()
+    public function getJWTIdentifier()
     {
-        return $this->hasMany(\App\Card::class);
+        return $this->getKey();
+    }
+
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 
 
+
+
     /**
-     * A user can have many journeys.
+     *  A user can have many journeys.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    //public function journeys()
-    //{
-      //  return $this->hasMany(\App\JourneyResource::class);
-   // }
+    public function journeys()
+    {
+        return $this->hasMany(\App\Journey::class);
+    }
+
+
+
+
 
 
 
