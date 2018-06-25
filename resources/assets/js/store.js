@@ -38,7 +38,6 @@ export default {
             state.isLoggedIn = false;
             state.currentUser = null;
         },
-
         register(state) {
             state.loading = true;
             state.reg_error = null;
