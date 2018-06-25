@@ -55,35 +55,22 @@
 <script>
 
     import axios from 'axios';
-    //import { mapState } from 'vuex';
+    import {getUsers} from '../../helpers/user';
+    import { mapState } from 'vuex';
 
     export default {
-      
-        created() {
-            //this.fetchUserList();
+        
+        mounted () {
+            this.$store.dispatch('loadUsers')
         },
         
-        computed: {
-            users() {
-                return this.$store.state.users
-            }
-        },
+        computed: mapState ([
+            'users'
+        ]),
+            
         
-        data() {
-            return {
-                //users: [],
-                //id: ''
-                     
-            }
-        },
-        methods: {
-
-            //fetchUserList() {
-              //  axios.get('/api/user').then((response) => {
-                    //console.log(response.data);
-                //    this.users = response.data;
-               // });
-           // }
-        }
+        
+        
+        
     }
 </script>

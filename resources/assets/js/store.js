@@ -11,9 +11,8 @@ export default {
         loading: false,
         auth_error: null,
         reg_error: null,
-        users: [
-            { id: 1, name: 'Sehinde', email: 'ormrepo@gmail.com', 'password': 'password' }
-        ]        
+        swipe_error: null,
+        users: []        
     },
     mutations: {
         login(state) {
@@ -44,6 +43,7 @@ export default {
             state.loading = true;
             state.reg_error = null;
         },
+
         registerSuccess(state, payload) {
             state.reg_error = null;
             state.isLoggedIn = true;
@@ -57,6 +57,10 @@ export default {
         registerFailed(state, payload){
             state.loading = false,
             state.reg_error = payload.error;
+        },
+
+        SET_USERS(state, users) {
+            state.users = users
         }
 
         
@@ -89,7 +93,17 @@ export default {
 
         register(context) {
             context.commit("register");
+        },
+
+        loadUsers ({commit}) {
+            axios.get('/api/user').then(response => 
+                  response.data)
+                  .then(users => {
+                      commit('SET_USERS', users)
+                  })
+                //this.users = response.data;    
         }
+        
 
         
     }

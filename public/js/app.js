@@ -5340,7 +5340,6 @@ module.exports = g;
 /* harmony export (immutable) */ __webpack_exports__["b"] = login;
 /* harmony export (immutable) */ __webpack_exports__["a"] = getLocalUser;
 /* harmony export (immutable) */ __webpack_exports__["c"] = register;
-/* harmony export (immutable) */ __webpack_exports__["d"] = swipe;
 /* unused harmony export enter */
 function login(credentials) {
     return new Promise(function (res, rej) {
@@ -5372,23 +5371,11 @@ function register(credentials) {
     });
 }
 
-function swipe(credentials) {
+function enter(credentials) {
     var _this = this;
 
     return new Promise(function (res, rej) {
         axios.post('/api/user/' + _this.user_id + '/journey', _this.$data).then(function (response) {
-            res(response.data);
-        }).catch(function (err) {
-            rej("Incorrect Swipe Details");
-        });
-    });
-}
-
-function enter(credentials) {
-    var _this2 = this;
-
-    return new Promise(function (res, rej) {
-        axios.post('/api/user/' + _this2.user_id + '/journey', _this2.$data).then(function (response) {
             res(response.data);
         }).catch(function (err) {
             rej("Incorrect Swipe Details");
@@ -22612,7 +22599,7 @@ module.exports = defaults;
 "use strict";
 /* unused harmony export Store */
 /* unused harmony export install */
-/* unused harmony export mapState */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mapState; });
 /* unused harmony export mapMutations */
 /* unused harmony export mapGetters */
 /* unused harmony export mapActions */
@@ -77225,7 +77212,8 @@ var user = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["a" /* getLocalUse
         loading: false,
         auth_error: null,
         reg_error: null,
-        users: [{ id: 1, name: 'Sehinde', email: 'ormrepo@gmail.com', 'password': 'password' }]
+        swipe_error: null,
+        users: []
     },
     mutations: {
         login: function login(state) {
@@ -77264,6 +77252,9 @@ var user = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["a" /* getLocalUse
         },
         registerFailed: function registerFailed(state, payload) {
             state.loading = false, state.reg_error = payload.error;
+        },
+        SET_USERS: function SET_USERS(state, users) {
+            state.users = users;
         }
     },
     getters: {
@@ -77289,6 +77280,16 @@ var user = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["a" /* getLocalUse
         },
         register: function register(context) {
             context.commit("register");
+        },
+        loadUsers: function loadUsers(_ref) {
+            var commit = _ref.commit;
+
+            axios.get('/api/user').then(function (response) {
+                return response.data;
+            }).then(function (users) {
+                commit('SET_USERS', users);
+            });
+            //this.users = response.data;    
         }
     }
 
@@ -79956,10 +79957,9 @@ exports.push([module.i, "\ndiv.card[data-v-3beadd4e] {\n    color: #004085;\n   
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_auth__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_journey__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
 //
 //
 //
@@ -80057,7 +80057,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-
+//import {EventBus} from '../../app.js';
 
 
 
@@ -80068,7 +80068,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     created: function created() {
         var _this = this;
 
-        __WEBPACK_IMPORTED_MODULE_0__app_js__["EventBus"].$on('firststation', function (message) {
+        EventBus.$on('firststation', function (message) {
             _this.startingCity = message;
             _this.from = message;
         });
@@ -80108,7 +80108,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
 
-        lookupEndingTo: __WEBPACK_IMPORTED_MODULE_2_lodash___default.a.throttle(function () {
+        lookupEndingTo: __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.throttle(function () {
             var app = this;
             var TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query=';
             app.endingCity = "Searching...";
@@ -80122,7 +80122,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         }, 500),
 
-        lookupFareTo: __WEBPACK_IMPORTED_MODULE_2_lodash___default.a.debounce(function () {
+        lookupFareTo: __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.debounce(function () {
             var app = this;
 
             var TflStopUrl = 'https://api.tfl.gov.uk/Stoppoint/';
@@ -80150,7 +80150,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this2 = this;
 
             this.$store.dispatch('swipe');
-            Object(__WEBPACK_IMPORTED_MODULE_1__helpers_auth__["d" /* swipe */])(this.$data.form).then(function (res) {
+            Object(__WEBPACK_IMPORTED_MODULE_0__helpers_journey__["a" /* swipe_enter */])(this.$data.form).then(function (res) {
                 _this2.$store.commit("swipeSuccess", res);
                 _this2.$router.push({ path: '/users' });
             }).catch(function (error) {
@@ -80597,6 +80597,8 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_user__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(9);
 //
 //
 //
@@ -80654,37 +80656,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-//import { mapState } from 'vuex';
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    created: function created() {
-        //this.fetchUserList();
+    mounted: function mounted() {
+        this.$store.dispatch('loadUsers');
     },
 
 
-    computed: {
-        users: function users() {
-            return this.$store.state.users;
-        }
-    },
+    computed: Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapState */])(['users'])
 
-    data: function data() {
-        return {
-            //users: [],
-            //id: ''
-
-        };
-    },
-
-    methods: {
-
-        //fetchUserList() {
-        //  axios.get('/api/user').then((response) => {
-        //console.log(response.data);
-        //    this.users = response.data;
-        // });
-        // }
-    }
 });
 
 /***/ }),
@@ -82651,6 +82633,45 @@ function initialise(store, router) {
             router.push('/login');
         }
         return Promise.reject(error);
+    });
+}
+
+/***/ }),
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export getUsers */
+function getUsers(credentials) {
+    return new Promise(function (res, rej) {
+        axios.get('/api/user').then(function (response) {
+            res(response.data);
+        }).catch(function (err) {
+            rej("Incorrect  Details");
+        });
+    });
+}
+
+/***/ }),
+/* 262 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = swipe_enter;
+function swipe_enter(credentials) {
+    var _this = this;
+
+    return new Promise(function (res, rej) {
+        axios.post('/api/user/' + _this.user_id + '/journey', _this.$data).then(function (response) {
+            res(response.data);
+        }).catch(function (err) {
+            rej("Incorrect Swipe Details");
+        });
     });
 }
 

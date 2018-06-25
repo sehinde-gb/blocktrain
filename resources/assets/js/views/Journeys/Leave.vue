@@ -95,8 +95,8 @@
 
 <script>
 
-import {EventBus} from '../../app.js';
-import { swipe } from '../../helpers/auth';
+//import {EventBus} from '../../app.js';
+import { swipe_enter } from '../../helpers/journey';
 import _ from 'lodash';
 
 
@@ -107,7 +107,7 @@ export default {
     created() {
 
         EventBus.$on('firststation', (message) => {
-            this.startingCity = message;
+           this.startingCity = message;
             this.from = message;
         })
 
@@ -205,7 +205,7 @@ export default {
 */
         upload() {
             this.$store.dispatch('swipe');
-            swipe(this.$data.form)
+            swipe_enter(this.$data.form)
                 .then((res) => {
                     this.$store.commit("swipeSuccess", res);
                     this.$router.push({ path: '/users'});
