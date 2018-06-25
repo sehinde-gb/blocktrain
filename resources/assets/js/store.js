@@ -11,8 +11,10 @@ export default {
         loading: false,
         auth_error: null,
         reg_error: null,
-        leave_error: null,
-        users: []        
+        addJourney_error: null,
+        users: [],
+        hasError: false,
+        journeys: []        
     },
     mutations: {
         login(state) {
@@ -62,13 +64,13 @@ export default {
             state.users = users
         },
 
-        leave(state) {
-            state.loading = true;
-            state.leave_error = null;
+        addJourney: function(state, journey) {
+            state.hasError = false;
+            state.journeys.push(journey);            
         },
 
-        leaveSuccess(state, payload) {
-            state.leave_error = null;
+        addjourneySuccess(state, payload) {
+            state.reg_error = null;
             state.isLoggedIn = true;
             state.loading = false;
 
@@ -77,14 +79,13 @@ export default {
             localStorage.setItem('user', JSON.stringify(state.currentUser));
         },
 
-        leaveFailed(state, payload){
+        addjourneyFailed(state, payload) {
             state.loading = false,
-                state.leave_error = payload.error;
+            state.reg_error = payload.error;
         }
 
 
-        
-
+    
     },
     getters: {
         isLoading(state) {
@@ -102,10 +103,8 @@ export default {
         },
         regError(state) {
             return state.reg_error;
-        },
-        leaveError(state) {
-            return state.swipe_error;
         }
+        
         
         
     },
@@ -127,8 +126,9 @@ export default {
                 //this.users = response.data;    
         },
 
-        leave(context) {
-            context.commit("leave");
+
+        addJourney: function(context, payload){
+            context.commit('addJourney', payload);
         }
         
 

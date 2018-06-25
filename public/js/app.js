@@ -5385,6 +5385,87 @@ function enter(credentials) {
 
 /***/ }),
 /* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventBus", function() { return EventBus; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vee_validate__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_resource__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_App__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_App__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__routes__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helpers_general__ = __webpack_require__(257);
+
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+
+__webpack_require__(145);
+
+
+
+
+
+
+window.Vue = __webpack_require__(170);
+window.Event = new Vue();
+
+var EventBus = new Vue();
+
+Object.defineProperties(Vue.prototype, {
+    $bus: {
+        get: function get() {
+            return EventBus;
+        }
+    }
+});
+
+Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
+Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]);
+Vue.use(__WEBPACK_IMPORTED_MODULE_2_vue_resource__["a" /* default */]);
+Vue.use(__WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */]);
+
+
+
+
+
+
+
+
+
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+var store = new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store(__WEBPACK_IMPORTED_MODULE_5__store__["a" /* default */]);
+
+var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
+    routes: __WEBPACK_IMPORTED_MODULE_6__routes__["a" /* routes */],
+    mode: 'history'
+
+});
+
+Object(__WEBPACK_IMPORTED_MODULE_7__helpers_general__["a" /* initialise */])(store, router);
+
+var app = new Vue({
+
+    el: '#app',
+
+    components: { App: __WEBPACK_IMPORTED_MODULE_4__views_App___default.a },
+    router: router,
+    store: store
+});
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -22489,7 +22570,7 @@ function enter(credentials) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(10)(module)))
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22591,87 +22672,6 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 module.exports = defaults;
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
-
-/***/ }),
-/* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventBus", function() { return EventBus; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vee_validate__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_resource__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_App__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_App__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__routes__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helpers_general__ = __webpack_require__(257);
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-__webpack_require__(145);
-
-
-
-
-
-
-window.Vue = __webpack_require__(170);
-window.Event = new Vue();
-
-var EventBus = new Vue();
-
-Object.defineProperties(Vue.prototype, {
-    $bus: {
-        get: function get() {
-            return EventBus;
-        }
-    }
-});
-
-Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
-Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]);
-Vue.use(__WEBPACK_IMPORTED_MODULE_2_vue_resource__["a" /* default */]);
-Vue.use(__WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */]);
-
-
-
-
-
-
-
-
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-var store = new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store(__WEBPACK_IMPORTED_MODULE_5__store__["a" /* default */]);
-
-var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
-    routes: __WEBPACK_IMPORTED_MODULE_6__routes__["a" /* routes */],
-    mode: 'history'
-
-});
-
-Object(__WEBPACK_IMPORTED_MODULE_7__helpers_general__["a" /* initialise */])(store, router);
-
-var app = new Vue({
-
-    el: '#app',
-
-    components: { App: __WEBPACK_IMPORTED_MODULE_4__views_App___default.a },
-    router: router,
-    store: store
-});
 
 /***/ }),
 /* 10 */
@@ -48776,7 +48776,7 @@ var index_esm = {
 /* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(9);
+module.exports = __webpack_require__(7);
 
 
 /***/ }),
@@ -48784,7 +48784,7 @@ module.exports = __webpack_require__(9);
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(7);
+window._ = __webpack_require__(8);
 window.Popper = __webpack_require__(11).default;
 var throttle = __webpack_require__(146);
 
@@ -53197,7 +53197,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var utils = __webpack_require__(4);
 var bind = __webpack_require__(14);
 var Axios = __webpack_require__(150);
-var defaults = __webpack_require__(8);
+var defaults = __webpack_require__(9);
 
 /**
  * Create an instance of Axios
@@ -53280,7 +53280,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(8);
+var defaults = __webpack_require__(9);
 var utils = __webpack_require__(4);
 var InterceptorManager = __webpack_require__(159);
 var dispatchRequest = __webpack_require__(160);
@@ -53819,7 +53819,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(4);
 var transformData = __webpack_require__(161);
 var isCancel = __webpack_require__(18);
-var defaults = __webpack_require__(8);
+var defaults = __webpack_require__(9);
 var isAbsoluteURL = __webpack_require__(162);
 var combineURLs = __webpack_require__(163);
 
@@ -77212,8 +77212,10 @@ var user = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["a" /* getLocalUse
         loading: false,
         auth_error: null,
         reg_error: null,
-        leave_error: null,
-        users: []
+        addJourney_error: null,
+        users: [],
+        hasError: false,
+        journeys: []
     },
     mutations: {
         login: function login(state) {
@@ -77256,12 +77258,15 @@ var user = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["a" /* getLocalUse
         SET_USERS: function SET_USERS(state, users) {
             state.users = users;
         },
-        leave: function leave(state) {
-            state.loading = true;
-            state.leave_error = null;
+
+
+        addJourney: function addJourney(state, journey) {
+            state.hasError = false;
+            state.journeys.push(journey);
         },
-        leaveSuccess: function leaveSuccess(state, payload) {
-            state.leave_error = null;
+
+        addjourneySuccess: function addjourneySuccess(state, payload) {
+            state.reg_error = null;
             state.isLoggedIn = true;
             state.loading = false;
 
@@ -77269,8 +77274,8 @@ var user = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["a" /* getLocalUse
 
             localStorage.setItem('user', JSON.stringify(state.currentUser));
         },
-        leaveFailed: function leaveFailed(state, payload) {
-            state.loading = false, state.leave_error = payload.error;
+        addjourneyFailed: function addjourneyFailed(state, payload) {
+            state.loading = false, state.reg_error = payload.error;
         }
     },
     getters: {
@@ -77288,9 +77293,6 @@ var user = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["a" /* getLocalUse
         },
         regError: function regError(state) {
             return state.reg_error;
-        },
-        leaveError: function leaveError(state) {
-            return state.swipe_error;
         }
     },
     actions: {
@@ -77310,9 +77312,12 @@ var user = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["a" /* getLocalUse
             });
             //this.users = response.data;    
         },
-        leave: function leave(context) {
-            context.commit("leave");
+
+
+        addJourney: function addJourney(context, payload) {
+            context.commit('addJourney', payload);
         }
+
     }
 
 });
@@ -77798,7 +77803,7 @@ exports.push([module.i, "\n.container[data-v-d23f90a8] {\n    height: 420px;\n}\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
 //
 //
@@ -79591,7 +79596,7 @@ exports.push([module.i, "\ndiv.card[data-v-b47cc622] {\n    color: #856404;\n   
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(7);
 //
 //
 //
@@ -79788,6 +79793,8 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
+                _c("p"),
+                _vm._v(" "),
                 _c(
                   "span",
                   {
@@ -79813,7 +79820,7 @@ var render = function() {
                     {
                       staticClass: "btn btn-primary btn-lg",
                       attrs: { disabled: _vm.errors.any() },
-                      on: { click: _vm.toSwipe }
+                      on: { click: _vm.stationEnter }
                     },
                     [_vm._v("Add Journey")]
                   )
@@ -79979,16 +79986,10 @@ exports.push([module.i, "\ndiv.card[data-v-3beadd4e] {\n    color: #004085;\n   
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_journey__ = __webpack_require__(229);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash__);
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -80086,7 +80087,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
-    name: "swipe",
+    name: "addJourney",
 
     created: function created() {
         var _this = this;
@@ -80115,11 +80116,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
 
-    computed: {
-        swipeError: function swipeError() {
-            return this.$store.getters.swipeError;
-        }
-    },
+
     watch: {
         to: function to() {
             this.endingCity = '';
@@ -80169,15 +80166,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$router.push('home')
           },
         */
-        upload: function upload() {
+        addJourney: function addJourney() {
             var _this2 = this;
 
-            this.$store.dispatch('leave');
-            Object(__WEBPACK_IMPORTED_MODULE_1__helpers_journey__["a" /* leave */])(this.$data.form).then(function (res) {
-                _this2.$store.commit("leaveSuccess", res);
+            this.$store.dispatch('addJourney');
+            Object(__WEBPACK_IMPORTED_MODULE_1__helpers_journey__["a" /* addJourney */])(this.$data.form).then(function (res) {
+                _this2.$store.commit("addjourneySuccess", res);
                 _this2.$router.push({ path: '/' });
             }).catch(function (error) {
-                _this2.$store.commit('leaveFailed', { error: error });
+                _this2.$store.commit('addjourneyFailed', { error: error });
             });
         }
     }
@@ -80189,8 +80186,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = leave;
-function leave(credentials) {
+/* harmony export (immutable) */ __webpack_exports__["a"] = addJourney;
+function addJourney(credentials) {
     var _this = this;
 
     return new Promise(function (res, rej) {
@@ -80222,7 +80219,7 @@ var render = function() {
                 on: {
                   submit: function($event) {
                     $event.preventDefault()
-                    return _vm.onSubmit($event)
+                    return _vm.addJourney($event)
                   }
                 }
               },
@@ -80472,9 +80469,9 @@ var render = function() {
                           attrs: {
                             disabled: _vm.errors.any(),
                             type: "submit",
-                            id: "submit",
-                            value: "swipe"
-                          }
+                            id: "submit"
+                          },
+                          on: { click: _vm.addJourney }
                         },
                         [_vm._v("Swipe Out & Exit")]
                       ),
@@ -80502,19 +80499,7 @@ var render = function() {
                       _c("div", { staticClass: "col-sm" })
                     ])
                   ])
-                ]),
-                _vm._v(" "),
-                _vm.swipeError
-                  ? _c("div", { staticClass: "form group row" }, [
-                      _c("p", { staticClass: "error" }, [
-                        _vm._v(
-                          "\n                                    " +
-                            _vm._s(_vm.swipeError) +
-                            "\n                                "
-                        )
-                      ])
-                    ])
-                  : _vm._e()
+                ])
               ]
             )
           ])

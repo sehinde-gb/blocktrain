@@ -24,7 +24,7 @@
                                     <p class="help is-danger" v-show="errors.has('from')">
                                         {{ errors.first('from') }}
                                     </p>
-
+                                    <p></p>
 
                                     
                                     <span class="city-span" v-model="startingCity">{{startingCity}}</span>
@@ -32,7 +32,7 @@
                                 </div><!-- /.form-group -->
                             
                             <div class="row">
-                                <div class="col-sm"><button v-on:click="toSwipe" :disabled="errors.any()"  class="btn btn-primary btn-lg">Add Journey</button></div>
+                                <div class="col-sm"><button v-on:click="stationEnter" :disabled="errors.any()"  class="btn btn-primary btn-lg">Add Journey</button></div>
                                 <div class="col-sm"></div>
                             </div><!-- /.row -->
                       

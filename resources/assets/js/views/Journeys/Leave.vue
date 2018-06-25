@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="lead-form">
-                            <form method="post"  @submit.prevent="onSubmit">
+                            <form method="post"  @submit.prevent="addJourney">
                                     <hr/>
                                     <span class="city-span">{{ startingCity }}</span>
                                     <div class="row">
@@ -60,7 +60,7 @@
                                         
                                             <div class="row">
                                                
-                                                <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" value="swipe">Swipe Out & Exit</button>
+                                                <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" v-on:click="addJourney">Swipe Out & Exit</button>
                                                 
                                                 <div class="col-sm"></div>
                                             </div>
@@ -75,13 +75,7 @@
                                         
                                     </div><!-- /.row -->
     
-                                <div class="form group row" v-if="swipeError">
-                                    <p class="error">
-                                        {{ swipeError }}
-                                    </p>
-                                    <!-- /.error -->
-    
-                                </div><!-- /.form group row -->
+                                
                                 
                             </form>
                             
@@ -96,13 +90,13 @@
 <script>
 
 import {EventBus} from '../../app.js';
-import { leave } from '../../helpers/journey';
+import { addJourney } from '../../helpers/journey';
 import _ from 'lodash';
 
 
 export default {
     
-    name: "swipe",
+    name: "addJourney",
     
     created() {
 
@@ -131,12 +125,7 @@ export default {
             
         }
     },
-    computed: {
-        
-        swipeError() {
-            return this.$store.getters.swipeError;
-        }
-    },
+    
     watch: {
         to: function () {
             this.endingCity = ''
@@ -203,15 +192,15 @@ export default {
 
         },
 */
-        upload() {
-            this.$store.dispatch('leave');
-            leave(this.$data.form)
+        addJourney() {
+            this.$store.dispatch('addJourney');
+            addJourney(this.$data.form)
                 .then((res) => {
-                    this.$store.commit("leaveSuccess", res);
+                    this.$store.commit("addjourneySuccess", res);
                     this.$router.push({ path: '/'});
                 })
                 .catch((error) => {
-                    this.$store.commit('leaveFailed', {error});
+                    this.$store.commit('addjourneyFailed', {error});
                 });
         }
 
