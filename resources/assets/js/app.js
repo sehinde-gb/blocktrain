@@ -35,11 +35,14 @@ Vue.use(Vuex);
 
 import App from './views/App'
 
-import StoreData from './store'
+//import StoreData from './store'
 
 import {routes} from './routes';
 
 import {initialise} from './helpers/general';
+
+import store from './store.js'
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -51,7 +54,7 @@ import {initialise} from './helpers/general';
 
 
 
-const store = new Vuex.Store(StoreData);
+//const store = new Vuex.Store(StoreData);
 
 const router = new VueRouter({
     routes,
@@ -61,7 +64,7 @@ const router = new VueRouter({
 
 
 
-initialise(store, router);
+initialise(router, store);
 
 const app = new Vue({
 

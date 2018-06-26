@@ -19,7 +19,7 @@ export const routes = [
         name: 'home',
         component: HomePage,
         meta: {
-            requiresAuth: true
+            //requiresAuth: true
         }
     },
 
@@ -47,7 +47,7 @@ export const routes = [
         name: 'user.register',
         component: UserRegister,
         meta: {
-            requiresAuth: true
+            //requiresAuth: true
         },
     },
 
@@ -57,7 +57,7 @@ export const routes = [
         name: 'users',
         component: Users,
         meta: {
-            requiresAuth: true
+            //requiresAuth: true
         },
 
     },
@@ -67,7 +67,7 @@ export const routes = [
         name: 'user.detail',
         component: UserDetail,
         meta: {
-            requiresAuth: true
+            //requiresAuth: true
         }
     },
 
@@ -77,7 +77,7 @@ export const routes = [
         props: true,
         component:JourneyListings,
         meta: {
-            requiresAuth: true
+            //requiresAuth: true
         }
     },
 
@@ -86,7 +86,7 @@ export const routes = [
         name: 'journey.detail',
         component:JourneyDetail,
         meta: {
-            requiresAuth: true
+            //requiresAuth: true
         }
     },
 
@@ -96,7 +96,7 @@ export const routes = [
         props: true,
         component: Journey,
         meta: {
-            requiresAuth: true
+            //requiresAuth: true
         }
     }
 

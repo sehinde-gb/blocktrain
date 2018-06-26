@@ -1,10 +1,22 @@
 import { getLocalUser } from "./helpers/auth";
+import {journeys} from './modules/journey.js';
+/*
+    Imports Vue and Vuex
+*/
+import Vue from 'vue'
+import Vuex from 'vuex'
+Vue.use(Vuex);
+
+/*
+  Adds the promise polyfill for IE 11
+*/
+require('es6-promise').polyfill();
 
 
 const user = getLocalUser();
 
 
-export default {
+/* export default {
     state: {
         currentUser: user,
         isLoggedIn: !! user,
@@ -110,3 +122,15 @@ export default {
     }
 
 }
+ */
+/*
+  Exports our data store.
+*/
+export default new Vuex.Store({
+    modules: {
+        journeys
+
+    }
+});
+
+
