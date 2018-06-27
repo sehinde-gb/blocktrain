@@ -1,25 +1,26 @@
 export default {
     /*
-        GET     /api/v1/user/{user}/journey
+        GET     /api/user/{user}/journey
     */
     getJourneys: function(id) {
-        return axios.get( '/api/user/' + this.id + '/journey' );
+        return axios.get( '/api/user/' + this.user_id + '/journey' );
     },
 
     /*
-        GET   /api/v1/user/{user}/journey/{journey}
+        GET   /api/user/{user}/journey/{journey}
     */
     getJourney: function( id, journey ) {
-        return axios.get('/api/user/' + this.id + '/journey/' + this.journey);
+        return axios.get('/api/user/' + this.user_id + '/journey/' + this.journey);
     },
 
     /*
-        POST  /api/v1/cafes
+        POST  /api/user/{user}/make/journey/
     */
-    postAddNewJourney: function( from, startingCity, to, endingCity, description, type, passengerType, mode, endingFare ) {
-        return axios.post('/api/user/' + this.id + '/journey',
+    postAddNewJourney: function( user_id, origin,  startingCity, to, endingCity, description, type, passengerType, mode, endingFare ) {
+        return axios.post('/api/user/' + this.user_id + '/journey',
         {
-            from: from,
+            user_id: user_id,
+            origin: origin,
             startingCity: startingCity,
             to: to,
             endingCity: endingCity,

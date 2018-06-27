@@ -9,7 +9,7 @@ import UserDetail from './views/Users/UserDetail'
 import UserRegister from './views/Users/UserRegister'
 import JourneyListings from './views/Journeys/JourneyListings'
 import JourneyDetail from './views/Journeys/JourneyDetail'
-
+import Leave from './views/Journeys/Leave'
 
 
 export const routes = [

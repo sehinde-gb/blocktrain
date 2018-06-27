@@ -4,9 +4,9 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="lead-form">
-                            <form method="post"  @submit.prevent="onSubmit">
+                            <form method="post"  @submit.prevent="submitNewJourney">
                                     <hr/>
-                                    <span class="city-span">{{ startingCity }}</span>
+                                     
                                     <div class="row">
                                         <div class="col-8">
                                             <h1 class="text-center">Approach Barrier</h1>
@@ -20,8 +20,12 @@
                                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                                 </div>
                                             </div>
-                                            
-                                        
+
+                                                           
+                                    <hr/>
+
+                                 
+                                      
                                         <div class="form group row">
                                             <label for="to">To</label>
                                             <input name="to" v-validate="'required|min:6'" type="text" class="form-control" placeholder="To.." v-model="to" id="to" autocomplete="nope">
@@ -56,11 +60,11 @@
                                                 <span class="city-span">{{type}}</span>
                                             </div><!-- /.form group row -->
                                             <br/>
-                                            
+                                               <span class="city-span" v-model="startingCity">{{startingCity}}</span>
                                         
                                             <div class="row">
                                                
-                                                <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" v-on:click="onSubmit">Swipe Out & Exit</button>
+                                                <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" v-on:click="submitNewJourney">Swipe Out & Exit</button>
                                                 
                                                 <div class="col-sm"></div>
                                             </div>
@@ -100,17 +104,17 @@ export default {
     
     created() {
 
-        EventBus.$on('firststation', (message) => {
-           this.startingCity = message;
-            this.from = message;
-        })
+         EventBus.$on('firststation', (message) => {
+            this.startingCity = message;
+             this.from = message;
+         })
 
     },
 
     data() {
         return {
            
-                from: '',
+                origin: '',
                 startingCity: '',
                 to: '',
                 endingCity: '',
@@ -127,17 +131,42 @@ export default {
     },
     
     watch: {
+        
+        
         to: function () {
-            this.endingCity = ''
-            if (this.to.length == 10) {
-                this.lookupEndingTo(),
-                this.lookupFareTo()
+             this.endingCity = ''
+             if (this.to.length == 10) {
+                 this.lookupEndingTo(),
+                 this.lookupFareTo()
+                 //this.lookupStartingFrom()
+
             }
-        }
+         }
     },
 
     methods: {
-        
+        // stationEnter() {
+        //          EventBus.$emit('firststation', this.startingCity)
+        //          alert('You have swiped in');
+        //          this.complete = false;
+        //     },
+
+       
+        lookupStartingFrom: _.debounce(function() {
+                var app = this
+
+                const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
+                app.startingCity = "Searching..."
+                this.$http.get(TflBaseUrl + app.origin)
+                    .then(function (response) {
+                        app.startingCity = response.data.matches[0].id
+                        //app.startingCity =  response.data.matches[0].name
+                    })
+                    .catch(function (error) {
+                        app.startingCity = "Invalid Station"
+                    })
+        }, 500),
+
         lookupEndingTo: _.throttle(function() {
             var app = this
             const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
@@ -145,7 +174,7 @@ export default {
             this.$http.get(TflBaseUrl + app.to)
                 .then(function (response) {
                     app.endingCity = response.data.matches[0].id
-
+                    
                     //app.to = response.data.matches[0].name
                     //app.endingCity = response.data.matches[0].name
                     
@@ -173,7 +202,9 @@ export default {
                     app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType,
                     app.mode = response.data[0].rows[0].ticketsAvailable[0].mode,
                     app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type,
-                    app.from = response.data[0].rows[0].from
+                    app.origin = response.data[0].rows[0].from,
+                    app.startingCity = this.startingCity
+                    //app.startingCity = 'hello'
                     //app.endingCity = response.data[0].rows[0].toStation
                     //app.to = response.data[0].rows[0].to
                     
@@ -186,11 +217,28 @@ export default {
         },1200),
 
         onSubmit: function() {
-            this.$http.post('/api/user/' + this.user_id + '/journey', this.$data);
-            alert('Thanks for swiping');
-            this.$router.push('home')
+            //this.$http.post('/api/user/' + this.user_id + '/journey', this.$data);
+            //alert('Thanks for swiping');
+            //this.$router.push('home')
 
         },
+
+        submitNewJourney() {
+             this.$store.dispatch('addJourney', {
+                 user_id: this.user_id,
+                 origin: this.origin,
+                 startingCity: this.startingCity,
+                 to: this.to,
+                 endingCity: this.endingCity,
+                 description: this.description,
+                 type: this.type,
+                 passengerType: this.passengerType,
+                 mode: this.mode,
+                 endingFare: this.endingFare
+
+             })   
+
+        }
 
        
 

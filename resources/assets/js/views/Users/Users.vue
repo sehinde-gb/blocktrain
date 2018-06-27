@@ -24,7 +24,7 @@
                                              <router-link class="card-link" to="/users/register"> New Card</router-link>
                                              <br>
                                              <p class="card-text">Journeys</p>
-                                             <router-link class="card-link" v-bind:to="  '/users/' + user.id + '/make/journey'"><h6>Start Journey</h6></router-link>
+                                             <router-link class="card-link" v-bind:to="  '/users/' + user.id + '/journeys/new'"><h6>Start Journey</h6></router-link>
                                              <router-link class="card-link" v-bind:to="  '/users/' + user.id + '/journeys'"><h6>Journey History</h6></router-link>
                                          </div>
                                      </div>

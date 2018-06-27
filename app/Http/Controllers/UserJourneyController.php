@@ -18,14 +18,10 @@ class UserJourneyController extends Controller
      */
     public function index()
     {
-
         $journeys = Journey::with('user')->get();
 
-
         return new JourneyCollection($journeys);
-
     }
-
 
     /**
      * Display's user details together with
@@ -38,12 +34,9 @@ class UserJourneyController extends Controller
      */
     public function show($id)
     {
-
         $journey = Journey::findOrFail($id);
 
-
         return new JourneyResource($journey);
-
     }
 
     /**
@@ -55,11 +48,9 @@ class UserJourneyController extends Controller
      */
     public function store(Request $request)
     {
-
-        $journey = $request->isMethod('put') ? Journey::findOrFail
-        ($request->journey_id) : new Journey;
+        $journey = $request->isMethod('put') ? Journey::findOrFail($request->journey_id) : new Journey;
         $journey->user_id = $request->input('user_id');
-        $journey->from = $request->input('from');
+        $journey->origin = $request->input('origin');
         $journey->startingCity = $request->input('startingCity');
         $journey->to = $request->input('to');
         $journey->endingCity = $request->input('endingCity');
@@ -69,10 +60,8 @@ class UserJourneyController extends Controller
         $journey->mode = $request->input('mode');
         $journey->endingFare = $request->input('endingFare');
 
-
-        if($journey->save()) {
+        if ($journey->save()) {
             return new JourneyResource($journey);
         }
     }
-
 }

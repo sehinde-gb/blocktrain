@@ -57,13 +57,27 @@ export const journeys = {
                     commit('setJourney', {});
                     commit('setJourneyLoadStatus', 3);
                 });
+        },
+
+        addJourney({ commit, state, dispatch }, data){
+            commit( 'setJourneyAddedStatus', 1);
+            JourneyAPI.postAddNewJourney( data.user_id, data.origin, data.startingCity, data.to, data.endingCity, data.description,
+            data.type, data.passengerType, data.mode, data.endingFare)
+            .then( function(response){
+                commit('setJourneyAddedStatus', 2);
+                //dispatch('loadJourneys');
+            })
+            .catch( function() {
+                commit('setJourneyAddedStatus', 3);
+            });
+
         }
         
     },
 
 
     /*
-    Defines the mutations used
+        Defines the mutations used
     */
     mutations: {
         /*
@@ -92,7 +106,14 @@ export const journeys = {
             Sets the journey
         */
         setJourney( state, journey) {
-            state.cafe = cafe;
+            state.journey = journey;
+        },
+
+        /*
+        Set the journey add status
+        */
+        setJourneyAddedStatus( state, status ){
+            state.journeyAddStatus = status;
         }
     },
 
@@ -130,6 +151,14 @@ export const journeys = {
 
         getJourney(state) {
             return state.journey;
+        },
+
+        /*
+          Gets the journey add status
+        */
+
+        getJourneyAddStatus( state) {
+            return state.journeyAddStatus;
         }
     }
 

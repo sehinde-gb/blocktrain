@@ -3,7 +3,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm">
-                        <enter></enter>
+                       <enter></enter>
                     </div><!-- /.col -->
                    
                     
@@ -29,14 +29,14 @@
     
  export default {
         
-        props: ['card'],
+        props: ['user'],
         
-        components: {Enter, Leave},
+        components: { Enter, Leave},
        
         data() {
             return {
                 thecardtitle: 'Parent component',
-                from: '',
+                origin: '',
                 complete: false
             }
         }
