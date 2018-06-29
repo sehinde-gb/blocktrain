@@ -41,25 +41,13 @@
     
     export default {
         
-        mounted () {
-            //this.$store.dispatch('loadJourneys', {
-              //  user_id: 1
-            //})
-        },
-
+        
         created() {
             this.fetchJourneyList();
             
         },
 
-        computed: {
-            /*
-             Get the journeys
-            */     
-            //journeys() {
-                //return this.$store.getters.getJourneys;    
-           // }
-        },
+        
 
         data() {
             return {

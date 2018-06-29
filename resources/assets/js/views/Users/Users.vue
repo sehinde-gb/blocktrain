@@ -55,7 +55,7 @@
 <script>
 
     import axios from 'axios';
-    import {getUsers} from '../../helpers/user';
+    import {getUsers} from '../../helpers/auth';
     import { mapState } from 'vuex';
 
     export default {
