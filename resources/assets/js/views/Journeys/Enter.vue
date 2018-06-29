@@ -55,8 +55,7 @@
 
 <script>
     import {EventBus} from '../../app.js';
-    //import {mapState, mapMutations} from 'vuex';
-    //import { enter } from '../../helpers/auth';
+    
     export default {
         name: 'enter',
 

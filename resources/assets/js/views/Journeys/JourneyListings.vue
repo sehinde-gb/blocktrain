@@ -10,7 +10,7 @@
                           <div v-for="journey in journeys">
     
                               <ul class="list-group">
-                                  <router-link  class="list-group-item" v-bind:to="  '/users/' + journey.user_id + '/journey/' + journey.id"><h6>{{ moment(journey.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a") }} </h6></router-link>
+                                  <router-link  class="list-group-item" v-bind:to="  '/users/' + user_id + '/journey/' + journey.id"><h6>{{ moment(journey.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a") }} </h6></router-link>
     
                                   
                               </ul><!-- end list-group -->
@@ -40,17 +40,32 @@
     var moment = require('moment');
     
     export default {
+        
+        mounted () {
+            //this.$store.dispatch('loadJourneys', {
+              //  user_id: 1
+            //})
+        },
 
         created() {
             this.fetchJourneyList();
             
         },
 
+        computed: {
+            /*
+             Get the journeys
+            */     
+            //journeys() {
+                //return this.$store.getters.getJourneys;    
+           // }
+        },
+
         data() {
             return {
                 moment: moment,
                 journeys: [],
-                id: this.$route.params.id
+                user_id: this.$route.params.id
                
             }
 

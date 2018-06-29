@@ -35,7 +35,7 @@ Vue.use(Vuex);
 
 import App from './views/App'
 
-//import StoreData from './store'
+
 
 import {routes} from './routes';
 
@@ -54,7 +54,6 @@ import store from './store.js'
 
 
 
-//const store = new Vuex.Store(StoreData);
 
 const router = new VueRouter({
     routes,

@@ -53,7 +53,7 @@
                 login(this.$data.form)
                     .then((res) => {
                         this.$store.commit("loginSuccess", res);
-                        this.$router.push({path: '/users'});
+                        this.$router.push({path: '/'});
                     })
                     .catch((error) => {
                         this.$store.commit('loginFailed', {error});

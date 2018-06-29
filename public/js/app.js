@@ -5433,8 +5433,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */]);
 
 
 
-//import StoreData from './store'
-
 
 
 
@@ -5446,8 +5444,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */]);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-//const store = new Vuex.Store(StoreData);
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
     routes: __WEBPACK_IMPORTED_MODULE_5__routes__["a" /* routes */],
@@ -77294,7 +77290,7 @@ var routes = [{
     name: 'home',
     component: __WEBPACK_IMPORTED_MODULE_0__views_Home_Home___default.a,
     meta: {
-        //requiresAuth: true
+        requiresAuth: true
     }
 }, {
     path: '/login',
@@ -77314,7 +77310,7 @@ var routes = [{
     name: 'user.register',
     component: __WEBPACK_IMPORTED_MODULE_7__views_Users_UserRegister___default.a,
     meta: {
-        //requiresAuth: true
+        requiresAuth: true
     }
 }, {
 
@@ -77322,14 +77318,14 @@ var routes = [{
     name: 'users',
     component: __WEBPACK_IMPORTED_MODULE_5__views_Users_Users___default.a,
     meta: {
-        //requiresAuth: true
+        requiresAuth: true
     }
 
 }, { path: '/users/:id',
     name: 'user.detail',
     component: __WEBPACK_IMPORTED_MODULE_6__views_Users_UserDetail___default.a,
     meta: {
-        //requiresAuth: true
+        requiresAuth: true
     }
 }, {
     path: '/users/:id/journeys',
@@ -77337,21 +77333,21 @@ var routes = [{
     props: true,
     component: __WEBPACK_IMPORTED_MODULE_8__views_Journeys_JourneyListings___default.a,
     meta: {
-        //requiresAuth: true
+        requiresAuth: true
     }
 }, {
     path: '/users/:id/journey/:journey',
     name: 'journey.detail',
     component: __WEBPACK_IMPORTED_MODULE_9__views_Journeys_JourneyDetail___default.a,
     meta: {
-        //requiresAuth: true
+        requiresAuth: true
     }
 }, { path: '/users/:id/make/journey',
     name: 'journey.make',
     props: true,
     component: __WEBPACK_IMPORTED_MODULE_4__views_Journeys_Journey___default.a,
     meta: {
-        //requiresAuth: true
+        requiresAuth: true
     }
 }];
 
@@ -78521,7 +78517,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$store.dispatch('login');
             Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["b" /* login */])(this.$data.form).then(function (res) {
                 _this.$store.commit("loginSuccess", res);
-                _this.$router.push({ path: '/users' });
+                _this.$router.push({ path: '/' });
             }).catch(function (error) {
                 _this.$store.commit('loginFailed', { error: error });
             });
@@ -79583,8 +79579,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-//import {mapState, mapMutations} from 'vuex';
-//import { enter } from '../../helpers/auth';
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'enter',
 
@@ -80054,10 +80049,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$http.get(TflStopUrl + app.startingCity + FareUrl + app.endingCity + AppKey).then(function (response) {
                 app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost, app.description = response.data[0].rows[0].ticketsAvailable[0].description, app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType, app.mode = response.data[0].rows[0].ticketsAvailable[0].mode, app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type, app.origin = response.data[0].rows[0].from, app.startingCity = this.startingCity;
-                //app.startingCity = 'hello'
-                //app.endingCity = response.data[0].rows[0].toStation
-                //app.to = response.data[0].rows[0].to
-
             }).catch(function (error) {
                 app.endingFare = "Invalid Fare";
             });
@@ -81570,7 +81561,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["c" /* register */])(this.$data.form).then(function (res) {
                 _this.$store.commit("registerSuccess", res);
                 alert('Your card has been registered successfully');
-                _this.$router.push({ path: '/dashboard' });
+                _this.$router.push({ path: '/' });
             }).catch(function (error) {
                 _this.$store.commit('registerFailed', { error: error });
             });
@@ -82060,7 +82051,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -82113,14 +82104,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var moment = __webpack_require__(0);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        //this.$store.dispatch('loadJourneys', {
+        //  user_id: 1
+        //})
+    },
     created: function created() {
         this.fetchJourneyList();
     },
+
+
+    computed: {
+        /*
+         Get the journeys
+        */
+        //journeys() {
+        //return this.$store.getters.getJourneys;    
+        // }
+    },
+
     data: function data() {
         return {
             moment: moment,
             journeys: [],
-            id: this.$route.params.id
+            user_id: this.$route.params.id
 
         };
     },
@@ -82172,10 +82179,7 @@ var render = function() {
                           staticClass: "list-group-item",
                           attrs: {
                             to:
-                              "/users/" +
-                              journey.user_id +
-                              "/journey/" +
-                              journey.id
+                              "/users/" + _vm.user_id + "/journey/" + journey.id
                           }
                         },
                         [
@@ -82395,6 +82399,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var moment = __webpack_require__(0);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        //this.$store.dispatch('loadJourney')
+    },
     created: function created() {
         this.fetchJourneyDetail();
     },
@@ -82556,29 +82563,26 @@ if (false) {
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = initialise;
 function initialise(store, router) {
-    /* 
-        router.beforeEach((to, from, next) => {
-            const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-            const currentUser = store.state.currentUser;
-    
-            if (requiresAuth && !currentUser) {
-                next('/login');
-    
-            } else if(to.path == '/login' && currentUser) {
-                next('/');
-            } else {
-                next();
-            }
-        }); */
 
-    /* axios.interceptors.response.use(null, (error) => {
-        if(error.response.status == 401) {
+    /* router.beforeEach((to, from, next) => {
+        const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+        const currentUser = store.state.currentUser;
+          if (requiresAuth && !currentUser) {
+            next('/login');
+          } else if(to.path == '/login' && currentUser) {
+            next('/');
+        } else {
+            next();
+        }
+    });  */
+
+    axios.interceptors.response.use(null, function (error) {
+        if (error.response.status == 401) {
             store.commit('logout');
             router.push('/login');
         }
         return Promise.reject(error);
-      }) */
-
+    });
 }
 
 /***/ }),
@@ -82588,9 +82592,11 @@ function initialise(store, router) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helpers_auth__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_journey_js__ = __webpack_require__(257);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_user_js__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(11);
+
 
 
 /*
@@ -82598,7 +82604,7 @@ function initialise(store, router) {
 */
 
 
-__WEBPACK_IMPORTED_MODULE_2_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */]);
+__WEBPACK_IMPORTED_MODULE_3_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_4_vuex__["a" /* default */]);
 
 /*
   Adds the promise polyfill for IE 11
@@ -82607,119 +82613,13 @@ __webpack_require__(259).polyfill();
 
 var user = Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["a" /* getLocalUser */])();
 
-/* export default {
-    state: {
-        currentUser: user,
-        isLoggedIn: !! user,
-        loading: false,
-        auth_error: null,
-        reg_error: null,
-        addJourney_error: null,
-        users: [],
-        journeys: []        
-    },
-    mutations: {
-        login(state) {
-            state.loading = true;
-            state.auth_error = null;
-        },
-
-        loginSuccess(state, payload) {
-            state.auth_error = null;
-            state.isLoggedIn = true;
-            state.loading = false;
-            state.currentUser = Object.assign({}, payload.user, {token: payload.access_token});
-
-            localStorage.setItem('user', JSON.stringify(state.currentUser));
-        },
-
-        loginFailed(state, payload) {
-            state.loading = false;
-            state.auth_error = payload.error;
-        },
-        logout(state) {
-            localStorage.removeItem("user");
-            state.isLoggedIn = false;
-            state.currentUser = null;
-        },
-        register(state) {
-            state.loading = true;
-            state.reg_error = null;
-        },
-
-        registerSuccess(state, payload) {
-            state.reg_error = null;
-            state.isLoggedIn = true;
-            state.loading = false;
-
-            state.currentUser = Object.assign({}, payload.user, {token: payload.access_token});
-
-            localStorage.setItem('user', JSON.stringify(state.currentUser));
-        },
-
-        registerFailed(state, payload){
-            state.loading = false,
-            state.reg_error = payload.error;
-        },
-
-        SET_USERS(state, users) {
-            state.users = users
-        }
-
-        
-
-    
-    },
-    getters: {
-        isLoading(state) {
-            return state.loading;
-        },
-        isLoggedIn(state) {
-            return state.isLoggedIn;
-        },
-        currentUser(state) {
-            return state.currentUser;
-        },
-
-        authError(state) {
-            return state.auth_error;
-        },
-        regError(state) {
-            return state.reg_error;
-        }
-        
-        
-        
-    },
-    actions: {
-
-        login(context) {
-            context.commit("login");
-        },
-
-        register(context) {
-            context.commit("register");
-        },
-
-        loadUsers ({commit}) {
-            axios.get('/api/user').then(response => 
-                  response.data)
-                  .then(users => {
-                      commit('SET_USERS', users)
-                  })
-                //this.users = response.data;    
-        }
-        
-    }
-
-}
- */
 /*
   Exports our data store.
 */
-/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store({
+/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_4_vuex__["a" /* default */].Store({
     modules: {
-        journeys: __WEBPACK_IMPORTED_MODULE_1__modules_journey_js__["a" /* journeys */]
+        journeys: __WEBPACK_IMPORTED_MODULE_1__modules_journey_js__["a" /* journeys */],
+        users: __WEBPACK_IMPORTED_MODULE_2__modules_user_js__["a" /* users */]
 
     }
 }));
@@ -82760,13 +82660,13 @@ var journeys = {
         /*
         Load the journeys from the API
         */
-        loadJourneys: function loadJourneys(_ref) {
+        loadJourneys: function loadJourneys(_ref, data) {
             var commit = _ref.commit;
 
-            commit('setJourneysStatus', 1);
+            commit('setJourneysLoadStatus', 1);
 
-            __WEBPACK_IMPORTED_MODULE_0__api_journey_js__["a" /* default */].getJourneys().then(function (response) {
-                commit('setJourneys', response.data);
+            __WEBPACK_IMPORTED_MODULE_0__api_journey_js__["a" /* default */].getJourneys(data.user_id).then(function (response) {
+                commit('setJourneys', response.data.data.data);
                 commit('setJourneysLoadStatus', 2);
             }).catch(function () {
                 commit('setJourneys', []);
@@ -82791,6 +82691,12 @@ var journeys = {
                 commit('setJourneyLoadStatus', 3);
             });
         },
+
+
+        /*
+            Adds a journey to the API
+        */
+
         addJourney: function addJourney(_ref3, data) {
             var commit = _ref3.commit,
                 state = _ref3.state,
@@ -82911,14 +82817,14 @@ var journeys = {
     /*
         GET     /api/user/{user}/journey
     */
-    getJourneys: function getJourneys(id) {
-        return axios.get('/api/user/' + this.user_id + '/journey');
+    getJourneys: function getJourneys(user_id) {
+        return axios.get('/api/user/' + '1' + '/journey');
     },
 
     /*
         GET   /api/user/{user}/journey/{journey}
     */
-    getJourney: function getJourney(id, journey) {
+    getJourney: function getJourney(user_id, id, journey) {
         return axios.get('/api/user/' + this.user_id + '/journey/' + this.journey);
     },
 
@@ -84128,6 +84034,111 @@ return Promise$1;
 //# sourceMappingURL=es6-promise.map
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10), __webpack_require__(5)))
+
+/***/ }),
+/* 260 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return users; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store_js__ = __webpack_require__(256);
+
+
+
+//import { getLocalUser } from "../helpers/auth";
+
+
+var users = {
+
+    state: {
+        currentUser: __WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* default */],
+        isLoggedIn: !!__WEBPACK_IMPORTED_MODULE_0__store_js__["a" /* default */],
+        loading: false,
+        auth_error: null,
+        reg_error: null,
+        addJourney_error: null,
+        users: [],
+        journeys: []
+    },
+    mutations: {
+        login: function login(state) {
+            state.loading = true;
+            state.auth_error = null;
+        },
+        loginSuccess: function loginSuccess(state, payload) {
+            state.auth_error = null;
+            state.isLoggedIn = true;
+            state.loading = false;
+            state.currentUser = Object.assign({}, payload.user, { token: payload.access_token });
+
+            localStorage.setItem('user', JSON.stringify(state.currentUser));
+        },
+        loginFailed: function loginFailed(state, payload) {
+            state.loading = false;
+            state.auth_error = payload.error;
+        },
+        logout: function logout(state) {
+            localStorage.removeItem("user");
+            state.isLoggedIn = false;
+            state.currentUser = null;
+        },
+        register: function register(state) {
+            state.loading = true;
+            state.reg_error = null;
+        },
+        registerSuccess: function registerSuccess(state, payload) {
+            state.reg_error = null;
+            state.isLoggedIn = true;
+            state.loading = false;
+
+            state.currentUser = Object.assign({}, payload.user, { token: payload.access_token });
+
+            localStorage.setItem('user', JSON.stringify(state.currentUser));
+        },
+        registerFailed: function registerFailed(state, payload) {
+            state.loading = false, state.reg_error = payload.error;
+        },
+        SET_USERS: function SET_USERS(state, users) {
+            state.users = users;
+        }
+    },
+    getters: {
+        isLoading: function isLoading(state) {
+            return state.loading;
+        },
+        isLoggedIn: function isLoggedIn(state) {
+            return state.isLoggedIn;
+        },
+        currentUser: function currentUser(state) {
+            return state.currentUser;
+        },
+        authError: function authError(state) {
+            return state.auth_error;
+        },
+        regError: function regError(state) {
+            return state.reg_error;
+        }
+    },
+    actions: {
+        login: function login(context) {
+            context.commit("login");
+        },
+        register: function register(context) {
+            context.commit("register");
+        },
+        loadUsers: function loadUsers(_ref) {
+            var commit = _ref.commit;
+
+            axios.get('/api/user').then(function (response) {
+                return response.data;
+            }).then(function (users) {
+                commit('SET_USERS', users);
+            });
+            //this.users = response.data;    
+        }
+    }
+
+};
 
 /***/ })
 /******/ ]);

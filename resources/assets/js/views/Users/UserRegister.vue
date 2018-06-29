@@ -114,7 +114,7 @@
                     .then((res) => {
                         this.$store.commit("registerSuccess", res);
                         alert('Your card has been registered successfully');
-                        this.$router.push({path: '/dashboard'});
+                        this.$router.push({path: '/'});
                     })
                     .catch((error) => {
                         this.$store.commit('registerFailed', {error});

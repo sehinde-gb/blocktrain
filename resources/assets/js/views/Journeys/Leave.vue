@@ -204,9 +204,7 @@ export default {
                     app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type,
                     app.origin = response.data[0].rows[0].from,
                     app.startingCity = this.startingCity
-                    //app.startingCity = 'hello'
-                    //app.endingCity = response.data[0].rows[0].toStation
-                    //app.to = response.data[0].rows[0].to
+                    
                     
                  
                 })

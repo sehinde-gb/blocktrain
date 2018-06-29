@@ -66,11 +66,7 @@
         
         computed: mapState ([
             'users'
-        ]),
-            
-        
-        
-        
-        
+        ])
+               
     }
 </script>

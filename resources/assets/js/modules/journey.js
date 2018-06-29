@@ -27,13 +27,13 @@ export const journeys = {
         /*
         Load the journeys from the API
         */
-        loadJourneys( { commit }){
-            commit('setJourneysStatus', 1);    
+        loadJourneys( { commit }, data){
+            commit('setJourneysLoadStatus', 1);    
      
 
-        JourneyAPI.getJourneys()
+        JourneyAPI.getJourneys(data.user_id)
             .then(function(response) {
-                commit('setJourneys', response.data);
+                commit('setJourneys', response.data.data.data);
                 commit('setJourneysLoadStatus', 2);
             })
             .catch(function(){
@@ -58,6 +58,10 @@ export const journeys = {
                     commit('setJourneyLoadStatus', 3);
                 });
         },
+
+        /*
+            Adds a journey to the API
+        */
 
         addJourney({ commit, state, dispatch }, data){
             commit( 'setJourneyAddedStatus', 1);

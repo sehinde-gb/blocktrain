@@ -59,6 +59,10 @@ j<template>
     
     export default {
     
+        mounted () {
+            //this.$store.dispatch('loadJourney')
+        },
+
         created() {
             this.fetchJourneyDetail();
             

@@ -2,14 +2,14 @@ export default {
     /*
         GET     /api/user/{user}/journey
     */
-    getJourneys: function(id) {
-        return axios.get( '/api/user/' + this.user_id + '/journey' );
+    getJourneys: function(user_id) {
+        return axios.get( '/api/user/' + '1' + '/journey' );
     },
 
     /*
         GET   /api/user/{user}/journey/{journey}
     */
-    getJourney: function( id, journey ) {
+    getJourney: function( user_id, id, journey ) {
         return axios.get('/api/user/' + this.user_id + '/journey/' + this.journey);
     },
 
