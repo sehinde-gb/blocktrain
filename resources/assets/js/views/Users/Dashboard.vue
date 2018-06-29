@@ -7,7 +7,11 @@
                         <br>
                         <h2>My Zorra Cards</h2>
                             <hr/>
-                            
+                            <ul>
+                                <li v-for="(link, index) in links" v-bind:key="index">
+                                    {{ link }}
+                                </li>
+                            </ul>
 
                             <div v-for="user in users" class="single-card">
                                 <br>
@@ -24,7 +28,7 @@
                                              <router-link class="card-link" to="/users/register"> New Card</router-link>
                                              <br>
                                              <p class="card-text">Journeys</p>
-                                             <router-link class="card-link" v-bind:to="  '/users/' + user.id + '/journeys/new'"><h6>Start Journey</h6></router-link>
+                                             <router-link class="card-link" v-bind:to="  '/users/' + user.id + '/make/journey'"><h6>Start Journey</h6></router-link>
                                              <router-link class="card-link" v-bind:to="  '/users/' + user.id + '/journeys'"><h6>Journey History</h6></router-link>
                                          </div>
                                      </div>
@@ -55,11 +59,9 @@
 <script>
 
     import axios from 'axios';
-    //import { getUsers } from '../../helpers/auth';
-    //import { mapState } from 'vuex';
-    //import {loadUsers} from '../../modules/user.js';
+    import { mapState } from 'vuex';
 
-   export default {
+    export default {
       
         created() {
             this.fetchUserList();
@@ -67,7 +69,12 @@
         computed: {
             endingFare() {
                 return this.$store.getters.endingFare
-            }
+            },
+          
+                ...mapState([
+                    'links'
+                ])
+            
             
         },
         
@@ -83,9 +90,10 @@
 
             fetchUserList() {
                 axios.get('/api/user').then((response) => {
-                      console.log(response.data);
-                    //this.users = response.data;
+                    //console.log(response.data);
+                    this.users = response.data;
                 });
             }
         }
     }
+</script>
