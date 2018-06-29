@@ -17,18 +17,17 @@ require('es6-promise').polyfill();
 
 //import user from '../store.js';
 
-import { getLocalUser } from "./helpers/auth";
+
 
 
 const user = getLocalUser();
 
 
-export const users = {
-
+export default new Vuex.Store ({
 
     state: {
         currentUser: user,
-        isLoggedIn: !! user,
+        isLoggedIn: !!user,
         loading: false,
         auth_error: null,
         reg_error: null,
@@ -55,6 +54,7 @@ export const users = {
             state.loading = false;
             state.auth_error = payload.error;
         },
+
         logout(state) {
             localStorage.removeItem("user");
             state.isLoggedIn = false;
@@ -129,18 +129,18 @@ export const users = {
         }
         
     }
+})
 
-}
  
 /*
   Exports our data store.
 */
-export default new Vuex.Store({
-    modules: {
-        journeys
-        //users
+// export default new Vuex.Store({
+//     modules: {
+//         journeys
+//         //users
 
-    }
-});
+//     }
+// });
 
 
