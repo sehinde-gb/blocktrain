@@ -55,16 +55,19 @@
 <script>
 
     import axios from 'axios';
-    import {getUsers} from '../../helpers/auth';
+    import { getUsers } from '../../helpers/auth';
     import { mapState } from 'vuex';
-    //import {loadUsers} from '../../modules/user.js';
+    import {loadUsers} from '../../modules/user.js';
 
     export default {
         
+        mounted () {
+            this.$store.dispatch('loadUsers')
+        },
         
-        currentUser() {
-            return this.$store.getters.currentUser;
-        }
+        computed: mapState ([
+            'users'
+        ])
                
     }
 </script>
