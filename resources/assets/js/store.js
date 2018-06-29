@@ -14,11 +14,13 @@ Vue.use(Vuex);
 require('es6-promise').polyfill();
 
 
-const user = getLocalUser(); 
 
-import user from '../store.js';
+//import user from '../store.js';
 
-//import { getLocalUser } from "../helpers/auth";
+import { getLocalUser } from "./helpers/auth";
+
+
+const user = getLocalUser();
 
 
 export const users = {

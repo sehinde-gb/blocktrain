@@ -82607,7 +82607,7 @@ function initialise(store, router) {
 /* 255 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: Duplicate declaration \"user\"\n\n\u001b[0m \u001b[90m 17 | \u001b[39m\u001b[36mconst\u001b[39m user \u001b[33m=\u001b[39m getLocalUser()\u001b[33m;\u001b[39m \n \u001b[90m 18 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 | \u001b[39m\u001b[36mimport\u001b[39m user from \u001b[32m'../store.js'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m    | \u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 20 | \u001b[39m\n \u001b[90m 21 | \u001b[39m\u001b[90m//import { getLocalUser } from \"../helpers/auth\";\u001b[39m\n \u001b[90m 22 | \u001b[39m\u001b[0m\n");
+throw new Error("Module build failed: Duplicate declaration \"getLocalUser\"\n\n\u001b[0m \u001b[90m 18 | \u001b[39m\u001b[90m//import user from '../store.js';\u001b[39m\n \u001b[90m 19 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 | \u001b[39m\u001b[36mimport\u001b[39m { getLocalUser } from \u001b[32m\"./helpers/auth\"\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m    | \u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 21 | \u001b[39m\n \u001b[90m 22 | \u001b[39m\n \u001b[90m 23 | \u001b[39m\u001b[36mconst\u001b[39m user \u001b[33m=\u001b[39m getLocalUser()\u001b[33m;\u001b[39m\u001b[0m\n");
 
 /***/ })
 /******/ ]);
