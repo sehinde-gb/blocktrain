@@ -19,7 +19,7 @@
                                     <p class="card-text">Mobile Phone: {{ user.mobile_phone }}</p>
                                     <p class="card-text">Email: {{ user.email }}</p>
                                     <p class="card-text">Balance: {{ user.balance }}</p>
-                                    <a class="btn btn-outline-primary"><router-link to="/users">Back </router-link></a>
+                                    <a class="btn btn-outline-primary"><router-link to="/dashboard">Back </router-link></a>
 
                                    
                                 </div>

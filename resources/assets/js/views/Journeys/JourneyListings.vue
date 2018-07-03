@@ -43,8 +43,25 @@
         
         
         created() {
-            this.fetchJourneyList();
-            
+             //this.fetchJourneyList();
+             this.$store.dispatch( 'loadJourneys', {
+                 user_id: this.$route.params.id
+             });
+        },
+
+        
+        computed: {
+            /*
+                Gets the journeys load status
+            */
+            journeysLoadStatus() {
+        
+                return this.$store.getters.getJourneysLoadStatus;
+            },
+
+            journeys() {
+                return this.$store.getters.getJourneys;
+            }
         },
 
         
@@ -52,20 +69,20 @@
         data() {
             return {
                 moment: moment,
-                journeys: [],
+                //journeys: [],
                 user_id: this.$route.params.id
                
             }
 
         },
         methods: {
-            fetchJourneyList() {
-                axios.get('/api/user/' + this.id + '/journey').then((response) => {
-                    //console.log(response.data.data.data);
+            // fetchJourneyList() {
+            //     axios.get('/api/user/' + this.id + '/journey').then((response) => {
+            //         //console.log(response.data.data.data);
                     
-                    this.journeys = response.data.data.data;
-                });
-            }
+            //         this.journeys = response.data.data.data;
+            //     });
+            // }
         }
     }
 </script>

@@ -4,7 +4,7 @@ import OriginalPage from './views/Original/OriginalPage'
 import Login from './views/Auth/Login'
 import Register from './views/Auth/Register'
 import Journey from './views/Journeys/Journey'
-import Dashboard from './views/Users/Dashboard'
+import Users from './views/Users/Users'
 import UserDetail from './views/Users/UserDetail'
 import UserRegister from './views/Users/UserRegister'
 import JourneyListings from './views/Journeys/JourneyListings'
@@ -53,9 +53,9 @@ export const routes = [
 
     {
 
-        path: '/dashboard',
-        name: 'dashboard',
-        component: Dashboard,
+        path: '/users',
+        name: 'users',
+        component: Users,
         meta: {
             requiresAuth: true
         },
@@ -84,6 +84,7 @@ export const routes = [
     {
         path: '/users/:id/journey/:journey',
         name: 'journey.detail',
+        props: true,
         component:JourneyDetail,
         meta: {
             requiresAuth: true

@@ -64,14 +64,14 @@
                                         
                                             <div class="row">
                                                
-                                                <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" v-on:click="submitNewJourney">Swipe Out & Exit</button>
+                                                <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" @click.prevent="submitNewJourney">Swipe Out & Exit</button>
                                                 
                                                 <div class="col-sm"></div>
                                             </div>
                                             <br/>
                                             <div class="row">
                                                 
-                                                <a class="btn btn-light" role="button"><router-link to="/users">Users </router-link></a>
+                                                <a class="btn btn-light" role="button"><router-link to="/dashboard">Dashboard </router-link></a>
                                                 <div class="col-sm"></div>
                                             </div><!-- /.row -->
                                             

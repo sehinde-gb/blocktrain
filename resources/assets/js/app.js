@@ -41,7 +41,7 @@ import {routes} from './routes';
 
 import {initialise} from './helpers/general';
 
-import store from './store.js'
+import {store} from './store.js'
 
 
 /**

@@ -32,7 +32,7 @@
                                 </div><!-- /.form-group -->
                             
                             <div class="row">
-                                <div class="col-sm"><button v-on:click="stationEnter" :disabled="errors.any()"  class="btn btn-primary btn-lg">Add Journey</button></div>
+                                <div class="col-sm"><button @click.prevent="stationEnter" :disabled="errors.any()"  class="btn btn-primary btn-lg">Add Journey</button></div>
                                 <div class="col-sm"></div>
                             </div><!-- /.row -->
                       

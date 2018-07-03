@@ -12,7 +12,7 @@ j<template>
                             <div class="card-body">
                                 <h5 class="card-title">View Details</h5>
                                 
-                                <p class="card-text">From: {{ journey.from }}</p>
+                                <p class="card-text">From: {{ journey.origin }}</p>
                                 <p class="card-text">To: {{ journey.to }}</p>
                                 <p class="card-text">Description: {{ journey.description }}</p>
                                 <p class="card-text">Type of Journey: {{ journey.type }}</p>
@@ -59,9 +59,7 @@ j<template>
     
     export default {
     
-        mounted () {
-            //this.$store.dispatch('loadJourney')
-        },
+        
 
         created() {
             this.fetchJourneyDetail();
@@ -79,16 +77,20 @@ j<template>
         
         methods: {
             fetchJourneyDetail() {
-                axios.get('/api/user/' + this.id + '/journey/' + this.journey).then
-                
-             
-                ((response) => {
+            
+
+                axios.get('/api/user/' + this.id + '/journey/' + this.journey)
+                    .then ((response) => {
                     //console.log(response.data);
                     this.journey = response.data;
-                });
-            }
+                    });
+                
+            }    
       
         }
+        
+
+        
     }
 </script>
 
