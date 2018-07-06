@@ -132,8 +132,8 @@ export default {
                 mode: '',
                 type: '',
                 user_id: this.$route.params.id,
-                balance: '',
-                user: {}
+                balance: 300
+            
             
         }
     },
@@ -144,7 +144,7 @@ export default {
              this.endingCity = ''
              if (this.to.length == 10) {
                  this.lookupEndingTo(),
-                 this.lookupFareTo(),
+                 this.lookupFareTo()
                  this.lookupBalance()
               
 
@@ -157,7 +157,7 @@ export default {
 
         lookupBalance() {
             var app = this;
-            app.balance = 150;
+            app.balance = app.balance - app.endingFare;
 
        },
          lookupStartingFrom: _.debounce(function() {
@@ -210,8 +210,6 @@ export default {
                     app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type,
                     app.origin = response.data[0].rows[0].from,
                     app.startingCity = this.startingCity
-                   
-                    
                  
                 })
                 .catch(function (error){
