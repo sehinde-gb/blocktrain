@@ -18,6 +18,7 @@
                                              <h5 class="card-title">Card Number:  {{ user.id }}</h5>
                                              <h6 class="card-subtitle mb-2 text-muted">Balance: {{ user.balance }}</h6>
                                              
+                                             
                                              <h2>{{ endingFare }}</h2>
                                              <p class="card-text">Card Management</p>
                                              <router-link class="card-link" v-bind:to="  '/users/' + user.id"><h6>View / Change Card  </h6></router-link>
@@ -54,8 +55,7 @@
 
 <script>
 
-    import axios from 'axios';
-    //import { mapState } from 'vuex';
+    
 
     export default {
       
@@ -79,7 +79,13 @@
 
             users() {
                 return this.$store.getters.getUsers;
-            }
+            },
+
+             journeys() {
+                return this.$store.getters.getJourneys;
+            },
+
+            
 
             
             

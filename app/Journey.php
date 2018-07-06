@@ -6,14 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Journey extends Model
 {
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'from', 'to', 'startingCity', 'endingCity', 'description', 'type', 'passengerType', 'mode', 'endingFare'
+        'from', 'to', 'startingCity', 'endingCity', 'description', 'type', 'passengerType', 'mode', 'endingFare', 'balance'
     ];
 
     /**
@@ -25,5 +24,4 @@ class Journey extends Model
     {
         return $this->belongsTo(\App\User::class, 'user_id');
     }
-
 }

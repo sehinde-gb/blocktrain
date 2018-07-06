@@ -2,17 +2,12 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Journey;
 use App\Http\Resources\JourneyResource as JourneyResource;
 use Illuminate\Http\Request;
 
-
-
 class JourneyController extends Controller
 {
-
-
     /**
      * Display a listing of journeys
      *
@@ -23,9 +18,7 @@ class JourneyController extends Controller
         $journeys = Journey::paginate(15);
 
         return JourneyResource::collection($journeys);
-
     }
-
 
     /**
      * Display the journey
@@ -35,12 +28,9 @@ class JourneyController extends Controller
      */
     public function show($id)
     {
-
         $journey = Journey::findOrFail($id);
 
         return new JourneyResource($journey);
-
-
     }
 
     /**
@@ -52,10 +42,7 @@ class JourneyController extends Controller
      */
     public function store(Request $request)
     {
-
-
-        $journey = $request->isMethod('put') ? Journey::findOrFail
-        ($request->journey_id) : new Journey;
+        $journey = $request->isMethod('put') ? Journey::findOrFail($request->journey_id) : new Journey;
 
         $journey->id = $request->input('journey_id');
         $journey->user_id = $request->input('user_id');
@@ -68,10 +55,9 @@ class JourneyController extends Controller
         $journey->type = $request->input('type');
         $journey->passengerType = $request->input('passengerType');
         $journey->mode = $request->input('mode');
+        $journey->balance = $request->input('balance');
 
-
-
-        if($journey->save()) {
+        if ($journey->save()) {
             return new JourneyResource($journey);
         }
     }
@@ -84,24 +70,10 @@ class JourneyController extends Controller
      */
     public function destroy($id)
     {
-
         $journey = Journey::findOrFail($id);
 
-        if($journey->delete()) {
+        if ($journey->delete()) {
             return new JourneyResource($journey);
         }
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
 }

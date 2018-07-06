@@ -3,8 +3,8 @@ import HomePage from './views/Home/Home'
 import OriginalPage from './views/Original/OriginalPage'
 import Login from './views/Auth/Login'
 import Register from './views/Auth/Register'
-import Journey from './views/Journeys/Journey'
-import Users from './views/Users/Users'
+import Journey from './views/Journeys/Parent'
+import Users from './views/Users/UserListing'
 import UserDetail from './views/Users/UserDetail'
 import UserRegister from './views/Users/UserRegister'
 import JourneyListings from './views/Journeys/JourneyListings'
@@ -82,7 +82,7 @@ export const routes = [
     },
 
     {
-        path: '/users/:id/journey/:journey',
+        path: '/users/:id/journeys/:journey',
         name: 'journey.detail',
         props: true,
         component:JourneyDetail,

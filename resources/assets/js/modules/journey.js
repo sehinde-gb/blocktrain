@@ -17,7 +17,9 @@ export const journeys = {
         journeysLoadStatus: 0,
 
         journey: {},
-        journeyLoadStatus: 0
+        journeyLoadStatus: 0,
+        firstname: 'John',
+        lastname: 'Doe'
     },
 
     /*
@@ -31,15 +33,15 @@ export const journeys = {
             commit('setJourneysLoadStatus', 1);    
      
 
-        JourneyAPI.getJourneys(data.user_id)
-            .then(function(response) {
-                commit('setJourneys', response.data.data.data);
-                commit('setJourneysLoadStatus', 2);
-            })
-            .catch(function(){
-                commit('setJourneys', []);
-                commit('setJourneysLoadStatus', 3);
-            });
+            JourneyAPI.getJourneys(data.user_id)
+                .then(function(response) {
+                    commit('setJourneys', response.data.data.data);
+                    commit('setJourneysLoadStatus', 2);
+                })
+                .catch(function(){
+                    commit('setJourneys', []);
+                    commit('setJourneysLoadStatus', 3);
+                });
         },
         
         /*
@@ -66,7 +68,7 @@ export const journeys = {
         addJourney({ commit, state, dispatch }, data){
             commit( 'setJourneyAddedStatus', 1);
             JourneyAPI.postAddNewJourney( data.user_id, data.origin, data.startingCity, data.to, data.endingCity, data.description,
-            data.type, data.passengerType, data.mode, data.endingFare)
+            data.type, data.passengerType, data.mode, data.endingFare, data.balance)
             .then( function(response){
                 commit('setJourneyAddedStatus', 2);
                 //dispatch('loadJourneys');
@@ -92,6 +94,21 @@ export const journeys = {
         },
 
         /*
+        Set the journey add status
+        */
+       setJourneyAddedStatus( state, status ) {
+            state.journeyAddStatus = status;
+        },
+        
+        /*
+            Sets the journey load status
+        */
+       setJourneyLoadStatus( state, status) {
+            state.journeyLoadStatus = status;
+        },
+
+
+        /*
             Sets the journeys
         */
 
@@ -99,26 +116,18 @@ export const journeys = {
             state.journeys = journeys;    
         },
 
-        /*
-            Sets the journey load status
-        */
-        setJourneyLoadStatus( state, status) {
-            state.journeyLoadStatus = status;
-        },
-
+        
         /*
             Sets the journey
         */
         setJourney( state, journey) {
             state.journey = journey;
-        },
-
-        /*
-        Set the journey add status
-        */
-        setJourneyAddedStatus( state, status ){
-            state.journeyAddStatus = status;
         }
+
+        
+
+        
+
     },
 
     /*
@@ -164,6 +173,8 @@ export const journeys = {
         getJourneyAddStatus( state) {
             return state.journeyAddStatus;
         }
+
+        
     }
 
 }

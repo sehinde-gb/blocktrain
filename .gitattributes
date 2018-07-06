@@ -3,3 +3,5 @@
 *.scss linguist-vendored
 *.js linguist-vendored
 CHANGELOG.md export-ignore
+# Set all files to have LF line endings
+* text eol=lf

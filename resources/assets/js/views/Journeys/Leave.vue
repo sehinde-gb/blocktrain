@@ -60,11 +60,18 @@
                                                 <span class="city-span">{{type}}</span>
                                             </div><!-- /.form group row -->
                                             <br/>
+
+                                            <div class="form group row">
+                                                <input type="text" class="form-control" placeholder="Balance" v-model="balance" readonly="readonly">
+                                                <span class="city-span">{{balance}}</span>
+                                            </div><!-- /.form group row -->
+                                            <br/>
                                                <span class="city-span" v-model="startingCity">{{startingCity}}</span>
                                         
                                             <div class="row">
                                                
                                                 <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" @click.prevent="submitNewJourney">Swipe Out & Exit</button>
+                                                
                                                 
                                                 <div class="col-sm"></div>
                                             </div>
@@ -125,34 +132,35 @@ export default {
                 mode: '',
                 type: '',
                 user_id: this.$route.params.id,
-                balance: ''
+                balance: '',
+                user: {}
             
         }
     },
     
     watch: {
-        
-        
+                
         to: function () {
              this.endingCity = ''
              if (this.to.length == 10) {
                  this.lookupEndingTo(),
-                 this.lookupFareTo()
-                 //this.lookupStartingFrom()
+                 this.lookupFareTo(),
+                 this.lookupBalance()
+              
 
             }
          }
     },
 
+     
     methods: {
-        // stationEnter() {
-        //          EventBus.$emit('firststation', this.startingCity)
-        //          alert('You have swiped in');
-        //          this.complete = false;
-        //     },
 
-       
-        lookupStartingFrom: _.debounce(function() {
+        lookupBalance() {
+            var app = this;
+            app.balance = 150;
+
+       },
+         lookupStartingFrom: _.debounce(function() {
                 var app = this
 
                 const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
@@ -175,8 +183,6 @@ export default {
                 .then(function (response) {
                     app.endingCity = response.data.matches[0].id
                     
-                    //app.to = response.data.matches[0].name
-                    //app.endingCity = response.data.matches[0].name
                     
                 })
                 .catch(function (error) {
@@ -204,7 +210,7 @@ export default {
                     app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type,
                     app.origin = response.data[0].rows[0].from,
                     app.startingCity = this.startingCity
-                    
+                   
                     
                  
                 })
@@ -214,13 +220,7 @@ export default {
 
         },1200),
 
-        onSubmit: function() {
-            //this.$http.post('/api/user/' + this.user_id + '/journey', this.$data);
-            //alert('Thanks for swiping');
-            //this.$router.push('home')
-
-        },
-
+        
         submitNewJourney() {
              this.$store.dispatch('addJourney', {
                  user_id: this.user_id,
@@ -232,12 +232,12 @@ export default {
                  type: this.type,
                  passengerType: this.passengerType,
                  mode: this.mode,
-                 endingFare: this.endingFare
-
+                 endingFare: this.endingFare,
+                 balance: this.balance
              })   
 
         }
-
+       
        
 
         

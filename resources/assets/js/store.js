@@ -1,4 +1,4 @@
-import { getLocalUser } from "./helpers/auth";
+
 import {journeys} from './modules/journey.js';
 
 import {users} from './modules/user.js';
@@ -14,13 +14,6 @@ require('es6-promise').polyfill();
 
 
 
-
-
-
-
-
-
-
 export const store = new Vuex.Store({
     
     modules: {
@@ -31,15 +24,6 @@ export const store = new Vuex.Store({
 })
 
 
-/*
-  Exports our data store.
-*/
-// export default new Vuex.Store({
-//     modules: {
-//         journeys
-//         //users
 
-//     }
-// });
 
 

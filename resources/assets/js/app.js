@@ -52,9 +52,6 @@ import {store} from './store.js'
 
 
 
-
-
-
 const router = new VueRouter({
     routes,
     mode: 'history'

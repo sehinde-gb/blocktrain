@@ -19,6 +19,7 @@
                                     <p class="card-text">Mobile Phone: {{ user.mobile_phone }}</p>
                                     <p class="card-text">Email: {{ user.email }}</p>
                                     <p class="card-text">Balance: {{ user.balance }}</p>
+                                    
                                     <a class="btn btn-outline-primary"><router-link to="/dashboard">Back </router-link></a>
 
                                    
@@ -51,6 +52,7 @@
 <script>
 
     var moment = require('moment');
+ 
     
     export default {
         data() {
@@ -62,12 +64,42 @@
         },
         created() {
             this.fetchAUser();
+            // this.$store.dispatch( 'loadJourneys', {
+            //      user_id: this.$route.params.id
+            //  });
             
+            // this.$store.dispatch('loadUser', {
+            //       id: this.$route.params.id
+            // });
         },
     computed: {
-        currentUser() {
-            return this.$store.getters.currentUser;
-        }
+
+        // currentUser() {
+        //     return this.$store.getters.currentUser;
+        // },
+
+        // userLoadStatus() {
+        //     return this.$store.getters.getUserLoadStatus;
+
+        // },
+
+        // user() {
+        //     return this.$store.getters.getUser;
+        // }
+
+
+       
+        // /*
+        //     Gets the journeys load status
+        // */
+        // journeysLoadStatus() {
+    
+        //     return this.$store.getters.getJourneysLoadStatus;
+        // },
+
+        // journeys() {
+        //     return this.$store.getters.getJourneys;
+        // }
     },
         methods: {
             fetchAUser() {

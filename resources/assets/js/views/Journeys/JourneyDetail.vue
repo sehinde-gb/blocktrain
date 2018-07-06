@@ -18,7 +18,9 @@ j<template>
                                 <p class="card-text">Type of Journey: {{ journey.type }}</p>
                                 <p class="card-text">Passenger Type: {{ journey.passengerType }}</p>
                                 <p class="card-text">Mode: {{ journey.mode }}</p>
-                                <p class="card-text">Ending Fare: {{ journey.endingFare }}</p>
+                                <p class="card-text">Fare: {{ journey.endingFare }}</p>
+                                <p class="card-text .d-none">Start Balance: {{ journey.balance }}</p>
+                                <p class="card-text">Current Balance: {{ remaining_balance }}</p>
                                 <a class="btn btn-outline-primary"><router-link v-bind:to="  '/users/' + journey.user_id + '/journeys'">Back</router-link></a>
                                
                                 <a class="btn btn-outline-primary"><router-link to="/users">Dashboard </router-link></a>
@@ -63,14 +65,35 @@ j<template>
 
         created() {
             this.fetchJourneyDetail();
+            //this.fetchAUser();
+            this.$store.dispatch( 'loadUsers', {
+                id: this.$route.params.id
+            });
+
+            
+        },
+
+        computed: {
+            /*
+                Gets the new balance
+            */
+            remaining_balance() {
+              
+                return this.journey.balance - this.journey.endingFare;
+                }
+          
+
             
         },
         
         data() {
             return {
                 journey: {},
+                user: {},
+                balance: '',
                 id: this.$route.params.id,
-                moment: moment
+                moment: moment,
+                foo: '10'
               
             }
         },
@@ -78,14 +101,22 @@ j<template>
         methods: {
             fetchJourneyDetail() {
             
-
                 axios.get('/api/user/' + this.id + '/journey/' + this.journey)
                     .then ((response) => {
                     //console.log(response.data);
                     this.journey = response.data;
                     });
                 
-            }    
+            }
+            
+            // fetchAUser() {
+            //     axios.get('/api/user/' + this.id)
+            //         .then ((response) => {
+            //         //console.log(response.data);
+            //         this.user = response.data;
+            //         });
+
+            // }
       
         }
         

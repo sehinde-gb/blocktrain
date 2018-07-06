@@ -10,7 +10,7 @@
                           <div v-for="journey in journeys">
     
                               <ul class="list-group">
-                                  <router-link  class="list-group-item" v-bind:to="  '/users/' + user_id + '/journey/' + journey.id"><h6>{{ moment(journey.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a") }} </h6></router-link>
+                                  <router-link  class="list-group-item" v-bind:to="  '/users/' + user_id + '/journeys/' + journey.id"><h6>{{ moment(journey.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a") }} </h6></router-link>
     
                                   
                               </ul><!-- end list-group -->
@@ -51,6 +51,8 @@
 
         
         computed: {
+            
+
             /*
                 Gets the journeys load status
             */

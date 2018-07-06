@@ -1,5 +1,6 @@
 
 import UserAPI from '../api/user.js';
+import { getLocalUser } from "../helpers/auth";
 
 const user = getLocalUser();
 
@@ -11,8 +12,8 @@ export const users = {
     
     state: {
         users: [],
-        usersLoadStatus: 0,
         user: {},
+        usersLoadStatus: 0,
         userLoadStatus: 0,
         currentUser: user,
         isLoggedIn: !!user,
@@ -20,16 +21,72 @@ export const users = {
         auth_error: null,
         reg_error: null,
         addJourney_error: null,
-        journeys: []    
+        journeys: [],
+        new_balance: null    
     },
 
     /*
-    Defines the actions used to retrieve the data.
+        Defines the actions used to retrieve the data.
     */
 
+    actions: {
+
+        /*
+          Loads an individual user from the API
+        */    
+
+        loadUser({ commit}) {
+                commit('setUserLoadStatus', 1);
+
+                UserAPI.getUser(body.id)
+                    .then(function(response) {
+                        commit('setUser', response.body);
+                        commit('setUserLoadStatus', 2);
+                    })
+                    .catch(function() {
+                        commit('setUser', {});
+                        commit('setUserLoadStatus', 3);
+                });
+        },
+        
+        /*
+          Load the tickets from the API
+        */
+        loadUsers( { commit }, data) {
+            commit('setUsersLoadStatus', 1);    
+
+            UserAPI.getUsers(data.user_id)
+                .then(function(response) {
+                    commit('setUsers', response.data);
+                    commit('setUsersLoadStatus', 2);
+                })
+                .catch(function(){
+                    commit('setUsers', []);
+                    commit('setUsersLoadStatus', 3);
+                });
+            
+        },    
+            
+        /*
+            Fires the login method commit
+        */ 
+
+        login(context) {
+            context.commit("login");
+        },
+
+        /*
+            Fires the register method commit
+        */ 
+        register(context) {
+            context.commit("register");
+        },
+    },    
+    
     /*
-        Defines the mutations used
+       Defines the mutations used
     */
+
     mutations: { 
         
         /*
@@ -38,6 +95,13 @@ export const users = {
 
         setUsers(state, users) {
             state.users = users;    
+        },
+
+        /*
+            Set the user
+        */
+        setUser( state, user) {
+            state.user = user;
         },
 
 
@@ -56,18 +120,21 @@ export const users = {
             state.userLoadStatus = status;
         },
 
-        
-        /*
-            Sets the user
-        */
-        setUser( state, user) {
-            state.user = user;
-        },
+    
 
+        /*
+            Set the logged in userr
+        */
         login(state) {
             state.loading = true;
             state.auth_error = null;
-        },
+            },
+
+        /*
+            Sets the logged in flag and the loading flag to false and 
+            assigns the access token to the user and stores
+            the current user in the local storage state.
+        */
 
         loginSuccess(state, payload) {
             state.auth_error = null;
@@ -78,24 +145,43 @@ export const users = {
             localStorage.setItem('user', JSON.stringify(state.currentUser));
         },
 
+        /*
+            Set the loginFailed flag 
+        */
+
         loginFailed(state, payload) {
             state.loading = false;
             state.auth_error = payload.error;
         },
 
+        /*
+            Logs the user out and removes the local stored user
+        */
         logout(state) {
             localStorage.removeItem("user");
             state.isLoggedIn = false;
             state.currentUser = null;
         },
+
+        /*
+            Registers the new user
+
+        */
+
         register(state) {
             state.loading = true;
             state.reg_error = null;
         },
 
+        /*
+            Sets the logged in flag and the loading flag to false and 
+            assigns the access token to the user and stores
+            the current user in the local storage state.
+        */
+
         registerSuccess(state, payload) {
             state.reg_error = null;
-            state.isLoggedIn = true;
+            state.isLoggedIn = false;
             state.loading = false;
 
             state.currentUser = Object.assign({}, payload.user, {token: payload.access_token});
@@ -103,67 +189,20 @@ export const users = {
             localStorage.setItem('user', JSON.stringify(state.currentUser));
         },
 
+        /*
+        Sets the state to register failed
+        */
+
+
         registerFailed(state, payload){
             state.loading = false,
             state.reg_error = payload.error;
-        },
-
-        SET_USERS(state, users) {
-            state.users = users
         }
-        
+            
         
     },
  
-    actions: {
-     
-
-        /*
-            Load the tickets from the API
-        */
-        loadUsers( { commit }, data){
-            commit('setUsersLoadStatus', 1);    
     
-
-            UserAPI.getUsers(data.user_id)
-                .then(function(response) {
-                    commit('setUsers', response.data.data);
-                    commit('setUsersLoadStatus', 2);
-                })
-                .catch(function(){
-                    commit('setUsers', []);
-                    commit('setUsersLoadStatus', 3);
-                });
-            },
-
-        /*
-            Loads an individual user from the API
-        */    
-    
-        loadUser({ commit}, data, id) {
-            commit('setUserLoadStatus', 1);
-
-            UserAPI.getUser(data.id)
-                .then(function(response) {
-                    commit('setUser', response.body.data);
-                    commit('setUserLoadStatus', 2);
-                })
-                .catch(function() {
-                    commit('setUser', {});
-                    commit('setUserLoadStatus', 3);
-                });
-        },
-
-        login(context) {
-            context.commit("login");
-        },
-
-        register(context) {
-            context.commit("register");
-        },
-    },
- 
-
     getters: {  
         /*
             Returns the users load status.
@@ -181,12 +220,22 @@ export const users = {
         },
 
         /*
-            Returns the te.user.
+            Returns the user.
         */   
 
         getUser(state) {
             return state.user;
         },
+
+        new_balance: state => {
+            var new_balance = state.users.map(user => {
+                return {
+                    balance: user.balance / 2
+                }
+            });
+            return new_balance;
+        },
+
 
         /*
             Returns the ticket load status.
@@ -195,22 +244,43 @@ export const users = {
         getUserLoadStatus( state) {
             return state.userLoadStatus;
         },
-        isLoading(state) {
-            return state.loading;
+
+        /*
+            Sets the state to is loading
+        */ 
+       isLoading(state) {
+        return state.loading;
         },
+
+        /*
+            Sets the state to isLoggedIn
+        */ 
         isLoggedIn(state) {
             return state.isLoggedIn;
         },
+
+        /*
+            Sets the state to currentUser
+        */ 
         currentUser(state) {
             return state.currentUser;
         },
 
+        /*
+            Sets the authError flag
+        */ 
         authError(state) {
             return state.auth_error;
         },
+
+        /*
+            Sets the reg error 
+        */ 
         regError(state) {
             return state.reg_error;
         }
+
+        
     }    
 
 

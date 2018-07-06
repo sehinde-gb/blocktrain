@@ -30,7 +30,7 @@
                             
                             
                             <li>
-                                <router-link to="/dashboard" class="nav-link">Dashboard</router-link>
+                                <router-link to="/users" class="nav-link">Dashboard</router-link>
                             </li>
                             
                         </template>
