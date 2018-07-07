@@ -16,7 +16,7 @@ export default {
     /*
         POST  /api/user/{user}/make/journey/
     */
-    postAddNewJourney: function( user_id, origin,  startingCity, to, endingCity, description, type, passengerType, mode, endingFare, balance ) {
+    postAddNewJourney: function( user_id, origin,  startingCity, to, endingCity, description, type, passengerType, mode, endingFare, start_balance, end_balance) {
         return axios.post('/api/user/' + this.user_id + '/journey',
         {
             user_id: user_id,
@@ -29,10 +29,25 @@ export default {
             passengerType: passengerType,
             mode: mode,
             endingFare: endingFare,
-            balance: balance
+            start_balance: start_balance,
+            end_balance: end_balance
 
         });
-    }    
+    },
+    
+    /*
+        POST  /api/user/{user}/make/journey/
+    */
+    postAddBalance: function( user_id, start_balance, end_balance ) {
+        return axios.post('/api/user/' + this.user_id + '/journey',
+        {
+            user_id: user_id,
+            start_balance: start_balance,
+            end_balance: end_balance
+
+        });
+    },
+
     
 }
 

@@ -29,8 +29,7 @@ class RegisterFormRequest extends FormRequest
             'password' => 'present|string|min:6|max:10',
             'address' => 'present|string',
             'home_phone' => 'present|string',
-            'mobile_phone' => 'present|string',
-            'balance' => 'present|string'
+            'mobile_phone' => 'present|string'
         ];
     }
 }

@@ -20,12 +20,9 @@
                                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                                 </div>
                                             </div>
-
                                                            
                                     <hr/>
 
-                                 
-                                      
                                         <div class="form group row">
                                             <label for="to">To</label>
                                             <input name="to" v-validate="'required|min:6'" type="text" class="form-control" placeholder="To.." v-model="to" id="to" autocomplete="nope">
@@ -33,8 +30,7 @@
                                         </div><!-- /.form group row -->
                                         <br/>
     
-                                        
-                                        
+                                         
                                         <div class="form group row">
                                                 <input type="text" class="form-control" placeholder="Fares" v-model="endingFare" readonly="readonly" id="endingFare">
                                                 <span class="city-span">{{ endingFare}}</span>
@@ -61,16 +57,15 @@
                                             </div><!-- /.form group row -->
                                             <br/>
 
-                                            <div class="form group row">
-                                                <input type="text" class="form-control" placeholder="Balance" v-model="balance" readonly="readonly">
-                                                <span class="city-span">{{balance}}</span>
-                                            </div><!-- /.form group row -->
+                                        
+
+                                             
                                             <br/>
                                                <span class="city-span" v-model="startingCity">{{startingCity}}</span>
                                         
                                             <div class="row">
                                                
-                                                <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" @click.prevent="submitNewJourney">Swipe Out & Exit</button>
+                                                <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" @click.prevent="onSubmit">Swipe Out & Exit</button>
                                                 
                                                 
                                                 <div class="col-sm"></div>
@@ -120,22 +115,26 @@ export default {
 
     data() {
         return {
-           
-                origin: '',
+                user_id: this.$route.params.id,
+                from: '',
                 startingCity: '',
                 to: '',
                 endingCity: '',
-                fare: '',
-                endingFare: '',
                 description: '',
+                type: '',
                 passengerType: '',
                 mode: '',
-                type: '',
-                user_id: this.$route.params.id,
-                balance: 300
-            
-            
+                endingFare: '',
+                start_balance: '',
+                end_balance: ''
+              
         }
+    },
+
+    computed: {
+         users() {
+                return this.$store.getters.getUsers;
+            }
     },
     
     watch: {
@@ -145,7 +144,6 @@ export default {
              if (this.to.length == 10) {
                  this.lookupEndingTo(),
                  this.lookupFareTo()
-                 this.lookupBalance()
               
 
             }
@@ -154,26 +152,7 @@ export default {
 
      
     methods: {
-
-        lookupBalance() {
-            var app = this;
-            app.balance = app.balance - app.endingFare;
-
-       },
-         lookupStartingFrom: _.debounce(function() {
-                var app = this
-
-                const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
-                app.startingCity = "Searching..."
-                this.$http.get(TflBaseUrl + app.origin)
-                    .then(function (response) {
-                        app.startingCity = response.data.matches[0].id
-                        //app.startingCity =  response.data.matches[0].name
-                    })
-                    .catch(function (error) {
-                        app.startingCity = "Invalid Station"
-                    })
-        }, 500),
+        
 
         lookupEndingTo: _.throttle(function() {
             var app = this
@@ -182,8 +161,7 @@ export default {
             this.$http.get(TflBaseUrl + app.to)
                 .then(function (response) {
                     app.endingCity = response.data.matches[0].id
-                    
-                    
+                                  
                 })
                 .catch(function (error) {
                     app.endingCity = "Invalid Station"
@@ -200,17 +178,16 @@ export default {
 
             this.$http.get(TflStopUrl +  app.startingCity + FareUrl + app.endingCity + AppKey)
             
-            
-
                 .then(function (response){
                     app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost,
                     app.description = response.data[0].rows[0].ticketsAvailable[0].description,
                     app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType,
                     app.mode = response.data[0].rows[0].ticketsAvailable[0].mode,
                     app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type,
-                    app.origin = response.data[0].rows[0].from,
-                    app.startingCity = this.startingCity
-                 
+                    app.from = response.data[0].rows[0].from,
+                    app.startingCity = this.startingCity,
+                    app.endingCity = response.data[0].rows[0].toStation,
+                    app.end_balance = app.end_balance -= app.endingFare
                 })
                 .catch(function (error){
                     app.endingFare = "Invalid Fare"
@@ -218,11 +195,21 @@ export default {
 
         },1200),
 
+       
+
+         onSubmit: function() {
+            this.$http.post('/api/user/' + this.user_id + '/journey', this.$data);
+            //alert('Thanks for swiping');
+            //this.$router.push('home')
+
+        },
+
+        
         
         submitNewJourney() {
              this.$store.dispatch('addJourney', {
                  user_id: this.user_id,
-                 origin: this.origin,
+                 from: this.from,
                  startingCity: this.startingCity,
                  to: this.to,
                  endingCity: this.endingCity,
@@ -231,15 +218,13 @@ export default {
                  passengerType: this.passengerType,
                  mode: this.mode,
                  endingFare: this.endingFare,
-                 balance: this.balance
+                 end_balance: this.end_balance
              })   
 
         }
-       
-       
-
         
-    }
+    }    
+    
    
 }
 </script>

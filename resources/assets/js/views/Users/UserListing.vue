@@ -19,7 +19,7 @@
                                              <h6 class="card-subtitle mb-2 text-muted">Balance: {{ user.balance }}</h6>
                                              
                                              
-                                             <h2>{{ endingFare }}</h2>
+                                             <h2>{{ total }}</h2>
                                              <p class="card-text">Card Management</p>
                                              <router-link class="card-link" v-bind:to="  '/users/' + user.id"><h6>View / Change Card  </h6></router-link>
                                              <router-link class="card-link" to="/users/register"> New Card</router-link>
@@ -65,11 +65,26 @@
                 id: this.$route.params.id
             });
 
+            this.$store.dispatch('loadJourneys', {
+                id: this.$route.params.id
+            });
+
         },
         computed: {
             
-            endingFare() {
-                return this.$store.getters.endingFare
+            journeys() {
+                return this.$store.getters.journeys
+            },
+
+            total: function() {
+                var list = this.$store.getters.journeys
+                var sum = 0
+                for(var listProps in list) { 
+                    list[listProps].journeys.forEach(function (journey) { 
+                    sum += journey.endingFare - journey.end_balance  
+                    }) 
+                } 
+                return sum; 
             },
 
             usersLoadStatus() {

@@ -19,10 +19,10 @@
                             </div><!-- end of .lead-form -->
                                 <br>
                                 <div class="form-group">
-                                   <label for="origin">Origin</label>
-                                    <input name="origin" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Enter your station" v-model="origin" id="origin">
-                                    <p class="help is-danger" v-show="errors.has('origin')">
-                                        {{ errors.first('origin') }}
+                                   <label for="from">From</label>
+                                    <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Enter your station" v-model="from" id="from">
+                                    <p class="help is-danger" v-show="errors.has('from')">
+                                        {{ errors.first('from') }}
                                     </p>
                                     <p></p>
 
@@ -63,7 +63,7 @@
         
         data: function() {
             return {
-                origin: '',
+                from: '',
                 startingCity: '',
                 firstStations: [],
                 user_id: '',
@@ -74,9 +74,9 @@
         
 
         watch: {
-            origin: function () {
+            from: function () {
                 this.startingCity = ''
-                if (this.origin.length == 10) {
+                if (this.from.length == 10) {
                     this.lookupStartingFrom()
                 }
             }
@@ -96,7 +96,7 @@
 
                 const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
                 app.startingCity = "Searching..."
-                this.$http.get(TflBaseUrl + app.origin)
+                this.$http.get(TflBaseUrl + app.from)
                     .then(function (response) {
                         app.startingCity = response.data.matches[0].id
                         //app.startingCity =  response.data.matches[0].name

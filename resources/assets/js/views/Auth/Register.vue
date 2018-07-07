@@ -58,10 +58,7 @@
                             
     
                            
-                                <div class="form group row">
-                                    <label for="balance">Balance</label>
-                                    <input name="balance"  v-validate="'required|decimal'" type="text" class="form-control" placeholder="Balance" v-model="form.balance" autocomplete="nope" id="balance">
-                                </div><!-- /.form group row-->
+                           
                             
                             
                             

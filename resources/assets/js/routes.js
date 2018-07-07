@@ -10,6 +10,7 @@ import UserRegister from './views/Users/UserRegister'
 import JourneyListings from './views/Journeys/JourneyListings'
 import JourneyDetail from './views/Journeys/JourneyDetail'
 import Leave from './views/Journeys/Leave'
+import TopUp from './views/Journeys/TopUp.vue'
 
 
 export const routes = [
@@ -70,6 +71,17 @@ export const routes = [
             requiresAuth: true
         }
     },
+
+
+    {   path: '/users/:id/topup',
+        name: 'journey.top',
+        component: TopUp,
+        meta: {
+            requiresAuth: true
+        }
+    },
+
+
 
     {
         path: '/users/:id/journeys',

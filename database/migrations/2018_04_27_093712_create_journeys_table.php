@@ -17,7 +17,7 @@ class CreateJourneysTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             //$table->foreign('user_id')->references('id')->on('cards')->onDelete('cascade')->unsigned();
-            $table->string('origin');
+            $table->string('from');
             $table->string('startingCity');
             $table->string('to');
             $table->string('endingCity');
@@ -26,7 +26,7 @@ class CreateJourneysTable extends Migration
             $table->string('passengerType');
             $table->string('mode');
             $table->decimal('endingFare', 8, 2);
-            $table->decimal('balance', 8, 2);
+            $table->decimal('end_balance', 8, 2);
             $table->timestamps();
         });
     }

@@ -5408,8 +5408,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_App__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_App__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__routes__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__helpers_general__ = __webpack_require__(254);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_js__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__helpers_general__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__store_js__ = __webpack_require__(258);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -77283,6 +77283,9 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_Journeys_JourneyDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_Journeys_JourneyDetail__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_Journeys_Leave__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_Journeys_Leave___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_Journeys_Leave__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_Journeys_TopUp_vue__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_Journeys_TopUp_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_Journeys_TopUp_vue__);
+
 
 
 
@@ -77335,6 +77338,12 @@ var routes = [{
 }, { path: '/users/:id',
     name: 'user.detail',
     component: __WEBPACK_IMPORTED_MODULE_6__views_Users_UserDetail___default.a,
+    meta: {
+        requiresAuth: true
+    }
+}, { path: '/users/:id/topup',
+    name: 'journey.top',
+    component: __WEBPACK_IMPORTED_MODULE_11__views_Journeys_TopUp_vue___default.a,
     meta: {
         requiresAuth: true
     }
@@ -78854,9 +78863,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 
@@ -79199,46 +79205,6 @@ var render = function() {
                           return
                         }
                         _vm.$set(_vm.form, "mobile_phone", $event.target.value)
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form group row" }, [
-                  _c("label", { attrs: { for: "balance" } }, [
-                    _vm._v("Balance")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "validate",
-                        rawName: "v-validate",
-                        value: "required|decimal",
-                        expression: "'required|decimal'"
-                      },
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.balance,
-                        expression: "form.balance"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: {
-                      name: "balance",
-                      type: "text",
-                      placeholder: "Balance",
-                      autocomplete: "nope",
-                      id: "balance"
-                    },
-                    domProps: { value: _vm.form.balance },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.form, "balance", $event.target.value)
                       }
                     }
                   })
@@ -79599,7 +79565,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
-            origin: '',
+            from: '',
             startingCity: '',
             firstStations: [],
             user_id: '',
@@ -79609,9 +79575,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     watch: {
-        origin: function origin() {
+        from: function from() {
             this.startingCity = '';
-            if (this.origin.length == 10) {
+            if (this.from.length == 10) {
                 this.lookupStartingFrom();
             }
         }
@@ -79630,7 +79596,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query=';
             app.startingCity = "Searching...";
-            this.$http.get(TflBaseUrl + app.origin).then(function (response) {
+            this.$http.get(TflBaseUrl + app.from).then(function (response) {
                 app.startingCity = response.data.matches[0].id;
                 //app.startingCity =  response.data.matches[0].name
             }).catch(function (error) {
@@ -79672,7 +79638,7 @@ var render = function() {
               _c("br"),
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "origin" } }, [_vm._v("Origin")]),
+                _c("label", { attrs: { for: "from" } }, [_vm._v("From")]),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -79685,24 +79651,24 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.origin,
-                      expression: "origin"
+                      value: _vm.from,
+                      expression: "from"
                     }
                   ],
                   staticClass: "form-control",
                   attrs: {
-                    name: "origin",
+                    name: "from",
                     type: "text",
                     placeholder: "Enter your station",
-                    id: "origin"
+                    id: "from"
                   },
-                  domProps: { value: _vm.origin },
+                  domProps: { value: _vm.from },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.origin = $event.target.value
+                      _vm.from = $event.target.value
                     }
                   }
                 }),
@@ -79714,8 +79680,8 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.errors.has("origin"),
-                        expression: "errors.has('origin')"
+                        value: _vm.errors.has("from"),
+                        expression: "errors.has('from')"
                       }
                     ],
                     staticClass: "help is-danger"
@@ -79723,7 +79689,7 @@ var render = function() {
                   [
                     _vm._v(
                       "\n                                    " +
-                        _vm._s(_vm.errors.first("origin")) +
+                        _vm._s(_vm.errors.first("from")) +
                         "\n                                "
                     )
                   ]
@@ -79974,11 +79940,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -79999,23 +79960,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-
-            origin: '',
+            user_id: this.$route.params.id,
+            from: '',
             startingCity: '',
             to: '',
             endingCity: '',
-            fare: '',
-            endingFare: '',
             description: '',
+            type: '',
             passengerType: '',
             mode: '',
-            type: '',
-            user_id: this.$route.params.id,
-            balance: 300
+            endingFare: '',
+            start_balance: '',
+            end_balance: ''
 
         };
     },
 
+
+    computed: {
+        users: function users() {
+            return this.$store.getters.getUsers;
+        }
+    },
 
     watch: {
 
@@ -80023,29 +79989,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.endingCity = '';
             if (this.to.length == 10) {
                 this.lookupEndingTo(), this.lookupFareTo();
-                this.lookupBalance();
             }
         }
     },
 
     methods: {
-        lookupBalance: function lookupBalance() {
-            var app = this;
-            app.balance = app.balance - app.endingFare;
-        },
-
-        lookupStartingFrom: __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.debounce(function () {
-            var app = this;
-
-            var TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query=';
-            app.startingCity = "Searching...";
-            this.$http.get(TflBaseUrl + app.origin).then(function (response) {
-                app.startingCity = response.data.matches[0].id;
-                //app.startingCity =  response.data.matches[0].name
-            }).catch(function (error) {
-                app.startingCity = "Invalid Station";
-            });
-        }, 500),
 
         lookupEndingTo: __WEBPACK_IMPORTED_MODULE_1_lodash___default.a.throttle(function () {
             var app = this;
@@ -80067,16 +80015,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             app.endingFare = "Searching..";
 
             this.$http.get(TflStopUrl + app.startingCity + FareUrl + app.endingCity + AppKey).then(function (response) {
-                app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost, app.description = response.data[0].rows[0].ticketsAvailable[0].description, app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType, app.mode = response.data[0].rows[0].ticketsAvailable[0].mode, app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type, app.origin = response.data[0].rows[0].from, app.startingCity = this.startingCity;
+                app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost, app.description = response.data[0].rows[0].ticketsAvailable[0].description, app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType, app.mode = response.data[0].rows[0].ticketsAvailable[0].mode, app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type, app.from = response.data[0].rows[0].from, app.startingCity = this.startingCity, app.endingCity = response.data[0].rows[0].toStation, app.end_balance = app.end_balance -= app.endingFare;
             }).catch(function (error) {
                 app.endingFare = "Invalid Fare";
             });
         }, 1200),
 
+        onSubmit: function onSubmit() {
+            this.$http.post('/api/user/' + this.user_id + '/journey', this.$data);
+            //alert('Thanks for swiping');
+            //this.$router.push('home')
+        },
+
         submitNewJourney: function submitNewJourney() {
             this.$store.dispatch('addJourney', {
                 user_id: this.user_id,
-                origin: this.origin,
+                from: this.from,
                 startingCity: this.startingCity,
                 to: this.to,
                 endingCity: this.endingCity,
@@ -80085,7 +80039,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 passengerType: this.passengerType,
                 mode: this.mode,
                 endingFare: this.endingFare,
-                balance: this.balance
+                end_balance: this.end_balance
             });
         }
     }
@@ -80352,38 +80306,6 @@ var render = function() {
                     _vm._v(" "),
                     _c("br"),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form group row" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.balance,
-                            expression: "balance"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Balance",
-                          readonly: "readonly"
-                        },
-                        domProps: { value: _vm.balance },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.balance = $event.target.value
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "city-span" }, [
-                        _vm._v(_vm._s(_vm.balance))
-                      ])
-                    ]),
-                    _vm._v(" "),
                     _c("br"),
                     _vm._v(" "),
                     _c(
@@ -80414,7 +80336,7 @@ var render = function() {
                           on: {
                             click: function($event) {
                               $event.preventDefault()
-                              return _vm.submitNewJourney($event)
+                              return _vm.onSubmit($event)
                             }
                           }
                         },
@@ -80566,6 +80488,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -80629,23 +80553,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.$store.dispatch('loadUsers', {
             id: this.$route.params.id
         });
+
+        this.$store.dispatch('loadJourneys', {
+            id: this.$route.params.id
+        });
     },
 
-    computed: {
-        endingFare: function endingFare() {
-            return this.$store.getters.endingFare;
+    computed: _defineProperty({
+        journeys: function journeys() {
+            return this.$store.getters.journeys;
         },
+
+
+        total: function total() {
+            var list = this.$store.getters.journeys;
+            var sum = 0;
+            for (var listProps in list) {
+                list[listProps].journeys.forEach(function (journey) {
+                    sum += journey.endingFare - journey.end_balance;
+                });
+            }
+            return sum;
+        },
+
         usersLoadStatus: function usersLoadStatus() {
 
             return this.$store.getters.getUsersLoadStatus;
         },
         users: function users() {
             return this.$store.getters.getUsers;
-        },
-        journeys: function journeys() {
-            return this.$store.getters.getJourneys;
         }
-    }
+    }, 'journeys', function journeys() {
+        return this.$store.getters.getJourneys;
+    })
 
     // data() {
     //     return {
@@ -80711,7 +80651,7 @@ var render = function() {
                               [_vm._v("Balance: " + _vm._s(user.balance))]
                             ),
                             _vm._v(" "),
-                            _c("h2", [_vm._v(_vm._s(_vm.endingFare))]),
+                            _c("h2", [_vm._v(_vm._s(_vm.total))]),
                             _vm._v(" "),
                             _c("p", { staticClass: "card-text" }, [
                               _vm._v("Card Management")
@@ -82691,6 +82631,217 @@ if (false) {
 
 /***/ }),
 /* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(255)
+/* template */
+var __vue_template__ = __webpack_require__(256)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/Journeys/TopUp.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-62bab632", Component.options)
+  } else {
+    hotAPI.reload("data-v-62bab632", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 255 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+
+            start_balance: ''
+
+        };
+    },
+
+    methods: {
+        topUp: function topUp() {
+            this.$store.dispatch('addBalance', {
+                user_id: this.user_id,
+                start_balance: this.start_balance
+            });
+        }
+    }
+
+});
+
+/***/ }),
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-8" }, [
+          _c("div", { staticClass: "lead-form" }, [
+            _c(
+              "form",
+              {
+                attrs: { method: "post" },
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.topUp($event)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "form group row" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.start_balance,
+                        expression: "start_balance"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      placeholder: "Balance",
+                      id: "start_balance"
+                    },
+                    domProps: { value: _vm.start_balance },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.start_balance = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "city-span" }, [
+                    _vm._v(_vm._s(_vm.start_balance))
+                  ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary btn-lg",
+                  attrs: {
+                    disabled: _vm.errors.any(),
+                    type: "submit",
+                    id: "submit"
+                  },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.topUp($event)
+                    }
+                  }
+                },
+                [_vm._v("Top Up")]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-sm" })
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-62bab632", module.exports)
+  }
+}
+
+/***/ }),
+/* 257 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -82719,13 +82870,13 @@ function initialise(store, router) {
 }
 
 /***/ }),
-/* 255 */
+/* 258 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return store; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_journey_js__ = __webpack_require__(256);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_user_js__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_journey_js__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_user_js__ = __webpack_require__(261);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(19);
@@ -82741,7 +82892,7 @@ __WEBPACK_IMPORTED_MODULE_2_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vuex
 /*
   Adds the promise polyfill for IE 11
 */
-__webpack_require__(260).polyfill();
+__webpack_require__(263).polyfill();
 
 var store = new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store({
 
@@ -82753,12 +82904,12 @@ var store = new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store({
 });
 
 /***/ }),
-/* 256 */
+/* 259 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return journeys; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_journey_js__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_journey_js__ = __webpack_require__(260);
 /*
 |-------------------------------------------------------------------------------
 | VUEX modules/modules.js
@@ -82833,11 +82984,30 @@ var journeys = {
                 dispatch = _ref3.dispatch;
 
             commit('setJourneyAddedStatus', 1);
-            __WEBPACK_IMPORTED_MODULE_0__api_journey_js__["a" /* default */].postAddNewJourney(data.user_id, data.origin, data.startingCity, data.to, data.endingCity, data.description, data.type, data.passengerType, data.mode, data.endingFare, data.balance).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_0__api_journey_js__["a" /* default */].postAddNewJourney(data.user_id, data.origin, data.startingCity, data.to, data.endingCity, data.description, data.type, data.passengerType, data.mode, data.endingFare, data.start_balance, data.end_balance).then(function (response) {
                 commit('setJourneyAddedStatus', 2);
                 //dispatch('loadJourneys');
             }).catch(function () {
                 commit('setJourneyAddedStatus', 3);
+            });
+        },
+
+
+        /*
+            Adds a journey to the API
+        */
+
+        addBalance: function addBalance(_ref4, data) {
+            var commit = _ref4.commit,
+                state = _ref4.state,
+                dispatch = _ref4.dispatch;
+
+            commit('setBalanceAddedStatus', 1);
+            __WEBPACK_IMPORTED_MODULE_0__api_journey_js__["a" /* default */].postAddBalance(data.user_id, data.start_balance).then(function (response) {
+                commit('setBalanceAddedStatus', 2);
+                //dispatch('loadJourneys');
+            }).catch(function () {
+                commit('setBalanceAddedStatus', 3);
             });
         }
     },
@@ -82859,6 +83029,14 @@ var journeys = {
         */
         setJourneyAddedStatus: function setJourneyAddedStatus(state, status) {
             state.journeyAddStatus = status;
+        },
+
+
+        /*
+        Set the balance add status
+        */
+        setBalanceAddedStatus: function setBalanceAddedStatus(state, status) {
+            state.balanceAddStatus = status;
         },
 
 
@@ -82939,7 +83117,7 @@ var journeys = {
 };
 
 /***/ }),
-/* 257 */
+/* 260 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -82961,7 +83139,7 @@ var journeys = {
     /*
         POST  /api/user/{user}/make/journey/
     */
-    postAddNewJourney: function postAddNewJourney(user_id, origin, startingCity, to, endingCity, description, type, passengerType, mode, endingFare, balance) {
+    postAddNewJourney: function postAddNewJourney(user_id, origin, startingCity, to, endingCity, description, type, passengerType, mode, endingFare, start_balance, end_balance) {
         return axios.post('/api/user/' + this.user_id + '/journey', {
             user_id: user_id,
             origin: origin,
@@ -82973,7 +83151,20 @@ var journeys = {
             passengerType: passengerType,
             mode: mode,
             endingFare: endingFare,
-            balance: balance
+            start_balance: start_balance,
+            end_balance: end_balance
+
+        });
+    },
+
+    /*
+        POST  /api/user/{user}/make/journey/
+    */
+    postAddBalance: function postAddBalance(user_id, start_balance, end_balance) {
+        return axios.post('/api/user/' + this.user_id + '/journey', {
+            user_id: user_id,
+            start_balance: start_balance,
+            end_balance: end_balance
 
         });
     }
@@ -82981,12 +83172,12 @@ var journeys = {
 });
 
 /***/ }),
-/* 258 */
+/* 261 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return users; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_user_js__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_user_js__ = __webpack_require__(262);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_auth__ = __webpack_require__(6);
 
 
@@ -83161,7 +83352,7 @@ var users = {
 
         /*
             Registers the new user
-          */
+         */
 
         register: function register(state) {
             state.loading = true;
@@ -83283,7 +83474,7 @@ var users = {
 };
 
 /***/ }),
-/* 259 */
+/* 262 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -83305,7 +83496,7 @@ var users = {
 });
 
 /***/ }),
-/* 260 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {/*!

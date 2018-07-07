@@ -68,7 +68,7 @@ export const journeys = {
         addJourney({ commit, state, dispatch }, data){
             commit( 'setJourneyAddedStatus', 1);
             JourneyAPI.postAddNewJourney( data.user_id, data.origin, data.startingCity, data.to, data.endingCity, data.description,
-            data.type, data.passengerType, data.mode, data.endingFare, data.balance)
+            data.type, data.passengerType, data.mode, data.endingFare, data.start_balance, data.end_balance)
             .then( function(response){
                 commit('setJourneyAddedStatus', 2);
                 //dispatch('loadJourneys');
@@ -77,7 +77,25 @@ export const journeys = {
                 commit('setJourneyAddedStatus', 3);
             });
 
-        }
+        },
+
+
+        /*
+            Adds a journey to the API
+        */
+
+       addBalance({ commit, state, dispatch }, data){
+        commit( 'setBalanceAddedStatus', 1);
+        JourneyAPI.postAddBalance( data.user_id, data.start_balance)
+        .then( function(response){
+            commit('setBalanceAddedStatus', 2);
+            //dispatch('loadJourneys');
+        })
+        .catch( function() {
+            commit('setBalanceAddedStatus', 3);
+        });
+
+    }
         
     },
 
@@ -98,6 +116,13 @@ export const journeys = {
         */
        setJourneyAddedStatus( state, status ) {
             state.journeyAddStatus = status;
+        },
+        
+        /*
+        Set the balance add status
+        */
+       setBalanceAddedStatus( state, status ) {
+        state.balanceAddStatus = status;
         },
         
         /*

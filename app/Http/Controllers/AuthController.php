@@ -34,7 +34,7 @@ class AuthController extends Controller
         $user->address = $request->input('address');
         $user->home_phone = $request->input('home_phone');
         $user->mobile_phone = $request->input('mobile_phone');
-        $user->balance = $request->input('balance');
+        
 
         if($user->save()) {
             return new UserResource($user);

@@ -50,7 +50,7 @@ class UserJourneyController extends Controller
     {
         $journey = $request->isMethod('put') ? Journey::findOrFail($request->journey_id) : new Journey;
         $journey->user_id = $request->input('user_id');
-        $journey->origin = $request->input('origin');
+        $journey->from = $request->input('from');
         $journey->startingCity = $request->input('startingCity');
         $journey->to = $request->input('to');
         $journey->endingCity = $request->input('endingCity');
@@ -59,6 +59,7 @@ class UserJourneyController extends Controller
         $journey->passengerType = $request->input('passengerType');
         $journey->mode = $request->input('mode');
         $journey->endingFare = $request->input('endingFare');
+        $journey->end_balance = $request->input('end_balance');
 
         if ($journey->save()) {
             return new JourneyResource($journey);
