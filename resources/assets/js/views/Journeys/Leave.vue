@@ -124,9 +124,8 @@ export default {
                 type: '',
                 passengerType: '',
                 mode: '',
-                endingFare: '',
-                start_balance: '',
-                end_balance: ''
+                endingFare: ''
+                
               
         }
     },
@@ -186,8 +185,8 @@ export default {
                     app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type,
                     app.from = response.data[0].rows[0].from,
                     app.startingCity = this.startingCity,
-                    app.endingCity = response.data[0].rows[0].toStation,
-                    app.end_balance = app.end_balance -= app.endingFare
+                    app.endingCity = response.data[0].rows[0].toStation
+                    //app.end_balance = app.end_balance -= app.endingFare
                 })
                 .catch(function (error){
                     app.endingFare = "Invalid Fare"
@@ -217,8 +216,8 @@ export default {
                  type: this.type,
                  passengerType: this.passengerType,
                  mode: this.mode,
-                 endingFare: this.endingFare,
-                 end_balance: this.end_balance
+                 endingFare: this.endingFare
+                 //end_balance: this.end_balance
              })   
 
         }

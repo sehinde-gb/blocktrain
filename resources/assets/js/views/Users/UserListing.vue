@@ -16,10 +16,9 @@
                                      <div class="card" style="width: 18rem;">
                                          <div class="card-body">
                                              <h5 class="card-title">Card Number:  {{ user.id }}</h5>
-                                             <h6 class="card-subtitle mb-2 text-muted">Balance: {{ user.balance }}</h6>
                                              
+                                             <h6 class="card-subtitle mb-2 text-muted">Current Balance: {{ current_balance | currency('£') }}</h6>
                                              
-                                             <h2>{{ total }}</h2>
                                              <p class="card-text">Card Management</p>
                                              <router-link class="card-link" v-bind:to="  '/users/' + user.id"><h6>View / Change Card  </h6></router-link>
                                              <router-link class="card-link" to="/users/register"> New Card</router-link>
@@ -77,16 +76,26 @@
             },
 
             total: function() {
-                var list = this.$store.getters.journeys
-                var sum = 0
-                for(var listProps in list) { 
-                    list[listProps].journeys.forEach(function (journey) { 
-                    sum += journey.endingFare - journey.end_balance  
-                    }) 
-                } 
-                return sum; 
+                    console.log(this.journeys);
+                    return this.journeys.reduce(function(total, item){
+                       return total + item.endingFare;
+                    },0);
+                    
             },
 
+            balance: function() {
+                console.log(this.users);
+                var item = 0
+                return this.users.reduce(function(balance, item){
+                    return balance + item.balance;
+                },0);
+            },
+
+            current_balance: function() {
+                return this.balance - this.total;
+            },
+
+    
             usersLoadStatus() {
         
                 return this.$store.getters.getUsersLoadStatus;

@@ -22,7 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->integer('home_phone');
             $table->integer('mobile_phone');
-            $table->decimal('balance', 8, 2);
+            $table->integer('balance');
+            //$table->decimal('balance', 8, 2);
             $table->timestamps();
         });
     }

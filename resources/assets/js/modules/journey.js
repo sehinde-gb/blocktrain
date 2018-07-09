@@ -17,9 +17,7 @@ export const journeys = {
         journeysLoadStatus: 0,
 
         journey: {},
-        journeyLoadStatus: 0,
-        firstname: 'John',
-        lastname: 'Doe'
+        journeyLoadStatus: 0
     },
 
     /*
@@ -149,10 +147,6 @@ export const journeys = {
             state.journey = journey;
         }
 
-        
-
-        
-
     },
 
     /*
@@ -197,9 +191,18 @@ export const journeys = {
 
         getJourneyAddStatus( state) {
             return state.journeyAddStatus;
+        },
+
+        getJourneyById: (state, getters) => (id) => {
+                return state.journeys.find((journey) => journey.id === id);
+            },
+        }, 
+
+        get_journey: (state) => (index) => {
+                return state.journeys.filter((journey) => {
+                return journey.id === index
+                }
+            )
         }
+    }    
 
-        
-    }
-
-}

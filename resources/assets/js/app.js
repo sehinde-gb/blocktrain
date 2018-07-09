@@ -11,6 +11,8 @@ import VueRouter from 'vue-router';
 import VeeValidate from 'vee-validate';
 import VueResource from 'vue-resource';
 import Vuex from 'vuex';
+import Vue2Filters from 'vue2-filters';
+ 
 
 
 window.Vue = require('vue');
@@ -31,7 +33,7 @@ Vue.use(VueRouter);
 Vue.use(VeeValidate);
 Vue.use(VueResource);
 Vue.use(Vuex);
-
+Vue.use(Vue2Filters);
 
 import App from './views/App'
 

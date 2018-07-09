@@ -1,4 +1,5 @@
 <template>
+
     <div>
     
         <div class="container">
@@ -18,9 +19,9 @@
                                     <p class="card-text">Land Phone: {{ user.home_phone }}</p>
                                     <p class="card-text">Mobile Phone: {{ user.mobile_phone }}</p>
                                     <p class="card-text">Email: {{ user.email }}</p>
-                                    <p class="card-text">Balance: {{ user.balance }}</p>
                                     
-                                    <a class="btn btn-outline-primary"><router-link to="/dashboard">Back </router-link></a>
+                                             
+                                    <a class="btn btn-outline-primary"><router-link to="/users">Back </router-link></a>
 
                                    
                                 </div>
@@ -51,29 +52,48 @@
 
 <script>
 
-    var moment = require('moment');
+var moment = require('moment');
  
-    
+import { mapGetters } from 'vuex';
+
     export default {
+        
         data() {
             return {
                 id: this.$route.params.id,
                 moment: moment,
                 user: {}
+                //journey: {}
             }
         },
+
         created() {
             this.fetchAUser();
-            // this.$store.dispatch( 'loadJourneys', {
-            //      user_id: this.$route.params.id
-            //  });
+            
+            //this.$store.dispatch( 'loadJourneys', {
+              //   user_id: this.$route.params.id
+             //});
             
             // this.$store.dispatch('loadUser', {
             //       id: this.$route.params.id
             // });
         },
-    computed: {
+ 
+        computed: {
 
+        //     total: function() {
+        //             console.log(this.journeys);
+        //         return this.journeys.reduce(function(total, item){
+        //             return total - item.endingFare;
+        //         },0);
+        //     },
+
+        //    currentJourney() {
+        //        return this.$store.getters.getjourneysById(1);
+        //    }
+            
+            
+       
         // currentUser() {
         //     return this.$store.getters.currentUser;
         // },
@@ -100,7 +120,7 @@
         // journeys() {
         //     return this.$store.getters.getJourneys;
         // }
-    },
+        },
         methods: {
             fetchAUser() {
                 this.$http.get('/api/user/' + this.id).then((response) => {
@@ -108,13 +128,13 @@
                     this.user = response.body;
                 });
             }
-        },
-        
-        filters: {
-            toUpperCase(value) {
-                return value.toUpperCase();
-            }
         }
+        
+        // filters: {
+        //     toUpperCase(value) {
+        //         return value.toUpperCase();
+        //     }
+        // }
     }
 </script>
 

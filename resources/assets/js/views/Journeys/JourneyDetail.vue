@@ -12,15 +12,15 @@ j<template>
                             <div class="card-body">
                                 <h5 class="card-title">View Details</h5>
                                 
-                                <p class="card-text">From: {{ journey.origin }}</p>
+                                <p class="card-text">From: {{ journey.from }}</p>
                                 <p class="card-text">To: {{ journey.to }}</p>
                                 <p class="card-text">Description: {{ journey.description }}</p>
                                 <p class="card-text">Type of Journey: {{ journey.type }}</p>
                                 <p class="card-text">Passenger Type: {{ journey.passengerType }}</p>
                                 <p class="card-text">Mode: {{ journey.mode }}</p>
-                                <p class="card-text">Fare: {{ journey.endingFare }}</p>
-                                <p class="card-text .d-none">Start Balance: {{ journey.balance }}</p>
-                                <p class="card-text">Current Balance: {{ remaining_balance }}</p>
+                                <p class="card-text">Fare: {{ journey.endingFare | currency('£') }}</p>
+                                
+                                
                                 <a class="btn btn-outline-primary"><router-link v-bind:to="  '/users/' + journey.user_id + '/journeys'">Back</router-link></a>
                                
                                 <a class="btn btn-outline-primary"><router-link to="/users">Dashboard </router-link></a>
@@ -66,41 +66,24 @@ j<template>
         created() {
             this.fetchJourneyDetail();
             //this.fetchAUser();
-            this.$store.dispatch( 'loadUsers', {
-                id: this.$route.params.id
-            });
-
-            
-        },
-
-        computed: {
-            /*
-                Gets the new balance
-            */
-            remaining_balance() {
-              
-                return this.journey.balance - this.journey.endingFare;
-                }
-          
-
+            // this.$store.dispatch( 'loadUsers', {
+            //     id: this.$route.params.id
+            // });
             
         },
         
         data() {
             return {
                 journey: {},
-                user: {},
                 balance: '',
                 id: this.$route.params.id,
-                moment: moment,
-                foo: '10'
+                moment: moment
               
             }
         },
         
         methods: {
             fetchJourneyDetail() {
-            
                 axios.get('/api/user/' + this.id + '/journey/' + this.journey)
                     .then ((response) => {
                     //console.log(response.data);
@@ -108,6 +91,8 @@ j<template>
                     });
                 
             }
+
+            
             
             // fetchAUser() {
             //     axios.get('/api/user/' + this.id)
