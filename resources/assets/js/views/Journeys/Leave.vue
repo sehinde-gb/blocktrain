@@ -185,7 +185,8 @@ export default {
                     app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type,
                     app.from = response.data[0].rows[0].from,
                     app.startingCity = this.startingCity,
-                    app.endingCity = response.data[0].rows[0].toStation
+                    app.endingCity = response.data[0].rows[0].toStation,
+                    app.endingFare = this.endingFare * 100
                     //app.end_balance = app.end_balance -= app.endingFare
                 })
                 .catch(function (error){

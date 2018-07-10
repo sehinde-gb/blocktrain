@@ -80706,7 +80706,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             app.endingFare = "Searching..";
 
             this.$http.get(TflStopUrl + app.startingCity + FareUrl + app.endingCity + AppKey).then(function (response) {
-                app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost, app.description = response.data[0].rows[0].ticketsAvailable[0].description, app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType, app.mode = response.data[0].rows[0].ticketsAvailable[0].mode, app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type, app.from = response.data[0].rows[0].from, app.startingCity = this.startingCity, app.endingCity = response.data[0].rows[0].toStation;
+                app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost, app.description = response.data[0].rows[0].ticketsAvailable[0].description, app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType, app.mode = response.data[0].rows[0].ticketsAvailable[0].mode, app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type, app.from = response.data[0].rows[0].from, app.startingCity = this.startingCity, app.endingCity = response.data[0].rows[0].toStation, app.endingFare = this.endingFare * 100;
                 //app.end_balance = app.end_balance -= app.endingFare
             }).catch(function (error) {
                 app.endingFare = "Invalid Fare";
