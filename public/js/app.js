@@ -80193,6 +80193,8 @@ exports.push([module.i, "\ndiv.card[data-v-b47cc622] {\n    color: #856404;\n   
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_SideMenu_vue__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_SideMenu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Users_SideMenu_vue__);
 //
 //
 //
@@ -80243,16 +80245,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'enter',
+
+    components: { SideMenu: __WEBPACK_IMPORTED_MODULE_1__Users_SideMenu_vue___default.a },
 
     props: ['user.id'],
 
@@ -80324,114 +80324,117 @@ var render = function() {
       },
       [
         _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-8" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "from" } }, [_vm._v("From")]),
+          _c(
+            "div",
+            { staticClass: "row" },
+            [
+              _c("div", { staticClass: "col-8" }, [
+                _vm._m(0),
                 _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "validate",
-                      rawName: "v-validate",
-                      value: "required|min:6",
-                      expression: "'required|min:6'"
-                    },
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.from,
-                      expression: "from"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    name: "from",
-                    type: "text",
-                    placeholder: "Enter your station",
-                    id: "from"
-                  },
-                  domProps: { value: _vm.from },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.from = $event.target.value
-                    }
-                  }
-                }),
+                _c("br"),
                 _vm._v(" "),
-                _c(
-                  "p",
-                  {
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", { attrs: { for: "from" } }, [_vm._v("From")]),
+                  _vm._v(" "),
+                  _c("input", {
                     directives: [
                       {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.errors.has("from"),
-                        expression: "errors.has('from')"
+                        name: "validate",
+                        rawName: "v-validate",
+                        value: "required|min:6",
+                        expression: "'required|min:6'"
+                      },
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.from,
+                        expression: "from"
                       }
                     ],
-                    staticClass: "help is-danger"
-                  },
-                  [
-                    _vm._v(
-                      "\n                                    " +
-                        _vm._s(_vm.errors.first("from")) +
-                        "\n                                "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("p"),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass: "city-span",
-                    model: {
-                      value: _vm.startingCity,
-                      callback: function($$v) {
-                        _vm.startingCity = $$v
-                      },
-                      expression: "startingCity"
-                    }
-                  },
-                  [_vm._v(_vm._s(_vm.startingCity))]
-                ),
-                _vm._v(" "),
-                _c("hr")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-sm" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-primary btn-lg",
-                      attrs: { disabled: _vm.errors.any() },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.stationEnter($event)
+                    staticClass: "form-control",
+                    attrs: {
+                      name: "from",
+                      type: "text",
+                      placeholder: "Enter your station",
+                      id: "from"
+                    },
+                    domProps: { value: _vm.from },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
                         }
+                        _vm.from = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.errors.has("from"),
+                          expression: "errors.has('from')"
+                        }
+                      ],
+                      staticClass: "help is-danger"
+                    },
+                    [
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(_vm.errors.first("from")) +
+                          "\n                            "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass: "city-span",
+                      model: {
+                        value: _vm.startingCity,
+                        callback: function($$v) {
+                          _vm.startingCity = $$v
+                        },
+                        expression: "startingCity"
                       }
                     },
-                    [_vm._v("Add Journey")]
-                  )
+                    [_vm._v(_vm._s(_vm.startingCity))]
+                  ),
+                  _vm._v(" "),
+                  _c("hr")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-sm" })
-              ])
-            ]),
-            _vm._v(" "),
-            _vm._m(1)
-          ])
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary btn-lg",
+                        attrs: { disabled: _vm.errors.any() },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.stationEnter($event)
+                          }
+                        }
+                      },
+                      [_vm._v("Add Journey")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm" })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("SideMenu")
+            ],
+            1
+          )
         ])
       ]
     )
@@ -80467,16 +80470,6 @@ var staticRenderFns = [
           ])
         ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-4" }, [
-      _c("h2", [_vm._v("My Account")]),
-      _vm._v(" "),
-      _c("ul", [_c("a", { attrs: { href: "#" } }, [_vm._v("Contactless")])])
     ])
   }
 ]
@@ -80538,16 +80531,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -80706,8 +80689,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             app.endingFare = "Searching..";
 
             this.$http.get(TflStopUrl + app.startingCity + FareUrl + app.endingCity + AppKey).then(function (response) {
-                app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost, app.description = response.data[0].rows[0].ticketsAvailable[0].description, app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType, app.mode = response.data[0].rows[0].ticketsAvailable[0].mode, app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type, app.from = response.data[0].rows[0].from, app.startingCity = this.startingCity, app.endingCity = response.data[0].rows[0].toStation, app.endingFare = this.endingFare * 100;
-                //app.end_balance = app.end_balance -= app.endingFare
+                app.from = response.data[0].rows[0].from, app.startingCity = this.startingCity, app.endingCity = response.data[0].rows[0].toStation, app.description = response.data[0].rows[0].ticketsAvailable[0].description, app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type, app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType, app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost, app.mode = response.data[0].rows[0].ticketsAvailable[0].mode, app.endingFare = this.endingFare * 100;
             }).catch(function (error) {
                 app.endingFare = "Invalid Fare";
             });
@@ -80731,7 +80713,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 passengerType: this.passengerType,
                 mode: this.mode,
                 endingFare: this.endingFare
-                //end_balance: this.end_balance
+
             });
         }
     }
@@ -81028,31 +81010,11 @@ var render = function() {
                           on: {
                             click: function($event) {
                               $event.preventDefault()
-                              return _vm.onSubmit($event)
+                              return _vm.submitNewJourney($event)
                             }
                           }
                         },
                         [_vm._v("Swipe Out & Exit")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-sm" })
-                    ]),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "btn btn-light",
-                          attrs: { role: "button" }
-                        },
-                        [
-                          _c("router-link", { attrs: { to: "/dashboard" } }, [
-                            _vm._v("Dashboard ")
-                          ])
-                        ],
-                        1
                       ),
                       _vm._v(" "),
                       _c("div", { staticClass: "col-sm" })
@@ -81180,6 +81142,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SideMenu_vue__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SideMenu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__SideMenu_vue__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 //
@@ -81223,22 +81187,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: { SideMenu: __WEBPACK_IMPORTED_MODULE_0__SideMenu_vue___default.a },
+
     created: function created() {
         //this.fetchUserList();
         this.$store.dispatch('loadUsers', {
@@ -81257,14 +81213,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
         total: function total() {
-            console.log(this.journeys);
+            //console.log(this.journeys);
             return this.journeys.reduce(function (total, item) {
                 return total + item.endingFare;
             }, 0);
         },
 
         balance: function balance() {
-            console.log(this.users);
+            //console.log(this.users);
             var item = 0;
             return this.users.reduce(function (balance, item) {
                 return balance + item.balance;
@@ -81272,7 +81228,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         },
 
         current_balance: function current_balance() {
-            return this.balance - this.total;
+            return (this.balance - this.total) / 100;
         },
 
         usersLoadStatus: function usersLoadStatus() {
@@ -81315,178 +81271,129 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-8" }, [
-          _c(
-            "div",
-            { staticClass: "lead-form" },
-            [
-              _c("br"),
-              _vm._v(" "),
-              _c("h2", [_vm._v("My Zorra Cards")]),
-              _vm._v(" "),
-              _c("hr"),
-              _vm._v(" "),
-              _vm._l(_vm.users, function(user) {
-                return _c("div", { staticClass: "single-card" }, [
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "list-group" }, [
-                    _c(
-                      "div",
-                      { staticClass: "card", staticStyle: { width: "18rem" } },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "card-body" },
-                          [
-                            _c("h5", { staticClass: "card-title" }, [
-                              _vm._v("Card Number:  " + _vm._s(user.id))
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "h6",
-                              { staticClass: "card-subtitle mb-2 text-muted" },
-                              [
-                                _vm._v(
-                                  "Current Balance: " +
-                                    _vm._s(
-                                      _vm._f("currency")(
-                                        _vm.current_balance,
-                                        "£"
+      _c(
+        "div",
+        { staticClass: "row" },
+        [
+          _c("div", { staticClass: "col-8" }, [
+            _c(
+              "div",
+              { staticClass: "lead-form" },
+              [
+                _c("br"),
+                _vm._v(" "),
+                _c("h2", [_vm._v("My Zorra Cards")]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _vm._l(_vm.users, function(user) {
+                  return _c("div", { staticClass: "single-card" }, [
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("ul", { staticClass: "list-group" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "card",
+                          staticStyle: { width: "18rem" }
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "card-body" },
+                            [
+                              _c("h5", { staticClass: "card-title" }, [
+                                _vm._v("Card Number:  " + _vm._s(user.id))
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "h6",
+                                {
+                                  staticClass: "card-subtitle mb-2 text-muted"
+                                },
+                                [
+                                  _vm._v(
+                                    "Current Balance: " +
+                                      _vm._s(
+                                        _vm._f("currency")(
+                                          _vm.current_balance,
+                                          "£"
+                                        )
                                       )
-                                    )
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "card-text" }, [
-                              _vm._v("Card Management")
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "card-link",
-                                attrs: { to: "/users/" + user.id }
-                              },
-                              [_c("h6", [_vm._v("View / Change Card  ")])]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "card-link",
-                                attrs: { to: "/users/register" }
-                              },
-                              [_vm._v(" New Card")]
-                            ),
-                            _vm._v(" "),
-                            _c("br"),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "card-text" }, [
-                              _vm._v("Journeys")
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "card-link",
-                                attrs: {
-                                  to: "/users/" + user.id + "/make/journey"
-                                }
-                              },
-                              [_c("h6", [_vm._v("Start Journey")])]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "card-link",
-                                attrs: { to: "/users/" + user.id + "/journeys" }
-                              },
-                              [_c("h6", [_vm._v("Journey History")])]
-                            )
-                          ],
-                          1
-                        )
-                      ]
-                    )
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "card-text" }, [
+                                _vm._v("Card Management")
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "card-link",
+                                  attrs: { to: "/users/" + user.id }
+                                },
+                                [_c("h6", [_vm._v("View / Change Card  ")])]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "card-link",
+                                  attrs: { to: "/users/register" }
+                                },
+                                [_c("h6", [_vm._v(" New Card ")])]
+                              ),
+                              _vm._v(" "),
+                              _c("br"),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "card-text" }, [
+                                _vm._v("Journeys")
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "card-link",
+                                  attrs: {
+                                    to: "/users/" + user.id + "/make/journey"
+                                  }
+                                },
+                                [_c("h6", [_vm._v("Start Journey")])]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "card-link",
+                                  attrs: {
+                                    to: "/users/" + user.id + "/journeys"
+                                  }
+                                },
+                                [_c("h6", [_vm._v("Journey History")])]
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      )
+                    ])
                   ])
-                ])
-              })
-            ],
-            2
-          )
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
-      ])
+                })
+              ],
+              2
+            )
+          ]),
+          _vm._v(" "),
+          _c("SideMenu")
+        ],
+        1
+      )
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-4" }, [
-      _c("h2", { staticClass: "list-group-item text-center text-uppercase" }, [
-        _vm._v("My Account")
-      ]),
-      _vm._v(" "),
-      _c("ul", { staticClass: "list-group-item" }, [
-        _c(
-          "a",
-          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
-          [_vm._v("Contactless")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
-          [_vm._v("Change My Password")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
-          [_vm._v("Order History")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
-          [_vm._v("Delay Refunds")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
-          [_vm._v("Change My Password")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
-          [_vm._v("Help")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
-          [_vm._v("View Change Details")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
-          [_vm._v("Log Out")]
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -81594,14 +81501,8 @@ exports.push([module.i, "\n#single-card[data-v-67977a54] {\n    max-width: 960px
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(11);
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SideMenu_vue__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SideMenu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__SideMenu_vue__);
 //
 //
 //
@@ -81652,7 +81553,11 @@ var moment = __webpack_require__(0);
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: { SideMenu: __WEBPACK_IMPORTED_MODULE_1__SideMenu_vue___default.a },
+
     data: function data() {
         return {
             id: this.$route.params.id,
@@ -82010,87 +81915,81 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-8" }, [
-          _c("div", { staticClass: "lead-form" }, [
-            _c("h2", { staticClass: "text-center" }, [
-              _vm._v("View or Change Details")
-            ]),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("h5", { staticClass: "text-center" }, [
-              _vm._v("Welcome " + _vm._s(_vm.user.name))
-            ]),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("div", { staticClass: "card text-center" }, [
-              _c("div", { staticClass: "card-header" }, [
-                _vm._v(
-                  "\n                                Card No: " +
-                    _vm._s(_vm.user.id) +
-                    "\n                            "
-                )
+      _c(
+        "div",
+        { staticClass: "row" },
+        [
+          _c("div", { staticClass: "col-8" }, [
+            _c("div", { staticClass: "lead-form" }, [
+              _c("h2", { staticClass: "text-center" }, [
+                _vm._v("View or Change Details")
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v("Address: " + _vm._s(_vm.user.address))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v("Land Phone: " + _vm._s(_vm.user.home_phone))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v("Mobile Phone: " + _vm._s(_vm.user.mobile_phone))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v("Email: " + _vm._s(_vm.user.email))
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "btn btn-outline-primary" },
-                  [
-                    _c("router-link", { attrs: { to: "/users" } }, [
-                      _vm._v("Back ")
-                    ])
-                  ],
-                  1
-                )
+              _c("br"),
+              _vm._v(" "),
+              _c("h5", { staticClass: "text-center" }, [
+                _vm._v("Welcome " + _vm._s(_vm.user.name))
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "card-footer text-muted" }, [
-                _vm._v(
-                  "\n                                Created " +
-                    _vm._s(_vm.moment(_vm.user.created_at).fromNow()) +
-                    "\n                            "
-                )
+              _c("br"),
+              _vm._v(" "),
+              _c("div", { staticClass: "card text-center" }, [
+                _c("div", { staticClass: "card-header" }, [
+                  _vm._v(
+                    "\n                                Card No: " +
+                      _vm._s(_vm.user.id) +
+                      "\n                            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v("Address: " + _vm._s(_vm.user.address))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v("Land Phone: " + _vm._s(_vm.user.home_phone))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v("Mobile Phone: " + _vm._s(_vm.user.mobile_phone))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v("Email: " + _vm._s(_vm.user.email))
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    { staticClass: "btn btn-outline-primary" },
+                    [
+                      _c("router-link", { attrs: { to: "/users" } }, [
+                        _vm._v("Back ")
+                      ])
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-footer text-muted" }, [
+                  _vm._v(
+                    "\n                                Created " +
+                      _vm._s(_vm.moment(_vm.user.created_at).fromNow()) +
+                      "\n                            "
+                  )
+                ])
               ])
             ])
-          ])
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
-      ])
+          ]),
+          _vm._v(" "),
+          _c("SideMenu")
+        ],
+        1
+      )
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-4" }, [
-      _c("h2", [_vm._v("My Account")]),
-      _vm._v(" "),
-      _c("ul", [_c("a", { attrs: { href: "#" } }, [_vm._v("Contactless")])])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -82805,7 +82704,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -82816,12 +82715,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue__);
 //
 //
 //
@@ -82857,7 +82752,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 var moment = __webpack_require__(0);
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: { SideMenu: __WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue___default.a },
+
     created: function created() {
         //this.fetchJourneyList();
         this.$store.dispatch('loadJourneys', {
@@ -82910,60 +82809,65 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-8" }, [
-          _c(
-            "div",
-            { staticClass: "lead-form" },
-            [
-              _c("h2", { staticClass: "text-center" }, [
-                _vm._v("Journey Listings")
-              ]),
-              _vm._v(" "),
-              _c("hr"),
-              _vm._v(" "),
-              _vm._l(_vm.journeys, function(journey) {
-                return _c("div", [
-                  _c(
-                    "ul",
-                    { staticClass: "list-group" },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "list-group-item",
-                          attrs: {
-                            to:
-                              "/users/" +
-                              _vm.user_id +
-                              "/journeys/" +
-                              journey.id
-                          }
-                        },
-                        [
-                          _c("h6", [
-                            _vm._v(
-                              _vm._s(
-                                _vm
-                                  .moment(journey.created_at)
-                                  .format("dddd, MMMM Do YYYY, h:mm:ss a")
-                              ) + " "
-                            )
-                          ])
-                        ]
-                      )
-                    ],
-                    1
-                  )
-                ])
-              })
-            ],
-            2
-          )
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
-      ]),
+      _c(
+        "div",
+        { staticClass: "row" },
+        [
+          _c("div", { staticClass: "col-8" }, [
+            _c(
+              "div",
+              { staticClass: "lead-form" },
+              [
+                _c("h2", { staticClass: "text-center" }, [
+                  _vm._v("Journey Listings")
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _vm._l(_vm.journeys, function(journey) {
+                  return _c("div", [
+                    _c(
+                      "ul",
+                      { staticClass: "list-group" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "list-group-item",
+                            attrs: {
+                              to:
+                                "/users/" +
+                                _vm.user_id +
+                                "/journeys/" +
+                                journey.id
+                            }
+                          },
+                          [
+                            _c("h6", [
+                              _vm._v(
+                                _vm._s(
+                                  _vm
+                                    .moment(journey.created_at)
+                                    .format("dddd, MMMM Do YYYY, h:mm:ss a")
+                                ) + " "
+                              )
+                            ])
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                })
+              ],
+              2
+            )
+          ]),
+          _vm._v(" "),
+          _c("SideMenu")
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("hr"),
       _vm._v(" "),
@@ -82979,18 +82883,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-4" }, [
-      _c("h2", [_vm._v("My Account")]),
-      _vm._v(" "),
-      _c("ul", [_c("a", { attrs: { href: "#" } }, [_vm._v("Contactless")])])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -83097,13 +82990,8 @@ exports.push([module.i, "\n#single-journey[data-v-7b8336c8] {\n    max-width: 96
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue__);
 //
 //
 //
@@ -83158,7 +83046,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 var moment = __webpack_require__(0);
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: { SideMenu: __WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue___default.a },
+
     created: function created() {
         this.fetchJourneyDetail();
         //this.fetchAUser();
@@ -83210,119 +83102,117 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-8" }, [
-          _c("div", { staticClass: "lead-form" }, [
-            _c("h2", { staticClass: "text-center" }, [
-              _vm._v("Journey History")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card text-center" }, [
-              _c("div", { staticClass: "card-header" }, [
-                _vm._v(
-                  "\n                            " +
-                    _vm._s(
-                      _vm
-                        .moment(_vm.journey.created_at)
-                        .format("dddd, MMMM Do YYYY, h:mm:ss a")
-                    ) +
-                    "\n                        "
-                )
+      _c(
+        "div",
+        { staticClass: "row" },
+        [
+          _c("div", { staticClass: "col-8" }, [
+            _c("div", { staticClass: "lead-form" }, [
+              _c("h2", { staticClass: "text-center" }, [
+                _vm._v("Journey History")
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("h5", { staticClass: "card-title" }, [
-                  _vm._v("View Details")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v("From: " + _vm._s(_vm.journey.from))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v("To: " + _vm._s(_vm.journey.to))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v("Description: " + _vm._s(_vm.journey.description))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v("Type of Journey: " + _vm._s(_vm.journey.type))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v("Passenger Type: " + _vm._s(_vm.journey.passengerType))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v("Mode: " + _vm._s(_vm.journey.mode))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
+              _c("div", { staticClass: "card text-center" }, [
+                _c("div", { staticClass: "card-header" }, [
                   _vm._v(
-                    "Fare: " +
-                      _vm._s(_vm._f("currency")(_vm.journey.endingFare, "£"))
+                    "\n                            " +
+                      _vm._s(
+                        _vm
+                          .moment(_vm.journey.created_at)
+                          .format("dddd, MMMM Do YYYY, h:mm:ss a")
+                      ) +
+                      "\n                        "
                   )
                 ]),
                 _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "btn btn-outline-primary" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          to: "/users/" + _vm.journey.user_id + "/journeys"
-                        }
-                      },
-                      [_vm._v("Back")]
+                _c("div", { staticClass: "card-body" }, [
+                  _c("h5", { staticClass: "card-title" }, [
+                    _vm._v("View Details")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v("From: " + _vm._s(_vm.journey.from))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v("To: " + _vm._s(_vm.journey.to))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v("Description: " + _vm._s(_vm.journey.description))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v("Type of Journey: " + _vm._s(_vm.journey.type))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v(
+                      "Passenger Type: " + _vm._s(_vm.journey.passengerType)
                     )
-                  ],
-                  1
-                ),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v("Mode: " + _vm._s(_vm.journey.mode))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v(
+                      "Fare: " +
+                        _vm._s(
+                          _vm._f("currency")(_vm.journey.endingFare / 100, "£")
+                        )
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    { staticClass: "btn btn-outline-primary" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          attrs: {
+                            to: "/users/" + _vm.journey.user_id + "/journeys"
+                          }
+                        },
+                        [_vm._v("Back")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    { staticClass: "btn btn-outline-primary" },
+                    [
+                      _c("router-link", { attrs: { to: "/users" } }, [
+                        _vm._v("Dashboard ")
+                      ])
+                    ],
+                    1
+                  )
+                ]),
                 _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "btn btn-outline-primary" },
-                  [
-                    _c("router-link", { attrs: { to: "/users" } }, [
-                      _vm._v("Dashboard ")
-                    ])
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-footer text-muted" }, [
-                _vm._v(
-                  "\n                            " +
-                    _vm._s(_vm.moment(_vm.journey.created_at).fromNow()) +
-                    "\n                        "
-                )
+                _c("div", { staticClass: "card-footer text-muted" }, [
+                  _vm._v(
+                    "\n                            " +
+                      _vm._s(_vm.moment(_vm.journey.created_at).fromNow()) +
+                      "\n                        "
+                  )
+                ])
               ])
             ])
-          ])
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
-      ])
+          ]),
+          _vm._v(" "),
+          _c("SideMenu")
+        ],
+        1
+      )
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-4" }, [
-      _c("h2", [_vm._v("My Account")]),
-      _vm._v(" "),
-      _c("ul", [_c("a", { attrs: { href: "#" } }, [_vm._v("Contactless")])])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -83429,10 +83319,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-
+            user_id: this.$route.params.id,
             start_balance: ''
 
         };
+    },
+
+    computed: {
+        users: function users() {
+            return this.$store.getters.getUsers;
+        }
     },
 
     methods: {
@@ -83685,7 +83581,7 @@ var journeys = {
                 dispatch = _ref3.dispatch;
 
             commit('setJourneyAddedStatus', 1);
-            __WEBPACK_IMPORTED_MODULE_0__api_journey_js__["a" /* default */].postAddNewJourney(data.user_id, data.origin, data.startingCity, data.to, data.endingCity, data.description, data.type, data.passengerType, data.mode, data.endingFare, data.start_balance, data.end_balance).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_0__api_journey_js__["a" /* default */].postAddNewJourney(data.user_id, data.from, data.startingCity, data.to, data.endingCity, data.description, data.type, data.passengerType, data.mode, data.endingFare).then(function (response) {
                 commit('setJourneyAddedStatus', 2);
                 //dispatch('loadJourneys');
             }).catch(function () {
@@ -83856,10 +83752,10 @@ var journeys = {
     /*
         POST  /api/user/{user}/make/journey/
     */
-    postAddNewJourney: function postAddNewJourney(user_id, origin, startingCity, to, endingCity, description, type, passengerType, mode, endingFare, start_balance, end_balance) {
+    postAddNewJourney: function postAddNewJourney(user_id, from, startingCity, to, endingCity, description, type, passengerType, mode, endingFare) {
         return axios.post('/api/user/' + this.user_id + '/journey', {
             user_id: user_id,
-            origin: origin,
+            from: from,
             startingCity: startingCity,
             to: to,
             endingCity: endingCity,
@@ -83867,9 +83763,7 @@ var journeys = {
             type: type,
             passengerType: passengerType,
             mode: mode,
-            endingFare: endingFare,
-            start_balance: start_balance,
-            end_balance: end_balance
+            endingFare: endingFare
 
         });
     },
@@ -85397,6 +85291,158 @@ return Promise$1;
 //# sourceMappingURL=es6-promise.map
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10), __webpack_require__(5)))
+
+/***/ }),
+/* 265 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(266)
+/* template */
+var __vue_template__ = __webpack_require__(267)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/Users/SideMenu.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-13b7e5b0", Component.options)
+  } else {
+    hotAPI.reload("data-v-13b7e5b0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 266 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 267 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-4" }, [
+      _c("h2", { staticClass: "list-group-item text-center text-uppercase" }, [
+        _vm._v("My Account")
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "list-group-item" }, [
+        _c(
+          "a",
+          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
+          [_vm._v("Contactless")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
+          [_vm._v("Change My Password")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
+          [_vm._v("Order History")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
+          [_vm._v("Delay Refunds")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
+          [_vm._v("Change My Password")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
+          [_vm._v("Help")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
+          [_vm._v("View Change Details")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
+          [_vm._v("Log Out")]
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-13b7e5b0", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

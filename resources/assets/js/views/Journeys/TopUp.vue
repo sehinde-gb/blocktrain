@@ -42,11 +42,17 @@
 export default {
         data() {
             return {
-                    
+                    user_id: this.$route.params.id,
                     start_balance: ''
                 
             }
         },
+        computed: {
+         users() {
+                return this.$store.getters.getUsers;
+            }
+        },
+    
     methods: {
         
         topUp() {

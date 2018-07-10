@@ -8,7 +8,7 @@ j<template>
                         <div class="card text-center">
                             <div class="card-header">
                                 {{ moment(journey.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a") }}
-                            </div>
+                            </div><!-- .card-header -->
                             <div class="card-body">
                                 <h5 class="card-title">View Details</h5>
                                 
@@ -18,29 +18,22 @@ j<template>
                                 <p class="card-text">Type of Journey: {{ journey.type }}</p>
                                 <p class="card-text">Passenger Type: {{ journey.passengerType }}</p>
                                 <p class="card-text">Mode: {{ journey.mode }}</p>
-                                <p class="card-text">Fare: {{ journey.endingFare | currency('£') }}</p>
+                                <p class="card-text">Fare: {{ journey.endingFare / 100 | currency('£') }}</p>
                                 
                                 
                                 <a class="btn btn-outline-primary"><router-link v-bind:to="  '/users/' + journey.user_id + '/journeys'">Back</router-link></a>
                                
                                 <a class="btn btn-outline-primary"><router-link to="/users">Dashboard </router-link></a>
-                            </div>
+                            </div><!-- .card-body -->
                             <div class="card-footer text-muted">
                                 {{ moment(journey.created_at).fromNow() }}
-                            </div>
+                            </div><!-- .card-footer -->
                         </div><!-- .card -->
                 
                 
-                    </div><!-- end of .col-8 -->
-                </div>
-                <div class="col-4">
-                    <h2>My Account</h2>
-                    <ul>
-                        <a href="#">Contactless</a>
-                
-                    </ul>
-            
-                </div><!-- end of .col-4 -->
+                    </div><!-- end of .lead-form -->
+                </div><!-- end of .col-8 -->
+                <SideMenu></SideMenu>
         
         
             </div> <!-- end of .row -->
@@ -58,10 +51,11 @@ j<template>
 
 <script>
     var moment = require('moment');
+    import SideMenu from '../Users/SideMenu.vue';
     
     export default {
     
-        
+        components: { SideMenu},
 
         created() {
             this.fetchJourneyDetail();

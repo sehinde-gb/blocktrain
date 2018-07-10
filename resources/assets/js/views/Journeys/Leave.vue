@@ -1,96 +1,86 @@
 <template>
     <div>
-         <div class="container">
-                <div class="row">
-                    <div class="col-8">
-                        <div class="lead-form">
-                            <form method="post"  @submit.prevent="submitNewJourney">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <div class="lead-form">
+                        <form method="post"  @submit.prevent="submitNewJourney">
+                                <hr/>
+                                    
+                            <div class="row">
+                                <div class="col-8">
+                                    <h1 class="text-center">Approach Barrier</h1>
                                     <hr/>
-                                     
+                                    <h3 class="text-center">Place Card on Reader</h3>
+                                    
+                                    <hr />
+                                    <div class="card" style="width: 18rem;">
+                                        <img class="card-img-top" src="" alt="Card image cap">
+                                        <div class="card-body">
+                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div><!-- /.card -->
+                                                    
+                            <hr/>
+
+                                    <div class="form group row">
+                                        <label for="to">To</label>
+                                        <input name="to" v-validate="'required|min:6'" type="text" class="form-control" placeholder="To.." v-model="to" id="to" autocomplete="nope">
+                                        <span class="city-span">{{ endingCity}}</span>
+                                    </div><!-- /.form group row -->
+                                    <br/>
+
+                                        
+                                    <div class="form group row">
+                                            <input type="text" class="form-control" placeholder="Fares" v-model="endingFare" readonly="readonly" id="endingFare">
+                                            <span class="city-span">{{ endingFare}}</span>
+                                    </div><!-- /.form group row -->
+                                    <br>
+                                    <div class="form group row">
+                                        <input type="text" class="form-control" placeholder="Description" v-model="description" readonly="readonly">
+                                        <span class="city-span">{{ description }}</span>
+                                    </div><!-- /.form group row -->
+                                    <br/>
+                                    <div class="form group row">
+                                        <input type="text" class="form-control" placeholder="Passenger Type" v-model="passengerType" readonly="readonly">
+                                        <span class="city-span">{{ passengerType}}</span>
+                                    </div><!-- /.form group row -->
+                                    <br/>
+                                    <div class="form group row">
+                                        <input type="text" class="form-control" placeholder="Mode" v-model="mode" readonly="readonly">
+                                        <span class="city-span">{{ mode}}</span>
+                                    </div><!-- /.form group row -->
+                                    <br/>
+                                    <div class="form group row">
+                                        <input type="text" class="form-control" placeholder="Type" v-model="type" readonly="readonly">
+                                        <span class="city-span">{{type}}</span>
+                                    </div><!-- /.form group row -->
+                                    <br/>
+
+                                            
+                                    <br/>
+                                        <span class="city-span" v-model="startingCity">{{startingCity}}</span>
+                                
                                     <div class="row">
-                                        <div class="col-8">
-                                            <h1 class="text-center">Approach Barrier</h1>
-                                            <hr/>
-                                            <h3 class="text-center">Place Card on Reader</h3>
-                                            
-                                            <hr />
-                                            <div class="card" style="width: 18rem;">
-                                                <img class="card-img-top" src="" alt="Card image cap">
-                                                <div class="card-body">
-                                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                </div>
-                                            </div>
-                                                           
-                                    <hr/>
-
-                                        <div class="form group row">
-                                            <label for="to">To</label>
-                                            <input name="to" v-validate="'required|min:6'" type="text" class="form-control" placeholder="To.." v-model="to" id="to" autocomplete="nope">
-                                            <span class="city-span">{{ endingCity}}</span>
-                                        </div><!-- /.form group row -->
-                                        <br/>
-    
-                                         
-                                        <div class="form group row">
-                                                <input type="text" class="form-control" placeholder="Fares" v-model="endingFare" readonly="readonly" id="endingFare">
-                                                <span class="city-span">{{ endingFare}}</span>
-                                        </div><!-- /.form group row -->
-                                        <br>
-                                            <div class="form group row">
-                                                <input type="text" class="form-control" placeholder="Description" v-model="description" readonly="readonly">
-                                                <span class="city-span">{{ description }}</span>
-                                            </div><!-- /.form group row -->
-                                            <br/>
-                                            <div class="form group row">
-                                                <input type="text" class="form-control" placeholder="Passenger Type" v-model="passengerType" readonly="readonly">
-                                                <span class="city-span">{{ passengerType}}</span>
-                                            </div><!-- /.form group row -->
-                                            <br/>
-                                            <div class="form group row">
-                                                <input type="text" class="form-control" placeholder="Mode" v-model="mode" readonly="readonly">
-                                                <span class="city-span">{{ mode}}</span>
-                                            </div><!-- /.form group row -->
-                                            <br/>
-                                            <div class="form group row">
-                                                <input type="text" class="form-control" placeholder="Type" v-model="type" readonly="readonly">
-                                                <span class="city-span">{{type}}</span>
-                                            </div><!-- /.form group row -->
-                                            <br/>
-
                                         
-
-                                             
-                                            <br/>
-                                               <span class="city-span" v-model="startingCity">{{startingCity}}</span>
+                                        <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" @click.prevent="submitNewJourney">Swipe Out & Exit</button>
                                         
-                                            <div class="row">
-                                               
-                                                <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" @click.prevent="onSubmit">Swipe Out & Exit</button>
-                                                
-                                                
-                                                <div class="col-sm"></div>
-                                            </div>
-                                            <br/>
-                                            <div class="row">
-                                                
-                                                <a class="btn btn-light" role="button"><router-link to="/dashboard">Dashboard </router-link></a>
-                                                <div class="col-sm"></div>
-                                            </div><!-- /.row -->
-                                            
-                                        </div><!-- /.col-8 -->
                                         
-                                    </div><!-- /.row -->
-    
-                                
-                                
-                            </form>
+                                        <div class="col-sm"></div>
+                                    </div>
+                                        
+                                        
+                                </div><!-- /.col-8 -->
+                                    
+                            </div><!-- /.row -->
                             
-                        </div><!-- end of .lead-form -->
-                    </div> <!-- end of .col-8 -->
-                </div> <!-- end of .row -->
-            </div> <!-- end of .container -->
-   
-    </div>
+                        </form>
+                        
+                    </div><!-- end of .lead-form -->
+                </div> <!-- end of .col-8 -->
+            </div> <!-- end of .row -->
+    </div> <!-- end of .container -->
+</div>
 </template>
 
 <script>
@@ -178,16 +168,16 @@ export default {
             this.$http.get(TflStopUrl +  app.startingCity + FareUrl + app.endingCity + AppKey)
             
                 .then(function (response){
-                    app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost,
-                    app.description = response.data[0].rows[0].ticketsAvailable[0].description,
-                    app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType,
-                    app.mode = response.data[0].rows[0].ticketsAvailable[0].mode,
-                    app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type,
                     app.from = response.data[0].rows[0].from,
                     app.startingCity = this.startingCity,
                     app.endingCity = response.data[0].rows[0].toStation,
+                    app.description = response.data[0].rows[0].ticketsAvailable[0].description,
+                    app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type,
+                    app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType,
+                    app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost,
+                    app.mode = response.data[0].rows[0].ticketsAvailable[0].mode,
                     app.endingFare = this.endingFare * 100
-                    //app.end_balance = app.end_balance -= app.endingFare
+                    
                 })
                 .catch(function (error){
                     app.endingFare = "Invalid Fare"
@@ -218,7 +208,7 @@ export default {
                  passengerType: this.passengerType,
                  mode: this.mode,
                  endingFare: this.endingFare
-                 //end_balance: this.end_balance
+                
              })   
 
         }

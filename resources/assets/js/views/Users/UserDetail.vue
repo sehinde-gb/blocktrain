@@ -27,20 +27,12 @@
                                 </div>
                                 <div class="card-footer text-muted">
                                     Created {{ moment(user.created_at).fromNow() }}
-                                </div>
+                                </div><!-- .card-footer -->
                             </div><!-- .card -->
-    
                         
-                    </div><!-- end of .col-8 -->
-                </div>
-                    <div class="col-4">
-                        <h2>My Account</h2>
-                        <ul>
-                            <a href="#">Contactless</a>
-        
-                        </ul>
-    
-                    </div><!-- end of .col-4 -->
+                    </div><!-- end of .lead-form -->
+                </div><!-- end of .col-8 -->
+                   <SideMenu></SideMenu>
 
                 
             </div> <!-- end of .row -->
@@ -55,87 +47,90 @@
 var moment = require('moment');
  
 import { mapGetters } from 'vuex';
+import SideMenu from './SideMenu.vue';
 
-    export default {
-        
-        data() {
-            return {
-                id: this.$route.params.id,
-                moment: moment,
-                user: {}
-                //journey: {}
-            }
-        },
-
-        created() {
-            this.fetchAUser();
-            
-            //this.$store.dispatch( 'loadJourneys', {
-              //   user_id: this.$route.params.id
-             //});
-            
-            // this.$store.dispatch('loadUser', {
-            //       id: this.$route.params.id
-            // });
-        },
- 
-        computed: {
-
-        //     total: function() {
-        //             console.log(this.journeys);
-        //         return this.journeys.reduce(function(total, item){
-        //             return total - item.endingFare;
-        //         },0);
-        //     },
-
-        //    currentJourney() {
-        //        return this.$store.getters.getjourneysById(1);
-        //    }
-            
-            
-       
-        // currentUser() {
-        //     return this.$store.getters.currentUser;
-        // },
-
-        // userLoadStatus() {
-        //     return this.$store.getters.getUserLoadStatus;
-
-        // },
-
-        // user() {
-        //     return this.$store.getters.getUser;
-        // }
-
-
-       
-        // /*
-        //     Gets the journeys load status
-        // */
-        // journeysLoadStatus() {
+export default {
     
-        //     return this.$store.getters.getJourneysLoadStatus;
-        // },
+    components: { SideMenu},
 
-        // journeys() {
-        //     return this.$store.getters.getJourneys;
-        // }
-        },
-        methods: {
-            fetchAUser() {
-                this.$http.get('/api/user/' + this.id).then((response) => {
-                    //console.log(response);
-                    this.user = response.body;
-                });
-            }
+    data() {
+        return {
+            id: this.$route.params.id,
+            moment: moment,
+            user: {}
+            //journey: {}
         }
+    },
+
+    created() {
+        this.fetchAUser();
         
-        // filters: {
-        //     toUpperCase(value) {
-        //         return value.toUpperCase();
-        //     }
-        // }
+        //this.$store.dispatch( 'loadJourneys', {
+            //   user_id: this.$route.params.id
+            //});
+        
+        // this.$store.dispatch('loadUser', {
+        //       id: this.$route.params.id
+        // });
+    },
+
+    computed: {
+
+    //     total: function() {
+    //             console.log(this.journeys);
+    //         return this.journeys.reduce(function(total, item){
+    //             return total - item.endingFare;
+    //         },0);
+    //     },
+
+    //    currentJourney() {
+    //        return this.$store.getters.getjourneysById(1);
+    //    }
+        
+        
+    
+    // currentUser() {
+    //     return this.$store.getters.currentUser;
+    // },
+
+    // userLoadStatus() {
+    //     return this.$store.getters.getUserLoadStatus;
+
+    // },
+
+    // user() {
+    //     return this.$store.getters.getUser;
+    // }
+
+
+    
+    // /*
+    //     Gets the journeys load status
+    // */
+    // journeysLoadStatus() {
+
+    //     return this.$store.getters.getJourneysLoadStatus;
+    // },
+
+    // journeys() {
+    //     return this.$store.getters.getJourneys;
+    // }
+    },
+    methods: {
+        fetchAUser() {
+            this.$http.get('/api/user/' + this.id).then((response) => {
+                //console.log(response);
+                this.user = response.body;
+            });
+        }
     }
+    
+    // filters: {
+    //     toUpperCase(value) {
+    //         return value.toUpperCase();
+    //     }
+    // }
+}
 </script>
 
 <style scoped>

@@ -65,8 +65,8 @@ export const journeys = {
 
         addJourney({ commit, state, dispatch }, data){
             commit( 'setJourneyAddedStatus', 1);
-            JourneyAPI.postAddNewJourney( data.user_id, data.origin, data.startingCity, data.to, data.endingCity, data.description,
-            data.type, data.passengerType, data.mode, data.endingFare, data.start_balance, data.end_balance)
+            JourneyAPI.postAddNewJourney(data.user_id, data.from, data.startingCity, data.to, data.endingCity, data.description,
+            data.type, data.passengerType, data.mode, data.endingFare)
             .then( function(response){
                 commit('setJourneyAddedStatus', 2);
                 //dispatch('loadJourneys');

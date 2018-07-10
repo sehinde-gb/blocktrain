@@ -18,13 +18,7 @@
                           </div><!-- end of div -->
                     </div><!-- .lead-form -->
                 </div><!-- .col-8 -->
-                <div class="col-4">
-                    <h2>My Account</h2>
-                    <ul>
-                        <a href="#">Contactless</a>
-        
-                    </ul>
-                </div><!-- .col-4 -->
+                 <SideMenu></SideMenu>
             </div><!-- .row -->
             
     
@@ -38,9 +32,11 @@
 
 <script>
     var moment = require('moment');
-    
+    import SideMenu from '../Users/SideMenu.vue';
+
     export default {
         
+        components: { SideMenu},
         
         created() {
              //this.fetchJourneyList();

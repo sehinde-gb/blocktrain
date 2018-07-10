@@ -21,7 +21,7 @@
                                              
                                              <p class="card-text">Card Management</p>
                                              <router-link class="card-link" v-bind:to="  '/users/' + user.id"><h6>View / Change Card  </h6></router-link>
-                                             <router-link class="card-link" to="/users/register"> New Card</router-link>
+                                             <router-link class="card-link" to="/users/register"><h6> New Card </h6></router-link>
                                              <br>
                                              <p class="card-text">Journeys</p>
                                              <router-link class="card-link" v-bind:to="  '/users/' + user.id + '/make/journey'"><h6>Start Journey</h6></router-link>
@@ -33,20 +33,7 @@
                             </div><!-- .single-card -->
                     </div><!-- .lead-form -->
                 </div> <!-- .col-8 -->
-                <div class="col-4">
-                    <h2 class="list-group-item text-center text-uppercase">My Account</h2>
-                    <ul class="list-group-item">
-                        <a class="list-group-item text-center" href="#">Contactless</a>
-                        <a class="list-group-item text-center" href="#">Change My Password</a>
-                        <a class="list-group-item text-center" href="#">Order History</a>
-                        <a class="list-group-item text-center" href="#">Delay Refunds</a>
-                        <a class="list-group-item text-center" href="#">Change My Password</a>
-                        <a class="list-group-item text-center" href="#">Help</a>
-                        <a class="list-group-item text-center" href="#">View Change Details</a>
-                        <a class="list-group-item text-center" href="#">Log Out</a>
-                    </ul>
-                    
-                </div>
+               <SideMenu></SideMenu>
             </div> <!-- end of .row -->
         </div> <!-- end of .container -->
     </div>
@@ -54,10 +41,13 @@
 
 <script>
 
+import SideMenu from './SideMenu.vue';
     
 
     export default {
-      
+        
+        components: { SideMenu},
+
         created() {
             //this.fetchUserList();
              this.$store.dispatch( 'loadUsers', {
@@ -76,7 +66,7 @@
             },
 
             total: function() {
-                    console.log(this.journeys);
+                    //console.log(this.journeys);
                     return this.journeys.reduce(function(total, item){
                        return total + item.endingFare;
                     },0);
@@ -84,7 +74,7 @@
             },
 
             balance: function() {
-                console.log(this.users);
+                //console.log(this.users);
                 var item = 0
                 return this.users.reduce(function(balance, item){
                     return balance + item.balance;
@@ -92,7 +82,7 @@
             },
 
             current_balance: function() {
-                return this.balance - this.total;
+                return (this.balance - this.total) / 100;
             },
 
     
