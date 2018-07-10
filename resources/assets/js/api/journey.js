@@ -9,7 +9,7 @@ export default {
     /*
         GET   /api/user/{user}/journey/{journey}
     */
-    getJourney: function( user_id, id, journey ) {
+    getJourney: function( user_id,  journey ) {
         return axios.get('/api/user/' + this.user_id + '/journey/' + this.journey);
     },
 
@@ -31,20 +31,9 @@ export default {
             endingFare: endingFare
 
         });
-    },
+    }
     
-    /*
-        POST  /api/user/{user}/make/journey/
-    */
-    postAddBalance: function( user_id, start_balance, end_balance ) {
-        return axios.post('/api/user/' + this.user_id + '/journey',
-        {
-            user_id: user_id,
-            start_balance: start_balance,
-            end_balance: end_balance
-
-        });
-    },
+   
 
     
 }

@@ -10,7 +10,7 @@ import UserRegister from './views/Users/UserRegister'
 import JourneyListings from './views/Journeys/JourneyListings'
 import JourneyDetail from './views/Journeys/JourneyDetail'
 import Leave from './views/Journeys/Leave'
-import TopUp from './views/Journeys/TopUp.vue'
+import Update from './views/Users/BalanceUpdate.vue'
 
 
 
@@ -75,8 +75,8 @@ export const routes = [
 
 
     {   path: '/users/:id/topup',
-        name: 'journey.top',
-        component: TopUp,
+        name: 'user.update',
+        component: Update,
         meta: {
             requiresAuth: true
         }

@@ -20,6 +20,7 @@
                                     <p class="card-text">Mobile Phone: {{ user.mobile_phone }}</p>
                                     <p class="card-text">Email: {{ user.email }}</p>
                                     
+                                    
                                              
                                     <a class="btn btn-outline-primary"><router-link to="/users">Back </router-link></a>
 
@@ -65,9 +66,7 @@ export default {
     created() {
         this.fetchAUser();
         
-        //this.$store.dispatch( 'loadJourneys', {
-            //   user_id: this.$route.params.id
-            //});
+        
         
         // this.$store.dispatch('loadUser', {
         //       id: this.$route.params.id
@@ -76,17 +75,7 @@ export default {
 
     computed: {
 
-    //     total: function() {
-    //             console.log(this.journeys);
-    //         return this.journeys.reduce(function(total, item){
-    //             return total - item.endingFare;
-    //         },0);
-    //     },
-
-    //    currentJourney() {
-    //        return this.$store.getters.getjourneysById(1);
-    //    }
-        
+    
         
     
     // currentUser() {
@@ -104,17 +93,7 @@ export default {
 
 
     
-    // /*
-    //     Gets the journeys load status
-    // */
-    // journeysLoadStatus() {
-
-    //     return this.$store.getters.getJourneysLoadStatus;
-    // },
-
-    // journeys() {
-    //     return this.$store.getters.getJourneys;
-    // }
+    
     },
     methods: {
         fetchAUser() {

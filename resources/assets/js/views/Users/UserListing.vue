@@ -21,6 +21,7 @@
                                              
                                              <p class="card-text">Card Management</p>
                                              <router-link class="card-link" v-bind:to="  '/users/' + user.id"><h6>View / Change Card  </h6></router-link>
+                                             <router-link class="card-link" v-bind:to="  '/users/' + user.id + '/topup'"><h6>Top Up  </h6></router-link>
                                              <router-link class="card-link" to="/users/register"><h6> New Card </h6></router-link>
                                              <br>
                                              <p class="card-text">Journeys</p>

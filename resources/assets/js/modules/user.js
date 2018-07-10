@@ -35,12 +35,12 @@ export const users = {
           Loads an individual user from the API
         */    
 
-        loadUser({ commit}) {
+        loadUser({ commit}, data) {
                 commit('setUserLoadStatus', 1);
 
-                UserAPI.getUser(body.id)
+                UserAPI.getUser(data.id)
                     .then(function(response) {
-                        commit('setUser', response.body);
+                        commit('setUser', response.data);
                         commit('setUserLoadStatus', 2);
                     })
                     .catch(function() {
@@ -65,7 +65,24 @@ export const users = {
                     commit('setUsersLoadStatus', 3);
                 });
             
-        },    
+        },
+        
+        /*
+            Updates the balance on the User API
+        */
+
+       addBalance({ commit, state, dispatch }, data){
+            commit( 'setBalanceAddedStatus', 1);
+            UserAPI.putAddBalance( data.user_id, data.balance)
+            .then( function(response){
+                commit('setBalanceAddedStatus', 2);
+                
+            })
+            .catch( function() {
+                commit('setBalanceAddedStatus', 3);
+            });
+
+        },
             
         /*
             Fires the login method commit
@@ -118,6 +135,13 @@ export const users = {
         */
         setUserLoadStatus( state, status) {
             state.userLoadStatus = status;
+        },
+
+         /*
+            Set the balance add status
+        */
+        setBalanceAddedStatus( state, status ) {
+            state.balanceAddStatus = status;
         },
 
     
@@ -198,6 +222,8 @@ export const users = {
             state.loading = false,
             state.reg_error = payload.error;
         }
+
+        
             
         
     },
