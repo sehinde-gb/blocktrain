@@ -1,5 +1,6 @@
 <template>
     <div>
+       
         <div class="container">
             <div class="row">
                 <div class="col-8">
@@ -25,13 +26,15 @@
                             </div><!-- /.form group row -->
 
                             <div class="row">
-                                
+                              
                                 <button :disabled="errors.any()" type="submit" class="btn btn-primary btn-lg" id="submit" @click.prevent="topUp">Top Up</button>
                             
                                 <div class="col-sm"></div>
                             </div><!-- /.row -->
 
                         </form>
+
+                        
                     </div><!-- end of .lead-form -->                  
                 </div><!-- /.col-8 -->
                  <SideMenu></SideMenu>
@@ -44,9 +47,11 @@
 
 <script>
 import SideMenu from './SideMenu.vue';
+import Modal from '../Modal.vue';
 
 export default {
-    components: { SideMenu},
+    
+    components: { SideMenu, Modal},
 
     
 
@@ -66,7 +71,6 @@ export default {
     data() {
         return {
                 user_id: this.$route.params.id,
-                
                 balance: ''
             
         }
@@ -79,7 +83,9 @@ export default {
              this.$store.dispatch('addBalance', {
                  user_id: this.user_id,
                  balance: this.balance
-             })   
+            }),
+            
+            this.$router.push({path: '/users'});
 
         }
 

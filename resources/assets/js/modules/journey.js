@@ -42,6 +42,7 @@ export const journeys = {
                 });
         },
         
+        
         /*
             Loads an individual journey from the API
         */
@@ -65,8 +66,26 @@ export const journeys = {
 
         addJourney({ commit, state, dispatch }, data){
             commit( 'setJourneyAddedStatus', 1);
-            JourneyAPI.postAddNewJourney(data.user_id, data.from, data.startingCity, data.to, data.endingCity, data.description,
+            JourneyAPI.AddNewJourney(data.user_id, data.from, data.startingCity, data.to, data.endingCity, data.description,
             data.type, data.passengerType, data.mode, data.endingFare)
+            .then( function(response){
+                commit('setJourneyAddedStatus', 2);
+                //dispatch('loadJourneys');
+            })
+            .catch( function() {
+                commit('setJourneyAddedStatus', 3);
+            });
+
+        },
+
+
+        /*
+            Adds a journey to the API
+        */
+
+        addEntrance({ commit, state, dispatch }, data){
+            commit( 'setJourneyAddedStatus', 1);
+            JourneyAPI.postAddNewEntrance(data.user_id, data.startingCity)
             .then( function(response){
                 commit('setJourneyAddedStatus', 2);
                 //dispatch('loadJourneys');

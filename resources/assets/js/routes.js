@@ -11,7 +11,8 @@ import JourneyListings from './views/Journeys/JourneyListings'
 import JourneyDetail from './views/Journeys/JourneyDetail'
 import Leave from './views/Journeys/Leave'
 import Update from './views/Users/BalanceUpdate.vue'
-
+import Enter from './views/Journeys/Enter'
+import Parent from './views/Journeys/Parent'
 
 
 export const routes = [
@@ -98,7 +99,7 @@ export const routes = [
         path: '/users/:id/journeys/:journey',
         name: 'journey.detail',
         props: true,
-        component:JourneyDetail,
+        component: JourneyDetail,
         meta: {
             requiresAuth: true
         }
@@ -108,7 +109,7 @@ export const routes = [
     {   path: '/users/:id/make/journey',
         name: 'journey.make',
         props: true,
-        component: Journey,
+        component: Parent,
         meta: {
             requiresAuth: true
         }

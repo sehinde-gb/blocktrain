@@ -20,7 +20,7 @@
                             <br>
                             <div class="form-group">
                                 <label for="from">From</label>
-                                <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Enter your station" v-model="from" id="from">
+                                <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="From Station Enter 8 characters" v-model="from" id="from">
                                 <p class="help is-danger" v-show="errors.has('from')">
                                     {{ errors.first('from') }}
                                 </p><!-- help is danger -->
@@ -53,18 +53,18 @@ import {EventBus} from '../../app.js';
 import SideMenu from '../Users/SideMenu.vue';
 
 export default {
+    
     name: 'enter',
 
-    components: { SideMenu},
+    components: {SideMenu},
     
-    props: ['user.id'],
     
     data: function() {
         return {
             from: '',
             startingCity: '',
             firstStations: [],
-            user_id: '',
+            user_id: this.$route.params.id,
             complete: true
                             
         }
@@ -74,7 +74,7 @@ export default {
     watch: {
         from: function () {
             this.startingCity = ''
-            if (this.from.length == 10) {
+            if (this.from.length == 8) {
                 this.lookupStartingFrom()
             }
         }
@@ -87,9 +87,10 @@ export default {
                 EventBus.$emit('firststation', this.startingCity)
                 alert('You have swiped in');
                 this.complete = false;
+                //this.$router.push('journey.travel')
         },
         
-        lookupStartingFrom: _.throttle(function () {
+        lookupStartingFrom: _.debounce(function () {
             var app = this
 
             const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='

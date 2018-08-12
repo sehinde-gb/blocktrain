@@ -11,7 +11,6 @@
     
                               <ul class="list-group">
                                   <router-link  class="list-group-item" v-bind:to="  '/users/' + user_id + '/journeys/' + journey.id"><h6>{{ moment(journey.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a") }} </h6></router-link>
-    
                                   
                               </ul><!-- end list-group -->
                               
@@ -39,7 +38,6 @@
         components: { SideMenu},
         
         created() {
-             //this.fetchJourneyList();
              this.$store.dispatch( 'loadJourneys', {
                  user_id: this.$route.params.id
              });
@@ -48,7 +46,6 @@
         
         computed: {
             
-
             /*
                 Gets the journeys load status
             */
@@ -63,25 +60,15 @@
         },
 
         
-
         data() {
             return {
                 moment: moment,
-                //journeys: [],
                 user_id: this.$route.params.id
                
             }
 
-        },
-        methods: {
-            // fetchJourneyList() {
-            //     axios.get('/api/user/' + this.id + '/journey').then((response) => {
-            //         //console.log(response.data.data.data);
-                    
-            //         this.journeys = response.data.data.data;
-            //     });
-            // }
         }
+    
     }
 </script>
 

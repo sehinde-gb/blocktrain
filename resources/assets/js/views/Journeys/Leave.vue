@@ -25,7 +25,7 @@
 
                                     <div class="form group row">
                                         <label for="to">To</label>
-                                        <input name="to" v-validate="'required|min:6'" type="text" class="form-control" placeholder="To.." v-model="to" id="to" autocomplete="nope">
+                                        <input name="to" v-validate="'required|min:6'" type="text" class="form-control" placeholder="Exit Station Enter 10 Characters" v-model="to" id="to" autocomplete="nope">
                                         <span class="city-span">{{ endingCity}}</span>
                                     </div><!-- /.form group row -->
                                     <br/>
@@ -115,7 +115,6 @@ export default {
                 passengerType: '',
                 mode: '',
                 endingFare: ''
-                
               
         }
     },
@@ -130,11 +129,10 @@ export default {
                 
         to: function () {
              this.endingCity = ''
-             if (this.to.length == 10) {
+             if (this.to.length == 8) {
                  this.lookupEndingTo(),
                  this.lookupFareTo()
               
-
             }
          }
     },
@@ -143,7 +141,7 @@ export default {
     methods: {
         
 
-        lookupEndingTo: _.throttle(function() {
+        lookupEndingTo: _.debounce(function() {
             var app = this
             const TflBaseUrl = 'https://api.tfl.gov.uk/StopPoint/Search?query='
             app.endingCity = "Searching..."
@@ -168,7 +166,7 @@ export default {
             this.$http.get(TflStopUrl +  app.startingCity + FareUrl + app.endingCity + AppKey)
             
                 .then(function (response){
-                    app.from = response.data[0].rows[0].from,
+                    //app.from = response.data[0].rows[0].from,
                     app.startingCity = this.startingCity,
                     app.endingCity = response.data[0].rows[0].toStation,
                     app.description = response.data[0].rows[0].ticketsAvailable[0].description,
@@ -190,7 +188,7 @@ export default {
          onSubmit: function() {
             this.$http.post('/api/user/' + this.user_id + '/journey', this.$data);
             //alert('Thanks for swiping');
-            //this.$router.push('home')
+            this.$router.push('home')
 
         },
 

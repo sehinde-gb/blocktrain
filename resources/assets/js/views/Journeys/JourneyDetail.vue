@@ -30,7 +30,6 @@ j<template>
                             </div><!-- .card-footer -->
                         </div><!-- .card -->
                 
-                
                     </div><!-- end of .lead-form -->
                 </div><!-- end of .col-8 -->
                 <SideMenu></SideMenu>
@@ -39,13 +38,7 @@ j<template>
             </div> <!-- end of .row -->
     
         </div><!-- end of .container -->
-    
-        
-    
-       
-    
-        
-      
+
     </div>
 </template>
 
@@ -59,10 +52,6 @@ j<template>
 
         created() {
             this.fetchJourneyDetail();
-            //this.fetchAUser();
-            // this.$store.dispatch( 'loadUsers', {
-            //     id: this.$route.params.id
-            // });
             
         },
         
@@ -86,16 +75,6 @@ j<template>
                 
             }
 
-            
-            
-            // fetchAUser() {
-            //     axios.get('/api/user/' + this.id)
-            //         .then ((response) => {
-            //         //console.log(response.data);
-            //         this.user = response.data;
-            //         });
-
-            // }
       
         }
         

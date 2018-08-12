@@ -9,7 +9,16 @@
                     
                     
                 </div><!-- /.row -->
-    
+
+                <div>
+                
+                <div class="col-sm">
+                    
+                    </div><!-- /.col -->
+                   
+                
+                </div>
+
                 <div class="row">
                     <div class="col-sm">
                         <leave></leave>
@@ -25,7 +34,9 @@
 
 <script>
     import Enter from './Enter.vue';
+    //import Travel from './Travel.vue';
     import Leave from './Leave.vue';
+
     
  export default {
         
