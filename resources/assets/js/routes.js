@@ -3,16 +3,15 @@ import HomePage from './views/Home/Home'
 import OriginalPage from './views/Original/OriginalPage'
 import Login from './views/Auth/Login'
 import Register from './views/Auth/Register'
-import Journey from './views/Journeys/Parent'
 import Users from './views/Users/UserListing'
 import UserDetail from './views/Users/UserDetail'
 import UserRegister from './views/Users/UserRegister'
 import JourneyListings from './views/Journeys/JourneyListings'
 import JourneyDetail from './views/Journeys/JourneyDetail'
-import Leave from './views/Journeys/Leave'
 import Update from './views/Users/BalanceUpdate.vue'
-import Enter from './views/Journeys/Enter'
 import Parent from './views/Journeys/Parent'
+import Confirmation from './views/Block/Confirmation'
+import BlockListings from './views/Block/Listings'
 
 
 export const routes = [
@@ -113,7 +112,30 @@ export const routes = [
         meta: {
             requiresAuth: true
         }
-    }
+    },
+
+    {
+        path: '/confirmation',
+        name: 'block.confirmation',
+        props: true,
+        component: Confirmation,
+        meta: {
+            requiresAuth: true
+        }
+
+    },
+
+    {
+        path: '/listings',
+        name: 'block.listings',
+        props: true,
+        component: BlockListings,
+        meta: {
+            requiresAuth: true
+        }
+
+    },
+
 
 
 

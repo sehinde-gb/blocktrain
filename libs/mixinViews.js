@@ -1,5 +1,5 @@
 import BcExplorer from './BcExplorer'
-import UsersContract from '../assets/UsersContract.json';
+import JourneysContract from '../assets/JourneysContract.json';
 
 let mixinViews = {
     data() {
@@ -17,7 +17,7 @@ let mixinViews = {
             window.bc = new BcExplorer
 
             // connecting to the blockchain and intializing the Users smart contract
-            window.bc.initWithContractJson(UsersContract, 'http://127.0.0.1:7545')
+            window.bc.initWithContractJson(JourneysContract, 'http://127.0.0.1:7545')
             .then((error) => {
                 // handling the connection error
                 if (error) {

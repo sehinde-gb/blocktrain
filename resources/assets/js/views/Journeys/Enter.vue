@@ -20,7 +20,7 @@
                             <br>
                             <div class="form-group">
                                 <label for="from">From</label>
-                                <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="From Station Enter 8 characters" v-model="from" id="from">
+                                <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Origin Station (Min. 6 characters)" v-model="from" id="from">
                                 <p class="help is-danger" v-show="errors.has('from')">
                                     {{ errors.first('from') }}
                                 </p><!-- help is danger -->
@@ -32,7 +32,7 @@
                             </div><!-- /.form-group -->
                         
                         <div class="row">
-                            <div class="col-sm"><button @click.prevent="stationEnter" :disabled="errors.any()"  class="btn btn-primary btn-lg">Add Journey</button></div>
+                            <div class="col-sm"><button @click.prevent="stationEnter" :disabled="errors.any()"  class="btn btn-primary btn-lg">Enter</button></div>
                             <div class="col-sm"></div><!-- .col-sm -->
                         </div><!-- /.row -->
                     
