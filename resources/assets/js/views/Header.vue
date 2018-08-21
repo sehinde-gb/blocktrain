@@ -75,10 +75,10 @@
                 this.$router.push('/login');
             },
              /**
-             * It checks if the visiting user is regitered calling every 500ms the function isRegistered
+             * It checks if the visiting journey is regitered calling every 500ms the function isRegistered
              * from the smart contract until the connection with the smart contract is established.
              */
-            checkUserIsRegistered() {
+            checkJourneyIsRegistered() {
                 this.tmoConn = setInterval(() => {
                     // checking first if the connection with the blockchain is established
                     if (this.blockchainIsConnected()) {
@@ -92,7 +92,7 @@
                                 console.error(error);
                             }
                             else {
-                                this.userIsRegistered = res
+                                this.journeyIsRegistered = res
                             }
                         })
                     }
@@ -100,19 +100,19 @@
             },
 
             /**
-             * Check if the user is registered calling the function of the smart contract isRegistered.
-             * This function is used when the user is signing up.
+             * Check if the journey is registered calling the function of the smart contract isRegistered.
+             * This function is used when the journey is signing up.
              * The difference with the previous function is:
-             *      - the function checkUserIsRegistered tries to check if the user is registered
+             *      - the function checkJourneyIsRegistered tries to check if the journey is registered
              *        until the connection with the blockchain is established.
-             *      - the function checkUntilUserIsRegistered tries to check if the user is registered
-             *        until the user is registered.
+             *      - the function checkUntilJourneyIsRegistered tries to check if the journey is registered
+             *        until the journey is registered.
              *
-             * NOTE: in order to check if the user has been registered successfully the function has to check
+             * NOTE: in order to check if the journey has been registered successfully the function has to check
              * several time because the block can take several minutes in order to be mined (depending on the
              * configuration of the blockchain you are using).
              */
-            checkUntilUserIsRegistered() {
+            checkUntilJourneyIsRegistered() {
                 this.tmoReg = setInterval(() => {
                     if (this.blockchainIsConnected()) {
                         window.bc.contract().isRegistered.call((error, res) => {
@@ -123,7 +123,7 @@
                                 // stopping the setInterval
                                 clearInterval(this.tmoReg)
 
-                                this.userIsRegistered = res
+                                this.journeyIsRegistered = res
                             }
                         })
                     }
@@ -136,11 +136,11 @@
             }
         },
         created() {
-            // when the event userregistered is fired (from the view Register.vue)
+            // when the event journeyregistered is fired (from the view Register.vue)
             // it runs the function checkUntilUserIsRegistered
-            Event.$on('userregistered', this.checkUntilUserIsRegistered);
+            Event.$on('journeyregistered', this.checkUntilJourneyIsRegistered);
 
-            this.checkUserIsRegistered()
+            this.checkJourneyIsRegistered()
         }
         
     }

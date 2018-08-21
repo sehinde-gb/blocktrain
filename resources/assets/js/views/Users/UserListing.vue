@@ -27,6 +27,7 @@
                                              <p class="card-text">Journeys</p>
                                              <router-link class="card-link" v-bind:to="  '/users/' + user.id + '/make/journey'"><h6>Start Journey</h6></router-link>
                                              <router-link class="card-link" v-bind:to="  '/users/' + user.id + '/journeys'"><h6>Journey History</h6></router-link>
+                                             <router-link class="card-link" v-bind:to="  '/users/' + user.id + '/blockchain'"><h6>My BlockChain</h6></router-link>
                                          </div>
                                      </div>
                                     
@@ -106,22 +107,6 @@ import SideMenu from './SideMenu.vue';
             
         }
         
-        // data() {
-        //     return {
-        //         users: [],
-        //         id: ''
-                
-                
-        //     }
-        // },
-        // methods: {
-
-        //     fetchUserList() {
-        //         axios.get('/api/user').then((response) => {
-        //             //console.log(response.data);
-        //             this.users = response.data;
-        //         });
-        //     }
-        // }
+        
     }
 </script>

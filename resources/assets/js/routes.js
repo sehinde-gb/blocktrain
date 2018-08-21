@@ -115,6 +115,17 @@ export const routes = [
     },
 
     {
+        path: '/users/:id/blockchain',
+        name: 'block.chain',
+        props: true,
+        component: BlockListings,
+        meta: {
+            requiresAuth: true
+        }
+
+    },
+
+    {
         path: '/confirmation',
         name: 'block.confirmation',
         props: true,
@@ -123,18 +134,9 @@ export const routes = [
             requiresAuth: true
         }
 
-    },
+    }
 
-    {
-        path: '/listings',
-        name: 'block.listings',
-        props: true,
-        component: BlockListings,
-        meta: {
-            requiresAuth: true
-        }
-
-    },
+    
 
 
 

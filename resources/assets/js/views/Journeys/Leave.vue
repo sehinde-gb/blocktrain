@@ -232,7 +232,7 @@ export default {
 
         },
 
-        /**
+            /**
              * Perform the registration of the journey when the submit button is pressed.
              */
         	performSubmit() {

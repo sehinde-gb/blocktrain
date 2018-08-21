@@ -26,8 +26,8 @@
                     <td>{{ journey[0].toNumber() }}</td>
                     <td>{{ journey[1] }}</td>
                     <td>{{ journey[2] }}</td>
-                    <td>{{ toAscii(journey[3]) }}</td>
-                    <td>{{ journey[4] }}</td>
+                     <td>{{ journey[3] }}</td>
+                    <td>{{ toAscii(journey[4]) }}</td>
                     <td>{{ toDate( journey[5].toNumber() ) }}</td>
                     <td>{{ toDate( journey[6].toNumber() ) }}</td>
                 </tr>
