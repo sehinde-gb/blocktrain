@@ -59,36 +59,9 @@ class UserJourneyController extends Controller
         $journey->passengerType = $request->input('passengerType');
         $journey->mode = $request->input('mode');
         $journey->endingFare = $request->input('endingFare');
-        
 
         if ($journey->save()) {
             return new JourneyResource($journey);
         }
     }
-
-
-
-     /**
-     * Update a journey
-     *
-     * @param $id
-     * @return JourneyResource
-     */
-     public function update(Request $request, $id)
-     {
-        //  $journey = Journey::findOrFail($id);
- 
-        //  $journey->fill($request->only(['from']));
-        //  $journey->fill($request->only(['to']));
-        //  $journey->fill($request->only(['endingCity']));
-        //  $journey->fill($request->only(['description']));
-        //  $journey->fill($request->only(['type']));
-        //  $journey->fill($request->only(['passengerType']));
-        //  $journey->fill($request->only(['mode']));
-        //  $journey->fill($request->only(['endingFare']));
- 
-        //  if ($journey->save()) {
-        //      return new JourneyResource($journey);
-        //  }
-     }
 }

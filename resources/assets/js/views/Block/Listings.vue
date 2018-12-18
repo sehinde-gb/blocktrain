@@ -33,6 +33,8 @@
                 </tr>
             </tbody>
         </table>
+
+        <a class="btn btn-primary btn-lg" role="button"><router-link to="/users">Dashboard</router-link></a>
     </div>
 </template>
 

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 174);
+/******/ 	return __webpack_require__(__webpack_require__.s = 175);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1902,7 +1902,7 @@
             try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__(320)("./" + name);
+                __webpack_require__(319)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {}
         }
@@ -5492,7 +5492,7 @@ module.exports = function normalizeComponent (
 
 var BigNumber = __webpack_require__(19);
 var sha3 = __webpack_require__(20);
-var utf8 = __webpack_require__(240);
+var utf8 = __webpack_require__(242);
 
 var unitMap = {
     'noether':      '0',
@@ -7079,7 +7079,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(207)
+var listToStyles = __webpack_require__(209)
 
 /*
 type StyleObject = {
@@ -7295,7 +7295,7 @@ function applyToTag (styleElement, obj) {
 
 
 var bind = __webpack_require__(39);
-var isBuffer = __webpack_require__(180);
+var isBuffer = __webpack_require__(181);
 
 /*global toString:true*/
 
@@ -8486,7 +8486,7 @@ module.exports = {
  */
 
 var utils = __webpack_require__(3);
-var errors = __webpack_require__(16);
+var errors = __webpack_require__(17);
 
 var Method = function (options) {
     this.name = options.name;
@@ -8633,6 +8633,53 @@ module.exports = Method;
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(310)
+/* template */
+var __vue_template__ = __webpack_require__(311)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/views/Users/SideMenu.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-13b7e5b0", Component.options)
+  } else {
+    hotAPI.reload("data-v-13b7e5b0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
 ;(function (root, factory) {
 	if (true) {
 		// CommonJS
@@ -8770,7 +8817,7 @@ module.exports = Method;
 }));
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
@@ -9043,7 +9090,7 @@ module.exports = Method;
 }));
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -9180,7 +9227,7 @@ module.exports = Method;
 }));
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 /*
@@ -9229,7 +9276,7 @@ module.exports = {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -9376,53 +9423,6 @@ Property.prototype.request = function () {
 
 module.exports = Property;
 
-
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(313)
-/* template */
-var __vue_template__ = __webpack_require__(314)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/views/Users/SideMenu.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-13b7e5b0", Component.options)
-  } else {
-    hotAPI.reload("data-v-13b7e5b0", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
 
 
 /***/ }),
@@ -12141,7 +12141,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*! bignumber.js v2.0.7 https://github.com/Mik
  * @date 2015
  */
 
-var CryptoJS = __webpack_require__(217);
+var CryptoJS = __webpack_require__(219);
 var sha3 = __webpack_require__(48);
 
 module.exports = function (value, options) {
@@ -12164,8 +12164,8 @@ module.exports = function (value, options) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BcExplorer__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_JourneysContract_json__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BcExplorer__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_JourneysContract_json__ = __webpack_require__(279);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__assets_JourneysContract_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__assets_JourneysContract_json__);
 
 
@@ -13305,17 +13305,19 @@ function getUsers(credentials) {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventBus", function() { return EventBus; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vee_validate__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_resource__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vee_validate__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_resource__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue2_filters__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue2_filters__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue2_filters___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue2_filters__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_App__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_App__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__routes__ = __webpack_require__(285);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helpers_general__ = __webpack_require__(366);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__store_js__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_disabled__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue_disabled___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue_disabled__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_App__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_App__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routes__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__helpers_general__ = __webpack_require__(365);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__store_js__ = __webpack_require__(366);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -13323,7 +13325,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(175);
+__webpack_require__(176);
+
 
 
 
@@ -13349,6 +13352,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]);
 Vue.use(__WEBPACK_IMPORTED_MODULE_2_vue_resource__["a" /* default */]);
 Vue.use(__WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */]);
 Vue.use(__WEBPACK_IMPORTED_MODULE_4_vue2_filters___default.a);
+Vue.use(__WEBPACK_IMPORTED_MODULE_5_vue_disabled___default.a);
 
 
 
@@ -13365,20 +13369,20 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_4_vue2_filters___default.a);
  */
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
-    routes: __WEBPACK_IMPORTED_MODULE_6__routes__["a" /* routes */],
+    routes: __WEBPACK_IMPORTED_MODULE_7__routes__["a" /* routes */],
     mode: 'history'
 
 });
 
-Object(__WEBPACK_IMPORTED_MODULE_7__helpers_general__["a" /* initialise */])(router, __WEBPACK_IMPORTED_MODULE_8__store_js__["a" /* store */]);
+Object(__WEBPACK_IMPORTED_MODULE_8__helpers_general__["a" /* initialise */])(router, __WEBPACK_IMPORTED_MODULE_9__store_js__["a" /* store */]);
 
 var app = new Vue({
 
     el: '#app',
 
-    components: { App: __WEBPACK_IMPORTED_MODULE_5__views_App___default.a },
+    components: { App: __WEBPACK_IMPORTED_MODULE_6__views_App___default.a },
     router: router,
-    store: __WEBPACK_IMPORTED_MODULE_8__store_js__["a" /* store */]
+    store: __WEBPACK_IMPORTED_MODULE_9__store_js__["a" /* store */]
 });
 
 /***/ }),
@@ -30522,7 +30526,7 @@ module.exports = function(module) {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(7);
-var normalizeHeaderName = __webpack_require__(182);
+var normalizeHeaderName = __webpack_require__(183);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -32084,15 +32088,15 @@ var index_esm = {
 
 var f = __webpack_require__(8);
 
-var SolidityTypeAddress = __webpack_require__(243);
-var SolidityTypeBool = __webpack_require__(244);
-var SolidityTypeInt = __webpack_require__(245);
-var SolidityTypeUInt = __webpack_require__(246);
-var SolidityTypeDynamicBytes = __webpack_require__(247);
-var SolidityTypeString = __webpack_require__(248);
-var SolidityTypeReal = __webpack_require__(249);
-var SolidityTypeUReal = __webpack_require__(250);
-var SolidityTypeBytes = __webpack_require__(251);
+var SolidityTypeAddress = __webpack_require__(245);
+var SolidityTypeBool = __webpack_require__(246);
+var SolidityTypeInt = __webpack_require__(247);
+var SolidityTypeUInt = __webpack_require__(248);
+var SolidityTypeDynamicBytes = __webpack_require__(249);
+var SolidityTypeString = __webpack_require__(250);
+var SolidityTypeReal = __webpack_require__(251);
+var SolidityTypeUReal = __webpack_require__(252);
+var SolidityTypeBytes = __webpack_require__(253);
 
 var isDynamic = function (solidityType, type) {
    return solidityType.isDynamicType(type) ||
@@ -45152,12 +45156,12 @@ module.exports = function bind(fn, thisArg) {
 
 
 var utils = __webpack_require__(7);
-var settle = __webpack_require__(183);
-var buildURL = __webpack_require__(185);
-var parseHeaders = __webpack_require__(186);
-var isURLSameOrigin = __webpack_require__(187);
+var settle = __webpack_require__(184);
+var buildURL = __webpack_require__(186);
+var parseHeaders = __webpack_require__(187);
+var isURLSameOrigin = __webpack_require__(188);
 var createError = __webpack_require__(41);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(188);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(189);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -45254,7 +45258,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(189);
+      var cookies = __webpack_require__(190);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -45338,7 +45342,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(184);
+var enhanceError = __webpack_require__(185);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -56351,7 +56355,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9), __webpack_require__(202).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9), __webpack_require__(204).setImmediate))
 
 /***/ }),
 /* 45 */
@@ -57678,7 +57682,8 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 51 */
+/* 51 */,
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -57755,7 +57760,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -57894,7 +57899,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -57957,7 +57962,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58020,7 +58025,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58146,7 +58151,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58209,7 +58214,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58317,7 +58322,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58380,7 +58385,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58489,7 +58494,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58625,7 +58630,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58719,7 +58724,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58781,7 +58786,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -58904,7 +58909,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59027,7 +59032,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59139,7 +59144,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59294,7 +59299,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59386,7 +59391,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59569,7 +59574,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59636,7 +59641,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59720,7 +59725,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59784,7 +59789,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59864,7 +59869,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -59944,7 +59949,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60024,7 +60029,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60127,7 +60132,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60231,7 +60236,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60302,7 +60307,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60369,7 +60374,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60440,7 +60445,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60511,7 +60516,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60577,7 +60582,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60648,7 +60653,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60723,7 +60728,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60819,7 +60824,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -60915,7 +60920,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61002,7 +61007,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61086,7 +61091,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61156,7 +61161,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61266,7 +61271,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61379,7 +61384,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61443,7 +61448,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61530,7 +61535,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61608,7 +61613,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61690,7 +61695,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61769,7 +61774,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61849,7 +61854,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -61930,7 +61935,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -62057,7 +62062,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -62185,7 +62190,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -62286,7 +62291,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -62414,7 +62419,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -62572,7 +62577,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -62686,7 +62691,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -62785,7 +62790,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -62871,7 +62876,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -63007,7 +63012,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -63080,7 +63085,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -63176,7 +63181,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -63262,7 +63267,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -63355,7 +63360,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -63446,7 +63451,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -63560,7 +63565,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -63690,7 +63695,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -63775,7 +63780,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -63866,7 +63871,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -64006,7 +64011,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -64080,7 +64085,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -64202,7 +64207,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -64303,7 +64308,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -64419,7 +64424,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -64487,7 +64492,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -64581,7 +64586,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -64666,7 +64671,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -64774,7 +64779,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -64938,7 +64943,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -65024,7 +65029,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -65110,7 +65115,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -65174,7 +65179,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -65271,7 +65276,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -65337,7 +65342,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -65464,7 +65469,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -65555,7 +65560,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -65646,7 +65651,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -65710,7 +65715,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -65838,7 +65843,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -65968,7 +65973,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -66037,7 +66042,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -66102,7 +66107,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -66181,7 +66186,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -66367,7 +66372,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -66469,7 +66474,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -66533,7 +66538,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -66608,7 +66613,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -66768,7 +66773,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -66945,7 +66950,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -67017,7 +67022,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -67132,7 +67137,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -67247,7 +67252,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -67339,7 +67344,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -67412,7 +67417,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -67475,7 +67480,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -67608,7 +67613,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -67701,7 +67706,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -67772,7 +67777,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -67892,7 +67897,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -67963,7 +67968,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -68029,7 +68034,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -68155,7 +68160,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -68253,7 +68258,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -68348,7 +68353,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -68410,7 +68415,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -68472,7 +68477,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js language configuration
@@ -68595,7 +68600,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -68750,7 +68755,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -68852,7 +68857,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -68914,7 +68919,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -68976,7 +68981,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -69059,7 +69064,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -69131,7 +69136,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -69195,7 +69200,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -69309,7 +69314,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -69416,7 +69421,7 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -69523,20 +69528,20 @@ module.exports = SolidityEvent;
 
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(28);
 
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 window._ = __webpack_require__(29);
 window.Popper = __webpack_require__(37).default;
-var throttle = __webpack_require__(176);
+var throttle = __webpack_require__(177);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -69547,7 +69552,7 @@ var throttle = __webpack_require__(176);
 try {
   window.$ = window.jQuery = __webpack_require__(38);
 
-  __webpack_require__(177);
+  __webpack_require__(178);
 } catch (e) {}
 
 /**
@@ -69556,7 +69561,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(178);
+window.axios = __webpack_require__(179);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -69592,7 +69597,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -70038,7 +70043,7 @@ module.exports = throttle;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -73938,13 +73943,13 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(179);
+module.exports = __webpack_require__(180);
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73952,7 +73957,7 @@ module.exports = __webpack_require__(179);
 
 var utils = __webpack_require__(7);
 var bind = __webpack_require__(39);
-var Axios = __webpack_require__(181);
+var Axios = __webpack_require__(182);
 var defaults = __webpack_require__(31);
 
 /**
@@ -73987,14 +73992,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(43);
-axios.CancelToken = __webpack_require__(195);
+axios.CancelToken = __webpack_require__(196);
 axios.isCancel = __webpack_require__(42);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(196);
+axios.spread = __webpack_require__(197);
 
 module.exports = axios;
 
@@ -74003,7 +74008,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports) {
 
 /*!
@@ -74030,7 +74035,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74038,8 +74043,8 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(31);
 var utils = __webpack_require__(7);
-var InterceptorManager = __webpack_require__(190);
-var dispatchRequest = __webpack_require__(191);
+var InterceptorManager = __webpack_require__(191);
+var dispatchRequest = __webpack_require__(192);
 
 /**
  * Create a new instance of Axios
@@ -74116,7 +74121,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74135,7 +74140,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74168,7 +74173,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74196,7 +74201,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74269,7 +74274,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74329,7 +74334,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74404,7 +74409,7 @@ module.exports = (
 
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74447,7 +74452,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74507,7 +74512,7 @@ module.exports = (
 
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74566,18 +74571,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(7);
-var transformData = __webpack_require__(192);
+var transformData = __webpack_require__(193);
 var isCancel = __webpack_require__(42);
 var defaults = __webpack_require__(31);
-var isAbsoluteURL = __webpack_require__(193);
-var combineURLs = __webpack_require__(194);
+var isAbsoluteURL = __webpack_require__(194);
+var combineURLs = __webpack_require__(195);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -74659,7 +74664,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74686,7 +74691,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74707,7 +74712,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74728,7 +74733,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74792,7 +74797,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74826,7 +74831,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77456,7 +77461,7 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 198 */
+/* 199 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -84483,7 +84488,7 @@ var index_esm = {
 
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -85581,7 +85586,7 @@ function xhrClient (request) {
 
 function nodeClient (request) {
 
-    var client = __webpack_require__(200);
+    var client = __webpack_require__(201);
 
     return new PromiseObj(function (resolve) {
 
@@ -86049,13 +86054,13 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -86744,7 +86749,39 @@ function pluralize (value) {
 });
 
 /***/ }),
-/* 202 */
+/* 203 */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function () {
+	var plugin;
+	plugin = function (Vue) {
+		return Vue.directive('disabled', function (el, binding) {
+			if (binding.value === true) {
+				el.style.opacity = 0.6;
+				el.setAttribute('disabled', true);
+			}
+			if (binding.value === false) {
+				el.style.opacity = 1;
+				return el.removeAttribute('disabled');
+			}
+		});
+	};
+	if (typeof Vue !== "undefined" && Vue !== null) {
+		Vue.use(plugin);
+	}
+	if (true) {
+		return module.exports = plugin;
+	} else if (typeof define === 'function' && define.amd) {
+		return define(function () {
+			return plugin;
+		});
+	} else if (typeof window !== "undefined" && window !== null) {
+		return window.VueDisabled = plugin;
+	}
+})();
+
+/***/ }),
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var apply = Function.prototype.apply;
@@ -86797,7 +86834,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(203);
+__webpack_require__(205);
 // On some exotic environments, it's not clear which object `setimmeidate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -86811,7 +86848,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ }),
-/* 203 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -87004,19 +87041,19 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9), __webpack_require__(32)))
 
 /***/ }),
-/* 204 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(205)
+  __webpack_require__(207)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(208)
+var __vue_script__ = __webpack_require__(210)
 /* template */
-var __vue_template__ = __webpack_require__(284)
+var __vue_template__ = __webpack_require__(286)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -87055,13 +87092,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 205 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(206);
+var content = __webpack_require__(208);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -87081,7 +87118,7 @@ if(false) {
 }
 
 /***/ }),
-/* 206 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -87095,7 +87132,7 @@ exports.push([module.i, "\n.slide-leave-active {\n    transition: opacity 1s eas
 
 
 /***/ }),
-/* 207 */
+/* 209 */
 /***/ (function(module, exports) {
 
 /**
@@ -87128,14 +87165,14 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 208 */
+/* 210 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Header_vue__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Header_vue__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Header_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Header_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Footer_vue__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Footer_vue__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Footer_vue__);
 //
 //
@@ -87179,19 +87216,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 209 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(210)
+  __webpack_require__(212)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(212)
+var __vue_script__ = __webpack_require__(214)
 /* template */
-var __vue_template__ = __webpack_require__(278)
+var __vue_template__ = __webpack_require__(280)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -87230,13 +87267,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 210 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(211);
+var content = __webpack_require__(213);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -87256,7 +87293,7 @@ if(false) {
 }
 
 /***/ }),
-/* 211 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -87270,7 +87307,7 @@ exports.push([module.i, "\nheader[data-v-11ad97a0] {\n   background: lightgreen;
 
 
 /***/ }),
-/* 212 */
+/* 214 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -87427,11 +87464,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 213 */
+/* 215 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_web3__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_web3__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_web3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_web3__);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -87896,10 +87933,10 @@ var BcExplorer = function () {
 /* harmony default export */ __webpack_exports__["a"] = (BcExplorer);
 
 /***/ }),
-/* 214 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Web3 = __webpack_require__(215);
+var Web3 = __webpack_require__(217);
 
 // dont override global variable
 if (typeof window !== 'undefined' && typeof window.Web3 === 'undefined') {
@@ -87910,7 +87947,7 @@ module.exports = Web3;
 
 
 /***/ }),
-/* 215 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -87940,23 +87977,23 @@ module.exports = Web3;
  * @date 2014
  */
 
-var RequestManager = __webpack_require__(216);
+var RequestManager = __webpack_require__(218);
 var Iban = __webpack_require__(24);
-var Eth = __webpack_require__(241);
-var DB = __webpack_require__(260);
-var Shh = __webpack_require__(261);
-var Net = __webpack_require__(262);
-var Personal = __webpack_require__(263);
-var Swarm = __webpack_require__(264);
-var Settings = __webpack_require__(265);
-var version = __webpack_require__(266);
+var Eth = __webpack_require__(243);
+var DB = __webpack_require__(262);
+var Shh = __webpack_require__(263);
+var Net = __webpack_require__(264);
+var Personal = __webpack_require__(265);
+var Swarm = __webpack_require__(266);
+var Settings = __webpack_require__(267);
+var version = __webpack_require__(268);
 var utils = __webpack_require__(3);
 var sha3 = __webpack_require__(20);
-var extend = __webpack_require__(267);
-var Batch = __webpack_require__(268);
-var Property = __webpack_require__(17);
-var HttpProvider = __webpack_require__(269);
-var IpcProvider = __webpack_require__(276);
+var extend = __webpack_require__(269);
+var Batch = __webpack_require__(270);
+var Property = __webpack_require__(18);
+var HttpProvider = __webpack_require__(271);
+var IpcProvider = __webpack_require__(278);
 var BigNumber = __webpack_require__(19);
 
 
@@ -88068,7 +88105,7 @@ module.exports = Web3;
 
 
 /***/ }),
-/* 216 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -88100,7 +88137,7 @@ module.exports = Web3;
 var Jsonrpc = __webpack_require__(45);
 var utils = __webpack_require__(3);
 var c = __webpack_require__(23);
-var errors = __webpack_require__(16);
+var errors = __webpack_require__(17);
 
 /**
  * It's responsible for passing messages to providers
@@ -88339,13 +88376,13 @@ module.exports = RequestManager;
 
 
 /***/ }),
-/* 217 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(22), __webpack_require__(218), __webpack_require__(219), __webpack_require__(13), __webpack_require__(14), __webpack_require__(34), __webpack_require__(46), __webpack_require__(220), __webpack_require__(47), __webpack_require__(221), __webpack_require__(48), __webpack_require__(222), __webpack_require__(35), __webpack_require__(223), __webpack_require__(15), __webpack_require__(4), __webpack_require__(224), __webpack_require__(225), __webpack_require__(226), __webpack_require__(227), __webpack_require__(228), __webpack_require__(229), __webpack_require__(230), __webpack_require__(231), __webpack_require__(232), __webpack_require__(233), __webpack_require__(234), __webpack_require__(235), __webpack_require__(236), __webpack_require__(237), __webpack_require__(238), __webpack_require__(239));
+		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(22), __webpack_require__(220), __webpack_require__(221), __webpack_require__(14), __webpack_require__(15), __webpack_require__(34), __webpack_require__(46), __webpack_require__(222), __webpack_require__(47), __webpack_require__(223), __webpack_require__(48), __webpack_require__(224), __webpack_require__(35), __webpack_require__(225), __webpack_require__(16), __webpack_require__(4), __webpack_require__(226), __webpack_require__(227), __webpack_require__(228), __webpack_require__(229), __webpack_require__(230), __webpack_require__(231), __webpack_require__(232), __webpack_require__(233), __webpack_require__(234), __webpack_require__(235), __webpack_require__(236), __webpack_require__(237), __webpack_require__(238), __webpack_require__(239), __webpack_require__(240), __webpack_require__(241));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -88362,7 +88399,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 218 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
@@ -88443,7 +88480,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 219 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
@@ -88597,7 +88634,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 220 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -88682,7 +88719,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 221 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -88770,7 +88807,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 222 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory) {
@@ -89042,7 +89079,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 223 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -89192,7 +89229,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 224 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -89275,7 +89312,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 225 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -89338,7 +89375,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 226 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -89459,7 +89496,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 227 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -89518,7 +89555,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 228 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -89563,7 +89600,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 229 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -89617,7 +89654,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 230 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -89666,7 +89703,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 231 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -89711,7 +89748,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 232 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -89761,7 +89798,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 233 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -89796,7 +89833,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 234 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
@@ -89867,13 +89904,13 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 235 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(13), __webpack_require__(14), __webpack_require__(15), __webpack_require__(4));
+		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(14), __webpack_require__(15), __webpack_require__(16), __webpack_require__(4));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -90104,13 +90141,13 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 236 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(13), __webpack_require__(14), __webpack_require__(15), __webpack_require__(4));
+		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(14), __webpack_require__(15), __webpack_require__(16), __webpack_require__(4));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -90879,13 +90916,13 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 237 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(13), __webpack_require__(14), __webpack_require__(15), __webpack_require__(4));
+		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(14), __webpack_require__(15), __webpack_require__(16), __webpack_require__(4));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -91023,13 +91060,13 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 238 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(13), __webpack_require__(14), __webpack_require__(15), __webpack_require__(4));
+		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(14), __webpack_require__(15), __webpack_require__(16), __webpack_require__(4));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -91220,13 +91257,13 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 239 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 ;(function (root, factory, undef) {
 	if (true) {
 		// CommonJS
-		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(13), __webpack_require__(14), __webpack_require__(15), __webpack_require__(4));
+		module.exports = exports = factory(__webpack_require__(1), __webpack_require__(14), __webpack_require__(15), __webpack_require__(16), __webpack_require__(4));
 	}
 	else if (typeof define === "function" && define.amd) {
 		// AMD
@@ -91415,7 +91452,7 @@ module.exports = RequestManager;
 }));
 
 /***/ }),
-/* 240 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module, global) {var __WEBPACK_AMD_DEFINE_RESULT__;/*! https://mths.be/utf8js v2.1.2 by @mathias */
@@ -91665,7 +91702,7 @@ module.exports = RequestManager;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(30)(module), __webpack_require__(9)))
 
 /***/ }),
-/* 241 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91697,15 +91734,15 @@ module.exports = RequestManager;
 var formatters = __webpack_require__(11);
 var utils = __webpack_require__(3);
 var Method = __webpack_require__(12);
-var Property = __webpack_require__(17);
+var Property = __webpack_require__(18);
 var c = __webpack_require__(23);
-var Contract = __webpack_require__(242);
+var Contract = __webpack_require__(244);
 var watches = __webpack_require__(26);
 var Filter = __webpack_require__(25);
-var IsSyncing = __webpack_require__(254);
-var namereg = __webpack_require__(255);
+var IsSyncing = __webpack_require__(256);
+var namereg = __webpack_require__(257);
 var Iban = __webpack_require__(24);
-var transfer = __webpack_require__(258);
+var transfer = __webpack_require__(260);
 
 var blockCall = function (args) {
     return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? "eth_getBlockByHash" : "eth_getBlockByNumber";
@@ -92026,7 +92063,7 @@ module.exports = Eth;
 
 
 /***/ }),
-/* 242 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -92054,8 +92091,8 @@ module.exports = Eth;
 var utils = __webpack_require__(3);
 var coder = __webpack_require__(36);
 var SolidityEvent = __webpack_require__(50);
-var SolidityFunction = __webpack_require__(252);
-var AllEvents = __webpack_require__(253);
+var SolidityFunction = __webpack_require__(254);
+var AllEvents = __webpack_require__(255);
 
 /**
  * Should be called to encode constructor params
@@ -92342,7 +92379,7 @@ module.exports = ContractFactory;
 
 
 /***/ }),
-/* 243 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(8);
@@ -92374,7 +92411,7 @@ module.exports = SolidityTypeAddress;
 
 
 /***/ }),
-/* 244 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(8);
@@ -92406,7 +92443,7 @@ module.exports = SolidityTypeBool;
 
 
 /***/ }),
-/* 245 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(8);
@@ -92444,7 +92481,7 @@ module.exports = SolidityTypeInt;
 
 
 /***/ }),
-/* 246 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(8);
@@ -92482,7 +92519,7 @@ module.exports = SolidityTypeUInt;
 
 
 /***/ }),
-/* 247 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(8);
@@ -92508,7 +92545,7 @@ module.exports = SolidityTypeDynamicBytes;
 
 
 /***/ }),
-/* 248 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(8);
@@ -92534,7 +92571,7 @@ module.exports = SolidityTypeString;
 
 
 /***/ }),
-/* 249 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(8);
@@ -92572,7 +92609,7 @@ module.exports = SolidityTypeReal;
 
 
 /***/ }),
-/* 250 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(8);
@@ -92610,7 +92647,7 @@ module.exports = SolidityTypeUReal;
 
 
 /***/ }),
-/* 251 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var f = __webpack_require__(8);
@@ -92645,7 +92682,7 @@ module.exports = SolidityTypeBytes;
 
 
 /***/ }),
-/* 252 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -92672,7 +92709,7 @@ module.exports = SolidityTypeBytes;
 
 var coder = __webpack_require__(36);
 var utils = __webpack_require__(3);
-var errors = __webpack_require__(16);
+var errors = __webpack_require__(17);
 var formatters = __webpack_require__(11);
 var sha3 = __webpack_require__(20);
 
@@ -92934,7 +92971,7 @@ module.exports = SolidityFunction;
 
 
 /***/ }),
-/* 253 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -93027,7 +93064,7 @@ module.exports = AllSolidityEvents;
 
 
 /***/ }),
-/* 254 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -93126,7 +93163,7 @@ module.exports = IsSyncing;
 
 
 /***/ }),
-/* 255 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -93151,8 +93188,8 @@ module.exports = IsSyncing;
  * @date 2015
  */
 
-var globalRegistrarAbi = __webpack_require__(256);
-var icapRegistrarAbi= __webpack_require__(257);
+var globalRegistrarAbi = __webpack_require__(258);
+var icapRegistrarAbi= __webpack_require__(259);
 
 var globalNameregAddress = '0xc6d9d2cd449a754c494264e1809c50e34d64562b';
 var icapNameregAddress = '0xa1a111bc074c9cfa781f0c38e63bd51c91b8af00';
@@ -93171,19 +93208,19 @@ module.exports = {
 
 
 /***/ }),
-/* 256 */
+/* 258 */
 /***/ (function(module, exports) {
 
 module.exports = [{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"name","outputs":[{"name":"o_name","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"content","outputs":[{"name":"","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"addr","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"}],"name":"reserve","outputs":[],"type":"function"},{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"subRegistrar","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_newOwner","type":"address"}],"name":"transfer","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_registrar","type":"address"}],"name":"setSubRegistrar","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"Registrar","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_a","type":"address"},{"name":"_primary","type":"bool"}],"name":"setAddress","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_content","type":"bytes32"}],"name":"setContent","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"}],"name":"disown","outputs":[],"type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_name","type":"bytes32"},{"indexed":false,"name":"_winner","type":"address"}],"name":"AuctionEnded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_name","type":"bytes32"},{"indexed":false,"name":"_bidder","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"NewBid","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"name","type":"bytes32"}],"name":"Changed","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"name","type":"bytes32"},{"indexed":true,"name":"addr","type":"address"}],"name":"PrimaryChanged","type":"event"}]
 
 /***/ }),
-/* 257 */
+/* 259 */
 /***/ (function(module, exports) {
 
 module.exports = [{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"owner","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_refund","type":"address"}],"name":"disown","outputs":[],"type":"function"},{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],"name":"addr","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"}],"name":"reserve","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_newOwner","type":"address"}],"name":"transfer","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_a","type":"address"}],"name":"setAddr","outputs":[],"type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"name":"name","type":"bytes32"}],"name":"Changed","type":"event"}]
 
 /***/ }),
-/* 258 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -93209,7 +93246,7 @@ module.exports = [{"constant":true,"inputs":[{"name":"_name","type":"bytes32"}],
  */
 
 var Iban = __webpack_require__(24);
-var exchangeAbi = __webpack_require__(259);
+var exchangeAbi = __webpack_require__(261);
 
 /**
  * Should be used to make Iban transfer
@@ -93281,13 +93318,13 @@ module.exports = transfer;
 
 
 /***/ }),
-/* 259 */
+/* 261 */
 /***/ (function(module, exports) {
 
 module.exports = [{"constant":false,"inputs":[{"name":"from","type":"bytes32"},{"name":"to","type":"address"},{"name":"value","type":"uint256"}],"name":"transfer","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"from","type":"bytes32"},{"name":"to","type":"address"},{"name":"indirectId","type":"bytes32"},{"name":"value","type":"uint256"}],"name":"icapTransfer","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"to","type":"bytes32"}],"name":"deposit","outputs":[],"payable":true,"type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"AnonymousDeposit","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"bytes32"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"bytes32"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"bytes32"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"indirectId","type":"bytes32"},{"indexed":false,"name":"value","type":"uint256"}],"name":"IcapTransfer","type":"event"}]
 
 /***/ }),
-/* 260 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -93359,7 +93396,7 @@ module.exports = DB;
 
 
 /***/ }),
-/* 261 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -93509,7 +93546,7 @@ module.exports = Shh;
 
 
 /***/ }),
-/* 262 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -93535,7 +93572,7 @@ module.exports = Shh;
  */
 
 var utils = __webpack_require__(3);
-var Property = __webpack_require__(17);
+var Property = __webpack_require__(18);
 
 var Net = function (web3) {
     this._requestManager = web3._requestManager;
@@ -93567,7 +93604,7 @@ module.exports = Net;
 
 
 /***/ }),
-/* 263 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -93597,7 +93634,7 @@ module.exports = Net;
 
 
 var Method = __webpack_require__(12);
-var Property = __webpack_require__(17);
+var Property = __webpack_require__(18);
 var formatters = __webpack_require__(11);
 
 function Personal(web3) {
@@ -93689,7 +93726,7 @@ module.exports = Personal;
 
 
 /***/ }),
-/* 264 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -93720,7 +93757,7 @@ module.exports = Personal;
 
 
 var Method = __webpack_require__(12);
-var Property = __webpack_require__(17);
+var Property = __webpack_require__(18);
 
 function Swarm(web3) {
     this._requestManager = web3._requestManager;
@@ -93841,7 +93878,7 @@ module.exports = Swarm;
 
 
 /***/ }),
-/* 265 */
+/* 267 */
 /***/ (function(module, exports) {
 
 
@@ -93856,19 +93893,19 @@ module.exports = Settings;
 
 
 /***/ }),
-/* 266 */
+/* 268 */
 /***/ (function(module, exports) {
 
 module.exports = {"version":"0.20.6"}
 
 /***/ }),
-/* 267 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var formatters = __webpack_require__(11);
 var utils = __webpack_require__(3);
 var Method = __webpack_require__(12);
-var Property = __webpack_require__(17);
+var Property = __webpack_require__(18);
 
 // TODO: refactor, so the input params are not altered.
 // it's necessary to make same 'extension' work with multiple providers
@@ -93916,7 +93953,7 @@ module.exports = extend;
 
 
 /***/ }),
-/* 268 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -93942,7 +93979,7 @@ module.exports = extend;
  */
 
 var Jsonrpc = __webpack_require__(45);
-var errors = __webpack_require__(16);
+var errors = __webpack_require__(17);
 
 var Batch = function (web3) {
     this.requestManager = web3._requestManager;
@@ -93988,7 +94025,7 @@ module.exports = Batch;
 
 
 /***/ }),
-/* 269 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -94015,7 +94052,7 @@ module.exports = Batch;
  * @date 2015
  */
 
-var errors = __webpack_require__(16);
+var errors = __webpack_require__(17);
 
 // workaround to use httpprovider in different envs
 
@@ -94024,10 +94061,10 @@ if (typeof window !== 'undefined' && window.XMLHttpRequest) {
   XMLHttpRequest = window.XMLHttpRequest; // jshint ignore: line
 // node
 } else {
-  XMLHttpRequest = __webpack_require__(274).XMLHttpRequest; // jshint ignore: line
+  XMLHttpRequest = __webpack_require__(276).XMLHttpRequest; // jshint ignore: line
 }
 
-var XHR2 = __webpack_require__(275); // jshint ignore: line
+var XHR2 = __webpack_require__(277); // jshint ignore: line
 
 /**
  * HttpProvider should be used to send rpc calls over http
@@ -94155,10 +94192,10 @@ HttpProvider.prototype.isConnected = function () {
 
 module.exports = HttpProvider;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(270).Buffer))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(272).Buffer))
 
 /***/ }),
-/* 270 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -94172,9 +94209,9 @@ module.exports = HttpProvider;
 
 
 
-var base64 = __webpack_require__(271)
-var ieee754 = __webpack_require__(272)
-var isArray = __webpack_require__(273)
+var base64 = __webpack_require__(273)
+var ieee754 = __webpack_require__(274)
+var isArray = __webpack_require__(275)
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -95955,7 +95992,7 @@ function isnan (val) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ }),
-/* 271 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -96078,7 +96115,7 @@ function fromByteArray (uint8) {
 
 
 /***/ }),
-/* 272 */
+/* 274 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -96168,7 +96205,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 273 */
+/* 275 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -96179,7 +96216,7 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 274 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -96195,14 +96232,14 @@ if (typeof XMLHttpRequest === 'undefined') {
 
 
 /***/ }),
-/* 275 */
+/* 277 */
 /***/ (function(module, exports) {
 
 module.exports = XMLHttpRequest;
 
 
 /***/ }),
-/* 276 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -96231,7 +96268,7 @@ module.exports = XMLHttpRequest;
 
 
 var utils = __webpack_require__(3);
-var errors = __webpack_require__(16);
+var errors = __webpack_require__(17);
 
 
 var IpcProvider = function (path, net) {
@@ -96416,13 +96453,13 @@ module.exports = IpcProvider;
 
 
 /***/ }),
-/* 277 */
+/* 279 */
 /***/ (function(module, exports) {
 
-module.exports = {"contractName":"Journeys","abi":[{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"journeysIds","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"journeys","outputs":[{"name":"from","type":"string"},{"name":"to","type":"string"},{"name":"endingFare","type":"uint256"},{"name":"walletAddress","type":"address"},{"name":"createdAt","type":"uint256"},{"name":"updatedAt","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"id","type":"uint256"}],"name":"newJourneyRegistered","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"id","type":"uint256"}],"name":"journeyUpdateEvent","type":"event"},{"constant":false,"inputs":[{"name":"from","type":"string"},{"name":"to","type":"string"},{"name":"endingFare","type":"uint256"}],"name":"registerJourney","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"newFrom","type":"string"},{"name":"newTo","type":"string"},{"name":"newendingFare","type":"uint256"}],"name":"updateJourney","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"id","type":"uint256"}],"name":"getJourneyById","outputs":[{"name":"","type":"uint256"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"uint256"},{"name":"","type":"address"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getOwnProfile","outputs":[{"name":"","type":"uint256"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"uint256"},{"name":"","type":"address"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"isRegistered","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"totalJourneys","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}],"bytecode":"0x60806040523480156200001157600080fd5b5062000051600060206040519081016040528060008152506020604051908101604052806000815250600062000208640100000000026401000000009004565b50620000e1653333333333336040805190810160405280601a81526020017f50696e6e657220556e64657267726f756e642053746174696f6e0000000000008152506040805190810160405280601b81526020017f4b696c6275726e20556e64657267726f756e642053746174696f6e000000000081525061024e62000208640100000000026401000000009004565b5062000171652345399999996040805190810160405280601d81526020017f57696c6c657364656e20556e64657267726f756e642053746174696f6e0000008152506040805190810160405280601e81526020017f4d616964612056616c6520556e64657267726f756e642053746174696f6e000081525061024e62000208640100000000026401000000009004565b5062000201654345782222226040805190810160405280601e81526020017f4265726d6f6e6473657920556e64657267726f756e642053746174696f6e00008152506040805190810160405280601b81526020017f4b696c6275726e20556e64657267726f756e642053746174696f6e000000000081525061024e62000208640100000000026401000000009004565b50620005bf565b60008060008060008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205491506000821415156200025e57600080fd5b6001805490506000808973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555060018054809190600101620002bc91906200040a565b905060c0604051908101604052808781526020018681526020018581526020018873ffffffffffffffffffffffffffffffffffffffff168152602001428152602001428152506001828154811015156200031257fe5b906000526020600020906006020160008201518160000190805190602001906200033e9291906200043f565b5060208201518160010190805190602001906200035d9291906200043f565b506040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506080820151816004015560a082015181600501559050507f6bef7adacfc09f59a87202193c883458dd5621fccb6887d9dffb9c188994c0ba816040518082815260200191505060405180910390a18092505050949350505050565b8154818355818111156200043a57600602816006028360005260206000209182019101620004399190620004c6565b5b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106200048257805160ff1916838001178555620004b3565b82800160010185558215620004b3579182015b82811115620004b257825182559160200191906001019062000495565b5b509050620004c291906200054b565b5090565b6200054891905b80821115620005445760008082016000620004e9919062000573565b600182016000620004fb919062000573565b60028201600090556003820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff02191690556004820160009055600582016000905550600601620004cd565b5090565b90565b6200057091905b808211156200056c57600081600090555060010162000552565b5090565b90565b50805460018160011615610100020316600290046000825580601f106200059b5750620005bc565b601f016020900490600052602060002090810190620005bb91906200054b565b5b50565b61116980620005cf6000396000f30060806040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806315e682051461009357806322366844146101f457806336ae14c8146102235780638df5a9fa1461027a578063bc40d5fb146103d4578063bc4e7007146104a1578063bd578c50146104cc578063fd1b515814610599575b600080fd5b34801561009f57600080fd5b506100be600480360381019080803590602001909291905050506106e4565b6040518088815260200180602001806020018781526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838103835289818151815260200191508051906020019080838360005b8381101561014c578082015181840152602081019050610131565b50505050905090810190601f1680156101795780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b838110156101b2578082015181840152602081019050610197565b50505050905090810190601f1680156101df5780820380516001836020036101000a031916815260200191505b50995050505050505050505060405180910390f35b34801561020057600080fd5b50610209610938565b604051808215151515815260200191505060405180910390f35b34801561022f57600080fd5b50610264600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610981565b6040518082815260200191505060405180910390f35b34801561028657600080fd5b506102a560048036038101908080359060200190929190505050610999565b6040518080602001806020018781526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838103835289818151815260200191508051906020019080838360005b8381101561032d578082015181840152602081019050610312565b50505050905090810190601f16801561035a5780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b83811015610393578082015181840152602081019050610378565b50505050905090810190601f1680156103c05780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b3480156103e057600080fd5b5061048b600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919291929080359060200190929190505050610b34565b6040518082815260200191505060405180910390f35b3480156104ad57600080fd5b506104b6610c33565b6040518082815260200191505060405180910390f35b3480156104d857600080fd5b50610583600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919291929080359060200190929190505050610c40565b6040518082815260200191505060405180910390f35b3480156105a557600080fd5b506105ae610c57565b6040518088815260200180602001806020018781526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838103835289818151815260200191508051906020019080838360005b8381101561063c578082015181840152602081019050610621565b50505050905090810190601f1680156106695780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b838110156106a2578082015181840152602081019050610687565b50505050905090810190601f1680156106cf5780820380516001836020036101000a031916815260200191505b50995050505050505050505060405180910390f35b60006060806000806000806106f7610ed3565b600089118061070b57506001805490508911155b151561071657600080fd5b60018981548110151561072557fe5b906000526020600020906006020160c06040519081016040529081600082018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107d85780601f106107ad576101008083540402835291602001916107d8565b820191906000526020600020905b8154815290600101906020018083116107bb57829003601f168201915b50505050508152602001600182018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561087a5780601f1061084f5761010080835404028352916020019161087a565b820191906000526020600020905b81548152906001019060200180831161085d57829003601f168201915b50505050508152602001600282015481526020016003820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200160048201548152602001600582015481525050905088816000015182602001518360400151846060015185608001518660a00151859550849450975097509750975097509750975050919395979092949650565b6000806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541415905090565b60006020528060005260406000206000915090505481565b6001818154811015156109a857fe5b9060005260206000209060060201600091509050806000018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610a545780601f10610a2957610100808354040283529160200191610a54565b820191906000526020600020905b815481529060010190602001808311610a3757829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610af25780601f10610ac757610100808354040283529160200191610af2565b820191906000526020600020905b815481529060010190602001808311610ad557829003601f168201915b5050505050908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060040154908060050154905086565b6000806000610b41610938565b1515610b4c57600080fd5b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549150600182815481101515610b9c57fe5b9060005260206000209060060201905085816000019080519060200190610bc4929190610f20565b5084816001019080519060200190610bdd929190610f20565b508381600201819055504281600501819055507fdb063512f00940756581e7b0b8efccfd498f53fc4f505706c2c535612945e505826040518082815260200191505060405180910390a181925050509392505050565b6000600180549050905090565b6000610c4e33858585610cd9565b90509392505050565b60006060806000806000806000610c6c610938565b1515610c7757600080fd5b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050610cc1816106e4565b97509750975097509750975097505090919293949596565b60008060008060008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549150600082141515610d2e57600080fd5b6001805490506000808973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555060018054809190600101610d8a9190610fa0565b905060c0604051908101604052808781526020018681526020018581526020018873ffffffffffffffffffffffffffffffffffffffff16815260200142815260200142815250600182815481101515610ddf57fe5b90600052602060002090600602016000820151816000019080519060200190610e09929190610fd2565b506020820151816001019080519060200190610e26929190610fd2565b506040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506080820151816004015560a082015181600501559050507f6bef7adacfc09f59a87202193c883458dd5621fccb6887d9dffb9c188994c0ba816040518082815260200191505060405180910390a18092505050949350505050565b60c060405190810160405280606081526020016060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200160008152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610f6157805160ff1916838001178555610f8f565b82800160010185558215610f8f579182015b82811115610f8e578251825591602001919060010190610f73565b5b509050610f9c9190611052565b5090565b815481835581811115610fcd57600602816006028360005260206000209182019101610fcc9190611077565b5b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061101357805160ff1916838001178555611041565b82800160010185558215611041579182015b82811115611040578251825591602001919060010190611025565b5b50905061104e9190611052565b5090565b61107491905b80821115611070576000816000905550600101611058565b5090565b90565b6110f291905b808211156110ee576000808201600061109691906110f5565b6001820160006110a691906110f5565b60028201600090556003820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055600482016000905560058201600090555060060161107d565b5090565b90565b50805460018160011615610100020316600290046000825580601f1061111b575061113a565b601f0160209004906000526020600020908101906111399190611052565b5b505600a165627a7a7230582016ada90f1ecb19ca873df94b42d3a2c609f2d64195a28cd10bfc492bea8382e90029","deployedBytecode":"0x60806040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806315e682051461009357806322366844146101f457806336ae14c8146102235780638df5a9fa1461027a578063bc40d5fb146103d4578063bc4e7007146104a1578063bd578c50146104cc578063fd1b515814610599575b600080fd5b34801561009f57600080fd5b506100be600480360381019080803590602001909291905050506106e4565b6040518088815260200180602001806020018781526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838103835289818151815260200191508051906020019080838360005b8381101561014c578082015181840152602081019050610131565b50505050905090810190601f1680156101795780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b838110156101b2578082015181840152602081019050610197565b50505050905090810190601f1680156101df5780820380516001836020036101000a031916815260200191505b50995050505050505050505060405180910390f35b34801561020057600080fd5b50610209610938565b604051808215151515815260200191505060405180910390f35b34801561022f57600080fd5b50610264600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610981565b6040518082815260200191505060405180910390f35b34801561028657600080fd5b506102a560048036038101908080359060200190929190505050610999565b6040518080602001806020018781526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838103835289818151815260200191508051906020019080838360005b8381101561032d578082015181840152602081019050610312565b50505050905090810190601f16801561035a5780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b83811015610393578082015181840152602081019050610378565b50505050905090810190601f1680156103c05780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b3480156103e057600080fd5b5061048b600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919291929080359060200190929190505050610b34565b6040518082815260200191505060405180910390f35b3480156104ad57600080fd5b506104b6610c33565b6040518082815260200191505060405180910390f35b3480156104d857600080fd5b50610583600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919291929080359060200190929190505050610c40565b6040518082815260200191505060405180910390f35b3480156105a557600080fd5b506105ae610c57565b6040518088815260200180602001806020018781526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838103835289818151815260200191508051906020019080838360005b8381101561063c578082015181840152602081019050610621565b50505050905090810190601f1680156106695780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b838110156106a2578082015181840152602081019050610687565b50505050905090810190601f1680156106cf5780820380516001836020036101000a031916815260200191505b50995050505050505050505060405180910390f35b60006060806000806000806106f7610ed3565b600089118061070b57506001805490508911155b151561071657600080fd5b60018981548110151561072557fe5b906000526020600020906006020160c06040519081016040529081600082018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107d85780601f106107ad576101008083540402835291602001916107d8565b820191906000526020600020905b8154815290600101906020018083116107bb57829003601f168201915b50505050508152602001600182018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561087a5780601f1061084f5761010080835404028352916020019161087a565b820191906000526020600020905b81548152906001019060200180831161085d57829003601f168201915b50505050508152602001600282015481526020016003820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200160048201548152602001600582015481525050905088816000015182602001518360400151846060015185608001518660a00151859550849450975097509750975097509750975050919395979092949650565b6000806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541415905090565b60006020528060005260406000206000915090505481565b6001818154811015156109a857fe5b9060005260206000209060060201600091509050806000018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610a545780601f10610a2957610100808354040283529160200191610a54565b820191906000526020600020905b815481529060010190602001808311610a3757829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610af25780601f10610ac757610100808354040283529160200191610af2565b820191906000526020600020905b815481529060010190602001808311610ad557829003601f168201915b5050505050908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060040154908060050154905086565b6000806000610b41610938565b1515610b4c57600080fd5b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549150600182815481101515610b9c57fe5b9060005260206000209060060201905085816000019080519060200190610bc4929190610f20565b5084816001019080519060200190610bdd929190610f20565b508381600201819055504281600501819055507fdb063512f00940756581e7b0b8efccfd498f53fc4f505706c2c535612945e505826040518082815260200191505060405180910390a181925050509392505050565b6000600180549050905090565b6000610c4e33858585610cd9565b90509392505050565b60006060806000806000806000610c6c610938565b1515610c7757600080fd5b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050610cc1816106e4565b97509750975097509750975097505090919293949596565b60008060008060008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549150600082141515610d2e57600080fd5b6001805490506000808973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555060018054809190600101610d8a9190610fa0565b905060c0604051908101604052808781526020018681526020018581526020018873ffffffffffffffffffffffffffffffffffffffff16815260200142815260200142815250600182815481101515610ddf57fe5b90600052602060002090600602016000820151816000019080519060200190610e09929190610fd2565b506020820151816001019080519060200190610e26929190610fd2565b506040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506080820151816004015560a082015181600501559050507f6bef7adacfc09f59a87202193c883458dd5621fccb6887d9dffb9c188994c0ba816040518082815260200191505060405180910390a18092505050949350505050565b60c060405190810160405280606081526020016060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200160008152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610f6157805160ff1916838001178555610f8f565b82800160010185558215610f8f579182015b82811115610f8e578251825591602001919060010190610f73565b5b509050610f9c9190611052565b5090565b815481835581811115610fcd57600602816006028360005260206000209182019101610fcc9190611077565b5b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061101357805160ff1916838001178555611041565b82800160010185558215611041579182015b82811115611040578251825591602001919060010190611025565b5b50905061104e9190611052565b5090565b61107491905b80821115611070576000816000905550600101611058565b5090565b90565b6110f291905b808211156110ee576000808201600061109691906110f5565b6001820160006110a691906110f5565b60028201600090556003820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055600482016000905560058201600090555060060161107d565b5090565b90565b50805460018160011615610100020316600290046000825580601f1061111b575061113a565b601f0160209004906000526020600020908101906111399190611052565b5b505600a165627a7a7230582016ada90f1ecb19ca873df94b42d3a2c609f2d64195a28cd10bfc492bea8382e90029","sourceMap":"27:4907:0:-;;;874:457;8:9:-1;5:2;;;30:1;27;20:12;5:2;874:457:0;954:26;965:3;954:26;;;;;;;;;;;;;;;;;;;;;;;;;;978:1;954:10;;;:26;;;:::i;:::-;;1018:92;1029:14;1018:92;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1106:3;1018:10;;;:92;;;:::i;:::-;;1120:98;1131:14;1120:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1214:3;1120:10;;;:98;;;:::i;:::-;;1228:96;1239:14;1228:96;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1320:3;1228:10;;;:96;;;:::i;:::-;;27:4907;;2001:826;2097:4;2174:14;2366:17;2191:11;:18;2203:5;2191:18;;;;;;;;;;;;;;;;2174:35;;2241:1;2228:9;:14;2219:24;;;;;;;;2341:8;:15;;;;2320:11;:18;2332:5;2320:18;;;;;;;;;;;;;;;:36;;;;2386:8;:17;;;;;;;;;;;:::i;:::-;2366:37;;2482:189;;;;;;;;;2510:4;2482:189;;;;2532:2;2482:189;;;;2560:10;2482:189;;;;2599:5;2482:189;;;;;;2629:3;2482:189;;;;2657:3;2482:189;;;2457:8;2466:12;2457:22;;;;;;;;;;;;;;;;;;;;:214;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2756:34;2777:12;2756:34;;;;;;;;;;;;;;;;;;2808:12;2801:19;;2001:826;;;;;;;;:::o;27:4907::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;","deployedSourceMap":"27:4907:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3792:430;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3792:430:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;3792:430:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;3792:430:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4651:106;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4651:106:0;;;;;;;;;;;;;;;;;;;;;;;;;;;331:44;;8:9:-1;5:2;;;30:1;27;20:12;5:2;331:44:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;456:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;456:25:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;456:25:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;456:25:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3159:486;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3159:486:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4836:95;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4836:95:0;;;;;;;;;;;;;;;;;;;;;;;1512:156;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1512:156:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4302:246;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4302:246:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;4302:246:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;4302:246:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3792:430;3855:4;3866:6;3879;3895:4;3906:7;3920:4;3931;4039:16;;:::i;:::-;4000:1;3995:2;:6;3994:35;;;;4013:8;:15;;;;4007:2;:21;;3994:35;3985:46;;;;;;;;4058:8;4067:2;4058:12;;;;;;;;;;;;;;;;;;;;4039:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4093:2;4103:1;:6;;;4117:1;:4;;;4135:1;:12;;;4155:1;:15;;;4178:1;:11;;;4197:1;:11;;;4078:137;;;;;;;;;;;;;;;;;;;;3792:430;;;;;;;;;;:::o;4651:106::-;4696:4;4748:1;4721:11;:23;4733:10;4721:23;;;;;;;;;;;;;;;;:28;;4713:37;;4651:106;:::o;331:44::-;;;;;;;;;;;;;;;;;:::o;456:25::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;3159:486::-;3275:4;3350:14;3398:23;792:14;:12;:14::i;:::-;784:23;;;;;;;;3367:11;:23;3379:10;3367:23;;;;;;;;;;;;;;;;3350:40;;3424:8;3433:9;3424:19;;;;;;;;;;;;;;;;;;;;3398:45;;3466:7;3451;:12;;:22;;;;;;;;;;;;:::i;:::-;;3493:5;3480:7;:10;;:18;;;;;;;;;;;;:::i;:::-;;3529:13;3508:7;:18;;:34;;;;3569:3;3549:7;:17;;:23;;;;3585:29;3604:9;3585:29;;;;;;;;;;;;;;;;;;3629:9;3622:16;;3159:486;;;;;;;:::o;4836:95::-;4882:4;4909:8;:15;;;;4902:22;;4836:95;:::o;1512:156::-;1593:4;1617:44;1628:10;1640:4;1646:2;1650:10;1617;:44::i;:::-;1610:51;;1512:156;;;;;:::o;4302:246::-;4381:4;4392:6;4405;4421:4;4432:7;4446:4;4457;4475:7;792:14;:12;:14::i;:::-;784:23;;;;;;;;4485:11;:23;4497:10;4485:23;;;;;;;;;;;;;;;;4475:33;;4523:18;4538:2;4523:14;:18::i;:::-;4516:25;;;;;;;;;;;;;;4302:246;;;;;;;;:::o;2001:826::-;2097:4;2174:14;2366:17;2191:11;:18;2203:5;2191:18;;;;;;;;;;;;;;;;2174:35;;2241:1;2228:9;:14;2219:24;;;;;;;;2341:8;:15;;;;2320:11;:18;2332:5;2320:18;;;;;;;;;;;;;;;:36;;;;2386:8;:17;;;;;;;;;;;:::i;:::-;2366:37;;2482:189;;;;;;;;;2510:4;2482:189;;;;2532:2;2482:189;;;;2560:10;2482:189;;;;2599:5;2482:189;;;;;;2629:3;2482:189;;;;2657:3;2482:189;;;2457:8;2466:12;2457:22;;;;;;;;;;;;;;;;;;;;:214;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2756:34;2777:12;2756:34;;;;;;;;;;;;;;;;;;2808:12;2801:19;;2001:826;;;;;;;;:::o;27:4907::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o","source":"pragma solidity ^0.4.21;\n\n\ncontract Journeys {\n    // data structure that stores a journey\n    struct Journey {\n        string from;\n        string to;\n        uint endingFare;\n        address walletAddress;\n        uint createdAt;\n        uint updatedAt;\n    }\n\n    // it maps the journey's wallet address with the journey ID\n    mapping (address => uint) public journeysIds;\n\n    // Array of Journey that holds the list of journeys and their details\n    Journey[] public journeys;\n\n    // event fired when a new journey is registered\n    event newJourneyRegistered(uint id);\n\n    // event fired when the journey is updated\n    event journeyUpdateEvent(uint id);\n\n\n\n    // Modifier: check if the caller of the smart contract is registered\n    modifier checkSenderIsRegistered {\n    \trequire(isRegistered());\n    \t_;\n    }\n\n\n\n    /**\n     * Constructor function\n     */\n    constructor() public {\n        // NOTE: the first journey MUST be empty\n        addJourney(0x0, \"\", \"\", 0);\n\n        // Some dummy data\n        addJourney(0x333333333333, \"Pinner Underground Station\", \"Kilburn Underground Station\", 590);\n        addJourney(0x234539999999, \"Willesden Underground Station\", \"Maida Vale Underground Station\", 590);\n        addJourney(0x434578222222, \"Bermondsey Underground Station\", \"Kilburn Underground Station\", 590);\n    }\n\n\n\n    /**\n     * Function to register a new journey.\n     *\n     * @param from   Point of Origin\n     * @param to     Destination\n     * @param endingFare Ending Fare\n     */\n    function registerJourney(string from, string to, uint endingFare) public returns(uint)\n    {\n    \treturn addJourney(msg.sender, from, to, endingFare);\n    }\n\n\n\n    /**\n     * Add a new journey. This function must be private because a journey\n     * cannot insert another journey on behalf of someone else.\n     *\n     * @param wAddr \t\tAddress wallet of the journey\n     * @param from\t\t    Point of origin\n     * @param to\t\t    Destination \n     * @param endingFare\tending Fare\n    */\n\n    function addJourney(address wAddr, string from, string to, uint endingFare) private\n    returns(uint)\n    {\n        // checking if the journey is already registered\n        uint journeyId = journeysIds[wAddr];\n        require (journeyId == 0);\n\n        // associating the journey wallet address with the new ID\n        journeysIds[wAddr] = journeys.length;\n        uint newJourneyId = journeys.length++;\n\n        // storing the new journey details\n        journeys[newJourneyId] = Journey({\n            from: from,\n            to: to,\n            endingFare: endingFare,\n            walletAddress: wAddr,\n            createdAt: now,\n            updatedAt: now\n        });\n\n        // emitting the event that a new journey has been registered\n        emit newJourneyRegistered(newJourneyId);\n\n        return newJourneyId;\n    }\n\n\n    /**\n     * Update the journey confirmation of the caller of this method.\n     * Note: the journey can modify only his own confirmation.\n     *\n     * @param newFrom\t    The new journey's displaying from\n     * @param newTo \t    The new journey's to\n     * @param newendingFare The new journey's endingFare\n     *\n     */\n    function updateJourney(string newFrom, string newTo, uint newendingFare) checkSenderIsRegistered public\n    returns(uint)\n    {\n    \t// A journey can modify only their own confirmation.\n    \tuint journeyId = journeysIds[msg.sender];\n\n    \tJourney storage journey = journeys[journeyId];\n\n    \tjourney.from = newFrom;\n    \tjourney.to = newTo;\n        journey.endingFare = newendingFare;\n    \tjourney.updatedAt = now;\n\n    \temit journeyUpdateEvent(journeyId);\n\n    \treturn journeyId;\n    }\n\n\n    /**\n     * Get the journey's confirmation information.\n     *\n     * @param id \tThe ID of the journey stored on the blockchain.\n     */\n    function getJourneyById(uint id) public view\n    returns(\n    \tuint,\n    \tstring,\n    \tstring,\n        uint,\n    \taddress,\n    \tuint,\n    \tuint\n    ) {\n    \t// checking if the ID is valid\n    \trequire( (id > 0) || (id <= journeys.length) );\n\n    \tJourney memory i = journeys[id];\n\n    \treturn (\n    \t\tid,\n    \t\ti.from,\n    \t\ti.to,\n            i.endingFare,\n    \t\ti.walletAddress,\n    \t\ti.createdAt,\n    \t\ti.updatedAt\n    \t);\n    }\n\n    /**\n     * Return the confirmation information of the caller.\n     */\n    function getOwnProfile() checkSenderIsRegistered public view\n    returns(\n    \tuint,\n    \tstring,\n    \tstring,\n        uint,\n    \taddress,\n    \tuint,\n    \tuint\n    ) {\n    \tuint id = journeysIds[msg.sender];\n\n    \treturn getJourneyById(id);\n    }\n\n\n\n\n    /**\n     * Check if the journey that is calling the smart contract is registered.\n     */\n    function isRegistered() public view returns (bool)\n    {\n    \treturn (journeysIds[msg.sender] != 0);\n    }\n\n\n\n    /**\n     * Return the number of total registered journeys.\n     */\n    function totalJourneys() public view returns (uint)\n    {\n        return journeys.length;\n    }\n\n}","sourcePath":"/Users/yameste/Sites/blocktrain-dapp/contracts/Journeys.sol","ast":{"absolutePath":"/Users/yameste/Sites/blocktrain-dapp/contracts/Journeys.sol","exportedSymbols":{"Journeys":[314]},"id":315,"nodeType":"SourceUnit","nodes":[{"id":1,"literals":["solidity","^","0.4",".21"],"nodeType":"PragmaDirective","src":"0:24:0"},{"baseContracts":[],"contractDependencies":[],"contractKind":"contract","documentation":null,"fullyImplemented":true,"id":314,"linearizedBaseContracts":[314],"name":"Journeys","nodeType":"ContractDefinition","nodes":[{"canonicalName":"Journeys.Journey","id":14,"members":[{"constant":false,"id":3,"name":"from","nodeType":"VariableDeclaration","scope":14,"src":"120:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"},"typeName":{"id":2,"name":"string","nodeType":"ElementaryTypeName","src":"120:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":5,"name":"to","nodeType":"VariableDeclaration","scope":14,"src":"141:9:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"},"typeName":{"id":4,"name":"string","nodeType":"ElementaryTypeName","src":"141:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":7,"name":"endingFare","nodeType":"VariableDeclaration","scope":14,"src":"160:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":6,"name":"uint","nodeType":"ElementaryTypeName","src":"160:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":9,"name":"walletAddress","nodeType":"VariableDeclaration","scope":14,"src":"185:21:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":8,"name":"address","nodeType":"ElementaryTypeName","src":"185:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":11,"name":"createdAt","nodeType":"VariableDeclaration","scope":14,"src":"216:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10,"name":"uint","nodeType":"ElementaryTypeName","src":"216:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":13,"name":"updatedAt","nodeType":"VariableDeclaration","scope":14,"src":"240:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":12,"name":"uint","nodeType":"ElementaryTypeName","src":"240:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"name":"Journey","nodeType":"StructDefinition","scope":314,"src":"95:166:0","visibility":"public"},{"constant":false,"id":18,"name":"journeysIds","nodeType":"VariableDeclaration","scope":314,"src":"331:44:0","stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"},"typeName":{"id":17,"keyType":{"id":15,"name":"address","nodeType":"ElementaryTypeName","src":"340:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Mapping","src":"331:25:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"},"valueType":{"id":16,"name":"uint","nodeType":"ElementaryTypeName","src":"351:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}},"value":null,"visibility":"public"},{"constant":false,"id":21,"name":"journeys","nodeType":"VariableDeclaration","scope":314,"src":"456:25:0","stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey[]"},"typeName":{"baseType":{"contractScope":null,"id":19,"name":"Journey","nodeType":"UserDefinedTypeName","referencedDeclaration":14,"src":"456:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"}},"id":20,"length":null,"nodeType":"ArrayTypeName","src":"456:9:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage_ptr","typeString":"struct Journeys.Journey[]"}},"value":null,"visibility":"public"},{"anonymous":false,"documentation":null,"id":25,"name":"newJourneyRegistered","nodeType":"EventDefinition","parameters":{"id":24,"nodeType":"ParameterList","parameters":[{"constant":false,"id":23,"indexed":false,"name":"id","nodeType":"VariableDeclaration","scope":25,"src":"567:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":22,"name":"uint","nodeType":"ElementaryTypeName","src":"567:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"566:9:0"},"src":"540:36:0"},{"anonymous":false,"documentation":null,"id":29,"name":"journeyUpdateEvent","nodeType":"EventDefinition","parameters":{"id":28,"nodeType":"ParameterList","parameters":[{"constant":false,"id":27,"indexed":false,"name":"id","nodeType":"VariableDeclaration","scope":29,"src":"654:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":26,"name":"uint","nodeType":"ElementaryTypeName","src":"654:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"653:9:0"},"src":"629:34:0"},{"body":{"id":37,"nodeType":"Block","src":"777:45:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"arguments":[],"expression":{"argumentTypes":[],"id":32,"name":"isRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":304,"src":"792:12:0","typeDescriptions":{"typeIdentifier":"t_function_internal_view$__$returns$_t_bool_$","typeString":"function () view returns (bool)"}},"id":33,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"792:14:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":31,"name":"require","nodeType":"Identifier","overloadedDeclarations":[389,390],"referencedDeclaration":389,"src":"784:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":34,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"784:23:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":35,"nodeType":"ExpressionStatement","src":"784:23:0"},{"id":36,"nodeType":"PlaceholderStatement","src":"814:1:0"}]},"documentation":null,"id":38,"name":"checkSenderIsRegistered","nodeType":"ModifierDefinition","parameters":{"id":30,"nodeType":"ParameterList","parameters":[],"src":"777:0:0"},"src":"744:78:0","visibility":"internal"},{"body":{"id":69,"nodeType":"Block","src":"895:436:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"307830","id":42,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"965:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0x0"},{"argumentTypes":null,"hexValue":"","id":43,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"970:2:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},"value":""},{"argumentTypes":null,"hexValue":"","id":44,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"974:2:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},"value":""},{"argumentTypes":null,"hexValue":"30","id":45,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"978:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"}],"id":41,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"954:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":46,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"954:26:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":47,"nodeType":"ExpressionStatement","src":"954:26:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"3078333333333333333333333333","id":49,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1029:14:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_56294995342131_by_1","typeString":"int_const 56294995342131"},"value":"0x333333333333"},{"argumentTypes":null,"hexValue":"50696e6e657220556e64657267726f756e642053746174696f6e","id":50,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1045:28:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_63abc9475da595b1caf5989321ec3357b045ce7396dfbedaf8db19a2780e581c","typeString":"literal_string \"Pinner Underground Station\""},"value":"Pinner Underground Station"},{"argumentTypes":null,"hexValue":"4b696c6275726e20556e64657267726f756e642053746174696f6e","id":51,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1075:29:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},"value":"Kilburn Underground Station"},{"argumentTypes":null,"hexValue":"353930","id":52,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1106:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"},"value":"590"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_56294995342131_by_1","typeString":"int_const 56294995342131"},{"typeIdentifier":"t_stringliteral_63abc9475da595b1caf5989321ec3357b045ce7396dfbedaf8db19a2780e581c","typeString":"literal_string \"Pinner Underground Station\""},{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"}],"id":48,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1018:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":53,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1018:92:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":54,"nodeType":"ExpressionStatement","src":"1018:92:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"3078323334353339393939393939","id":56,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1131:14:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_38780226083225_by_1","typeString":"int_const 38780226083225"},"value":"0x234539999999"},{"argumentTypes":null,"hexValue":"57696c6c657364656e20556e64657267726f756e642053746174696f6e","id":57,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1147:31:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_fd876c5236d87ef79c56011b38ce5b514639f102ed51e25af4197383bbc78170","typeString":"literal_string \"Willesden Underground Station\""},"value":"Willesden Underground Station"},{"argumentTypes":null,"hexValue":"4d616964612056616c6520556e64657267726f756e642053746174696f6e","id":58,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1180:32:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_1a996c0d42ffff2cb9ede595c138b15dd3155489a0d7ffc20c3c1694b10c93be","typeString":"literal_string \"Maida Vale Underground Station\""},"value":"Maida Vale Underground Station"},{"argumentTypes":null,"hexValue":"353930","id":59,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1214:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"},"value":"590"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_38780226083225_by_1","typeString":"int_const 38780226083225"},{"typeIdentifier":"t_stringliteral_fd876c5236d87ef79c56011b38ce5b514639f102ed51e25af4197383bbc78170","typeString":"literal_string \"Willesden Underground Station\""},{"typeIdentifier":"t_stringliteral_1a996c0d42ffff2cb9ede595c138b15dd3155489a0d7ffc20c3c1694b10c93be","typeString":"literal_string \"Maida Vale Underground Station\""},{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"}],"id":55,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1120:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":60,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1120:98:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":61,"nodeType":"ExpressionStatement","src":"1120:98:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"3078343334353738323232323232","id":63,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1239:14:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_73965647307298_by_1","typeString":"int_const 73965647307298"},"value":"0x434578222222"},{"argumentTypes":null,"hexValue":"4265726d6f6e6473657920556e64657267726f756e642053746174696f6e","id":64,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1255:32:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_5ecf2f08b6d1627cbc794d3b2a4b050d15dc3291ae8809e41dadf03c0a9b2270","typeString":"literal_string \"Bermondsey Underground Station\""},"value":"Bermondsey Underground Station"},{"argumentTypes":null,"hexValue":"4b696c6275726e20556e64657267726f756e642053746174696f6e","id":65,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1289:29:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},"value":"Kilburn Underground Station"},{"argumentTypes":null,"hexValue":"353930","id":66,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1320:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"},"value":"590"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_73965647307298_by_1","typeString":"int_const 73965647307298"},{"typeIdentifier":"t_stringliteral_5ecf2f08b6d1627cbc794d3b2a4b050d15dc3291ae8809e41dadf03c0a9b2270","typeString":"literal_string \"Bermondsey Underground Station\""},{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"}],"id":62,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1228:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":67,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1228:96:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":68,"nodeType":"ExpressionStatement","src":"1228:96:0"}]},"documentation":"Constructor function","id":70,"implemented":true,"isConstructor":true,"isDeclaredConst":false,"modifiers":[],"name":"","nodeType":"FunctionDefinition","parameters":{"id":39,"nodeType":"ParameterList","parameters":[],"src":"885:2:0"},"payable":false,"returnParameters":{"id":40,"nodeType":"ParameterList","parameters":[],"src":"895:0:0"},"scope":314,"src":"874:457:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":89,"nodeType":"Block","src":"1603:65:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":82,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"1628:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":83,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"1628:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":84,"name":"from","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":72,"src":"1640:4:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":85,"name":"to","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":74,"src":"1646:2:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":86,"name":"endingFare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":76,"src":"1650:10:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"},{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":81,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1617:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":87,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1617:44:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":80,"id":88,"nodeType":"Return","src":"1610:51:0"}]},"documentation":"Function to register a new journey.\n     * @param from   Point of Origin\n@param to     Destination\n@param endingFare Ending Fare","id":90,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"registerJourney","nodeType":"FunctionDefinition","parameters":{"id":77,"nodeType":"ParameterList","parameters":[{"constant":false,"id":72,"name":"from","nodeType":"VariableDeclaration","scope":90,"src":"1537:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":71,"name":"string","nodeType":"ElementaryTypeName","src":"1537:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":74,"name":"to","nodeType":"VariableDeclaration","scope":90,"src":"1550:9:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":73,"name":"string","nodeType":"ElementaryTypeName","src":"1550:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":76,"name":"endingFare","nodeType":"VariableDeclaration","scope":90,"src":"1561:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":75,"name":"uint","nodeType":"ElementaryTypeName","src":"1561:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1536:41:0"},"payable":false,"returnParameters":{"id":80,"nodeType":"ParameterList","parameters":[{"constant":false,"id":79,"name":"","nodeType":"VariableDeclaration","scope":90,"src":"1593:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":78,"name":"uint","nodeType":"ElementaryTypeName","src":"1593:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1592:6:0"},"scope":314,"src":"1512:156:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":147,"nodeType":"Block","src":"2107:720:0","statements":[{"assignments":[104],"declarations":[{"constant":false,"id":104,"name":"journeyId","nodeType":"VariableDeclaration","scope":148,"src":"2174:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":103,"name":"uint","nodeType":"ElementaryTypeName","src":"2174:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":108,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":105,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"2191:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":107,"indexExpression":{"argumentTypes":null,"id":106,"name":"wAddr","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":92,"src":"2203:5:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"2191:18:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"2174:35:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":112,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"id":110,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":104,"src":"2228:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"==","rightExpression":{"argumentTypes":null,"hexValue":"30","id":111,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"2241:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"2228:14:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":109,"name":"require","nodeType":"Identifier","overloadedDeclarations":[389,390],"referencedDeclaration":389,"src":"2219:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":113,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2219:24:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":114,"nodeType":"ExpressionStatement","src":"2219:24:0"},{"expression":{"argumentTypes":null,"id":120,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":115,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"2320:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":117,"indexExpression":{"argumentTypes":null,"id":116,"name":"wAddr","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":92,"src":"2332:5:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"nodeType":"IndexAccess","src":"2320:18:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":118,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"2341:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":119,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2341:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"2320:36:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":121,"nodeType":"ExpressionStatement","src":"2320:36:0"},{"assignments":[123],"declarations":[{"constant":false,"id":123,"name":"newJourneyId","nodeType":"VariableDeclaration","scope":148,"src":"2366:17:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":122,"name":"uint","nodeType":"ElementaryTypeName","src":"2366:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":127,"initialValue":{"argumentTypes":null,"id":126,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"UnaryOperation","operator":"++","prefix":false,"src":"2386:17:0","subExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":124,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"2386:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":125,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2386:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"2366:37:0"},{"expression":{"argumentTypes":null,"id":139,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":128,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"2457:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":130,"indexExpression":{"argumentTypes":null,"id":129,"name":"newJourneyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":123,"src":"2466:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"nodeType":"IndexAccess","src":"2457:22:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":132,"name":"from","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":94,"src":"2510:4:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":133,"name":"to","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":96,"src":"2532:2:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":134,"name":"endingFare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":98,"src":"2560:10:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"id":135,"name":"wAddr","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":92,"src":"2599:5:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":136,"name":"now","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":388,"src":"2629:3:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"id":137,"name":"now","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":388,"src":"2657:3:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":null,"id":131,"name":"Journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":14,"src":"2482:7:0","typeDescriptions":{"typeIdentifier":"t_type$_t_struct$_Journey_$14_storage_ptr_$","typeString":"type(struct Journeys.Journey storage pointer)"}},"id":138,"isConstant":false,"isLValue":false,"isPure":false,"kind":"structConstructorCall","lValueRequested":false,"names":["from","to","endingFare","walletAddress","createdAt","updatedAt"],"nodeType":"FunctionCall","src":"2482:189:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory","typeString":"struct Journeys.Journey memory"}},"src":"2457:214:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"id":140,"nodeType":"ExpressionStatement","src":"2457:214:0"},{"eventCall":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":142,"name":"newJourneyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":123,"src":"2777:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":141,"name":"newJourneyRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":25,"src":"2756:20:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":143,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2756:34:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":144,"nodeType":"EmitStatement","src":"2751:39:0"},{"expression":{"argumentTypes":null,"id":145,"name":"newJourneyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":123,"src":"2808:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":102,"id":146,"nodeType":"Return","src":"2801:19:0"}]},"documentation":"Add a new journey. This function must be private because a journey\ncannot insert another journey on behalf of someone else.\n     * @param wAddr \t\tAddress wallet of the journey\n@param from\t\t    Point of origin\n@param to\t\t    Destination \n@param endingFare\tending Fare","id":148,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"addJourney","nodeType":"FunctionDefinition","parameters":{"id":99,"nodeType":"ParameterList","parameters":[{"constant":false,"id":92,"name":"wAddr","nodeType":"VariableDeclaration","scope":148,"src":"2021:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":91,"name":"address","nodeType":"ElementaryTypeName","src":"2021:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":94,"name":"from","nodeType":"VariableDeclaration","scope":148,"src":"2036:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":93,"name":"string","nodeType":"ElementaryTypeName","src":"2036:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":96,"name":"to","nodeType":"VariableDeclaration","scope":148,"src":"2049:9:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":95,"name":"string","nodeType":"ElementaryTypeName","src":"2049:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":98,"name":"endingFare","nodeType":"VariableDeclaration","scope":148,"src":"2060:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":97,"name":"uint","nodeType":"ElementaryTypeName","src":"2060:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"2020:56:0"},"payable":false,"returnParameters":{"id":102,"nodeType":"ParameterList","parameters":[{"constant":false,"id":101,"name":"","nodeType":"VariableDeclaration","scope":148,"src":"2097:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":100,"name":"uint","nodeType":"ElementaryTypeName","src":"2097:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"2096:6:0"},"scope":314,"src":"2001:826:0","stateMutability":"nonpayable","superFunction":null,"visibility":"private"},{"body":{"id":204,"nodeType":"Block","src":"3285:360:0","statements":[{"assignments":[162],"declarations":[{"constant":false,"id":162,"name":"journeyId","nodeType":"VariableDeclaration","scope":205,"src":"3350:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":161,"name":"uint","nodeType":"ElementaryTypeName","src":"3350:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":167,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":163,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"3367:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":166,"indexExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":164,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"3379:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":165,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"3379:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"3367:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"3350:40:0"},{"assignments":[169],"declarations":[{"constant":false,"id":169,"name":"journey","nodeType":"VariableDeclaration","scope":205,"src":"3398:23:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"},"typeName":{"contractScope":null,"id":168,"name":"Journey","nodeType":"UserDefinedTypeName","referencedDeclaration":14,"src":"3398:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"}},"value":null,"visibility":"internal"}],"id":173,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":170,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"3424:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":172,"indexExpression":{"argumentTypes":null,"id":171,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":162,"src":"3433:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"3424:19:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"nodeType":"VariableDeclarationStatement","src":"3398:45:0"},{"expression":{"argumentTypes":null,"id":178,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":174,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3451:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":176,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"from","nodeType":"MemberAccess","referencedDeclaration":3,"src":"3451:12:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":177,"name":"newFrom","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":150,"src":"3466:7:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},"src":"3451:22:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"id":179,"nodeType":"ExpressionStatement","src":"3451:22:0"},{"expression":{"argumentTypes":null,"id":184,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":180,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3480:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":182,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"to","nodeType":"MemberAccess","referencedDeclaration":5,"src":"3480:10:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":183,"name":"newTo","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":152,"src":"3493:5:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},"src":"3480:18:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"id":185,"nodeType":"ExpressionStatement","src":"3480:18:0"},{"expression":{"argumentTypes":null,"id":190,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":186,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3508:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":188,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"endingFare","nodeType":"MemberAccess","referencedDeclaration":7,"src":"3508:18:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":189,"name":"newendingFare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":154,"src":"3529:13:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"3508:34:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":191,"nodeType":"ExpressionStatement","src":"3508:34:0"},{"expression":{"argumentTypes":null,"id":196,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":192,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3549:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":194,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"updatedAt","nodeType":"MemberAccess","referencedDeclaration":13,"src":"3549:17:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":195,"name":"now","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":388,"src":"3569:3:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"3549:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":197,"nodeType":"ExpressionStatement","src":"3549:23:0"},{"eventCall":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":199,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":162,"src":"3604:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":198,"name":"journeyUpdateEvent","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":29,"src":"3585:18:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":200,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"3585:29:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":201,"nodeType":"EmitStatement","src":"3580:34:0"},{"expression":{"argumentTypes":null,"id":202,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":162,"src":"3629:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":160,"id":203,"nodeType":"Return","src":"3622:16:0"}]},"documentation":"Update the journey confirmation of the caller of this method.\nNote: the journey can modify only his own confirmation.\n     * @param newFrom\t    The new journey's displaying from\n@param newTo \t    The new journey's to\n@param newendingFare The new journey's endingFare\n     ","id":205,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[{"arguments":null,"id":157,"modifierName":{"argumentTypes":null,"id":156,"name":"checkSenderIsRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":38,"src":"3232:23:0","typeDescriptions":{"typeIdentifier":"t_modifier$__$","typeString":"modifier ()"}},"nodeType":"ModifierInvocation","src":"3232:23:0"}],"name":"updateJourney","nodeType":"FunctionDefinition","parameters":{"id":155,"nodeType":"ParameterList","parameters":[{"constant":false,"id":150,"name":"newFrom","nodeType":"VariableDeclaration","scope":205,"src":"3182:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":149,"name":"string","nodeType":"ElementaryTypeName","src":"3182:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":152,"name":"newTo","nodeType":"VariableDeclaration","scope":205,"src":"3198:12:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":151,"name":"string","nodeType":"ElementaryTypeName","src":"3198:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":154,"name":"newendingFare","nodeType":"VariableDeclaration","scope":205,"src":"3212:18:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":153,"name":"uint","nodeType":"ElementaryTypeName","src":"3212:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3181:50:0"},"payable":false,"returnParameters":{"id":160,"nodeType":"ParameterList","parameters":[{"constant":false,"id":159,"name":"","nodeType":"VariableDeclaration","scope":205,"src":"3275:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":158,"name":"uint","nodeType":"ElementaryTypeName","src":"3275:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3274:6:0"},"scope":314,"src":"3159:486:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":258,"nodeType":"Block","src":"3942:280:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_bool","typeString":"bool"},"id":234,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"components":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":227,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"id":225,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"3995:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":">","rightExpression":{"argumentTypes":null,"hexValue":"30","id":226,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"4000:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"3995:6:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":228,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"3994:8:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"BinaryOperation","operator":"||","rightExpression":{"argumentTypes":null,"components":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":232,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"id":229,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"4007:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"<=","rightExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":230,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"4013:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":231,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4013:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"4007:21:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":233,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"4006:23:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"src":"3994:35:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":224,"name":"require","nodeType":"Identifier","overloadedDeclarations":[389,390],"referencedDeclaration":389,"src":"3985:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":235,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"3985:46:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":236,"nodeType":"ExpressionStatement","src":"3985:46:0"},{"assignments":[238],"declarations":[{"constant":false,"id":238,"name":"i","nodeType":"VariableDeclaration","scope":259,"src":"4039:16:0","stateVariable":false,"storageLocation":"memory","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey"},"typeName":{"contractScope":null,"id":237,"name":"Journey","nodeType":"UserDefinedTypeName","referencedDeclaration":14,"src":"4039:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"}},"value":null,"visibility":"internal"}],"id":242,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":239,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"4058:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":241,"indexExpression":{"argumentTypes":null,"id":240,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"4067:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"4058:12:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"nodeType":"VariableDeclarationStatement","src":"4039:31:0"},{"expression":{"argumentTypes":null,"components":[{"argumentTypes":null,"id":243,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"4093:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":244,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4103:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":245,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"from","nodeType":"MemberAccess","referencedDeclaration":3,"src":"4103:6:0","typeDescriptions":{"typeIdentifier":"t_string_memory","typeString":"string memory"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":246,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4117:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":247,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"to","nodeType":"MemberAccess","referencedDeclaration":5,"src":"4117:4:0","typeDescriptions":{"typeIdentifier":"t_string_memory","typeString":"string memory"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":248,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4135:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":249,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"endingFare","nodeType":"MemberAccess","referencedDeclaration":7,"src":"4135:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":250,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4155:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":251,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"walletAddress","nodeType":"MemberAccess","referencedDeclaration":9,"src":"4155:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":252,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4178:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":253,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"createdAt","nodeType":"MemberAccess","referencedDeclaration":11,"src":"4178:11:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":254,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4197:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":255,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"updatedAt","nodeType":"MemberAccess","referencedDeclaration":13,"src":"4197:11:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"id":256,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"4085:130:0","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_string_memory_$_t_string_memory_$_t_uint256_$_t_address_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,string memory,string memory,uint256,address,uint256,uint256)"}},"functionReturnParameters":223,"id":257,"nodeType":"Return","src":"4078:137:0"}]},"documentation":"Get the journey's confirmation information.\n     * @param id \tThe ID of the journey stored on the blockchain.","id":259,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"getJourneyById","nodeType":"FunctionDefinition","parameters":{"id":208,"nodeType":"ParameterList","parameters":[{"constant":false,"id":207,"name":"id","nodeType":"VariableDeclaration","scope":259,"src":"3816:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":206,"name":"uint","nodeType":"ElementaryTypeName","src":"3816:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3815:9:0"},"payable":false,"returnParameters":{"id":223,"nodeType":"ParameterList","parameters":[{"constant":false,"id":210,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3855:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":209,"name":"uint","nodeType":"ElementaryTypeName","src":"3855:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":212,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3866:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":211,"name":"string","nodeType":"ElementaryTypeName","src":"3866:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":214,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3879:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":213,"name":"string","nodeType":"ElementaryTypeName","src":"3879:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":216,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3895:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":215,"name":"uint","nodeType":"ElementaryTypeName","src":"3895:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":218,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3906:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":217,"name":"address","nodeType":"ElementaryTypeName","src":"3906:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":220,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3920:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":219,"name":"uint","nodeType":"ElementaryTypeName","src":"3920:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":222,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3931:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":221,"name":"uint","nodeType":"ElementaryTypeName","src":"3931:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3848:93:0"},"scope":314,"src":"3792:430:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":289,"nodeType":"Block","src":"4468:80:0","statements":[{"assignments":[279],"declarations":[{"constant":false,"id":279,"name":"id","nodeType":"VariableDeclaration","scope":290,"src":"4475:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":278,"name":"uint","nodeType":"ElementaryTypeName","src":"4475:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":284,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":280,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"4485:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":283,"indexExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":281,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"4497:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":282,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4497:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"4485:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"4475:33:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":286,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":279,"src":"4538:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":285,"name":"getJourneyById","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":259,"src":"4523:14:0","typeDescriptions":{"typeIdentifier":"t_function_internal_view$_t_uint256_$returns$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$_t_address_$_t_uint256_$_t_uint256_$","typeString":"function (uint256) view returns (uint256,string memory,string memory,uint256,address,uint256,uint256)"}},"id":287,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"4523:18:0","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$_t_address_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,string memory,string memory,uint256,address,uint256,uint256)"}},"functionReturnParameters":277,"id":288,"nodeType":"Return","src":"4516:25:0"}]},"documentation":"Return the confirmation information of the caller.","id":290,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[{"arguments":null,"id":262,"modifierName":{"argumentTypes":null,"id":261,"name":"checkSenderIsRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":38,"src":"4327:23:0","typeDescriptions":{"typeIdentifier":"t_modifier$__$","typeString":"modifier ()"}},"nodeType":"ModifierInvocation","src":"4327:23:0"}],"name":"getOwnProfile","nodeType":"FunctionDefinition","parameters":{"id":260,"nodeType":"ParameterList","parameters":[],"src":"4324:2:0"},"payable":false,"returnParameters":{"id":277,"nodeType":"ParameterList","parameters":[{"constant":false,"id":264,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4381:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":263,"name":"uint","nodeType":"ElementaryTypeName","src":"4381:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":266,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4392:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":265,"name":"string","nodeType":"ElementaryTypeName","src":"4392:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":268,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4405:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":267,"name":"string","nodeType":"ElementaryTypeName","src":"4405:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":270,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4421:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":269,"name":"uint","nodeType":"ElementaryTypeName","src":"4421:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":272,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4432:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":271,"name":"address","nodeType":"ElementaryTypeName","src":"4432:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":274,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4446:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":273,"name":"uint","nodeType":"ElementaryTypeName","src":"4446:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":276,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4457:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":275,"name":"uint","nodeType":"ElementaryTypeName","src":"4457:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"4374:93:0"},"scope":314,"src":"4302:246:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":303,"nodeType":"Block","src":"4706:51:0","statements":[{"expression":{"argumentTypes":null,"components":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":300,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":295,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"4721:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":298,"indexExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":296,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"4733:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":297,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4733:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"4721:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"!=","rightExpression":{"argumentTypes":null,"hexValue":"30","id":299,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"4748:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"4721:28:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":301,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"4720:30:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"functionReturnParameters":294,"id":302,"nodeType":"Return","src":"4713:37:0"}]},"documentation":"Check if the journey that is calling the smart contract is registered.","id":304,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"isRegistered","nodeType":"FunctionDefinition","parameters":{"id":291,"nodeType":"ParameterList","parameters":[],"src":"4672:2:0"},"payable":false,"returnParameters":{"id":294,"nodeType":"ParameterList","parameters":[{"constant":false,"id":293,"name":"","nodeType":"VariableDeclaration","scope":304,"src":"4696:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":292,"name":"bool","nodeType":"ElementaryTypeName","src":"4696:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"src":"4695:6:0"},"scope":314,"src":"4651:106:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":312,"nodeType":"Block","src":"4892:39:0","statements":[{"expression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":309,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"4909:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":310,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4909:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":308,"id":311,"nodeType":"Return","src":"4902:22:0"}]},"documentation":"Return the number of total registered journeys.","id":313,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"totalJourneys","nodeType":"FunctionDefinition","parameters":{"id":305,"nodeType":"ParameterList","parameters":[],"src":"4858:2:0"},"payable":false,"returnParameters":{"id":308,"nodeType":"ParameterList","parameters":[{"constant":false,"id":307,"name":"","nodeType":"VariableDeclaration","scope":313,"src":"4882:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":306,"name":"uint","nodeType":"ElementaryTypeName","src":"4882:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"4881:6:0"},"scope":314,"src":"4836:95:0","stateMutability":"view","superFunction":null,"visibility":"public"}],"scope":315,"src":"27:4907:0"}],"src":"0:4934:0"},"legacyAST":{"absolutePath":"/Users/yameste/Sites/blocktrain-dapp/contracts/Journeys.sol","exportedSymbols":{"Journeys":[314]},"id":315,"nodeType":"SourceUnit","nodes":[{"id":1,"literals":["solidity","^","0.4",".21"],"nodeType":"PragmaDirective","src":"0:24:0"},{"baseContracts":[],"contractDependencies":[],"contractKind":"contract","documentation":null,"fullyImplemented":true,"id":314,"linearizedBaseContracts":[314],"name":"Journeys","nodeType":"ContractDefinition","nodes":[{"canonicalName":"Journeys.Journey","id":14,"members":[{"constant":false,"id":3,"name":"from","nodeType":"VariableDeclaration","scope":14,"src":"120:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"},"typeName":{"id":2,"name":"string","nodeType":"ElementaryTypeName","src":"120:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":5,"name":"to","nodeType":"VariableDeclaration","scope":14,"src":"141:9:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"},"typeName":{"id":4,"name":"string","nodeType":"ElementaryTypeName","src":"141:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":7,"name":"endingFare","nodeType":"VariableDeclaration","scope":14,"src":"160:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":6,"name":"uint","nodeType":"ElementaryTypeName","src":"160:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":9,"name":"walletAddress","nodeType":"VariableDeclaration","scope":14,"src":"185:21:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":8,"name":"address","nodeType":"ElementaryTypeName","src":"185:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":11,"name":"createdAt","nodeType":"VariableDeclaration","scope":14,"src":"216:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10,"name":"uint","nodeType":"ElementaryTypeName","src":"216:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":13,"name":"updatedAt","nodeType":"VariableDeclaration","scope":14,"src":"240:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":12,"name":"uint","nodeType":"ElementaryTypeName","src":"240:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"name":"Journey","nodeType":"StructDefinition","scope":314,"src":"95:166:0","visibility":"public"},{"constant":false,"id":18,"name":"journeysIds","nodeType":"VariableDeclaration","scope":314,"src":"331:44:0","stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"},"typeName":{"id":17,"keyType":{"id":15,"name":"address","nodeType":"ElementaryTypeName","src":"340:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Mapping","src":"331:25:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"},"valueType":{"id":16,"name":"uint","nodeType":"ElementaryTypeName","src":"351:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}},"value":null,"visibility":"public"},{"constant":false,"id":21,"name":"journeys","nodeType":"VariableDeclaration","scope":314,"src":"456:25:0","stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey[]"},"typeName":{"baseType":{"contractScope":null,"id":19,"name":"Journey","nodeType":"UserDefinedTypeName","referencedDeclaration":14,"src":"456:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"}},"id":20,"length":null,"nodeType":"ArrayTypeName","src":"456:9:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage_ptr","typeString":"struct Journeys.Journey[]"}},"value":null,"visibility":"public"},{"anonymous":false,"documentation":null,"id":25,"name":"newJourneyRegistered","nodeType":"EventDefinition","parameters":{"id":24,"nodeType":"ParameterList","parameters":[{"constant":false,"id":23,"indexed":false,"name":"id","nodeType":"VariableDeclaration","scope":25,"src":"567:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":22,"name":"uint","nodeType":"ElementaryTypeName","src":"567:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"566:9:0"},"src":"540:36:0"},{"anonymous":false,"documentation":null,"id":29,"name":"journeyUpdateEvent","nodeType":"EventDefinition","parameters":{"id":28,"nodeType":"ParameterList","parameters":[{"constant":false,"id":27,"indexed":false,"name":"id","nodeType":"VariableDeclaration","scope":29,"src":"654:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":26,"name":"uint","nodeType":"ElementaryTypeName","src":"654:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"653:9:0"},"src":"629:34:0"},{"body":{"id":37,"nodeType":"Block","src":"777:45:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"arguments":[],"expression":{"argumentTypes":[],"id":32,"name":"isRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":304,"src":"792:12:0","typeDescriptions":{"typeIdentifier":"t_function_internal_view$__$returns$_t_bool_$","typeString":"function () view returns (bool)"}},"id":33,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"792:14:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":31,"name":"require","nodeType":"Identifier","overloadedDeclarations":[389,390],"referencedDeclaration":389,"src":"784:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":34,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"784:23:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":35,"nodeType":"ExpressionStatement","src":"784:23:0"},{"id":36,"nodeType":"PlaceholderStatement","src":"814:1:0"}]},"documentation":null,"id":38,"name":"checkSenderIsRegistered","nodeType":"ModifierDefinition","parameters":{"id":30,"nodeType":"ParameterList","parameters":[],"src":"777:0:0"},"src":"744:78:0","visibility":"internal"},{"body":{"id":69,"nodeType":"Block","src":"895:436:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"307830","id":42,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"965:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0x0"},{"argumentTypes":null,"hexValue":"","id":43,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"970:2:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},"value":""},{"argumentTypes":null,"hexValue":"","id":44,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"974:2:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},"value":""},{"argumentTypes":null,"hexValue":"30","id":45,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"978:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"}],"id":41,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"954:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":46,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"954:26:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":47,"nodeType":"ExpressionStatement","src":"954:26:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"3078333333333333333333333333","id":49,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1029:14:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_56294995342131_by_1","typeString":"int_const 56294995342131"},"value":"0x333333333333"},{"argumentTypes":null,"hexValue":"50696e6e657220556e64657267726f756e642053746174696f6e","id":50,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1045:28:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_63abc9475da595b1caf5989321ec3357b045ce7396dfbedaf8db19a2780e581c","typeString":"literal_string \"Pinner Underground Station\""},"value":"Pinner Underground Station"},{"argumentTypes":null,"hexValue":"4b696c6275726e20556e64657267726f756e642053746174696f6e","id":51,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1075:29:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},"value":"Kilburn Underground Station"},{"argumentTypes":null,"hexValue":"353930","id":52,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1106:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"},"value":"590"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_56294995342131_by_1","typeString":"int_const 56294995342131"},{"typeIdentifier":"t_stringliteral_63abc9475da595b1caf5989321ec3357b045ce7396dfbedaf8db19a2780e581c","typeString":"literal_string \"Pinner Underground Station\""},{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"}],"id":48,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1018:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":53,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1018:92:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":54,"nodeType":"ExpressionStatement","src":"1018:92:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"3078323334353339393939393939","id":56,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1131:14:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_38780226083225_by_1","typeString":"int_const 38780226083225"},"value":"0x234539999999"},{"argumentTypes":null,"hexValue":"57696c6c657364656e20556e64657267726f756e642053746174696f6e","id":57,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1147:31:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_fd876c5236d87ef79c56011b38ce5b514639f102ed51e25af4197383bbc78170","typeString":"literal_string \"Willesden Underground Station\""},"value":"Willesden Underground Station"},{"argumentTypes":null,"hexValue":"4d616964612056616c6520556e64657267726f756e642053746174696f6e","id":58,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1180:32:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_1a996c0d42ffff2cb9ede595c138b15dd3155489a0d7ffc20c3c1694b10c93be","typeString":"literal_string \"Maida Vale Underground Station\""},"value":"Maida Vale Underground Station"},{"argumentTypes":null,"hexValue":"353930","id":59,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1214:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"},"value":"590"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_38780226083225_by_1","typeString":"int_const 38780226083225"},{"typeIdentifier":"t_stringliteral_fd876c5236d87ef79c56011b38ce5b514639f102ed51e25af4197383bbc78170","typeString":"literal_string \"Willesden Underground Station\""},{"typeIdentifier":"t_stringliteral_1a996c0d42ffff2cb9ede595c138b15dd3155489a0d7ffc20c3c1694b10c93be","typeString":"literal_string \"Maida Vale Underground Station\""},{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"}],"id":55,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1120:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":60,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1120:98:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":61,"nodeType":"ExpressionStatement","src":"1120:98:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"3078343334353738323232323232","id":63,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1239:14:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_73965647307298_by_1","typeString":"int_const 73965647307298"},"value":"0x434578222222"},{"argumentTypes":null,"hexValue":"4265726d6f6e6473657920556e64657267726f756e642053746174696f6e","id":64,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1255:32:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_5ecf2f08b6d1627cbc794d3b2a4b050d15dc3291ae8809e41dadf03c0a9b2270","typeString":"literal_string \"Bermondsey Underground Station\""},"value":"Bermondsey Underground Station"},{"argumentTypes":null,"hexValue":"4b696c6275726e20556e64657267726f756e642053746174696f6e","id":65,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1289:29:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},"value":"Kilburn Underground Station"},{"argumentTypes":null,"hexValue":"353930","id":66,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1320:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"},"value":"590"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_73965647307298_by_1","typeString":"int_const 73965647307298"},{"typeIdentifier":"t_stringliteral_5ecf2f08b6d1627cbc794d3b2a4b050d15dc3291ae8809e41dadf03c0a9b2270","typeString":"literal_string \"Bermondsey Underground Station\""},{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"}],"id":62,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1228:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":67,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1228:96:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":68,"nodeType":"ExpressionStatement","src":"1228:96:0"}]},"documentation":"Constructor function","id":70,"implemented":true,"isConstructor":true,"isDeclaredConst":false,"modifiers":[],"name":"","nodeType":"FunctionDefinition","parameters":{"id":39,"nodeType":"ParameterList","parameters":[],"src":"885:2:0"},"payable":false,"returnParameters":{"id":40,"nodeType":"ParameterList","parameters":[],"src":"895:0:0"},"scope":314,"src":"874:457:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":89,"nodeType":"Block","src":"1603:65:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":82,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"1628:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":83,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"1628:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":84,"name":"from","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":72,"src":"1640:4:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":85,"name":"to","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":74,"src":"1646:2:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":86,"name":"endingFare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":76,"src":"1650:10:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"},{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":81,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1617:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":87,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1617:44:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":80,"id":88,"nodeType":"Return","src":"1610:51:0"}]},"documentation":"Function to register a new journey.\n     * @param from   Point of Origin\n@param to     Destination\n@param endingFare Ending Fare","id":90,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"registerJourney","nodeType":"FunctionDefinition","parameters":{"id":77,"nodeType":"ParameterList","parameters":[{"constant":false,"id":72,"name":"from","nodeType":"VariableDeclaration","scope":90,"src":"1537:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":71,"name":"string","nodeType":"ElementaryTypeName","src":"1537:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":74,"name":"to","nodeType":"VariableDeclaration","scope":90,"src":"1550:9:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":73,"name":"string","nodeType":"ElementaryTypeName","src":"1550:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":76,"name":"endingFare","nodeType":"VariableDeclaration","scope":90,"src":"1561:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":75,"name":"uint","nodeType":"ElementaryTypeName","src":"1561:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1536:41:0"},"payable":false,"returnParameters":{"id":80,"nodeType":"ParameterList","parameters":[{"constant":false,"id":79,"name":"","nodeType":"VariableDeclaration","scope":90,"src":"1593:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":78,"name":"uint","nodeType":"ElementaryTypeName","src":"1593:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1592:6:0"},"scope":314,"src":"1512:156:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":147,"nodeType":"Block","src":"2107:720:0","statements":[{"assignments":[104],"declarations":[{"constant":false,"id":104,"name":"journeyId","nodeType":"VariableDeclaration","scope":148,"src":"2174:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":103,"name":"uint","nodeType":"ElementaryTypeName","src":"2174:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":108,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":105,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"2191:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":107,"indexExpression":{"argumentTypes":null,"id":106,"name":"wAddr","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":92,"src":"2203:5:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"2191:18:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"2174:35:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":112,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"id":110,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":104,"src":"2228:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"==","rightExpression":{"argumentTypes":null,"hexValue":"30","id":111,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"2241:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"2228:14:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":109,"name":"require","nodeType":"Identifier","overloadedDeclarations":[389,390],"referencedDeclaration":389,"src":"2219:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":113,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2219:24:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":114,"nodeType":"ExpressionStatement","src":"2219:24:0"},{"expression":{"argumentTypes":null,"id":120,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":115,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"2320:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":117,"indexExpression":{"argumentTypes":null,"id":116,"name":"wAddr","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":92,"src":"2332:5:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"nodeType":"IndexAccess","src":"2320:18:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":118,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"2341:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":119,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2341:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"2320:36:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":121,"nodeType":"ExpressionStatement","src":"2320:36:0"},{"assignments":[123],"declarations":[{"constant":false,"id":123,"name":"newJourneyId","nodeType":"VariableDeclaration","scope":148,"src":"2366:17:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":122,"name":"uint","nodeType":"ElementaryTypeName","src":"2366:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":127,"initialValue":{"argumentTypes":null,"id":126,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"UnaryOperation","operator":"++","prefix":false,"src":"2386:17:0","subExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":124,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"2386:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":125,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2386:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"2366:37:0"},{"expression":{"argumentTypes":null,"id":139,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":128,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"2457:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":130,"indexExpression":{"argumentTypes":null,"id":129,"name":"newJourneyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":123,"src":"2466:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"nodeType":"IndexAccess","src":"2457:22:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":132,"name":"from","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":94,"src":"2510:4:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":133,"name":"to","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":96,"src":"2532:2:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":134,"name":"endingFare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":98,"src":"2560:10:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"id":135,"name":"wAddr","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":92,"src":"2599:5:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":136,"name":"now","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":388,"src":"2629:3:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"id":137,"name":"now","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":388,"src":"2657:3:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":null,"id":131,"name":"Journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":14,"src":"2482:7:0","typeDescriptions":{"typeIdentifier":"t_type$_t_struct$_Journey_$14_storage_ptr_$","typeString":"type(struct Journeys.Journey storage pointer)"}},"id":138,"isConstant":false,"isLValue":false,"isPure":false,"kind":"structConstructorCall","lValueRequested":false,"names":["from","to","endingFare","walletAddress","createdAt","updatedAt"],"nodeType":"FunctionCall","src":"2482:189:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory","typeString":"struct Journeys.Journey memory"}},"src":"2457:214:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"id":140,"nodeType":"ExpressionStatement","src":"2457:214:0"},{"eventCall":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":142,"name":"newJourneyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":123,"src":"2777:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":141,"name":"newJourneyRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":25,"src":"2756:20:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":143,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2756:34:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":144,"nodeType":"EmitStatement","src":"2751:39:0"},{"expression":{"argumentTypes":null,"id":145,"name":"newJourneyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":123,"src":"2808:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":102,"id":146,"nodeType":"Return","src":"2801:19:0"}]},"documentation":"Add a new journey. This function must be private because a journey\ncannot insert another journey on behalf of someone else.\n     * @param wAddr \t\tAddress wallet of the journey\n@param from\t\t    Point of origin\n@param to\t\t    Destination \n@param endingFare\tending Fare","id":148,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"addJourney","nodeType":"FunctionDefinition","parameters":{"id":99,"nodeType":"ParameterList","parameters":[{"constant":false,"id":92,"name":"wAddr","nodeType":"VariableDeclaration","scope":148,"src":"2021:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":91,"name":"address","nodeType":"ElementaryTypeName","src":"2021:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":94,"name":"from","nodeType":"VariableDeclaration","scope":148,"src":"2036:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":93,"name":"string","nodeType":"ElementaryTypeName","src":"2036:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":96,"name":"to","nodeType":"VariableDeclaration","scope":148,"src":"2049:9:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":95,"name":"string","nodeType":"ElementaryTypeName","src":"2049:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":98,"name":"endingFare","nodeType":"VariableDeclaration","scope":148,"src":"2060:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":97,"name":"uint","nodeType":"ElementaryTypeName","src":"2060:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"2020:56:0"},"payable":false,"returnParameters":{"id":102,"nodeType":"ParameterList","parameters":[{"constant":false,"id":101,"name":"","nodeType":"VariableDeclaration","scope":148,"src":"2097:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":100,"name":"uint","nodeType":"ElementaryTypeName","src":"2097:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"2096:6:0"},"scope":314,"src":"2001:826:0","stateMutability":"nonpayable","superFunction":null,"visibility":"private"},{"body":{"id":204,"nodeType":"Block","src":"3285:360:0","statements":[{"assignments":[162],"declarations":[{"constant":false,"id":162,"name":"journeyId","nodeType":"VariableDeclaration","scope":205,"src":"3350:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":161,"name":"uint","nodeType":"ElementaryTypeName","src":"3350:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":167,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":163,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"3367:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":166,"indexExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":164,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"3379:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":165,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"3379:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"3367:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"3350:40:0"},{"assignments":[169],"declarations":[{"constant":false,"id":169,"name":"journey","nodeType":"VariableDeclaration","scope":205,"src":"3398:23:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"},"typeName":{"contractScope":null,"id":168,"name":"Journey","nodeType":"UserDefinedTypeName","referencedDeclaration":14,"src":"3398:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"}},"value":null,"visibility":"internal"}],"id":173,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":170,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"3424:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":172,"indexExpression":{"argumentTypes":null,"id":171,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":162,"src":"3433:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"3424:19:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"nodeType":"VariableDeclarationStatement","src":"3398:45:0"},{"expression":{"argumentTypes":null,"id":178,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":174,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3451:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":176,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"from","nodeType":"MemberAccess","referencedDeclaration":3,"src":"3451:12:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":177,"name":"newFrom","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":150,"src":"3466:7:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},"src":"3451:22:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"id":179,"nodeType":"ExpressionStatement","src":"3451:22:0"},{"expression":{"argumentTypes":null,"id":184,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":180,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3480:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":182,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"to","nodeType":"MemberAccess","referencedDeclaration":5,"src":"3480:10:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":183,"name":"newTo","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":152,"src":"3493:5:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},"src":"3480:18:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"id":185,"nodeType":"ExpressionStatement","src":"3480:18:0"},{"expression":{"argumentTypes":null,"id":190,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":186,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3508:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":188,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"endingFare","nodeType":"MemberAccess","referencedDeclaration":7,"src":"3508:18:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":189,"name":"newendingFare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":154,"src":"3529:13:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"3508:34:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":191,"nodeType":"ExpressionStatement","src":"3508:34:0"},{"expression":{"argumentTypes":null,"id":196,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":192,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3549:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":194,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"updatedAt","nodeType":"MemberAccess","referencedDeclaration":13,"src":"3549:17:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":195,"name":"now","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":388,"src":"3569:3:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"3549:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":197,"nodeType":"ExpressionStatement","src":"3549:23:0"},{"eventCall":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":199,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":162,"src":"3604:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":198,"name":"journeyUpdateEvent","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":29,"src":"3585:18:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":200,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"3585:29:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":201,"nodeType":"EmitStatement","src":"3580:34:0"},{"expression":{"argumentTypes":null,"id":202,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":162,"src":"3629:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":160,"id":203,"nodeType":"Return","src":"3622:16:0"}]},"documentation":"Update the journey confirmation of the caller of this method.\nNote: the journey can modify only his own confirmation.\n     * @param newFrom\t    The new journey's displaying from\n@param newTo \t    The new journey's to\n@param newendingFare The new journey's endingFare\n     ","id":205,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[{"arguments":null,"id":157,"modifierName":{"argumentTypes":null,"id":156,"name":"checkSenderIsRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":38,"src":"3232:23:0","typeDescriptions":{"typeIdentifier":"t_modifier$__$","typeString":"modifier ()"}},"nodeType":"ModifierInvocation","src":"3232:23:0"}],"name":"updateJourney","nodeType":"FunctionDefinition","parameters":{"id":155,"nodeType":"ParameterList","parameters":[{"constant":false,"id":150,"name":"newFrom","nodeType":"VariableDeclaration","scope":205,"src":"3182:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":149,"name":"string","nodeType":"ElementaryTypeName","src":"3182:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":152,"name":"newTo","nodeType":"VariableDeclaration","scope":205,"src":"3198:12:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":151,"name":"string","nodeType":"ElementaryTypeName","src":"3198:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":154,"name":"newendingFare","nodeType":"VariableDeclaration","scope":205,"src":"3212:18:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":153,"name":"uint","nodeType":"ElementaryTypeName","src":"3212:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3181:50:0"},"payable":false,"returnParameters":{"id":160,"nodeType":"ParameterList","parameters":[{"constant":false,"id":159,"name":"","nodeType":"VariableDeclaration","scope":205,"src":"3275:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":158,"name":"uint","nodeType":"ElementaryTypeName","src":"3275:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3274:6:0"},"scope":314,"src":"3159:486:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":258,"nodeType":"Block","src":"3942:280:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_bool","typeString":"bool"},"id":234,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"components":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":227,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"id":225,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"3995:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":">","rightExpression":{"argumentTypes":null,"hexValue":"30","id":226,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"4000:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"3995:6:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":228,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"3994:8:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"BinaryOperation","operator":"||","rightExpression":{"argumentTypes":null,"components":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":232,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"id":229,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"4007:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"<=","rightExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":230,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"4013:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":231,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4013:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"4007:21:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":233,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"4006:23:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"src":"3994:35:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":224,"name":"require","nodeType":"Identifier","overloadedDeclarations":[389,390],"referencedDeclaration":389,"src":"3985:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":235,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"3985:46:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":236,"nodeType":"ExpressionStatement","src":"3985:46:0"},{"assignments":[238],"declarations":[{"constant":false,"id":238,"name":"i","nodeType":"VariableDeclaration","scope":259,"src":"4039:16:0","stateVariable":false,"storageLocation":"memory","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey"},"typeName":{"contractScope":null,"id":237,"name":"Journey","nodeType":"UserDefinedTypeName","referencedDeclaration":14,"src":"4039:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"}},"value":null,"visibility":"internal"}],"id":242,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":239,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"4058:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":241,"indexExpression":{"argumentTypes":null,"id":240,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"4067:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"4058:12:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"nodeType":"VariableDeclarationStatement","src":"4039:31:0"},{"expression":{"argumentTypes":null,"components":[{"argumentTypes":null,"id":243,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"4093:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":244,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4103:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":245,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"from","nodeType":"MemberAccess","referencedDeclaration":3,"src":"4103:6:0","typeDescriptions":{"typeIdentifier":"t_string_memory","typeString":"string memory"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":246,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4117:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":247,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"to","nodeType":"MemberAccess","referencedDeclaration":5,"src":"4117:4:0","typeDescriptions":{"typeIdentifier":"t_string_memory","typeString":"string memory"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":248,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4135:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":249,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"endingFare","nodeType":"MemberAccess","referencedDeclaration":7,"src":"4135:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":250,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4155:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":251,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"walletAddress","nodeType":"MemberAccess","referencedDeclaration":9,"src":"4155:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":252,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4178:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":253,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"createdAt","nodeType":"MemberAccess","referencedDeclaration":11,"src":"4178:11:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":254,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4197:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":255,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"updatedAt","nodeType":"MemberAccess","referencedDeclaration":13,"src":"4197:11:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"id":256,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"4085:130:0","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_string_memory_$_t_string_memory_$_t_uint256_$_t_address_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,string memory,string memory,uint256,address,uint256,uint256)"}},"functionReturnParameters":223,"id":257,"nodeType":"Return","src":"4078:137:0"}]},"documentation":"Get the journey's confirmation information.\n     * @param id \tThe ID of the journey stored on the blockchain.","id":259,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"getJourneyById","nodeType":"FunctionDefinition","parameters":{"id":208,"nodeType":"ParameterList","parameters":[{"constant":false,"id":207,"name":"id","nodeType":"VariableDeclaration","scope":259,"src":"3816:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":206,"name":"uint","nodeType":"ElementaryTypeName","src":"3816:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3815:9:0"},"payable":false,"returnParameters":{"id":223,"nodeType":"ParameterList","parameters":[{"constant":false,"id":210,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3855:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":209,"name":"uint","nodeType":"ElementaryTypeName","src":"3855:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":212,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3866:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":211,"name":"string","nodeType":"ElementaryTypeName","src":"3866:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":214,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3879:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":213,"name":"string","nodeType":"ElementaryTypeName","src":"3879:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":216,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3895:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":215,"name":"uint","nodeType":"ElementaryTypeName","src":"3895:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":218,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3906:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":217,"name":"address","nodeType":"ElementaryTypeName","src":"3906:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":220,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3920:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":219,"name":"uint","nodeType":"ElementaryTypeName","src":"3920:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":222,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3931:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":221,"name":"uint","nodeType":"ElementaryTypeName","src":"3931:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3848:93:0"},"scope":314,"src":"3792:430:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":289,"nodeType":"Block","src":"4468:80:0","statements":[{"assignments":[279],"declarations":[{"constant":false,"id":279,"name":"id","nodeType":"VariableDeclaration","scope":290,"src":"4475:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":278,"name":"uint","nodeType":"ElementaryTypeName","src":"4475:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":284,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":280,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"4485:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":283,"indexExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":281,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"4497:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":282,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4497:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"4485:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"4475:33:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":286,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":279,"src":"4538:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":285,"name":"getJourneyById","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":259,"src":"4523:14:0","typeDescriptions":{"typeIdentifier":"t_function_internal_view$_t_uint256_$returns$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$_t_address_$_t_uint256_$_t_uint256_$","typeString":"function (uint256) view returns (uint256,string memory,string memory,uint256,address,uint256,uint256)"}},"id":287,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"4523:18:0","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$_t_address_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,string memory,string memory,uint256,address,uint256,uint256)"}},"functionReturnParameters":277,"id":288,"nodeType":"Return","src":"4516:25:0"}]},"documentation":"Return the confirmation information of the caller.","id":290,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[{"arguments":null,"id":262,"modifierName":{"argumentTypes":null,"id":261,"name":"checkSenderIsRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":38,"src":"4327:23:0","typeDescriptions":{"typeIdentifier":"t_modifier$__$","typeString":"modifier ()"}},"nodeType":"ModifierInvocation","src":"4327:23:0"}],"name":"getOwnProfile","nodeType":"FunctionDefinition","parameters":{"id":260,"nodeType":"ParameterList","parameters":[],"src":"4324:2:0"},"payable":false,"returnParameters":{"id":277,"nodeType":"ParameterList","parameters":[{"constant":false,"id":264,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4381:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":263,"name":"uint","nodeType":"ElementaryTypeName","src":"4381:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":266,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4392:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":265,"name":"string","nodeType":"ElementaryTypeName","src":"4392:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":268,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4405:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":267,"name":"string","nodeType":"ElementaryTypeName","src":"4405:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":270,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4421:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":269,"name":"uint","nodeType":"ElementaryTypeName","src":"4421:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":272,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4432:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":271,"name":"address","nodeType":"ElementaryTypeName","src":"4432:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":274,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4446:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":273,"name":"uint","nodeType":"ElementaryTypeName","src":"4446:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":276,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4457:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":275,"name":"uint","nodeType":"ElementaryTypeName","src":"4457:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"4374:93:0"},"scope":314,"src":"4302:246:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":303,"nodeType":"Block","src":"4706:51:0","statements":[{"expression":{"argumentTypes":null,"components":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":300,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":295,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"4721:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":298,"indexExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":296,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"4733:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":297,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4733:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"4721:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"!=","rightExpression":{"argumentTypes":null,"hexValue":"30","id":299,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"4748:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"4721:28:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":301,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"4720:30:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"functionReturnParameters":294,"id":302,"nodeType":"Return","src":"4713:37:0"}]},"documentation":"Check if the journey that is calling the smart contract is registered.","id":304,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"isRegistered","nodeType":"FunctionDefinition","parameters":{"id":291,"nodeType":"ParameterList","parameters":[],"src":"4672:2:0"},"payable":false,"returnParameters":{"id":294,"nodeType":"ParameterList","parameters":[{"constant":false,"id":293,"name":"","nodeType":"VariableDeclaration","scope":304,"src":"4696:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":292,"name":"bool","nodeType":"ElementaryTypeName","src":"4696:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"src":"4695:6:0"},"scope":314,"src":"4651:106:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":312,"nodeType":"Block","src":"4892:39:0","statements":[{"expression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":309,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"4909:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":310,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4909:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":308,"id":311,"nodeType":"Return","src":"4902:22:0"}]},"documentation":"Return the number of total registered journeys.","id":313,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"totalJourneys","nodeType":"FunctionDefinition","parameters":{"id":305,"nodeType":"ParameterList","parameters":[],"src":"4858:2:0"},"payable":false,"returnParameters":{"id":308,"nodeType":"ParameterList","parameters":[{"constant":false,"id":307,"name":"","nodeType":"VariableDeclaration","scope":313,"src":"4882:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":306,"name":"uint","nodeType":"ElementaryTypeName","src":"4882:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"4881:6:0"},"scope":314,"src":"4836:95:0","stateMutability":"view","superFunction":null,"visibility":"public"}],"scope":315,"src":"27:4907:0"}],"src":"0:4934:0"},"compiler":{"name":"solc","version":"0.4.24+commit.e67f0147.Emscripten.clang"},"networks":{"5777":{"events":{},"links":{},"address":"0x3b2aa8cbd39d0645c0e66255731ca3f51691f773","transactionHash":"0xa2804a4aa09024886c52d4065705b6d137b6fdb16763dc908cd70fa32f2a9e6e"}},"schemaVersion":"2.0.1","updatedAt":"2018-08-21T07:48:25.434Z"}
+module.exports = {"contractName":"Journeys","abi":[{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"journeysIds","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"journeys","outputs":[{"name":"from","type":"string"},{"name":"to","type":"string"},{"name":"endingFare","type":"uint256"},{"name":"walletAddress","type":"address"},{"name":"createdAt","type":"uint256"},{"name":"updatedAt","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"id","type":"uint256"}],"name":"newJourneyRegistered","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"id","type":"uint256"}],"name":"journeyUpdateEvent","type":"event"},{"constant":false,"inputs":[{"name":"from","type":"string"},{"name":"to","type":"string"},{"name":"endingFare","type":"uint256"}],"name":"registerJourney","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"newFrom","type":"string"},{"name":"newTo","type":"string"},{"name":"newendingFare","type":"uint256"}],"name":"updateJourney","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"id","type":"uint256"}],"name":"getJourneyById","outputs":[{"name":"","type":"uint256"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"uint256"},{"name":"","type":"address"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getOwnProfile","outputs":[{"name":"","type":"uint256"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"uint256"},{"name":"","type":"address"},{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"isRegistered","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"totalJourneys","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}],"bytecode":"0x60806040523480156200001157600080fd5b5062000051600060206040519081016040528060008152506020604051908101604052806000815250600062000208640100000000026401000000009004565b50620000e1653333333333336040805190810160405280601a81526020017f50696e6e657220556e64657267726f756e642053746174696f6e0000000000008152506040805190810160405280601b81526020017f4b696c6275726e20556e64657267726f756e642053746174696f6e000000000081525061024e62000208640100000000026401000000009004565b5062000171652345399999996040805190810160405280601d81526020017f57696c6c657364656e20556e64657267726f756e642053746174696f6e0000008152506040805190810160405280601e81526020017f4d616964612056616c6520556e64657267726f756e642053746174696f6e000081525061024e62000208640100000000026401000000009004565b5062000201654345782222226040805190810160405280601e81526020017f4265726d6f6e6473657920556e64657267726f756e642053746174696f6e00008152506040805190810160405280601b81526020017f4b696c6275726e20556e64657267726f756e642053746174696f6e000000000081525061024e62000208640100000000026401000000009004565b50620005bf565b60008060008060008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205491506000821415156200025e57600080fd5b6001805490506000808973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555060018054809190600101620002bc91906200040a565b905060c0604051908101604052808781526020018681526020018581526020018873ffffffffffffffffffffffffffffffffffffffff168152602001428152602001428152506001828154811015156200031257fe5b906000526020600020906006020160008201518160000190805190602001906200033e9291906200043f565b5060208201518160010190805190602001906200035d9291906200043f565b506040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506080820151816004015560a082015181600501559050507f6bef7adacfc09f59a87202193c883458dd5621fccb6887d9dffb9c188994c0ba816040518082815260200191505060405180910390a18092505050949350505050565b8154818355818111156200043a57600602816006028360005260206000209182019101620004399190620004c6565b5b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106200048257805160ff1916838001178555620004b3565b82800160010185558215620004b3579182015b82811115620004b257825182559160200191906001019062000495565b5b509050620004c291906200054b565b5090565b6200054891905b80821115620005445760008082016000620004e9919062000573565b600182016000620004fb919062000573565b60028201600090556003820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff02191690556004820160009055600582016000905550600601620004cd565b5090565b90565b6200057091905b808211156200056c57600081600090555060010162000552565b5090565b90565b50805460018160011615610100020316600290046000825580601f106200059b5750620005bc565b601f016020900490600052602060002090810190620005bb91906200054b565b5b50565b61116980620005cf6000396000f30060806040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806315e682051461009357806322366844146101f457806336ae14c8146102235780638df5a9fa1461027a578063bc40d5fb146103d4578063bc4e7007146104a1578063bd578c50146104cc578063fd1b515814610599575b600080fd5b34801561009f57600080fd5b506100be600480360381019080803590602001909291905050506106e4565b6040518088815260200180602001806020018781526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838103835289818151815260200191508051906020019080838360005b8381101561014c578082015181840152602081019050610131565b50505050905090810190601f1680156101795780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b838110156101b2578082015181840152602081019050610197565b50505050905090810190601f1680156101df5780820380516001836020036101000a031916815260200191505b50995050505050505050505060405180910390f35b34801561020057600080fd5b50610209610938565b604051808215151515815260200191505060405180910390f35b34801561022f57600080fd5b50610264600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610981565b6040518082815260200191505060405180910390f35b34801561028657600080fd5b506102a560048036038101908080359060200190929190505050610999565b6040518080602001806020018781526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838103835289818151815260200191508051906020019080838360005b8381101561032d578082015181840152602081019050610312565b50505050905090810190601f16801561035a5780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b83811015610393578082015181840152602081019050610378565b50505050905090810190601f1680156103c05780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b3480156103e057600080fd5b5061048b600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919291929080359060200190929190505050610b34565b6040518082815260200191505060405180910390f35b3480156104ad57600080fd5b506104b6610c33565b6040518082815260200191505060405180910390f35b3480156104d857600080fd5b50610583600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919291929080359060200190929190505050610c40565b6040518082815260200191505060405180910390f35b3480156105a557600080fd5b506105ae610c57565b6040518088815260200180602001806020018781526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838103835289818151815260200191508051906020019080838360005b8381101561063c578082015181840152602081019050610621565b50505050905090810190601f1680156106695780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b838110156106a2578082015181840152602081019050610687565b50505050905090810190601f1680156106cf5780820380516001836020036101000a031916815260200191505b50995050505050505050505060405180910390f35b60006060806000806000806106f7610ed3565b600089118061070b57506001805490508911155b151561071657600080fd5b60018981548110151561072557fe5b906000526020600020906006020160c06040519081016040529081600082018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107d85780601f106107ad576101008083540402835291602001916107d8565b820191906000526020600020905b8154815290600101906020018083116107bb57829003601f168201915b50505050508152602001600182018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561087a5780601f1061084f5761010080835404028352916020019161087a565b820191906000526020600020905b81548152906001019060200180831161085d57829003601f168201915b50505050508152602001600282015481526020016003820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200160048201548152602001600582015481525050905088816000015182602001518360400151846060015185608001518660a00151859550849450975097509750975097509750975050919395979092949650565b6000806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541415905090565b60006020528060005260406000206000915090505481565b6001818154811015156109a857fe5b9060005260206000209060060201600091509050806000018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610a545780601f10610a2957610100808354040283529160200191610a54565b820191906000526020600020905b815481529060010190602001808311610a3757829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610af25780601f10610ac757610100808354040283529160200191610af2565b820191906000526020600020905b815481529060010190602001808311610ad557829003601f168201915b5050505050908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060040154908060050154905086565b6000806000610b41610938565b1515610b4c57600080fd5b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549150600182815481101515610b9c57fe5b9060005260206000209060060201905085816000019080519060200190610bc4929190610f20565b5084816001019080519060200190610bdd929190610f20565b508381600201819055504281600501819055507fdb063512f00940756581e7b0b8efccfd498f53fc4f505706c2c535612945e505826040518082815260200191505060405180910390a181925050509392505050565b6000600180549050905090565b6000610c4e33858585610cd9565b90509392505050565b60006060806000806000806000610c6c610938565b1515610c7757600080fd5b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050610cc1816106e4565b97509750975097509750975097505090919293949596565b60008060008060008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549150600082141515610d2e57600080fd5b6001805490506000808973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555060018054809190600101610d8a9190610fa0565b905060c0604051908101604052808781526020018681526020018581526020018873ffffffffffffffffffffffffffffffffffffffff16815260200142815260200142815250600182815481101515610ddf57fe5b90600052602060002090600602016000820151816000019080519060200190610e09929190610fd2565b506020820151816001019080519060200190610e26929190610fd2565b506040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506080820151816004015560a082015181600501559050507f6bef7adacfc09f59a87202193c883458dd5621fccb6887d9dffb9c188994c0ba816040518082815260200191505060405180910390a18092505050949350505050565b60c060405190810160405280606081526020016060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200160008152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610f6157805160ff1916838001178555610f8f565b82800160010185558215610f8f579182015b82811115610f8e578251825591602001919060010190610f73565b5b509050610f9c9190611052565b5090565b815481835581811115610fcd57600602816006028360005260206000209182019101610fcc9190611077565b5b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061101357805160ff1916838001178555611041565b82800160010185558215611041579182015b82811115611040578251825591602001919060010190611025565b5b50905061104e9190611052565b5090565b61107491905b80821115611070576000816000905550600101611058565b5090565b90565b6110f291905b808211156110ee576000808201600061109691906110f5565b6001820160006110a691906110f5565b60028201600090556003820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055600482016000905560058201600090555060060161107d565b5090565b90565b50805460018160011615610100020316600290046000825580601f1061111b575061113a565b601f0160209004906000526020600020908101906111399190611052565b5b505600a165627a7a7230582016ada90f1ecb19ca873df94b42d3a2c609f2d64195a28cd10bfc492bea8382e90029","deployedBytecode":"0x60806040526004361061008e576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806315e682051461009357806322366844146101f457806336ae14c8146102235780638df5a9fa1461027a578063bc40d5fb146103d4578063bc4e7007146104a1578063bd578c50146104cc578063fd1b515814610599575b600080fd5b34801561009f57600080fd5b506100be600480360381019080803590602001909291905050506106e4565b6040518088815260200180602001806020018781526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838103835289818151815260200191508051906020019080838360005b8381101561014c578082015181840152602081019050610131565b50505050905090810190601f1680156101795780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b838110156101b2578082015181840152602081019050610197565b50505050905090810190601f1680156101df5780820380516001836020036101000a031916815260200191505b50995050505050505050505060405180910390f35b34801561020057600080fd5b50610209610938565b604051808215151515815260200191505060405180910390f35b34801561022f57600080fd5b50610264600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610981565b6040518082815260200191505060405180910390f35b34801561028657600080fd5b506102a560048036038101908080359060200190929190505050610999565b6040518080602001806020018781526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838103835289818151815260200191508051906020019080838360005b8381101561032d578082015181840152602081019050610312565b50505050905090810190601f16801561035a5780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b83811015610393578082015181840152602081019050610378565b50505050905090810190601f1680156103c05780820380516001836020036101000a031916815260200191505b509850505050505050505060405180910390f35b3480156103e057600080fd5b5061048b600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919291929080359060200190929190505050610b34565b6040518082815260200191505060405180910390f35b3480156104ad57600080fd5b506104b6610c33565b6040518082815260200191505060405180910390f35b3480156104d857600080fd5b50610583600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919291929080359060200190929190505050610c40565b6040518082815260200191505060405180910390f35b3480156105a557600080fd5b506105ae610c57565b6040518088815260200180602001806020018781526020018673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001858152602001848152602001838103835289818151815260200191508051906020019080838360005b8381101561063c578082015181840152602081019050610621565b50505050905090810190601f1680156106695780820380516001836020036101000a031916815260200191505b50838103825288818151815260200191508051906020019080838360005b838110156106a2578082015181840152602081019050610687565b50505050905090810190601f1680156106cf5780820380516001836020036101000a031916815260200191505b50995050505050505050505060405180910390f35b60006060806000806000806106f7610ed3565b600089118061070b57506001805490508911155b151561071657600080fd5b60018981548110151561072557fe5b906000526020600020906006020160c06040519081016040529081600082018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156107d85780601f106107ad576101008083540402835291602001916107d8565b820191906000526020600020905b8154815290600101906020018083116107bb57829003601f168201915b50505050508152602001600182018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561087a5780601f1061084f5761010080835404028352916020019161087a565b820191906000526020600020905b81548152906001019060200180831161085d57829003601f168201915b50505050508152602001600282015481526020016003820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200160048201548152602001600582015481525050905088816000015182602001518360400151846060015185608001518660a00151859550849450975097509750975097509750975050919395979092949650565b6000806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541415905090565b60006020528060005260406000206000915090505481565b6001818154811015156109a857fe5b9060005260206000209060060201600091509050806000018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610a545780601f10610a2957610100808354040283529160200191610a54565b820191906000526020600020905b815481529060010190602001808311610a3757829003601f168201915b505050505090806001018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610af25780601f10610ac757610100808354040283529160200191610af2565b820191906000526020600020905b815481529060010190602001808311610ad557829003601f168201915b5050505050908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060040154908060050154905086565b6000806000610b41610938565b1515610b4c57600080fd5b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549150600182815481101515610b9c57fe5b9060005260206000209060060201905085816000019080519060200190610bc4929190610f20565b5084816001019080519060200190610bdd929190610f20565b508381600201819055504281600501819055507fdb063512f00940756581e7b0b8efccfd498f53fc4f505706c2c535612945e505826040518082815260200191505060405180910390a181925050509392505050565b6000600180549050905090565b6000610c4e33858585610cd9565b90509392505050565b60006060806000806000806000610c6c610938565b1515610c7757600080fd5b6000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050610cc1816106e4565b97509750975097509750975097505090919293949596565b60008060008060008873ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549150600082141515610d2e57600080fd5b6001805490506000808973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555060018054809190600101610d8a9190610fa0565b905060c0604051908101604052808781526020018681526020018581526020018873ffffffffffffffffffffffffffffffffffffffff16815260200142815260200142815250600182815481101515610ddf57fe5b90600052602060002090600602016000820151816000019080519060200190610e09929190610fd2565b506020820151816001019080519060200190610e26929190610fd2565b506040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506080820151816004015560a082015181600501559050507f6bef7adacfc09f59a87202193c883458dd5621fccb6887d9dffb9c188994c0ba816040518082815260200191505060405180910390a18092505050949350505050565b60c060405190810160405280606081526020016060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff16815260200160008152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610f6157805160ff1916838001178555610f8f565b82800160010185558215610f8f579182015b82811115610f8e578251825591602001919060010190610f73565b5b509050610f9c9190611052565b5090565b815481835581811115610fcd57600602816006028360005260206000209182019101610fcc9190611077565b5b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061101357805160ff1916838001178555611041565b82800160010185558215611041579182015b82811115611040578251825591602001919060010190611025565b5b50905061104e9190611052565b5090565b61107491905b80821115611070576000816000905550600101611058565b5090565b90565b6110f291905b808211156110ee576000808201600061109691906110f5565b6001820160006110a691906110f5565b60028201600090556003820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055600482016000905560058201600090555060060161107d565b5090565b90565b50805460018160011615610100020316600290046000825580601f1061111b575061113a565b601f0160209004906000526020600020908101906111399190611052565b5b505600a165627a7a7230582016ada90f1ecb19ca873df94b42d3a2c609f2d64195a28cd10bfc492bea8382e90029","sourceMap":"27:4907:0:-;;;874:457;8:9:-1;5:2;;;30:1;27;20:12;5:2;874:457:0;954:26;965:3;954:26;;;;;;;;;;;;;;;;;;;;;;;;;;978:1;954:10;;;:26;;;:::i;:::-;;1018:92;1029:14;1018:92;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1106:3;1018:10;;;:92;;;:::i;:::-;;1120:98;1131:14;1120:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1214:3;1120:10;;;:98;;;:::i;:::-;;1228:96;1239:14;1228:96;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1320:3;1228:10;;;:96;;;:::i;:::-;;27:4907;;2001:826;2097:4;2174:14;2366:17;2191:11;:18;2203:5;2191:18;;;;;;;;;;;;;;;;2174:35;;2241:1;2228:9;:14;2219:24;;;;;;;;2341:8;:15;;;;2320:11;:18;2332:5;2320:18;;;;;;;;;;;;;;;:36;;;;2386:8;:17;;;;;;;;;;;:::i;:::-;2366:37;;2482:189;;;;;;;;;2510:4;2482:189;;;;2532:2;2482:189;;;;2560:10;2482:189;;;;2599:5;2482:189;;;;;;2629:3;2482:189;;;;2657:3;2482:189;;;2457:8;2466:12;2457:22;;;;;;;;;;;;;;;;;;;;:214;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2756:34;2777:12;2756:34;;;;;;;;;;;;;;;;;;2808:12;2801:19;;2001:826;;;;;;;;:::o;27:4907::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;","deployedSourceMap":"27:4907:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3792:430;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3792:430:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;3792:430:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;3792:430:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4651:106;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4651:106:0;;;;;;;;;;;;;;;;;;;;;;;;;;;331:44;;8:9:-1;5:2;;;30:1;27;20:12;5:2;331:44:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;456:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;456:25:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;456:25:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;456:25:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3159:486;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3159:486:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4836:95;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4836:95:0;;;;;;;;;;;;;;;;;;;;;;;1512:156;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1512:156:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4302:246;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4302:246:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;4302:246:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;4302:246:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3792:430;3855:4;3866:6;3879;3895:4;3906:7;3920:4;3931;4039:16;;:::i;:::-;4000:1;3995:2;:6;3994:35;;;;4013:8;:15;;;;4007:2;:21;;3994:35;3985:46;;;;;;;;4058:8;4067:2;4058:12;;;;;;;;;;;;;;;;;;;;4039:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4093:2;4103:1;:6;;;4117:1;:4;;;4135:1;:12;;;4155:1;:15;;;4178:1;:11;;;4197:1;:11;;;4078:137;;;;;;;;;;;;;;;;;;;;3792:430;;;;;;;;;;:::o;4651:106::-;4696:4;4748:1;4721:11;:23;4733:10;4721:23;;;;;;;;;;;;;;;;:28;;4713:37;;4651:106;:::o;331:44::-;;;;;;;;;;;;;;;;;:::o;456:25::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;3159:486::-;3275:4;3350:14;3398:23;792:14;:12;:14::i;:::-;784:23;;;;;;;;3367:11;:23;3379:10;3367:23;;;;;;;;;;;;;;;;3350:40;;3424:8;3433:9;3424:19;;;;;;;;;;;;;;;;;;;;3398:45;;3466:7;3451;:12;;:22;;;;;;;;;;;;:::i;:::-;;3493:5;3480:7;:10;;:18;;;;;;;;;;;;:::i;:::-;;3529:13;3508:7;:18;;:34;;;;3569:3;3549:7;:17;;:23;;;;3585:29;3604:9;3585:29;;;;;;;;;;;;;;;;;;3629:9;3622:16;;3159:486;;;;;;;:::o;4836:95::-;4882:4;4909:8;:15;;;;4902:22;;4836:95;:::o;1512:156::-;1593:4;1617:44;1628:10;1640:4;1646:2;1650:10;1617;:44::i;:::-;1610:51;;1512:156;;;;;:::o;4302:246::-;4381:4;4392:6;4405;4421:4;4432:7;4446:4;4457;4475:7;792:14;:12;:14::i;:::-;784:23;;;;;;;;4485:11;:23;4497:10;4485:23;;;;;;;;;;;;;;;;4475:33;;4523:18;4538:2;4523:14;:18::i;:::-;4516:25;;;;;;;;;;;;;;4302:246;;;;;;;;:::o;2001:826::-;2097:4;2174:14;2366:17;2191:11;:18;2203:5;2191:18;;;;;;;;;;;;;;;;2174:35;;2241:1;2228:9;:14;2219:24;;;;;;;;2341:8;:15;;;;2320:11;:18;2332:5;2320:18;;;;;;;;;;;;;;;:36;;;;2386:8;:17;;;;;;;;;;;:::i;:::-;2366:37;;2482:189;;;;;;;;;2510:4;2482:189;;;;2532:2;2482:189;;;;2560:10;2482:189;;;;2599:5;2482:189;;;;;;2629:3;2482:189;;;;2657:3;2482:189;;;2457:8;2466:12;2457:22;;;;;;;;;;;;;;;;;;;;:214;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2756:34;2777:12;2756:34;;;;;;;;;;;;;;;;;;2808:12;2801:19;;2001:826;;;;;;;;:::o;27:4907::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o","source":"pragma solidity ^0.4.21;\n\n\ncontract Journeys {\n    // data structure that stores a journey\n    struct Journey {\n        string from;\n        string to;\n        uint endingFare;\n        address walletAddress;\n        uint createdAt;\n        uint updatedAt;\n    }\n\n    // it maps the journey's wallet address with the journey ID\n    mapping (address => uint) public journeysIds;\n\n    // Array of Journey that holds the list of journeys and their details\n    Journey[] public journeys;\n\n    // event fired when a new journey is registered\n    event newJourneyRegistered(uint id);\n\n    // event fired when the journey is updated\n    event journeyUpdateEvent(uint id);\n\n\n\n    // Modifier: check if the caller of the smart contract is registered\n    modifier checkSenderIsRegistered {\n    \trequire(isRegistered());\n    \t_;\n    }\n\n\n\n    /**\n     * Constructor function\n     */\n    constructor() public {\n        // NOTE: the first journey MUST be empty\n        addJourney(0x0, \"\", \"\", 0);\n\n        // Some dummy data\n        addJourney(0x333333333333, \"Pinner Underground Station\", \"Kilburn Underground Station\", 590);\n        addJourney(0x234539999999, \"Willesden Underground Station\", \"Maida Vale Underground Station\", 590);\n        addJourney(0x434578222222, \"Bermondsey Underground Station\", \"Kilburn Underground Station\", 590);\n    }\n\n\n\n    /**\n     * Function to register a new journey.\n     *\n     * @param from   Point of Origin\n     * @param to     Destination\n     * @param endingFare Ending Fare\n     */\n    function registerJourney(string from, string to, uint endingFare) public returns(uint)\n    {\n    \treturn addJourney(msg.sender, from, to, endingFare);\n    }\n\n\n\n    /**\n     * Add a new journey. This function must be private because a journey\n     * cannot insert another journey on behalf of someone else.\n     *\n     * @param wAddr \t\tAddress wallet of the journey\n     * @param from\t\t    Point of origin\n     * @param to\t\t    Destination \n     * @param endingFare\tending Fare\n    */\n\n    function addJourney(address wAddr, string from, string to, uint endingFare) private\n    returns(uint)\n    {\n        // checking if the journey is already registered\n        uint journeyId = journeysIds[wAddr];\n        require (journeyId == 0);\n\n        // associating the journey wallet address with the new ID\n        journeysIds[wAddr] = journeys.length;\n        uint newJourneyId = journeys.length++;\n\n        // storing the new journey details\n        journeys[newJourneyId] = Journey({\n            from: from,\n            to: to,\n            endingFare: endingFare,\n            walletAddress: wAddr,\n            createdAt: now,\n            updatedAt: now\n        });\n\n        // emitting the event that a new journey has been registered\n        emit newJourneyRegistered(newJourneyId);\n\n        return newJourneyId;\n    }\n\n\n    /**\n     * Update the journey confirmation of the caller of this method.\n     * Note: the journey can modify only his own confirmation.\n     *\n     * @param newFrom\t    The new journey's displaying from\n     * @param newTo \t    The new journey's to\n     * @param newendingFare The new journey's endingFare\n     *\n     */\n    function updateJourney(string newFrom, string newTo, uint newendingFare) checkSenderIsRegistered public\n    returns(uint)\n    {\n    \t// A journey can modify only their own confirmation.\n    \tuint journeyId = journeysIds[msg.sender];\n\n    \tJourney storage journey = journeys[journeyId];\n\n    \tjourney.from = newFrom;\n    \tjourney.to = newTo;\n        journey.endingFare = newendingFare;\n    \tjourney.updatedAt = now;\n\n    \temit journeyUpdateEvent(journeyId);\n\n    \treturn journeyId;\n    }\n\n\n    /**\n     * Get the journey's confirmation information.\n     *\n     * @param id \tThe ID of the journey stored on the blockchain.\n     */\n    function getJourneyById(uint id) public view\n    returns(\n    \tuint,\n    \tstring,\n    \tstring,\n        uint,\n    \taddress,\n    \tuint,\n    \tuint\n    ) {\n    \t// checking if the ID is valid\n    \trequire( (id > 0) || (id <= journeys.length) );\n\n    \tJourney memory i = journeys[id];\n\n    \treturn (\n    \t\tid,\n    \t\ti.from,\n    \t\ti.to,\n            i.endingFare,\n    \t\ti.walletAddress,\n    \t\ti.createdAt,\n    \t\ti.updatedAt\n    \t);\n    }\n\n    /**\n     * Return the confirmation information of the caller.\n     */\n    function getOwnProfile() checkSenderIsRegistered public view\n    returns(\n    \tuint,\n    \tstring,\n    \tstring,\n        uint,\n    \taddress,\n    \tuint,\n    \tuint\n    ) {\n    \tuint id = journeysIds[msg.sender];\n\n    \treturn getJourneyById(id);\n    }\n\n\n\n\n    /**\n     * Check if the journey that is calling the smart contract is registered.\n     */\n    function isRegistered() public view returns (bool)\n    {\n    \treturn (journeysIds[msg.sender] != 0);\n    }\n\n\n\n    /**\n     * Return the number of total registered journeys.\n     */\n    function totalJourneys() public view returns (uint)\n    {\n        return journeys.length;\n    }\n\n}","sourcePath":"/Users/yameste/Sites/blocktrain-dapp/contracts/Journeys.sol","ast":{"absolutePath":"/Users/yameste/Sites/blocktrain-dapp/contracts/Journeys.sol","exportedSymbols":{"Journeys":[314]},"id":315,"nodeType":"SourceUnit","nodes":[{"id":1,"literals":["solidity","^","0.4",".21"],"nodeType":"PragmaDirective","src":"0:24:0"},{"baseContracts":[],"contractDependencies":[],"contractKind":"contract","documentation":null,"fullyImplemented":true,"id":314,"linearizedBaseContracts":[314],"name":"Journeys","nodeType":"ContractDefinition","nodes":[{"canonicalName":"Journeys.Journey","id":14,"members":[{"constant":false,"id":3,"name":"from","nodeType":"VariableDeclaration","scope":14,"src":"120:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"},"typeName":{"id":2,"name":"string","nodeType":"ElementaryTypeName","src":"120:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":5,"name":"to","nodeType":"VariableDeclaration","scope":14,"src":"141:9:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"},"typeName":{"id":4,"name":"string","nodeType":"ElementaryTypeName","src":"141:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":7,"name":"endingFare","nodeType":"VariableDeclaration","scope":14,"src":"160:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":6,"name":"uint","nodeType":"ElementaryTypeName","src":"160:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":9,"name":"walletAddress","nodeType":"VariableDeclaration","scope":14,"src":"185:21:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":8,"name":"address","nodeType":"ElementaryTypeName","src":"185:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":11,"name":"createdAt","nodeType":"VariableDeclaration","scope":14,"src":"216:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10,"name":"uint","nodeType":"ElementaryTypeName","src":"216:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":13,"name":"updatedAt","nodeType":"VariableDeclaration","scope":14,"src":"240:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":12,"name":"uint","nodeType":"ElementaryTypeName","src":"240:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"name":"Journey","nodeType":"StructDefinition","scope":314,"src":"95:166:0","visibility":"public"},{"constant":false,"id":18,"name":"journeysIds","nodeType":"VariableDeclaration","scope":314,"src":"331:44:0","stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"},"typeName":{"id":17,"keyType":{"id":15,"name":"address","nodeType":"ElementaryTypeName","src":"340:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Mapping","src":"331:25:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"},"valueType":{"id":16,"name":"uint","nodeType":"ElementaryTypeName","src":"351:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}},"value":null,"visibility":"public"},{"constant":false,"id":21,"name":"journeys","nodeType":"VariableDeclaration","scope":314,"src":"456:25:0","stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey[]"},"typeName":{"baseType":{"contractScope":null,"id":19,"name":"Journey","nodeType":"UserDefinedTypeName","referencedDeclaration":14,"src":"456:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"}},"id":20,"length":null,"nodeType":"ArrayTypeName","src":"456:9:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage_ptr","typeString":"struct Journeys.Journey[]"}},"value":null,"visibility":"public"},{"anonymous":false,"documentation":null,"id":25,"name":"newJourneyRegistered","nodeType":"EventDefinition","parameters":{"id":24,"nodeType":"ParameterList","parameters":[{"constant":false,"id":23,"indexed":false,"name":"id","nodeType":"VariableDeclaration","scope":25,"src":"567:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":22,"name":"uint","nodeType":"ElementaryTypeName","src":"567:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"566:9:0"},"src":"540:36:0"},{"anonymous":false,"documentation":null,"id":29,"name":"journeyUpdateEvent","nodeType":"EventDefinition","parameters":{"id":28,"nodeType":"ParameterList","parameters":[{"constant":false,"id":27,"indexed":false,"name":"id","nodeType":"VariableDeclaration","scope":29,"src":"654:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":26,"name":"uint","nodeType":"ElementaryTypeName","src":"654:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"653:9:0"},"src":"629:34:0"},{"body":{"id":37,"nodeType":"Block","src":"777:45:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"arguments":[],"expression":{"argumentTypes":[],"id":32,"name":"isRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":304,"src":"792:12:0","typeDescriptions":{"typeIdentifier":"t_function_internal_view$__$returns$_t_bool_$","typeString":"function () view returns (bool)"}},"id":33,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"792:14:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":31,"name":"require","nodeType":"Identifier","overloadedDeclarations":[389,390],"referencedDeclaration":389,"src":"784:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":34,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"784:23:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":35,"nodeType":"ExpressionStatement","src":"784:23:0"},{"id":36,"nodeType":"PlaceholderStatement","src":"814:1:0"}]},"documentation":null,"id":38,"name":"checkSenderIsRegistered","nodeType":"ModifierDefinition","parameters":{"id":30,"nodeType":"ParameterList","parameters":[],"src":"777:0:0"},"src":"744:78:0","visibility":"internal"},{"body":{"id":69,"nodeType":"Block","src":"895:436:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"307830","id":42,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"965:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0x0"},{"argumentTypes":null,"hexValue":"","id":43,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"970:2:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},"value":""},{"argumentTypes":null,"hexValue":"","id":44,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"974:2:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},"value":""},{"argumentTypes":null,"hexValue":"30","id":45,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"978:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"}],"id":41,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"954:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":46,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"954:26:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":47,"nodeType":"ExpressionStatement","src":"954:26:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"3078333333333333333333333333","id":49,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1029:14:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_56294995342131_by_1","typeString":"int_const 56294995342131"},"value":"0x333333333333"},{"argumentTypes":null,"hexValue":"50696e6e657220556e64657267726f756e642053746174696f6e","id":50,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1045:28:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_63abc9475da595b1caf5989321ec3357b045ce7396dfbedaf8db19a2780e581c","typeString":"literal_string \"Pinner Underground Station\""},"value":"Pinner Underground Station"},{"argumentTypes":null,"hexValue":"4b696c6275726e20556e64657267726f756e642053746174696f6e","id":51,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1075:29:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},"value":"Kilburn Underground Station"},{"argumentTypes":null,"hexValue":"353930","id":52,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1106:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"},"value":"590"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_56294995342131_by_1","typeString":"int_const 56294995342131"},{"typeIdentifier":"t_stringliteral_63abc9475da595b1caf5989321ec3357b045ce7396dfbedaf8db19a2780e581c","typeString":"literal_string \"Pinner Underground Station\""},{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"}],"id":48,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1018:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":53,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1018:92:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":54,"nodeType":"ExpressionStatement","src":"1018:92:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"3078323334353339393939393939","id":56,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1131:14:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_38780226083225_by_1","typeString":"int_const 38780226083225"},"value":"0x234539999999"},{"argumentTypes":null,"hexValue":"57696c6c657364656e20556e64657267726f756e642053746174696f6e","id":57,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1147:31:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_fd876c5236d87ef79c56011b38ce5b514639f102ed51e25af4197383bbc78170","typeString":"literal_string \"Willesden Underground Station\""},"value":"Willesden Underground Station"},{"argumentTypes":null,"hexValue":"4d616964612056616c6520556e64657267726f756e642053746174696f6e","id":58,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1180:32:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_1a996c0d42ffff2cb9ede595c138b15dd3155489a0d7ffc20c3c1694b10c93be","typeString":"literal_string \"Maida Vale Underground Station\""},"value":"Maida Vale Underground Station"},{"argumentTypes":null,"hexValue":"353930","id":59,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1214:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"},"value":"590"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_38780226083225_by_1","typeString":"int_const 38780226083225"},{"typeIdentifier":"t_stringliteral_fd876c5236d87ef79c56011b38ce5b514639f102ed51e25af4197383bbc78170","typeString":"literal_string \"Willesden Underground Station\""},{"typeIdentifier":"t_stringliteral_1a996c0d42ffff2cb9ede595c138b15dd3155489a0d7ffc20c3c1694b10c93be","typeString":"literal_string \"Maida Vale Underground Station\""},{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"}],"id":55,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1120:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":60,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1120:98:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":61,"nodeType":"ExpressionStatement","src":"1120:98:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"3078343334353738323232323232","id":63,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1239:14:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_73965647307298_by_1","typeString":"int_const 73965647307298"},"value":"0x434578222222"},{"argumentTypes":null,"hexValue":"4265726d6f6e6473657920556e64657267726f756e642053746174696f6e","id":64,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1255:32:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_5ecf2f08b6d1627cbc794d3b2a4b050d15dc3291ae8809e41dadf03c0a9b2270","typeString":"literal_string \"Bermondsey Underground Station\""},"value":"Bermondsey Underground Station"},{"argumentTypes":null,"hexValue":"4b696c6275726e20556e64657267726f756e642053746174696f6e","id":65,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1289:29:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},"value":"Kilburn Underground Station"},{"argumentTypes":null,"hexValue":"353930","id":66,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1320:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"},"value":"590"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_73965647307298_by_1","typeString":"int_const 73965647307298"},{"typeIdentifier":"t_stringliteral_5ecf2f08b6d1627cbc794d3b2a4b050d15dc3291ae8809e41dadf03c0a9b2270","typeString":"literal_string \"Bermondsey Underground Station\""},{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"}],"id":62,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1228:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":67,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1228:96:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":68,"nodeType":"ExpressionStatement","src":"1228:96:0"}]},"documentation":"Constructor function","id":70,"implemented":true,"isConstructor":true,"isDeclaredConst":false,"modifiers":[],"name":"","nodeType":"FunctionDefinition","parameters":{"id":39,"nodeType":"ParameterList","parameters":[],"src":"885:2:0"},"payable":false,"returnParameters":{"id":40,"nodeType":"ParameterList","parameters":[],"src":"895:0:0"},"scope":314,"src":"874:457:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":89,"nodeType":"Block","src":"1603:65:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":82,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"1628:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":83,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"1628:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":84,"name":"from","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":72,"src":"1640:4:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":85,"name":"to","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":74,"src":"1646:2:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":86,"name":"endingFare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":76,"src":"1650:10:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"},{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":81,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1617:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":87,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1617:44:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":80,"id":88,"nodeType":"Return","src":"1610:51:0"}]},"documentation":"Function to register a new journey.\n     * @param from   Point of Origin\n@param to     Destination\n@param endingFare Ending Fare","id":90,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"registerJourney","nodeType":"FunctionDefinition","parameters":{"id":77,"nodeType":"ParameterList","parameters":[{"constant":false,"id":72,"name":"from","nodeType":"VariableDeclaration","scope":90,"src":"1537:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":71,"name":"string","nodeType":"ElementaryTypeName","src":"1537:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":74,"name":"to","nodeType":"VariableDeclaration","scope":90,"src":"1550:9:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":73,"name":"string","nodeType":"ElementaryTypeName","src":"1550:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":76,"name":"endingFare","nodeType":"VariableDeclaration","scope":90,"src":"1561:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":75,"name":"uint","nodeType":"ElementaryTypeName","src":"1561:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1536:41:0"},"payable":false,"returnParameters":{"id":80,"nodeType":"ParameterList","parameters":[{"constant":false,"id":79,"name":"","nodeType":"VariableDeclaration","scope":90,"src":"1593:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":78,"name":"uint","nodeType":"ElementaryTypeName","src":"1593:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1592:6:0"},"scope":314,"src":"1512:156:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":147,"nodeType":"Block","src":"2107:720:0","statements":[{"assignments":[104],"declarations":[{"constant":false,"id":104,"name":"journeyId","nodeType":"VariableDeclaration","scope":148,"src":"2174:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":103,"name":"uint","nodeType":"ElementaryTypeName","src":"2174:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":108,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":105,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"2191:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":107,"indexExpression":{"argumentTypes":null,"id":106,"name":"wAddr","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":92,"src":"2203:5:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"2191:18:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"2174:35:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":112,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"id":110,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":104,"src":"2228:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"==","rightExpression":{"argumentTypes":null,"hexValue":"30","id":111,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"2241:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"2228:14:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":109,"name":"require","nodeType":"Identifier","overloadedDeclarations":[389,390],"referencedDeclaration":389,"src":"2219:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":113,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2219:24:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":114,"nodeType":"ExpressionStatement","src":"2219:24:0"},{"expression":{"argumentTypes":null,"id":120,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":115,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"2320:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":117,"indexExpression":{"argumentTypes":null,"id":116,"name":"wAddr","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":92,"src":"2332:5:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"nodeType":"IndexAccess","src":"2320:18:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":118,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"2341:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":119,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2341:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"2320:36:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":121,"nodeType":"ExpressionStatement","src":"2320:36:0"},{"assignments":[123],"declarations":[{"constant":false,"id":123,"name":"newJourneyId","nodeType":"VariableDeclaration","scope":148,"src":"2366:17:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":122,"name":"uint","nodeType":"ElementaryTypeName","src":"2366:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":127,"initialValue":{"argumentTypes":null,"id":126,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"UnaryOperation","operator":"++","prefix":false,"src":"2386:17:0","subExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":124,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"2386:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":125,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2386:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"2366:37:0"},{"expression":{"argumentTypes":null,"id":139,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":128,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"2457:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":130,"indexExpression":{"argumentTypes":null,"id":129,"name":"newJourneyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":123,"src":"2466:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"nodeType":"IndexAccess","src":"2457:22:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":132,"name":"from","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":94,"src":"2510:4:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":133,"name":"to","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":96,"src":"2532:2:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":134,"name":"endingFare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":98,"src":"2560:10:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"id":135,"name":"wAddr","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":92,"src":"2599:5:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":136,"name":"now","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":388,"src":"2629:3:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"id":137,"name":"now","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":388,"src":"2657:3:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":null,"id":131,"name":"Journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":14,"src":"2482:7:0","typeDescriptions":{"typeIdentifier":"t_type$_t_struct$_Journey_$14_storage_ptr_$","typeString":"type(struct Journeys.Journey storage pointer)"}},"id":138,"isConstant":false,"isLValue":false,"isPure":false,"kind":"structConstructorCall","lValueRequested":false,"names":["from","to","endingFare","walletAddress","createdAt","updatedAt"],"nodeType":"FunctionCall","src":"2482:189:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory","typeString":"struct Journeys.Journey memory"}},"src":"2457:214:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"id":140,"nodeType":"ExpressionStatement","src":"2457:214:0"},{"eventCall":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":142,"name":"newJourneyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":123,"src":"2777:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":141,"name":"newJourneyRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":25,"src":"2756:20:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":143,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2756:34:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":144,"nodeType":"EmitStatement","src":"2751:39:0"},{"expression":{"argumentTypes":null,"id":145,"name":"newJourneyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":123,"src":"2808:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":102,"id":146,"nodeType":"Return","src":"2801:19:0"}]},"documentation":"Add a new journey. This function must be private because a journey\ncannot insert another journey on behalf of someone else.\n     * @param wAddr \t\tAddress wallet of the journey\n@param from\t\t    Point of origin\n@param to\t\t    Destination \n@param endingFare\tending Fare","id":148,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"addJourney","nodeType":"FunctionDefinition","parameters":{"id":99,"nodeType":"ParameterList","parameters":[{"constant":false,"id":92,"name":"wAddr","nodeType":"VariableDeclaration","scope":148,"src":"2021:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":91,"name":"address","nodeType":"ElementaryTypeName","src":"2021:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":94,"name":"from","nodeType":"VariableDeclaration","scope":148,"src":"2036:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":93,"name":"string","nodeType":"ElementaryTypeName","src":"2036:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":96,"name":"to","nodeType":"VariableDeclaration","scope":148,"src":"2049:9:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":95,"name":"string","nodeType":"ElementaryTypeName","src":"2049:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":98,"name":"endingFare","nodeType":"VariableDeclaration","scope":148,"src":"2060:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":97,"name":"uint","nodeType":"ElementaryTypeName","src":"2060:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"2020:56:0"},"payable":false,"returnParameters":{"id":102,"nodeType":"ParameterList","parameters":[{"constant":false,"id":101,"name":"","nodeType":"VariableDeclaration","scope":148,"src":"2097:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":100,"name":"uint","nodeType":"ElementaryTypeName","src":"2097:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"2096:6:0"},"scope":314,"src":"2001:826:0","stateMutability":"nonpayable","superFunction":null,"visibility":"private"},{"body":{"id":204,"nodeType":"Block","src":"3285:360:0","statements":[{"assignments":[162],"declarations":[{"constant":false,"id":162,"name":"journeyId","nodeType":"VariableDeclaration","scope":205,"src":"3350:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":161,"name":"uint","nodeType":"ElementaryTypeName","src":"3350:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":167,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":163,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"3367:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":166,"indexExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":164,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"3379:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":165,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"3379:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"3367:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"3350:40:0"},{"assignments":[169],"declarations":[{"constant":false,"id":169,"name":"journey","nodeType":"VariableDeclaration","scope":205,"src":"3398:23:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"},"typeName":{"contractScope":null,"id":168,"name":"Journey","nodeType":"UserDefinedTypeName","referencedDeclaration":14,"src":"3398:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"}},"value":null,"visibility":"internal"}],"id":173,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":170,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"3424:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":172,"indexExpression":{"argumentTypes":null,"id":171,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":162,"src":"3433:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"3424:19:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"nodeType":"VariableDeclarationStatement","src":"3398:45:0"},{"expression":{"argumentTypes":null,"id":178,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":174,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3451:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":176,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"from","nodeType":"MemberAccess","referencedDeclaration":3,"src":"3451:12:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":177,"name":"newFrom","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":150,"src":"3466:7:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},"src":"3451:22:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"id":179,"nodeType":"ExpressionStatement","src":"3451:22:0"},{"expression":{"argumentTypes":null,"id":184,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":180,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3480:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":182,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"to","nodeType":"MemberAccess","referencedDeclaration":5,"src":"3480:10:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":183,"name":"newTo","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":152,"src":"3493:5:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},"src":"3480:18:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"id":185,"nodeType":"ExpressionStatement","src":"3480:18:0"},{"expression":{"argumentTypes":null,"id":190,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":186,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3508:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":188,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"endingFare","nodeType":"MemberAccess","referencedDeclaration":7,"src":"3508:18:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":189,"name":"newendingFare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":154,"src":"3529:13:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"3508:34:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":191,"nodeType":"ExpressionStatement","src":"3508:34:0"},{"expression":{"argumentTypes":null,"id":196,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":192,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3549:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":194,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"updatedAt","nodeType":"MemberAccess","referencedDeclaration":13,"src":"3549:17:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":195,"name":"now","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":388,"src":"3569:3:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"3549:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":197,"nodeType":"ExpressionStatement","src":"3549:23:0"},{"eventCall":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":199,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":162,"src":"3604:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":198,"name":"journeyUpdateEvent","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":29,"src":"3585:18:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":200,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"3585:29:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":201,"nodeType":"EmitStatement","src":"3580:34:0"},{"expression":{"argumentTypes":null,"id":202,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":162,"src":"3629:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":160,"id":203,"nodeType":"Return","src":"3622:16:0"}]},"documentation":"Update the journey confirmation of the caller of this method.\nNote: the journey can modify only his own confirmation.\n     * @param newFrom\t    The new journey's displaying from\n@param newTo \t    The new journey's to\n@param newendingFare The new journey's endingFare\n     ","id":205,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[{"arguments":null,"id":157,"modifierName":{"argumentTypes":null,"id":156,"name":"checkSenderIsRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":38,"src":"3232:23:0","typeDescriptions":{"typeIdentifier":"t_modifier$__$","typeString":"modifier ()"}},"nodeType":"ModifierInvocation","src":"3232:23:0"}],"name":"updateJourney","nodeType":"FunctionDefinition","parameters":{"id":155,"nodeType":"ParameterList","parameters":[{"constant":false,"id":150,"name":"newFrom","nodeType":"VariableDeclaration","scope":205,"src":"3182:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":149,"name":"string","nodeType":"ElementaryTypeName","src":"3182:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":152,"name":"newTo","nodeType":"VariableDeclaration","scope":205,"src":"3198:12:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":151,"name":"string","nodeType":"ElementaryTypeName","src":"3198:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":154,"name":"newendingFare","nodeType":"VariableDeclaration","scope":205,"src":"3212:18:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":153,"name":"uint","nodeType":"ElementaryTypeName","src":"3212:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3181:50:0"},"payable":false,"returnParameters":{"id":160,"nodeType":"ParameterList","parameters":[{"constant":false,"id":159,"name":"","nodeType":"VariableDeclaration","scope":205,"src":"3275:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":158,"name":"uint","nodeType":"ElementaryTypeName","src":"3275:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3274:6:0"},"scope":314,"src":"3159:486:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":258,"nodeType":"Block","src":"3942:280:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_bool","typeString":"bool"},"id":234,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"components":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":227,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"id":225,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"3995:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":">","rightExpression":{"argumentTypes":null,"hexValue":"30","id":226,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"4000:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"3995:6:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":228,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"3994:8:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"BinaryOperation","operator":"||","rightExpression":{"argumentTypes":null,"components":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":232,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"id":229,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"4007:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"<=","rightExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":230,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"4013:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":231,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4013:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"4007:21:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":233,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"4006:23:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"src":"3994:35:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":224,"name":"require","nodeType":"Identifier","overloadedDeclarations":[389,390],"referencedDeclaration":389,"src":"3985:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":235,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"3985:46:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":236,"nodeType":"ExpressionStatement","src":"3985:46:0"},{"assignments":[238],"declarations":[{"constant":false,"id":238,"name":"i","nodeType":"VariableDeclaration","scope":259,"src":"4039:16:0","stateVariable":false,"storageLocation":"memory","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey"},"typeName":{"contractScope":null,"id":237,"name":"Journey","nodeType":"UserDefinedTypeName","referencedDeclaration":14,"src":"4039:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"}},"value":null,"visibility":"internal"}],"id":242,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":239,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"4058:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":241,"indexExpression":{"argumentTypes":null,"id":240,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"4067:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"4058:12:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"nodeType":"VariableDeclarationStatement","src":"4039:31:0"},{"expression":{"argumentTypes":null,"components":[{"argumentTypes":null,"id":243,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"4093:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":244,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4103:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":245,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"from","nodeType":"MemberAccess","referencedDeclaration":3,"src":"4103:6:0","typeDescriptions":{"typeIdentifier":"t_string_memory","typeString":"string memory"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":246,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4117:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":247,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"to","nodeType":"MemberAccess","referencedDeclaration":5,"src":"4117:4:0","typeDescriptions":{"typeIdentifier":"t_string_memory","typeString":"string memory"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":248,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4135:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":249,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"endingFare","nodeType":"MemberAccess","referencedDeclaration":7,"src":"4135:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":250,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4155:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":251,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"walletAddress","nodeType":"MemberAccess","referencedDeclaration":9,"src":"4155:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":252,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4178:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":253,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"createdAt","nodeType":"MemberAccess","referencedDeclaration":11,"src":"4178:11:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":254,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4197:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":255,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"updatedAt","nodeType":"MemberAccess","referencedDeclaration":13,"src":"4197:11:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"id":256,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"4085:130:0","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_string_memory_$_t_string_memory_$_t_uint256_$_t_address_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,string memory,string memory,uint256,address,uint256,uint256)"}},"functionReturnParameters":223,"id":257,"nodeType":"Return","src":"4078:137:0"}]},"documentation":"Get the journey's confirmation information.\n     * @param id \tThe ID of the journey stored on the blockchain.","id":259,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"getJourneyById","nodeType":"FunctionDefinition","parameters":{"id":208,"nodeType":"ParameterList","parameters":[{"constant":false,"id":207,"name":"id","nodeType":"VariableDeclaration","scope":259,"src":"3816:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":206,"name":"uint","nodeType":"ElementaryTypeName","src":"3816:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3815:9:0"},"payable":false,"returnParameters":{"id":223,"nodeType":"ParameterList","parameters":[{"constant":false,"id":210,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3855:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":209,"name":"uint","nodeType":"ElementaryTypeName","src":"3855:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":212,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3866:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":211,"name":"string","nodeType":"ElementaryTypeName","src":"3866:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":214,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3879:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":213,"name":"string","nodeType":"ElementaryTypeName","src":"3879:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":216,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3895:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":215,"name":"uint","nodeType":"ElementaryTypeName","src":"3895:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":218,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3906:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":217,"name":"address","nodeType":"ElementaryTypeName","src":"3906:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":220,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3920:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":219,"name":"uint","nodeType":"ElementaryTypeName","src":"3920:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":222,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3931:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":221,"name":"uint","nodeType":"ElementaryTypeName","src":"3931:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3848:93:0"},"scope":314,"src":"3792:430:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":289,"nodeType":"Block","src":"4468:80:0","statements":[{"assignments":[279],"declarations":[{"constant":false,"id":279,"name":"id","nodeType":"VariableDeclaration","scope":290,"src":"4475:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":278,"name":"uint","nodeType":"ElementaryTypeName","src":"4475:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":284,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":280,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"4485:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":283,"indexExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":281,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"4497:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":282,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4497:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"4485:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"4475:33:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":286,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":279,"src":"4538:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":285,"name":"getJourneyById","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":259,"src":"4523:14:0","typeDescriptions":{"typeIdentifier":"t_function_internal_view$_t_uint256_$returns$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$_t_address_$_t_uint256_$_t_uint256_$","typeString":"function (uint256) view returns (uint256,string memory,string memory,uint256,address,uint256,uint256)"}},"id":287,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"4523:18:0","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$_t_address_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,string memory,string memory,uint256,address,uint256,uint256)"}},"functionReturnParameters":277,"id":288,"nodeType":"Return","src":"4516:25:0"}]},"documentation":"Return the confirmation information of the caller.","id":290,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[{"arguments":null,"id":262,"modifierName":{"argumentTypes":null,"id":261,"name":"checkSenderIsRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":38,"src":"4327:23:0","typeDescriptions":{"typeIdentifier":"t_modifier$__$","typeString":"modifier ()"}},"nodeType":"ModifierInvocation","src":"4327:23:0"}],"name":"getOwnProfile","nodeType":"FunctionDefinition","parameters":{"id":260,"nodeType":"ParameterList","parameters":[],"src":"4324:2:0"},"payable":false,"returnParameters":{"id":277,"nodeType":"ParameterList","parameters":[{"constant":false,"id":264,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4381:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":263,"name":"uint","nodeType":"ElementaryTypeName","src":"4381:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":266,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4392:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":265,"name":"string","nodeType":"ElementaryTypeName","src":"4392:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":268,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4405:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":267,"name":"string","nodeType":"ElementaryTypeName","src":"4405:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":270,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4421:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":269,"name":"uint","nodeType":"ElementaryTypeName","src":"4421:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":272,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4432:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":271,"name":"address","nodeType":"ElementaryTypeName","src":"4432:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":274,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4446:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":273,"name":"uint","nodeType":"ElementaryTypeName","src":"4446:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":276,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4457:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":275,"name":"uint","nodeType":"ElementaryTypeName","src":"4457:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"4374:93:0"},"scope":314,"src":"4302:246:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":303,"nodeType":"Block","src":"4706:51:0","statements":[{"expression":{"argumentTypes":null,"components":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":300,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":295,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"4721:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":298,"indexExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":296,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"4733:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":297,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4733:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"4721:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"!=","rightExpression":{"argumentTypes":null,"hexValue":"30","id":299,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"4748:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"4721:28:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":301,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"4720:30:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"functionReturnParameters":294,"id":302,"nodeType":"Return","src":"4713:37:0"}]},"documentation":"Check if the journey that is calling the smart contract is registered.","id":304,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"isRegistered","nodeType":"FunctionDefinition","parameters":{"id":291,"nodeType":"ParameterList","parameters":[],"src":"4672:2:0"},"payable":false,"returnParameters":{"id":294,"nodeType":"ParameterList","parameters":[{"constant":false,"id":293,"name":"","nodeType":"VariableDeclaration","scope":304,"src":"4696:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":292,"name":"bool","nodeType":"ElementaryTypeName","src":"4696:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"src":"4695:6:0"},"scope":314,"src":"4651:106:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":312,"nodeType":"Block","src":"4892:39:0","statements":[{"expression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":309,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"4909:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":310,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4909:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":308,"id":311,"nodeType":"Return","src":"4902:22:0"}]},"documentation":"Return the number of total registered journeys.","id":313,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"totalJourneys","nodeType":"FunctionDefinition","parameters":{"id":305,"nodeType":"ParameterList","parameters":[],"src":"4858:2:0"},"payable":false,"returnParameters":{"id":308,"nodeType":"ParameterList","parameters":[{"constant":false,"id":307,"name":"","nodeType":"VariableDeclaration","scope":313,"src":"4882:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":306,"name":"uint","nodeType":"ElementaryTypeName","src":"4882:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"4881:6:0"},"scope":314,"src":"4836:95:0","stateMutability":"view","superFunction":null,"visibility":"public"}],"scope":315,"src":"27:4907:0"}],"src":"0:4934:0"},"legacyAST":{"absolutePath":"/Users/yameste/Sites/blocktrain-dapp/contracts/Journeys.sol","exportedSymbols":{"Journeys":[314]},"id":315,"nodeType":"SourceUnit","nodes":[{"id":1,"literals":["solidity","^","0.4",".21"],"nodeType":"PragmaDirective","src":"0:24:0"},{"baseContracts":[],"contractDependencies":[],"contractKind":"contract","documentation":null,"fullyImplemented":true,"id":314,"linearizedBaseContracts":[314],"name":"Journeys","nodeType":"ContractDefinition","nodes":[{"canonicalName":"Journeys.Journey","id":14,"members":[{"constant":false,"id":3,"name":"from","nodeType":"VariableDeclaration","scope":14,"src":"120:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"},"typeName":{"id":2,"name":"string","nodeType":"ElementaryTypeName","src":"120:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":5,"name":"to","nodeType":"VariableDeclaration","scope":14,"src":"141:9:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"},"typeName":{"id":4,"name":"string","nodeType":"ElementaryTypeName","src":"141:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":7,"name":"endingFare","nodeType":"VariableDeclaration","scope":14,"src":"160:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":6,"name":"uint","nodeType":"ElementaryTypeName","src":"160:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":9,"name":"walletAddress","nodeType":"VariableDeclaration","scope":14,"src":"185:21:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":8,"name":"address","nodeType":"ElementaryTypeName","src":"185:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":11,"name":"createdAt","nodeType":"VariableDeclaration","scope":14,"src":"216:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":10,"name":"uint","nodeType":"ElementaryTypeName","src":"216:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":13,"name":"updatedAt","nodeType":"VariableDeclaration","scope":14,"src":"240:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":12,"name":"uint","nodeType":"ElementaryTypeName","src":"240:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"name":"Journey","nodeType":"StructDefinition","scope":314,"src":"95:166:0","visibility":"public"},{"constant":false,"id":18,"name":"journeysIds","nodeType":"VariableDeclaration","scope":314,"src":"331:44:0","stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"},"typeName":{"id":17,"keyType":{"id":15,"name":"address","nodeType":"ElementaryTypeName","src":"340:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"nodeType":"Mapping","src":"331:25:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"},"valueType":{"id":16,"name":"uint","nodeType":"ElementaryTypeName","src":"351:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}},"value":null,"visibility":"public"},{"constant":false,"id":21,"name":"journeys","nodeType":"VariableDeclaration","scope":314,"src":"456:25:0","stateVariable":true,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey[]"},"typeName":{"baseType":{"contractScope":null,"id":19,"name":"Journey","nodeType":"UserDefinedTypeName","referencedDeclaration":14,"src":"456:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"}},"id":20,"length":null,"nodeType":"ArrayTypeName","src":"456:9:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage_ptr","typeString":"struct Journeys.Journey[]"}},"value":null,"visibility":"public"},{"anonymous":false,"documentation":null,"id":25,"name":"newJourneyRegistered","nodeType":"EventDefinition","parameters":{"id":24,"nodeType":"ParameterList","parameters":[{"constant":false,"id":23,"indexed":false,"name":"id","nodeType":"VariableDeclaration","scope":25,"src":"567:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":22,"name":"uint","nodeType":"ElementaryTypeName","src":"567:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"566:9:0"},"src":"540:36:0"},{"anonymous":false,"documentation":null,"id":29,"name":"journeyUpdateEvent","nodeType":"EventDefinition","parameters":{"id":28,"nodeType":"ParameterList","parameters":[{"constant":false,"id":27,"indexed":false,"name":"id","nodeType":"VariableDeclaration","scope":29,"src":"654:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":26,"name":"uint","nodeType":"ElementaryTypeName","src":"654:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"653:9:0"},"src":"629:34:0"},{"body":{"id":37,"nodeType":"Block","src":"777:45:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"arguments":[],"expression":{"argumentTypes":[],"id":32,"name":"isRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":304,"src":"792:12:0","typeDescriptions":{"typeIdentifier":"t_function_internal_view$__$returns$_t_bool_$","typeString":"function () view returns (bool)"}},"id":33,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"792:14:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":31,"name":"require","nodeType":"Identifier","overloadedDeclarations":[389,390],"referencedDeclaration":389,"src":"784:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":34,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"784:23:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":35,"nodeType":"ExpressionStatement","src":"784:23:0"},{"id":36,"nodeType":"PlaceholderStatement","src":"814:1:0"}]},"documentation":null,"id":38,"name":"checkSenderIsRegistered","nodeType":"ModifierDefinition","parameters":{"id":30,"nodeType":"ParameterList","parameters":[],"src":"777:0:0"},"src":"744:78:0","visibility":"internal"},{"body":{"id":69,"nodeType":"Block","src":"895:436:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"307830","id":42,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"965:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0x0"},{"argumentTypes":null,"hexValue":"","id":43,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"970:2:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},"value":""},{"argumentTypes":null,"hexValue":"","id":44,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"974:2:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},"value":""},{"argumentTypes":null,"hexValue":"30","id":45,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"978:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},{"typeIdentifier":"t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470","typeString":"literal_string \"\""},{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"}],"id":41,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"954:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":46,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"954:26:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":47,"nodeType":"ExpressionStatement","src":"954:26:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"3078333333333333333333333333","id":49,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1029:14:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_56294995342131_by_1","typeString":"int_const 56294995342131"},"value":"0x333333333333"},{"argumentTypes":null,"hexValue":"50696e6e657220556e64657267726f756e642053746174696f6e","id":50,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1045:28:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_63abc9475da595b1caf5989321ec3357b045ce7396dfbedaf8db19a2780e581c","typeString":"literal_string \"Pinner Underground Station\""},"value":"Pinner Underground Station"},{"argumentTypes":null,"hexValue":"4b696c6275726e20556e64657267726f756e642053746174696f6e","id":51,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1075:29:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},"value":"Kilburn Underground Station"},{"argumentTypes":null,"hexValue":"353930","id":52,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1106:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"},"value":"590"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_56294995342131_by_1","typeString":"int_const 56294995342131"},{"typeIdentifier":"t_stringliteral_63abc9475da595b1caf5989321ec3357b045ce7396dfbedaf8db19a2780e581c","typeString":"literal_string \"Pinner Underground Station\""},{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"}],"id":48,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1018:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":53,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1018:92:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":54,"nodeType":"ExpressionStatement","src":"1018:92:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"3078323334353339393939393939","id":56,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1131:14:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_38780226083225_by_1","typeString":"int_const 38780226083225"},"value":"0x234539999999"},{"argumentTypes":null,"hexValue":"57696c6c657364656e20556e64657267726f756e642053746174696f6e","id":57,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1147:31:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_fd876c5236d87ef79c56011b38ce5b514639f102ed51e25af4197383bbc78170","typeString":"literal_string \"Willesden Underground Station\""},"value":"Willesden Underground Station"},{"argumentTypes":null,"hexValue":"4d616964612056616c6520556e64657267726f756e642053746174696f6e","id":58,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1180:32:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_1a996c0d42ffff2cb9ede595c138b15dd3155489a0d7ffc20c3c1694b10c93be","typeString":"literal_string \"Maida Vale Underground Station\""},"value":"Maida Vale Underground Station"},{"argumentTypes":null,"hexValue":"353930","id":59,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1214:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"},"value":"590"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_38780226083225_by_1","typeString":"int_const 38780226083225"},{"typeIdentifier":"t_stringliteral_fd876c5236d87ef79c56011b38ce5b514639f102ed51e25af4197383bbc78170","typeString":"literal_string \"Willesden Underground Station\""},{"typeIdentifier":"t_stringliteral_1a996c0d42ffff2cb9ede595c138b15dd3155489a0d7ffc20c3c1694b10c93be","typeString":"literal_string \"Maida Vale Underground Station\""},{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"}],"id":55,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1120:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":60,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1120:98:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":61,"nodeType":"ExpressionStatement","src":"1120:98:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"hexValue":"3078343334353738323232323232","id":63,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1239:14:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_73965647307298_by_1","typeString":"int_const 73965647307298"},"value":"0x434578222222"},{"argumentTypes":null,"hexValue":"4265726d6f6e6473657920556e64657267726f756e642053746174696f6e","id":64,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1255:32:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_5ecf2f08b6d1627cbc794d3b2a4b050d15dc3291ae8809e41dadf03c0a9b2270","typeString":"literal_string \"Bermondsey Underground Station\""},"value":"Bermondsey Underground Station"},{"argumentTypes":null,"hexValue":"4b696c6275726e20556e64657267726f756e642053746174696f6e","id":65,"isConstant":false,"isLValue":false,"isPure":true,"kind":"string","lValueRequested":false,"nodeType":"Literal","src":"1289:29:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},"value":"Kilburn Underground Station"},{"argumentTypes":null,"hexValue":"353930","id":66,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"1320:3:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"},"value":"590"}],"expression":{"argumentTypes":[{"typeIdentifier":"t_rational_73965647307298_by_1","typeString":"int_const 73965647307298"},{"typeIdentifier":"t_stringliteral_5ecf2f08b6d1627cbc794d3b2a4b050d15dc3291ae8809e41dadf03c0a9b2270","typeString":"literal_string \"Bermondsey Underground Station\""},{"typeIdentifier":"t_stringliteral_a568c8dbdd1c1123a9b5e50b1d756d64f09498aef0f98eb94622ff1bb99d4053","typeString":"literal_string \"Kilburn Underground Station\""},{"typeIdentifier":"t_rational_590_by_1","typeString":"int_const 590"}],"id":62,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1228:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":67,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1228:96:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":68,"nodeType":"ExpressionStatement","src":"1228:96:0"}]},"documentation":"Constructor function","id":70,"implemented":true,"isConstructor":true,"isDeclaredConst":false,"modifiers":[],"name":"","nodeType":"FunctionDefinition","parameters":{"id":39,"nodeType":"ParameterList","parameters":[],"src":"885:2:0"},"payable":false,"returnParameters":{"id":40,"nodeType":"ParameterList","parameters":[],"src":"895:0:0"},"scope":314,"src":"874:457:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":89,"nodeType":"Block","src":"1603:65:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"expression":{"argumentTypes":null,"id":82,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"1628:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":83,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"1628:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":84,"name":"from","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":72,"src":"1640:4:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":85,"name":"to","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":74,"src":"1646:2:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":86,"name":"endingFare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":76,"src":"1650:10:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_address","typeString":"address"},{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"},{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"},{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":81,"name":"addJourney","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":148,"src":"1617:10:0","typeDescriptions":{"typeIdentifier":"t_function_internal_nonpayable$_t_address_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_uint256_$","typeString":"function (address,string memory,string memory,uint256) returns (uint256)"}},"id":87,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"1617:44:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":80,"id":88,"nodeType":"Return","src":"1610:51:0"}]},"documentation":"Function to register a new journey.\n     * @param from   Point of Origin\n@param to     Destination\n@param endingFare Ending Fare","id":90,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"registerJourney","nodeType":"FunctionDefinition","parameters":{"id":77,"nodeType":"ParameterList","parameters":[{"constant":false,"id":72,"name":"from","nodeType":"VariableDeclaration","scope":90,"src":"1537:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":71,"name":"string","nodeType":"ElementaryTypeName","src":"1537:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":74,"name":"to","nodeType":"VariableDeclaration","scope":90,"src":"1550:9:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":73,"name":"string","nodeType":"ElementaryTypeName","src":"1550:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":76,"name":"endingFare","nodeType":"VariableDeclaration","scope":90,"src":"1561:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":75,"name":"uint","nodeType":"ElementaryTypeName","src":"1561:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1536:41:0"},"payable":false,"returnParameters":{"id":80,"nodeType":"ParameterList","parameters":[{"constant":false,"id":79,"name":"","nodeType":"VariableDeclaration","scope":90,"src":"1593:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":78,"name":"uint","nodeType":"ElementaryTypeName","src":"1593:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"1592:6:0"},"scope":314,"src":"1512:156:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":147,"nodeType":"Block","src":"2107:720:0","statements":[{"assignments":[104],"declarations":[{"constant":false,"id":104,"name":"journeyId","nodeType":"VariableDeclaration","scope":148,"src":"2174:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":103,"name":"uint","nodeType":"ElementaryTypeName","src":"2174:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":108,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":105,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"2191:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":107,"indexExpression":{"argumentTypes":null,"id":106,"name":"wAddr","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":92,"src":"2203:5:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"2191:18:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"2174:35:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":112,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"id":110,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":104,"src":"2228:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"==","rightExpression":{"argumentTypes":null,"hexValue":"30","id":111,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"2241:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"2228:14:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":109,"name":"require","nodeType":"Identifier","overloadedDeclarations":[389,390],"referencedDeclaration":389,"src":"2219:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":113,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2219:24:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":114,"nodeType":"ExpressionStatement","src":"2219:24:0"},{"expression":{"argumentTypes":null,"id":120,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":115,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"2320:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":117,"indexExpression":{"argumentTypes":null,"id":116,"name":"wAddr","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":92,"src":"2332:5:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"nodeType":"IndexAccess","src":"2320:18:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":118,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"2341:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":119,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2341:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"2320:36:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":121,"nodeType":"ExpressionStatement","src":"2320:36:0"},{"assignments":[123],"declarations":[{"constant":false,"id":123,"name":"newJourneyId","nodeType":"VariableDeclaration","scope":148,"src":"2366:17:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":122,"name":"uint","nodeType":"ElementaryTypeName","src":"2366:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":127,"initialValue":{"argumentTypes":null,"id":126,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"UnaryOperation","operator":"++","prefix":false,"src":"2386:17:0","subExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":124,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"2386:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":125,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"2386:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"2366:37:0"},{"expression":{"argumentTypes":null,"id":139,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":128,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"2457:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":130,"indexExpression":{"argumentTypes":null,"id":129,"name":"newJourneyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":123,"src":"2466:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"nodeType":"IndexAccess","src":"2457:22:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":132,"name":"from","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":94,"src":"2510:4:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":133,"name":"to","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":96,"src":"2532:2:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},{"argumentTypes":null,"id":134,"name":"endingFare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":98,"src":"2560:10:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"id":135,"name":"wAddr","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":92,"src":"2599:5:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"id":136,"name":"now","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":388,"src":"2629:3:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"id":137,"name":"now","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":388,"src":"2657:3:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":null,"id":131,"name":"Journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":14,"src":"2482:7:0","typeDescriptions":{"typeIdentifier":"t_type$_t_struct$_Journey_$14_storage_ptr_$","typeString":"type(struct Journeys.Journey storage pointer)"}},"id":138,"isConstant":false,"isLValue":false,"isPure":false,"kind":"structConstructorCall","lValueRequested":false,"names":["from","to","endingFare","walletAddress","createdAt","updatedAt"],"nodeType":"FunctionCall","src":"2482:189:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory","typeString":"struct Journeys.Journey memory"}},"src":"2457:214:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"id":140,"nodeType":"ExpressionStatement","src":"2457:214:0"},{"eventCall":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":142,"name":"newJourneyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":123,"src":"2777:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":141,"name":"newJourneyRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":25,"src":"2756:20:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":143,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"2756:34:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":144,"nodeType":"EmitStatement","src":"2751:39:0"},{"expression":{"argumentTypes":null,"id":145,"name":"newJourneyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":123,"src":"2808:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":102,"id":146,"nodeType":"Return","src":"2801:19:0"}]},"documentation":"Add a new journey. This function must be private because a journey\ncannot insert another journey on behalf of someone else.\n     * @param wAddr \t\tAddress wallet of the journey\n@param from\t\t    Point of origin\n@param to\t\t    Destination \n@param endingFare\tending Fare","id":148,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[],"name":"addJourney","nodeType":"FunctionDefinition","parameters":{"id":99,"nodeType":"ParameterList","parameters":[{"constant":false,"id":92,"name":"wAddr","nodeType":"VariableDeclaration","scope":148,"src":"2021:13:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":91,"name":"address","nodeType":"ElementaryTypeName","src":"2021:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":94,"name":"from","nodeType":"VariableDeclaration","scope":148,"src":"2036:11:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":93,"name":"string","nodeType":"ElementaryTypeName","src":"2036:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":96,"name":"to","nodeType":"VariableDeclaration","scope":148,"src":"2049:9:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":95,"name":"string","nodeType":"ElementaryTypeName","src":"2049:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":98,"name":"endingFare","nodeType":"VariableDeclaration","scope":148,"src":"2060:15:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":97,"name":"uint","nodeType":"ElementaryTypeName","src":"2060:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"2020:56:0"},"payable":false,"returnParameters":{"id":102,"nodeType":"ParameterList","parameters":[{"constant":false,"id":101,"name":"","nodeType":"VariableDeclaration","scope":148,"src":"2097:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":100,"name":"uint","nodeType":"ElementaryTypeName","src":"2097:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"2096:6:0"},"scope":314,"src":"2001:826:0","stateMutability":"nonpayable","superFunction":null,"visibility":"private"},{"body":{"id":204,"nodeType":"Block","src":"3285:360:0","statements":[{"assignments":[162],"declarations":[{"constant":false,"id":162,"name":"journeyId","nodeType":"VariableDeclaration","scope":205,"src":"3350:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":161,"name":"uint","nodeType":"ElementaryTypeName","src":"3350:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":167,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":163,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"3367:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":166,"indexExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":164,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"3379:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":165,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"3379:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"3367:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"3350:40:0"},{"assignments":[169],"declarations":[{"constant":false,"id":169,"name":"journey","nodeType":"VariableDeclaration","scope":205,"src":"3398:23:0","stateVariable":false,"storageLocation":"storage","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"},"typeName":{"contractScope":null,"id":168,"name":"Journey","nodeType":"UserDefinedTypeName","referencedDeclaration":14,"src":"3398:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"}},"value":null,"visibility":"internal"}],"id":173,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":170,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"3424:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":172,"indexExpression":{"argumentTypes":null,"id":171,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":162,"src":"3433:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"3424:19:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"nodeType":"VariableDeclarationStatement","src":"3398:45:0"},{"expression":{"argumentTypes":null,"id":178,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":174,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3451:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":176,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"from","nodeType":"MemberAccess","referencedDeclaration":3,"src":"3451:12:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":177,"name":"newFrom","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":150,"src":"3466:7:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},"src":"3451:22:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"id":179,"nodeType":"ExpressionStatement","src":"3451:22:0"},{"expression":{"argumentTypes":null,"id":184,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":180,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3480:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":182,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"to","nodeType":"MemberAccess","referencedDeclaration":5,"src":"3480:10:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":183,"name":"newTo","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":152,"src":"3493:5:0","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string memory"}},"src":"3480:18:0","typeDescriptions":{"typeIdentifier":"t_string_storage","typeString":"string storage ref"}},"id":185,"nodeType":"ExpressionStatement","src":"3480:18:0"},{"expression":{"argumentTypes":null,"id":190,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":186,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3508:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":188,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"endingFare","nodeType":"MemberAccess","referencedDeclaration":7,"src":"3508:18:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":189,"name":"newendingFare","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":154,"src":"3529:13:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"3508:34:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":191,"nodeType":"ExpressionStatement","src":"3508:34:0"},{"expression":{"argumentTypes":null,"id":196,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftHandSide":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":192,"name":"journey","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":169,"src":"3549:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey storage pointer"}},"id":194,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":true,"memberName":"updatedAt","nodeType":"MemberAccess","referencedDeclaration":13,"src":"3549:17:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"Assignment","operator":"=","rightHandSide":{"argumentTypes":null,"id":195,"name":"now","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":388,"src":"3569:3:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"3549:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"id":197,"nodeType":"ExpressionStatement","src":"3549:23:0"},{"eventCall":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":199,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":162,"src":"3604:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":198,"name":"journeyUpdateEvent","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":29,"src":"3585:18:0","typeDescriptions":{"typeIdentifier":"t_function_event_nonpayable$_t_uint256_$returns$__$","typeString":"function (uint256)"}},"id":200,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"3585:29:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":201,"nodeType":"EmitStatement","src":"3580:34:0"},{"expression":{"argumentTypes":null,"id":202,"name":"journeyId","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":162,"src":"3629:9:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":160,"id":203,"nodeType":"Return","src":"3622:16:0"}]},"documentation":"Update the journey confirmation of the caller of this method.\nNote: the journey can modify only his own confirmation.\n     * @param newFrom\t    The new journey's displaying from\n@param newTo \t    The new journey's to\n@param newendingFare The new journey's endingFare\n     ","id":205,"implemented":true,"isConstructor":false,"isDeclaredConst":false,"modifiers":[{"arguments":null,"id":157,"modifierName":{"argumentTypes":null,"id":156,"name":"checkSenderIsRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":38,"src":"3232:23:0","typeDescriptions":{"typeIdentifier":"t_modifier$__$","typeString":"modifier ()"}},"nodeType":"ModifierInvocation","src":"3232:23:0"}],"name":"updateJourney","nodeType":"FunctionDefinition","parameters":{"id":155,"nodeType":"ParameterList","parameters":[{"constant":false,"id":150,"name":"newFrom","nodeType":"VariableDeclaration","scope":205,"src":"3182:14:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":149,"name":"string","nodeType":"ElementaryTypeName","src":"3182:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":152,"name":"newTo","nodeType":"VariableDeclaration","scope":205,"src":"3198:12:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":151,"name":"string","nodeType":"ElementaryTypeName","src":"3198:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":154,"name":"newendingFare","nodeType":"VariableDeclaration","scope":205,"src":"3212:18:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":153,"name":"uint","nodeType":"ElementaryTypeName","src":"3212:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3181:50:0"},"payable":false,"returnParameters":{"id":160,"nodeType":"ParameterList","parameters":[{"constant":false,"id":159,"name":"","nodeType":"VariableDeclaration","scope":205,"src":"3275:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":158,"name":"uint","nodeType":"ElementaryTypeName","src":"3275:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3274:6:0"},"scope":314,"src":"3159:486:0","stateMutability":"nonpayable","superFunction":null,"visibility":"public"},{"body":{"id":258,"nodeType":"Block","src":"3942:280:0","statements":[{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_bool","typeString":"bool"},"id":234,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"components":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":227,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"id":225,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"3995:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":">","rightExpression":{"argumentTypes":null,"hexValue":"30","id":226,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"4000:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"3995:6:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":228,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"3994:8:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"nodeType":"BinaryOperation","operator":"||","rightExpression":{"argumentTypes":null,"components":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":232,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"id":229,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"4007:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"<=","rightExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":230,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"4013:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":231,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4013:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"src":"4007:21:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":233,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"4006:23:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"src":"3994:35:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_bool","typeString":"bool"}],"id":224,"name":"require","nodeType":"Identifier","overloadedDeclarations":[389,390],"referencedDeclaration":389,"src":"3985:7:0","typeDescriptions":{"typeIdentifier":"t_function_require_pure$_t_bool_$returns$__$","typeString":"function (bool) pure"}},"id":235,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"3985:46:0","typeDescriptions":{"typeIdentifier":"t_tuple$__$","typeString":"tuple()"}},"id":236,"nodeType":"ExpressionStatement","src":"3985:46:0"},{"assignments":[238],"declarations":[{"constant":false,"id":238,"name":"i","nodeType":"VariableDeclaration","scope":259,"src":"4039:16:0","stateVariable":false,"storageLocation":"memory","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey"},"typeName":{"contractScope":null,"id":237,"name":"Journey","nodeType":"UserDefinedTypeName","referencedDeclaration":14,"src":"4039:7:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage_ptr","typeString":"struct Journeys.Journey"}},"value":null,"visibility":"internal"}],"id":242,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":239,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"4058:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":241,"indexExpression":{"argumentTypes":null,"id":240,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"4067:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"4058:12:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_storage","typeString":"struct Journeys.Journey storage ref"}},"nodeType":"VariableDeclarationStatement","src":"4039:31:0"},{"expression":{"argumentTypes":null,"components":[{"argumentTypes":null,"id":243,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":207,"src":"4093:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":244,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4103:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":245,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"from","nodeType":"MemberAccess","referencedDeclaration":3,"src":"4103:6:0","typeDescriptions":{"typeIdentifier":"t_string_memory","typeString":"string memory"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":246,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4117:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":247,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"to","nodeType":"MemberAccess","referencedDeclaration":5,"src":"4117:4:0","typeDescriptions":{"typeIdentifier":"t_string_memory","typeString":"string memory"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":248,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4135:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":249,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"endingFare","nodeType":"MemberAccess","referencedDeclaration":7,"src":"4135:12:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":250,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4155:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":251,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"walletAddress","nodeType":"MemberAccess","referencedDeclaration":9,"src":"4155:15:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":252,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4178:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":253,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"createdAt","nodeType":"MemberAccess","referencedDeclaration":11,"src":"4178:11:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},{"argumentTypes":null,"expression":{"argumentTypes":null,"id":254,"name":"i","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":238,"src":"4197:1:0","typeDescriptions":{"typeIdentifier":"t_struct$_Journey_$14_memory_ptr","typeString":"struct Journeys.Journey memory"}},"id":255,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"updatedAt","nodeType":"MemberAccess","referencedDeclaration":13,"src":"4197:11:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"id":256,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"4085:130:0","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_string_memory_$_t_string_memory_$_t_uint256_$_t_address_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,string memory,string memory,uint256,address,uint256,uint256)"}},"functionReturnParameters":223,"id":257,"nodeType":"Return","src":"4078:137:0"}]},"documentation":"Get the journey's confirmation information.\n     * @param id \tThe ID of the journey stored on the blockchain.","id":259,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"getJourneyById","nodeType":"FunctionDefinition","parameters":{"id":208,"nodeType":"ParameterList","parameters":[{"constant":false,"id":207,"name":"id","nodeType":"VariableDeclaration","scope":259,"src":"3816:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":206,"name":"uint","nodeType":"ElementaryTypeName","src":"3816:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3815:9:0"},"payable":false,"returnParameters":{"id":223,"nodeType":"ParameterList","parameters":[{"constant":false,"id":210,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3855:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":209,"name":"uint","nodeType":"ElementaryTypeName","src":"3855:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":212,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3866:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":211,"name":"string","nodeType":"ElementaryTypeName","src":"3866:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":214,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3879:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":213,"name":"string","nodeType":"ElementaryTypeName","src":"3879:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":216,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3895:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":215,"name":"uint","nodeType":"ElementaryTypeName","src":"3895:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":218,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3906:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":217,"name":"address","nodeType":"ElementaryTypeName","src":"3906:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":220,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3920:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":219,"name":"uint","nodeType":"ElementaryTypeName","src":"3920:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":222,"name":"","nodeType":"VariableDeclaration","scope":259,"src":"3931:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":221,"name":"uint","nodeType":"ElementaryTypeName","src":"3931:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"3848:93:0"},"scope":314,"src":"3792:430:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":289,"nodeType":"Block","src":"4468:80:0","statements":[{"assignments":[279],"declarations":[{"constant":false,"id":279,"name":"id","nodeType":"VariableDeclaration","scope":290,"src":"4475:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":278,"name":"uint","nodeType":"ElementaryTypeName","src":"4475:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"id":284,"initialValue":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":280,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"4485:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":283,"indexExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":281,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"4497:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":282,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4497:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"4485:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"VariableDeclarationStatement","src":"4475:33:0"},{"expression":{"argumentTypes":null,"arguments":[{"argumentTypes":null,"id":286,"name":"id","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":279,"src":"4538:2:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}}],"expression":{"argumentTypes":[{"typeIdentifier":"t_uint256","typeString":"uint256"}],"id":285,"name":"getJourneyById","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":259,"src":"4523:14:0","typeDescriptions":{"typeIdentifier":"t_function_internal_view$_t_uint256_$returns$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$_t_address_$_t_uint256_$_t_uint256_$","typeString":"function (uint256) view returns (uint256,string memory,string memory,uint256,address,uint256,uint256)"}},"id":287,"isConstant":false,"isLValue":false,"isPure":false,"kind":"functionCall","lValueRequested":false,"names":[],"nodeType":"FunctionCall","src":"4523:18:0","typeDescriptions":{"typeIdentifier":"t_tuple$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$_t_address_$_t_uint256_$_t_uint256_$","typeString":"tuple(uint256,string memory,string memory,uint256,address,uint256,uint256)"}},"functionReturnParameters":277,"id":288,"nodeType":"Return","src":"4516:25:0"}]},"documentation":"Return the confirmation information of the caller.","id":290,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[{"arguments":null,"id":262,"modifierName":{"argumentTypes":null,"id":261,"name":"checkSenderIsRegistered","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":38,"src":"4327:23:0","typeDescriptions":{"typeIdentifier":"t_modifier$__$","typeString":"modifier ()"}},"nodeType":"ModifierInvocation","src":"4327:23:0"}],"name":"getOwnProfile","nodeType":"FunctionDefinition","parameters":{"id":260,"nodeType":"ParameterList","parameters":[],"src":"4324:2:0"},"payable":false,"returnParameters":{"id":277,"nodeType":"ParameterList","parameters":[{"constant":false,"id":264,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4381:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":263,"name":"uint","nodeType":"ElementaryTypeName","src":"4381:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":266,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4392:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":265,"name":"string","nodeType":"ElementaryTypeName","src":"4392:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":268,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4405:6:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_string_memory_ptr","typeString":"string"},"typeName":{"id":267,"name":"string","nodeType":"ElementaryTypeName","src":"4405:6:0","typeDescriptions":{"typeIdentifier":"t_string_storage_ptr","typeString":"string"}},"value":null,"visibility":"internal"},{"constant":false,"id":270,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4421:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":269,"name":"uint","nodeType":"ElementaryTypeName","src":"4421:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":272,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4432:7:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"},"typeName":{"id":271,"name":"address","nodeType":"ElementaryTypeName","src":"4432:7:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"value":null,"visibility":"internal"},{"constant":false,"id":274,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4446:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":273,"name":"uint","nodeType":"ElementaryTypeName","src":"4446:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"},{"constant":false,"id":276,"name":"","nodeType":"VariableDeclaration","scope":290,"src":"4457:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":275,"name":"uint","nodeType":"ElementaryTypeName","src":"4457:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"4374:93:0"},"scope":314,"src":"4302:246:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":303,"nodeType":"Block","src":"4706:51:0","statements":[{"expression":{"argumentTypes":null,"components":[{"argumentTypes":null,"commonType":{"typeIdentifier":"t_uint256","typeString":"uint256"},"id":300,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"leftExpression":{"argumentTypes":null,"baseExpression":{"argumentTypes":null,"id":295,"name":"journeysIds","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":18,"src":"4721:11:0","typeDescriptions":{"typeIdentifier":"t_mapping$_t_address_$_t_uint256_$","typeString":"mapping(address => uint256)"}},"id":298,"indexExpression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":296,"name":"msg","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":386,"src":"4733:3:0","typeDescriptions":{"typeIdentifier":"t_magic_message","typeString":"msg"}},"id":297,"isConstant":false,"isLValue":false,"isPure":false,"lValueRequested":false,"memberName":"sender","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4733:10:0","typeDescriptions":{"typeIdentifier":"t_address","typeString":"address"}},"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"nodeType":"IndexAccess","src":"4721:23:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"nodeType":"BinaryOperation","operator":"!=","rightExpression":{"argumentTypes":null,"hexValue":"30","id":299,"isConstant":false,"isLValue":false,"isPure":true,"kind":"number","lValueRequested":false,"nodeType":"Literal","src":"4748:1:0","subdenomination":null,"typeDescriptions":{"typeIdentifier":"t_rational_0_by_1","typeString":"int_const 0"},"value":"0"},"src":"4721:28:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}}],"id":301,"isConstant":false,"isInlineArray":false,"isLValue":false,"isPure":false,"lValueRequested":false,"nodeType":"TupleExpression","src":"4720:30:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"functionReturnParameters":294,"id":302,"nodeType":"Return","src":"4713:37:0"}]},"documentation":"Check if the journey that is calling the smart contract is registered.","id":304,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"isRegistered","nodeType":"FunctionDefinition","parameters":{"id":291,"nodeType":"ParameterList","parameters":[],"src":"4672:2:0"},"payable":false,"returnParameters":{"id":294,"nodeType":"ParameterList","parameters":[{"constant":false,"id":293,"name":"","nodeType":"VariableDeclaration","scope":304,"src":"4696:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"},"typeName":{"id":292,"name":"bool","nodeType":"ElementaryTypeName","src":"4696:4:0","typeDescriptions":{"typeIdentifier":"t_bool","typeString":"bool"}},"value":null,"visibility":"internal"}],"src":"4695:6:0"},"scope":314,"src":"4651:106:0","stateMutability":"view","superFunction":null,"visibility":"public"},{"body":{"id":312,"nodeType":"Block","src":"4892:39:0","statements":[{"expression":{"argumentTypes":null,"expression":{"argumentTypes":null,"id":309,"name":"journeys","nodeType":"Identifier","overloadedDeclarations":[],"referencedDeclaration":21,"src":"4909:8:0","typeDescriptions":{"typeIdentifier":"t_array$_t_struct$_Journey_$14_storage_$dyn_storage","typeString":"struct Journeys.Journey storage ref[] storage ref"}},"id":310,"isConstant":false,"isLValue":true,"isPure":false,"lValueRequested":false,"memberName":"length","nodeType":"MemberAccess","referencedDeclaration":null,"src":"4909:15:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"functionReturnParameters":308,"id":311,"nodeType":"Return","src":"4902:22:0"}]},"documentation":"Return the number of total registered journeys.","id":313,"implemented":true,"isConstructor":false,"isDeclaredConst":true,"modifiers":[],"name":"totalJourneys","nodeType":"FunctionDefinition","parameters":{"id":305,"nodeType":"ParameterList","parameters":[],"src":"4858:2:0"},"payable":false,"returnParameters":{"id":308,"nodeType":"ParameterList","parameters":[{"constant":false,"id":307,"name":"","nodeType":"VariableDeclaration","scope":313,"src":"4882:4:0","stateVariable":false,"storageLocation":"default","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"},"typeName":{"id":306,"name":"uint","nodeType":"ElementaryTypeName","src":"4882:4:0","typeDescriptions":{"typeIdentifier":"t_uint256","typeString":"uint256"}},"value":null,"visibility":"internal"}],"src":"4881:6:0"},"scope":314,"src":"4836:95:0","stateMutability":"view","superFunction":null,"visibility":"public"}],"scope":315,"src":"27:4907:0"}],"src":"0:4934:0"},"compiler":{"name":"solc","version":"0.4.24+commit.e67f0147.Emscripten.clang"},"networks":{"5777":{"events":{},"links":{},"address":"0x80f080fe0d224b3ba6bb5d3e825f5661a8fe84fc","transactionHash":"0x790847c383be9ef90bbf7542f4c984fb3d2115f5d09ebf06ae343d3b3b35d8be"}},"schemaVersion":"2.0.1","updatedAt":"2018-08-22T13:16:06.557Z"}
 
 /***/ }),
-/* 278 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96630,19 +96667,19 @@ if (false) {
 }
 
 /***/ }),
-/* 279 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(280)
+  __webpack_require__(282)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(282)
+var __vue_script__ = __webpack_require__(284)
 /* template */
-var __vue_template__ = __webpack_require__(283)
+var __vue_template__ = __webpack_require__(285)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -96681,13 +96718,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 280 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(281);
+var content = __webpack_require__(283);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -96707,7 +96744,7 @@ if(false) {
 }
 
 /***/ }),
-/* 281 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -96721,7 +96758,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", 
 
 
 /***/ }),
-/* 282 */
+/* 284 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -96746,7 +96783,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 283 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96766,7 +96803,7 @@ if (false) {
 }
 
 /***/ }),
-/* 284 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -96804,37 +96841,35 @@ if (false) {
 }
 
 /***/ }),
-/* 285 */
+/* 287 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routes; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__views_Home_Home__ = __webpack_require__(286);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__views_Home_Home___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__views_Home_Home__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__views_Original_OriginalPage__ = __webpack_require__(291);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__views_Original_OriginalPage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__views_Original_OriginalPage__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_Auth_Login__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_Auth_Login___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__views_Auth_Login__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_Auth_Register__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_Auth_Register___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_Auth_Register__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Users_UserListing__ = __webpack_require__(311);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Users_UserListing___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_Users_UserListing__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_Users_UserDetail__ = __webpack_require__(316);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_Users_UserDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_Users_UserDetail__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_Users_UserRegister__ = __webpack_require__(322);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_Users_UserRegister___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_Users_UserRegister__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_Journeys_JourneyListings__ = __webpack_require__(327);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_Journeys_JourneyListings___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_Journeys_JourneyListings__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_Journeys_JourneyDetail__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_Journeys_JourneyDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_Journeys_JourneyDetail__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_Users_BalanceUpdate_vue__ = __webpack_require__(337);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_Users_BalanceUpdate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_Users_BalanceUpdate_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_Journeys_Parent__ = __webpack_require__(343);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_Journeys_Parent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_Journeys_Parent__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_Block_Confirmation__ = __webpack_require__(358);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_Block_Confirmation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_Block_Confirmation__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_Block_Listings__ = __webpack_require__(361);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_Block_Listings___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__views_Block_Listings__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__views_Original_OriginalPage__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__views_Original_OriginalPage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__views_Original_OriginalPage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__views_Auth_Login__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__views_Auth_Login___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__views_Auth_Login__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_Auth_Register__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_Auth_Register___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__views_Auth_Register__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_Users_Dashboard__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_Users_Dashboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_Users_Dashboard__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Users_UserDetail__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_Users_UserDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_Users_UserDetail__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_Users_UserRegister__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_Users_UserRegister___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__views_Users_UserRegister__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_Journeys_JourneyListings__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_Journeys_JourneyListings___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__views_Journeys_JourneyListings__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_Journeys_JourneyDetail__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_Journeys_JourneyDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__views_Journeys_JourneyDetail__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_Users_BalanceUpdate_vue__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__views_Users_BalanceUpdate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__views_Users_BalanceUpdate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_Journeys_Parent__ = __webpack_require__(342);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_Journeys_Parent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__views_Journeys_Parent__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_Block_Confirmation__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_Block_Confirmation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__views_Block_Confirmation__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_Block_Listings__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_Block_Listings___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__views_Block_Listings__);
 
 
 
@@ -96851,50 +96886,41 @@ if (false) {
 
 
 var routes = [{
-    path: '/',
-    name: 'home',
-    component: __WEBPACK_IMPORTED_MODULE_0__views_Home_Home___default.a,
+    path: '/dashboard',
+    name: 'dashboard',
+    component: __WEBPACK_IMPORTED_MODULE_3__views_Users_Dashboard___default.a,
     meta: {
         requiresAuth: true
     }
 }, {
     path: '/login',
     name: 'login',
-    component: __WEBPACK_IMPORTED_MODULE_2__views_Auth_Login___default.a
+    component: __WEBPACK_IMPORTED_MODULE_1__views_Auth_Login___default.a
 }, {
     path: '/register',
     name: 'register',
-    component: __WEBPACK_IMPORTED_MODULE_3__views_Auth_Register___default.a
+    component: __WEBPACK_IMPORTED_MODULE_2__views_Auth_Register___default.a
 
 }, {
     path: '/original',
     name: 'original',
-    component: __WEBPACK_IMPORTED_MODULE_1__views_Original_OriginalPage___default.a
+    component: __WEBPACK_IMPORTED_MODULE_0__views_Original_OriginalPage___default.a
 }, {
     path: '/users/register',
     name: 'user.register',
-    component: __WEBPACK_IMPORTED_MODULE_6__views_Users_UserRegister___default.a,
+    component: __WEBPACK_IMPORTED_MODULE_5__views_Users_UserRegister___default.a,
     meta: {
         requiresAuth: true
     }
-}, {
-
-    path: '/users',
-    name: 'users',
-    component: __WEBPACK_IMPORTED_MODULE_4__views_Users_UserListing___default.a,
-    meta: {
-        requiresAuth: true
-    }
-
 }, { path: '/users/:id',
     name: 'user.detail',
-    component: __WEBPACK_IMPORTED_MODULE_5__views_Users_UserDetail___default.a,
+    component: __WEBPACK_IMPORTED_MODULE_4__views_Users_UserDetail___default.a,
     meta: {
         requiresAuth: true
     }
 }, { path: '/users/:id/topup',
     name: 'user.update',
-    component: __WEBPACK_IMPORTED_MODULE_9__views_Users_BalanceUpdate_vue___default.a,
+    component: __WEBPACK_IMPORTED_MODULE_8__views_Users_BalanceUpdate_vue___default.a,
     meta: {
         requiresAuth: true
     }
@@ -96902,7 +96928,7 @@ var routes = [{
     path: '/users/:id/journeys',
     name: 'journey.listings',
     props: true,
-    component: __WEBPACK_IMPORTED_MODULE_7__views_Journeys_JourneyListings___default.a,
+    component: __WEBPACK_IMPORTED_MODULE_6__views_Journeys_JourneyListings___default.a,
     meta: {
         requiresAuth: true
     }
@@ -96910,14 +96936,14 @@ var routes = [{
     path: '/users/:id/journeys/:journey',
     name: 'journey.detail',
     props: true,
-    component: __WEBPACK_IMPORTED_MODULE_8__views_Journeys_JourneyDetail___default.a,
+    component: __WEBPACK_IMPORTED_MODULE_7__views_Journeys_JourneyDetail___default.a,
     meta: {
         requiresAuth: true
     }
 }, { path: '/users/:id/make/journey',
     name: 'journey.make',
     props: true,
-    component: __WEBPACK_IMPORTED_MODULE_10__views_Journeys_Parent___default.a,
+    component: __WEBPACK_IMPORTED_MODULE_9__views_Journeys_Parent___default.a,
     meta: {
         requiresAuth: true
     }
@@ -96925,7 +96951,7 @@ var routes = [{
     path: '/users/:id/blockchain',
     name: 'block.chain',
     props: true,
-    component: __WEBPACK_IMPORTED_MODULE_12__views_Block_Listings___default.a,
+    component: __WEBPACK_IMPORTED_MODULE_11__views_Block_Listings___default.a,
     meta: {
         requiresAuth: true
     }
@@ -96934,7 +96960,7 @@ var routes = [{
     path: '/confirmation',
     name: 'block.confirmation',
     props: true,
-    component: __WEBPACK_IMPORTED_MODULE_11__views_Block_Confirmation___default.a,
+    component: __WEBPACK_IMPORTED_MODULE_10__views_Block_Confirmation___default.a,
     meta: {
         requiresAuth: true
     }
@@ -96942,175 +96968,19 @@ var routes = [{
 }];
 
 /***/ }),
-/* 286 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(287)
-}
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(289)
-/* template */
-var __vue_template__ = __webpack_require__(290)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-fe5bf728"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/views/Home/Home.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-fe5bf728", Component.options)
-  } else {
-    hotAPI.reload("data-v-fe5bf728", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 287 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(288);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(6)("71c63404", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fe5bf728\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fe5bf728\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
 /* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\nh1[data-v-fe5bf728] {\n    text-align: center;\n    padding: 20px;\n}\n.container[data-v-fe5bf728] {\n    max-width: 960px;\n}\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 289 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-
-    computed: {
-        welcome: function welcome() {
-            return this.$store.getters.welcome;
-        }
-    }
-
-});
-
-/***/ }),
-/* 290 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "jumbotron" }, [
-    _c("h1", { staticClass: "display-4" }, [_vm._v("Welcome Home")]),
-    _vm._v(" "),
-    _c("h4", [_vm._v("Your Train is Blocked !")]),
-    _vm._v(" "),
-    _c("p", { staticClass: "lead" }, [
-      _vm._v("You are on the home page of the Vue application")
-    ]),
-    _vm._v(" "),
-    _c("hr", { staticClass: "my-4" }),
-    _vm._v(" "),
-    _c("p", [_vm._v("This text is not important, but thanks for reading it.")]),
-    _vm._v("\n    " + _vm._s(_vm.welcome) + "\n    \n    \n")
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-fe5bf728", module.exports)
-  }
-}
-
-/***/ }),
-/* 291 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(292)
+  __webpack_require__(289)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(294)
+var __vue_script__ = __webpack_require__(291)
 /* template */
-var __vue_template__ = __webpack_require__(300)
+var __vue_template__ = __webpack_require__(297)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -97149,13 +97019,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 292 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(293);
+var content = __webpack_require__(290);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -97175,7 +97045,7 @@ if(false) {
 }
 
 /***/ }),
-/* 293 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -97189,12 +97059,12 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 294 */
+/* 291 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Original_vue__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Original_vue__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Original_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Original_vue__);
 //
 //
@@ -97222,19 +97092,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 295 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(296)
+  __webpack_require__(293)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(298)
+var __vue_script__ = __webpack_require__(295)
 /* template */
-var __vue_template__ = __webpack_require__(299)
+var __vue_template__ = __webpack_require__(296)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -97273,13 +97143,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 296 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(297);
+var content = __webpack_require__(294);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -97299,7 +97169,7 @@ if(false) {
 }
 
 /***/ }),
-/* 297 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -97313,7 +97183,7 @@ exports.push([module.i, "\n.container[data-v-d23f90a8] {\n    height: 420px;\n}\
 
 
 /***/ }),
-/* 298 */
+/* 295 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -97519,7 +97389,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 299 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97933,7 +97803,7 @@ if (false) {
 }
 
 /***/ }),
-/* 300 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97953,19 +97823,19 @@ if (false) {
 }
 
 /***/ }),
-/* 301 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(302)
+  __webpack_require__(299)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(304)
+var __vue_script__ = __webpack_require__(301)
 /* template */
-var __vue_template__ = __webpack_require__(305)
+var __vue_template__ = __webpack_require__(302)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -98004,13 +97874,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 302 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(303);
+var content = __webpack_require__(300);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -98030,7 +97900,7 @@ if(false) {
 }
 
 /***/ }),
-/* 303 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -98044,7 +97914,7 @@ exports.push([module.i, "\n.error[data-v-15deb135] {\n    text-align: center;\n 
 
 
 /***/ }),
-/* 304 */
+/* 301 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98107,7 +97977,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$store.dispatch('login');
             Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["b" /* login */])(this.$data.form).then(function (res) {
                 _this.$store.commit("loginSuccess", res);
-                _this.$router.push({ path: '/' });
+                _this.$router.push({ path: '/dashboard' });
             }).catch(function (error) {
                 _this.$store.commit('loginFailed', { error: error });
             });
@@ -98122,7 +97992,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 305 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -98250,19 +98120,19 @@ if (false) {
 }
 
 /***/ }),
-/* 306 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(307)
+  __webpack_require__(304)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(309)
+var __vue_script__ = __webpack_require__(306)
 /* template */
-var __vue_template__ = __webpack_require__(310)
+var __vue_template__ = __webpack_require__(307)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -98301,13 +98171,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 307 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(308);
+var content = __webpack_require__(305);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -98327,7 +98197,7 @@ if(false) {
 }
 
 /***/ }),
-/* 308 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -98341,7 +98211,7 @@ exports.push([module.i, "\n.error[data-v-777e40f2] {\n    text-align: center;\n 
 
 
 /***/ }),
-/* 309 */
+/* 306 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98478,7 +98348,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 310 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -98827,15 +98697,15 @@ if (false) {
 }
 
 /***/ }),
-/* 311 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(312)
+var __vue_script__ = __webpack_require__(309)
 /* template */
-var __vue_template__ = __webpack_require__(315)
+var __vue_template__ = __webpack_require__(314)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -98852,7 +98722,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/views/Users/UserListing.vue"
+Component.options.__file = "resources/assets/js/views/Users/Dashboard.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -98861,9 +98731,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5a7d904f", Component.options)
+    hotAPI.createRecord("data-v-48bea0aa", Component.options)
   } else {
-    hotAPI.reload("data-v-5a7d904f", Component.options)
+    hotAPI.reload("data-v-48bea0aa", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -98874,15 +98744,48 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 312 */
+/* 309 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SideMenu_vue__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SideMenu_vue__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SideMenu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__SideMenu_vue__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -98984,7 +98887,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 });
 
 /***/ }),
-/* 313 */
+/* 310 */
 /***/ (function(module, exports) {
 
 //
@@ -99005,10 +98908,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 /***/ }),
-/* 314 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -99031,19 +98933,19 @@ var staticRenderFns = [
         _c(
           "a",
           { staticClass: "list-group-item text-center", attrs: { href: "#" } },
-          [_vm._v("Contactless")]
+          [_vm._v("Adult Concessions")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
+          [_vm._v("Price Caps")]
         ),
         _vm._v(" "),
         _c(
           "a",
           { staticClass: "list-group-item text-center", attrs: { href: "#" } },
           [_vm._v("Change My Password")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
-          [_vm._v("Order History")]
         ),
         _vm._v(" "),
         _c(
@@ -99067,12 +98969,6 @@ var staticRenderFns = [
         _c(
           "a",
           { staticClass: "list-group-item text-center", attrs: { href: "#" } },
-          [_vm._v("View Change Details")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "list-group-item text-center", attrs: { href: "#" } },
           [_vm._v("Log Out")]
         )
       ])
@@ -99089,7 +98985,9 @@ if (false) {
 }
 
 /***/ }),
-/* 315 */
+/* 312 */,
+/* 313 */,
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -99109,12 +99007,50 @@ var render = function() {
               [
                 _c("br"),
                 _vm._v(" "),
-                _c("h2", [_vm._v("My Zorra Cards")]),
+                _c("h2", [_vm._v("Your Dashboard")]),
                 _vm._v(" "),
                 _c("hr"),
                 _vm._v(" "),
                 _vm._l(_vm.users, function(user) {
                   return _c("div", { staticClass: "single-card" }, [
+                    _c("br"),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "card", staticStyle: { width: "18rem" } },
+                      [
+                        _c("div", { staticClass: "card-body" }, [
+                          _c(
+                            "h5",
+                            { staticClass: "card-title" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "card-link",
+                                  attrs: {
+                                    to: "/users/" + user.id + "/make/journey"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-plus",
+                                    attrs: { "aria-hidden": "true" }
+                                  }),
+                                  _c("h6", [_vm._v("New Journey")])
+                                ]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "card-text" }, [
+                            _vm._v("Start Your New Journey Here")
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
                     _c("br"),
                     _vm._v(" "),
                     _c("ul", { staticClass: "list-group" }, [
@@ -99129,8 +99065,19 @@ var render = function() {
                             "div",
                             { staticClass: "card-body" },
                             [
-                              _c("h5", { staticClass: "card-title" }, [
-                                _vm._v("Card Number:  " + _vm._s(user.id))
+                              _c("i", {
+                                staticClass: "fa fa-id-card",
+                                attrs: { "aria-hidden": "true" }
+                              }),
+                              _vm._v(" "),
+                              _c("h6", { staticClass: "card-title" }, [
+                                _vm._v("Card No:  " + _vm._s(user.id))
+                              ]),
+                              _vm._v(" "),
+                              _c("br"),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "card-text" }, [
+                                _vm._v("Card Management")
                               ]),
                               _vm._v(" "),
                               _c(
@@ -99151,9 +99098,12 @@ var render = function() {
                                 ]
                               ),
                               _vm._v(" "),
-                              _c("p", { staticClass: "card-text" }, [
-                                _vm._v("Card Management")
-                              ]),
+                              _c("br"),
+                              _vm._v(" "),
+                              _c("i", {
+                                staticClass: "fa fa-wrench",
+                                attrs: { "aria-hidden": "true" }
+                              }),
                               _vm._v(" "),
                               _c(
                                 "router-link",
@@ -99161,8 +99111,13 @@ var render = function() {
                                   staticClass: "card-link",
                                   attrs: { to: "/users/" + user.id }
                                 },
-                                [_c("h6", [_vm._v("View / Change Card  ")])]
+                                [_c("h6", [_vm._v("Edit Card  ")])]
                               ),
+                              _vm._v(" "),
+                              _c("i", {
+                                staticClass: "fa fa-credit-card",
+                                attrs: { "aria-hidden": "true" }
+                              }),
                               _vm._v(" "),
                               _c(
                                 "router-link",
@@ -99170,33 +99125,25 @@ var render = function() {
                                   staticClass: "card-link",
                                   attrs: { to: "/users/" + user.id + "/topup" }
                                 },
-                                [_c("h6", [_vm._v("Top Up  ")])]
+                                [_c("h6", [_vm._v("Top Up")])]
                               ),
                               _vm._v(" "),
-                              _c(
-                                "router-link",
-                                {
-                                  staticClass: "card-link",
-                                  attrs: { to: "/users/register" }
-                                },
-                                [_c("h6", [_vm._v(" New Card ")])]
-                              ),
+                              _c("hr"),
                               _vm._v(" "),
-                              _c("br"),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "card-text" }, [
-                                _vm._v("Journeys")
-                              ]),
+                              _c("i", {
+                                staticClass: "fa fa-subway",
+                                attrs: { "aria-hidden": "true" }
+                              }),
                               _vm._v(" "),
                               _c(
                                 "router-link",
                                 {
                                   staticClass: "card-link",
                                   attrs: {
-                                    to: "/users/" + user.id + "/make/journey"
+                                    to: "/users/" + user.id + "/journeys"
                                   }
                                 },
-                                [_c("h6", [_vm._v("Start Journey")])]
+                                [_c("h6", [_vm._v("Journeys")])]
                               ),
                               _vm._v(" "),
                               _c(
@@ -99207,8 +99154,10 @@ var render = function() {
                                     to: "/users/" + user.id + "/journeys"
                                   }
                                 },
-                                [_c("h6", [_vm._v("Journey History")])]
+                                [_c("h6", [_vm._v("Incomplete Journeys")])]
                               ),
+                              _vm._v(" "),
+                              _c("br"),
                               _vm._v(" "),
                               _c(
                                 "router-link",
@@ -99218,11 +99167,91 @@ var render = function() {
                                     to: "/users/" + user.id + "/blockchain"
                                   }
                                 },
-                                [_c("h6", [_vm._v("My BlockChain")])]
+                                [_c("h6", [_vm._v("BlockChain")])]
                               )
                             ],
                             1
                           )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "card",
+                          staticStyle: { width: "18rem" }
+                        },
+                        [
+                          _c("div", { staticClass: "card-body" }, [
+                            _c(
+                              "h5",
+                              { staticClass: "card-title" },
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "card-link",
+                                    attrs: {
+                                      to: "/users/" + user.id + "/make/journey"
+                                    }
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fa fa-plus",
+                                      attrs: { "aria-hidden": "true" }
+                                    }),
+                                    _c("h6", [_vm._v("Add An Existing Card")])
+                                  ]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "card-text" }, [
+                              _vm._v("Add An Existing Card Here")
+                            ])
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "card",
+                          staticStyle: { width: "18rem" }
+                        },
+                        [
+                          _c("div", { staticClass: "card-body" }, [
+                            _c(
+                              "h5",
+                              { staticClass: "card-title" },
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "card-link",
+                                    attrs: { to: "/users/register" }
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fa fa-plus",
+                                      attrs: { "aria-hidden": "true" }
+                                    }),
+                                    _c("h6", [_vm._v(" New Card ")])
+                                  ]
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "card-text" }, [
+                              _vm._v("Get A New Card")
+                            ])
+                          ])
                         ]
                       )
                     ])
@@ -99246,24 +99275,24 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5a7d904f", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-48bea0aa", module.exports)
   }
 }
 
 /***/ }),
-/* 316 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(317)
+  __webpack_require__(316)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(319)
+var __vue_script__ = __webpack_require__(318)
 /* template */
-var __vue_template__ = __webpack_require__(321)
+var __vue_template__ = __webpack_require__(320)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -99302,13 +99331,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 317 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(318);
+var content = __webpack_require__(317);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -99328,7 +99357,7 @@ if(false) {
 }
 
 /***/ }),
-/* 318 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -99342,13 +99371,13 @@ exports.push([module.i, "\n#single-card[data-v-67977a54] {\n    max-width: 960px
 
 
 /***/ }),
-/* 319 */
+/* 318 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SideMenu_vue__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SideMenu_vue__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SideMenu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__SideMenu_vue__);
 //
 //
@@ -99459,256 +99488,256 @@ var moment = __webpack_require__(0);
 });
 
 /***/ }),
-/* 320 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 51,
-	"./af.js": 51,
-	"./ar": 52,
-	"./ar-dz": 53,
-	"./ar-dz.js": 53,
-	"./ar-kw": 54,
-	"./ar-kw.js": 54,
-	"./ar-ly": 55,
-	"./ar-ly.js": 55,
-	"./ar-ma": 56,
-	"./ar-ma.js": 56,
-	"./ar-sa": 57,
-	"./ar-sa.js": 57,
-	"./ar-tn": 58,
-	"./ar-tn.js": 58,
-	"./ar.js": 52,
-	"./az": 59,
-	"./az.js": 59,
-	"./be": 60,
-	"./be.js": 60,
-	"./bg": 61,
-	"./bg.js": 61,
-	"./bm": 62,
-	"./bm.js": 62,
-	"./bn": 63,
-	"./bn.js": 63,
-	"./bo": 64,
-	"./bo.js": 64,
-	"./br": 65,
-	"./br.js": 65,
-	"./bs": 66,
-	"./bs.js": 66,
-	"./ca": 67,
-	"./ca.js": 67,
-	"./cs": 68,
-	"./cs.js": 68,
-	"./cv": 69,
-	"./cv.js": 69,
-	"./cy": 70,
-	"./cy.js": 70,
-	"./da": 71,
-	"./da.js": 71,
-	"./de": 72,
-	"./de-at": 73,
-	"./de-at.js": 73,
-	"./de-ch": 74,
-	"./de-ch.js": 74,
-	"./de.js": 72,
-	"./dv": 75,
-	"./dv.js": 75,
-	"./el": 76,
-	"./el.js": 76,
-	"./en-au": 77,
-	"./en-au.js": 77,
-	"./en-ca": 78,
-	"./en-ca.js": 78,
-	"./en-gb": 79,
-	"./en-gb.js": 79,
-	"./en-ie": 80,
-	"./en-ie.js": 80,
-	"./en-il": 81,
-	"./en-il.js": 81,
-	"./en-nz": 82,
-	"./en-nz.js": 82,
-	"./eo": 83,
-	"./eo.js": 83,
-	"./es": 84,
-	"./es-do": 85,
-	"./es-do.js": 85,
-	"./es-us": 86,
-	"./es-us.js": 86,
-	"./es.js": 84,
-	"./et": 87,
-	"./et.js": 87,
-	"./eu": 88,
-	"./eu.js": 88,
-	"./fa": 89,
-	"./fa.js": 89,
-	"./fi": 90,
-	"./fi.js": 90,
-	"./fo": 91,
-	"./fo.js": 91,
-	"./fr": 92,
-	"./fr-ca": 93,
-	"./fr-ca.js": 93,
-	"./fr-ch": 94,
-	"./fr-ch.js": 94,
-	"./fr.js": 92,
-	"./fy": 95,
-	"./fy.js": 95,
-	"./gd": 96,
-	"./gd.js": 96,
-	"./gl": 97,
-	"./gl.js": 97,
-	"./gom-latn": 98,
-	"./gom-latn.js": 98,
-	"./gu": 99,
-	"./gu.js": 99,
-	"./he": 100,
-	"./he.js": 100,
-	"./hi": 101,
-	"./hi.js": 101,
-	"./hr": 102,
-	"./hr.js": 102,
-	"./hu": 103,
-	"./hu.js": 103,
-	"./hy-am": 104,
-	"./hy-am.js": 104,
-	"./id": 105,
-	"./id.js": 105,
-	"./is": 106,
-	"./is.js": 106,
-	"./it": 107,
-	"./it.js": 107,
-	"./ja": 108,
-	"./ja.js": 108,
-	"./jv": 109,
-	"./jv.js": 109,
-	"./ka": 110,
-	"./ka.js": 110,
-	"./kk": 111,
-	"./kk.js": 111,
-	"./km": 112,
-	"./km.js": 112,
-	"./kn": 113,
-	"./kn.js": 113,
-	"./ko": 114,
-	"./ko.js": 114,
-	"./ky": 115,
-	"./ky.js": 115,
-	"./lb": 116,
-	"./lb.js": 116,
-	"./lo": 117,
-	"./lo.js": 117,
-	"./lt": 118,
-	"./lt.js": 118,
-	"./lv": 119,
-	"./lv.js": 119,
-	"./me": 120,
-	"./me.js": 120,
-	"./mi": 121,
-	"./mi.js": 121,
-	"./mk": 122,
-	"./mk.js": 122,
-	"./ml": 123,
-	"./ml.js": 123,
-	"./mn": 124,
-	"./mn.js": 124,
-	"./mr": 125,
-	"./mr.js": 125,
-	"./ms": 126,
-	"./ms-my": 127,
-	"./ms-my.js": 127,
-	"./ms.js": 126,
-	"./mt": 128,
-	"./mt.js": 128,
-	"./my": 129,
-	"./my.js": 129,
-	"./nb": 130,
-	"./nb.js": 130,
-	"./ne": 131,
-	"./ne.js": 131,
-	"./nl": 132,
-	"./nl-be": 133,
-	"./nl-be.js": 133,
-	"./nl.js": 132,
-	"./nn": 134,
-	"./nn.js": 134,
-	"./pa-in": 135,
-	"./pa-in.js": 135,
-	"./pl": 136,
-	"./pl.js": 136,
-	"./pt": 137,
-	"./pt-br": 138,
-	"./pt-br.js": 138,
-	"./pt.js": 137,
-	"./ro": 139,
-	"./ro.js": 139,
-	"./ru": 140,
-	"./ru.js": 140,
-	"./sd": 141,
-	"./sd.js": 141,
-	"./se": 142,
-	"./se.js": 142,
-	"./si": 143,
-	"./si.js": 143,
-	"./sk": 144,
-	"./sk.js": 144,
-	"./sl": 145,
-	"./sl.js": 145,
-	"./sq": 146,
-	"./sq.js": 146,
-	"./sr": 147,
-	"./sr-cyrl": 148,
-	"./sr-cyrl.js": 148,
-	"./sr.js": 147,
-	"./ss": 149,
-	"./ss.js": 149,
-	"./sv": 150,
-	"./sv.js": 150,
-	"./sw": 151,
-	"./sw.js": 151,
-	"./ta": 152,
-	"./ta.js": 152,
-	"./te": 153,
-	"./te.js": 153,
-	"./tet": 154,
-	"./tet.js": 154,
-	"./tg": 155,
-	"./tg.js": 155,
-	"./th": 156,
-	"./th.js": 156,
-	"./tl-ph": 157,
-	"./tl-ph.js": 157,
-	"./tlh": 158,
-	"./tlh.js": 158,
-	"./tr": 159,
-	"./tr.js": 159,
-	"./tzl": 160,
-	"./tzl.js": 160,
-	"./tzm": 161,
-	"./tzm-latn": 162,
-	"./tzm-latn.js": 162,
-	"./tzm.js": 161,
-	"./ug-cn": 163,
-	"./ug-cn.js": 163,
-	"./uk": 164,
-	"./uk.js": 164,
-	"./ur": 165,
-	"./ur.js": 165,
-	"./uz": 166,
-	"./uz-latn": 167,
-	"./uz-latn.js": 167,
-	"./uz.js": 166,
-	"./vi": 168,
-	"./vi.js": 168,
-	"./x-pseudo": 169,
-	"./x-pseudo.js": 169,
-	"./yo": 170,
-	"./yo.js": 170,
-	"./zh-cn": 171,
-	"./zh-cn.js": 171,
-	"./zh-hk": 172,
-	"./zh-hk.js": 172,
-	"./zh-tw": 173,
-	"./zh-tw.js": 173
+	"./af": 52,
+	"./af.js": 52,
+	"./ar": 53,
+	"./ar-dz": 54,
+	"./ar-dz.js": 54,
+	"./ar-kw": 55,
+	"./ar-kw.js": 55,
+	"./ar-ly": 56,
+	"./ar-ly.js": 56,
+	"./ar-ma": 57,
+	"./ar-ma.js": 57,
+	"./ar-sa": 58,
+	"./ar-sa.js": 58,
+	"./ar-tn": 59,
+	"./ar-tn.js": 59,
+	"./ar.js": 53,
+	"./az": 60,
+	"./az.js": 60,
+	"./be": 61,
+	"./be.js": 61,
+	"./bg": 62,
+	"./bg.js": 62,
+	"./bm": 63,
+	"./bm.js": 63,
+	"./bn": 64,
+	"./bn.js": 64,
+	"./bo": 65,
+	"./bo.js": 65,
+	"./br": 66,
+	"./br.js": 66,
+	"./bs": 67,
+	"./bs.js": 67,
+	"./ca": 68,
+	"./ca.js": 68,
+	"./cs": 69,
+	"./cs.js": 69,
+	"./cv": 70,
+	"./cv.js": 70,
+	"./cy": 71,
+	"./cy.js": 71,
+	"./da": 72,
+	"./da.js": 72,
+	"./de": 73,
+	"./de-at": 74,
+	"./de-at.js": 74,
+	"./de-ch": 75,
+	"./de-ch.js": 75,
+	"./de.js": 73,
+	"./dv": 76,
+	"./dv.js": 76,
+	"./el": 77,
+	"./el.js": 77,
+	"./en-au": 78,
+	"./en-au.js": 78,
+	"./en-ca": 79,
+	"./en-ca.js": 79,
+	"./en-gb": 80,
+	"./en-gb.js": 80,
+	"./en-ie": 81,
+	"./en-ie.js": 81,
+	"./en-il": 82,
+	"./en-il.js": 82,
+	"./en-nz": 83,
+	"./en-nz.js": 83,
+	"./eo": 84,
+	"./eo.js": 84,
+	"./es": 85,
+	"./es-do": 86,
+	"./es-do.js": 86,
+	"./es-us": 87,
+	"./es-us.js": 87,
+	"./es.js": 85,
+	"./et": 88,
+	"./et.js": 88,
+	"./eu": 89,
+	"./eu.js": 89,
+	"./fa": 90,
+	"./fa.js": 90,
+	"./fi": 91,
+	"./fi.js": 91,
+	"./fo": 92,
+	"./fo.js": 92,
+	"./fr": 93,
+	"./fr-ca": 94,
+	"./fr-ca.js": 94,
+	"./fr-ch": 95,
+	"./fr-ch.js": 95,
+	"./fr.js": 93,
+	"./fy": 96,
+	"./fy.js": 96,
+	"./gd": 97,
+	"./gd.js": 97,
+	"./gl": 98,
+	"./gl.js": 98,
+	"./gom-latn": 99,
+	"./gom-latn.js": 99,
+	"./gu": 100,
+	"./gu.js": 100,
+	"./he": 101,
+	"./he.js": 101,
+	"./hi": 102,
+	"./hi.js": 102,
+	"./hr": 103,
+	"./hr.js": 103,
+	"./hu": 104,
+	"./hu.js": 104,
+	"./hy-am": 105,
+	"./hy-am.js": 105,
+	"./id": 106,
+	"./id.js": 106,
+	"./is": 107,
+	"./is.js": 107,
+	"./it": 108,
+	"./it.js": 108,
+	"./ja": 109,
+	"./ja.js": 109,
+	"./jv": 110,
+	"./jv.js": 110,
+	"./ka": 111,
+	"./ka.js": 111,
+	"./kk": 112,
+	"./kk.js": 112,
+	"./km": 113,
+	"./km.js": 113,
+	"./kn": 114,
+	"./kn.js": 114,
+	"./ko": 115,
+	"./ko.js": 115,
+	"./ky": 116,
+	"./ky.js": 116,
+	"./lb": 117,
+	"./lb.js": 117,
+	"./lo": 118,
+	"./lo.js": 118,
+	"./lt": 119,
+	"./lt.js": 119,
+	"./lv": 120,
+	"./lv.js": 120,
+	"./me": 121,
+	"./me.js": 121,
+	"./mi": 122,
+	"./mi.js": 122,
+	"./mk": 123,
+	"./mk.js": 123,
+	"./ml": 124,
+	"./ml.js": 124,
+	"./mn": 125,
+	"./mn.js": 125,
+	"./mr": 126,
+	"./mr.js": 126,
+	"./ms": 127,
+	"./ms-my": 128,
+	"./ms-my.js": 128,
+	"./ms.js": 127,
+	"./mt": 129,
+	"./mt.js": 129,
+	"./my": 130,
+	"./my.js": 130,
+	"./nb": 131,
+	"./nb.js": 131,
+	"./ne": 132,
+	"./ne.js": 132,
+	"./nl": 133,
+	"./nl-be": 134,
+	"./nl-be.js": 134,
+	"./nl.js": 133,
+	"./nn": 135,
+	"./nn.js": 135,
+	"./pa-in": 136,
+	"./pa-in.js": 136,
+	"./pl": 137,
+	"./pl.js": 137,
+	"./pt": 138,
+	"./pt-br": 139,
+	"./pt-br.js": 139,
+	"./pt.js": 138,
+	"./ro": 140,
+	"./ro.js": 140,
+	"./ru": 141,
+	"./ru.js": 141,
+	"./sd": 142,
+	"./sd.js": 142,
+	"./se": 143,
+	"./se.js": 143,
+	"./si": 144,
+	"./si.js": 144,
+	"./sk": 145,
+	"./sk.js": 145,
+	"./sl": 146,
+	"./sl.js": 146,
+	"./sq": 147,
+	"./sq.js": 147,
+	"./sr": 148,
+	"./sr-cyrl": 149,
+	"./sr-cyrl.js": 149,
+	"./sr.js": 148,
+	"./ss": 150,
+	"./ss.js": 150,
+	"./sv": 151,
+	"./sv.js": 151,
+	"./sw": 152,
+	"./sw.js": 152,
+	"./ta": 153,
+	"./ta.js": 153,
+	"./te": 154,
+	"./te.js": 154,
+	"./tet": 155,
+	"./tet.js": 155,
+	"./tg": 156,
+	"./tg.js": 156,
+	"./th": 157,
+	"./th.js": 157,
+	"./tl-ph": 158,
+	"./tl-ph.js": 158,
+	"./tlh": 159,
+	"./tlh.js": 159,
+	"./tr": 160,
+	"./tr.js": 160,
+	"./tzl": 161,
+	"./tzl.js": 161,
+	"./tzm": 162,
+	"./tzm-latn": 163,
+	"./tzm-latn.js": 163,
+	"./tzm.js": 162,
+	"./ug-cn": 164,
+	"./ug-cn.js": 164,
+	"./uk": 165,
+	"./uk.js": 165,
+	"./ur": 166,
+	"./ur.js": 166,
+	"./uz": 167,
+	"./uz-latn": 168,
+	"./uz-latn.js": 168,
+	"./uz.js": 167,
+	"./vi": 169,
+	"./vi.js": 169,
+	"./x-pseudo": 170,
+	"./x-pseudo.js": 170,
+	"./yo": 171,
+	"./yo.js": 171,
+	"./zh-cn": 172,
+	"./zh-cn.js": 172,
+	"./zh-hk": 173,
+	"./zh-hk.js": 173,
+	"./zh-tw": 174,
+	"./zh-tw.js": 174
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -99724,10 +99753,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 320;
+webpackContext.id = 319;
 
 /***/ }),
-/* 321 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -99821,19 +99850,19 @@ if (false) {
 }
 
 /***/ }),
-/* 322 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(323)
+  __webpack_require__(322)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(325)
+var __vue_script__ = __webpack_require__(324)
 /* template */
-var __vue_template__ = __webpack_require__(326)
+var __vue_template__ = __webpack_require__(325)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -99872,13 +99901,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 323 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(324);
+var content = __webpack_require__(323);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -99898,7 +99927,7 @@ if(false) {
 }
 
 /***/ }),
-/* 324 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -99912,7 +99941,7 @@ exports.push([module.i, "\n.error[data-v-49ce78e8] {\n    text-align: center;\n 
 
 
 /***/ }),
-/* 325 */
+/* 324 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100032,7 +100061,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             Object(__WEBPACK_IMPORTED_MODULE_0__helpers_auth__["c" /* register */])(this.$data.form).then(function (res) {
                 _this.$store.commit("registerSuccess", res);
                 alert('Your card has been registered successfully');
-                _this.$router.push({ path: '/' });
+                _this.$router.push({ path: '/dashboard' });
             }).catch(function (error) {
                 _this.$store.commit('registerFailed', { error: error });
             });
@@ -100048,7 +100077,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 326 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -100397,19 +100426,19 @@ if (false) {
 }
 
 /***/ }),
-/* 327 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(328)
+  __webpack_require__(327)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(330)
+var __vue_script__ = __webpack_require__(329)
 /* template */
-var __vue_template__ = __webpack_require__(331)
+var __vue_template__ = __webpack_require__(330)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -100448,13 +100477,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 328 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(329);
+var content = __webpack_require__(328);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -100474,7 +100503,7 @@ if(false) {
 }
 
 /***/ }),
-/* 329 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -100488,12 +100517,12 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 330 */
+/* 329 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue__);
 //
 //
@@ -100565,7 +100594,7 @@ var moment = __webpack_require__(0);
 });
 
 /***/ }),
-/* 331 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -100659,19 +100688,19 @@ if (false) {
 }
 
 /***/ }),
-/* 332 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(333)
+  __webpack_require__(332)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(335)
+var __vue_script__ = __webpack_require__(334)
 /* template */
-var __vue_template__ = __webpack_require__(336)
+var __vue_template__ = __webpack_require__(335)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -100710,13 +100739,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 333 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(334);
+var content = __webpack_require__(333);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -100736,7 +100765,7 @@ if(false) {
 }
 
 /***/ }),
-/* 334 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -100750,12 +100779,12 @@ exports.push([module.i, "\n#single-journey[data-v-7b8336c8] {\n    max-width: 96
 
 
 /***/ }),
-/* 335 */
+/* 334 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_SideMenu_vue__);
 //
 //
@@ -100837,7 +100866,7 @@ var moment = __webpack_require__(0);
 });
 
 /***/ }),
-/* 336 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -100967,15 +100996,15 @@ if (false) {
 }
 
 /***/ }),
-/* 337 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(338)
+var __vue_script__ = __webpack_require__(337)
 /* template */
-var __vue_template__ = __webpack_require__(342)
+var __vue_template__ = __webpack_require__(341)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -101014,14 +101043,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 338 */
+/* 337 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SideMenu_vue__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SideMenu_vue__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SideMenu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__SideMenu_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Modal_vue__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Modal_vue__ = __webpack_require__(338);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Modal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Modal_vue__);
 //
 //
@@ -101112,15 +101141,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 339 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(340)
+var __vue_script__ = __webpack_require__(339)
 /* template */
-var __vue_template__ = __webpack_require__(341)
+var __vue_template__ = __webpack_require__(340)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -101159,7 +101188,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 340 */
+/* 339 */
 /***/ (function(module, exports) {
 
 //
@@ -101191,7 +101220,7 @@ module.exports = Component.exports
 //
 
 /***/ }),
-/* 341 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -101289,7 +101318,7 @@ if (false) {
 }
 
 /***/ }),
-/* 342 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -101436,19 +101465,19 @@ if (false) {
 }
 
 /***/ }),
-/* 343 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(344)
+  __webpack_require__(343)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(346)
+var __vue_script__ = __webpack_require__(345)
 /* template */
-var __vue_template__ = __webpack_require__(357)
+var __vue_template__ = __webpack_require__(356)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -101487,13 +101516,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 344 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(345);
+var content = __webpack_require__(344);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -101513,7 +101542,7 @@ if(false) {
 }
 
 /***/ }),
-/* 345 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -101527,14 +101556,14 @@ exports.push([module.i, "\ndiv.card[data-v-374436a3] {\n    color: #721c24;\n   
 
 
 /***/ }),
-/* 346 */
+/* 345 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Enter_vue__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Enter_vue__ = __webpack_require__(346);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Enter_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Enter_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Leave_vue__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Leave_vue__ = __webpack_require__(351);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Leave_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Leave_vue__);
 //
 //
@@ -101591,19 +101620,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 347 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(348)
+  __webpack_require__(347)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(350)
+var __vue_script__ = __webpack_require__(349)
 /* template */
-var __vue_template__ = __webpack_require__(351)
+var __vue_template__ = __webpack_require__(350)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -101642,13 +101671,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 348 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(349);
+var content = __webpack_require__(348);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -101668,7 +101697,7 @@ if(false) {
 }
 
 /***/ }),
-/* 349 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -101682,14 +101711,16 @@ exports.push([module.i, "\ndiv.card[data-v-b47cc622] {\n    color: #856404;\n   
 
 
 /***/ }),
-/* 350 */
+/* 349 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_js__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_SideMenu_vue__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_SideMenu_vue__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_SideMenu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Users_SideMenu_vue__);
+//
+//
 //
 //
 //
@@ -101764,7 +101795,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     watch: {
         from: function from() {
             this.startingCity = '';
-            if (this.from.length == 8) {
+            if (this.from.length == 6) {
                 this.lookupStartingFrom();
             }
         }
@@ -101775,7 +101806,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             __WEBPACK_IMPORTED_MODULE_0__app_js__["EventBus"].$emit('firststation', this.startingCity);
             alert('You have swiped in');
             this.complete = false;
-            //this.$router.push('journey.travel')
         },
 
 
@@ -101796,7 +101826,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 351 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -101904,6 +101934,8 @@ var render = function() {
                   _c("hr")
                 ]),
                 _vm._v(" "),
+                _c("h6", [_vm._v("Step 1: Enter Your Station Gates")]),
+                _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-sm" }, [
                     _c(
@@ -101978,19 +102010,19 @@ if (false) {
 }
 
 /***/ }),
-/* 352 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(353)
+  __webpack_require__(352)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(355)
+var __vue_script__ = __webpack_require__(354)
 /* template */
-var __vue_template__ = __webpack_require__(356)
+var __vue_template__ = __webpack_require__(355)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -102029,13 +102061,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 353 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(354);
+var content = __webpack_require__(353);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -102055,7 +102087,7 @@ if(false) {
 }
 
 /***/ }),
-/* 354 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -102069,7 +102101,7 @@ exports.push([module.i, "\ndiv.card[data-v-3beadd4e] {\n    color: #004085;\n   
 
 
 /***/ }),
-/* 355 */
+/* 354 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -102172,6 +102204,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -102180,6 +102222,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+
     mixins: [__WEBPACK_IMPORTED_MODULE_1__libs_mixinViews__["a" /* default */]],
 
     name: "addJourney",
@@ -102209,7 +102252,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             endingFare: '',
             submitting: false, // true once the submit button is pressed
             successMessage: false, // true when the journey has been registered successfully
-
             tmoConn: null, // contain the intervalID given by setInterval
             tmoReg: null, // contain the intervalID given by setInterval
             errorSubmit: false // it shows the erro message
@@ -102231,6 +102273,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          */
         disableSubmit: function disableSubmit() {
             return !this.from.length || !this.startingCity.length || !this.to.length || this.submitting || !this.blockchainIsConnected();
+        },
+        isComplete: function isComplete() {
+            return this.to && this.endingCity && this.description;
         }
     },
 
@@ -102238,7 +102283,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         to: function to() {
             this.endingCity = '';
-            if (this.to.length == 8) {
+            if (this.to.length == 6) {
                 this.lookupEndingTo(), this.lookupFareTo();
             }
         }
@@ -102252,6 +102297,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             app.endingCity = "Searching...";
             this.$http.get(TflBaseUrl + app.to).then(function (response) {
                 app.endingCity = response.data.matches[0].id;
+                //app.to = response.data.matches[0].name              
             }).catch(function (error) {
                 app.endingCity = "Invalid Station";
             });
@@ -102266,29 +102312,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             app.endingFare = "Searching..";
 
             this.$http.get(TflStopUrl + app.startingCity + FareUrl + app.endingCity + AppKey).then(function (response) {
-                app.from = response.data[0].rows[0].from, app.startingCity = this.startingCity, app.endingCity = response.data[0].rows[0].toStation, app.description = response.data[0].rows[0].ticketsAvailable[0].description, app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type, app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType, app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost, app.mode = response.data[0].rows[0].ticketsAvailable[0].mode, app.endingFare = this.endingFare * 100;
+                app.from = response.data[0].rows[0].from,
+                //app.to = response.data[0].rows[0].to,
+                app.endingCity = response.data[0].rows[0].toStation, app.startingCity = this.startingCity, app.description = response.data[0].rows[0].ticketsAvailable[0].description, app.type = response.data[0].rows[0].ticketsAvailable[0].ticketTime.type, app.passengerType = response.data[0].rows[0].ticketsAvailable[0].passengerType, app.endingFare = response.data[0].rows[0].ticketsAvailable[0].cost, app.mode = response.data[0].rows[0].ticketsAvailable[0].mode, app.endingFare = this.endingFare * 100;
             }).catch(function (error) {
                 app.endingFare = "Invalid Fare";
             });
         }, 1200),
-
-        submitNewJourney: function submitNewJourney() {
-            this.$store.dispatch('addJourney', {
-                user_id: this.user_id,
-                from: this.from,
-                startingCity: this.startingCity,
-                to: this.to,
-                endingCity: this.endingCity,
-                description: this.description,
-                type: this.type,
-                passengerType: this.passengerType,
-                mode: this.mode,
-                endingFare: this.endingFare
-
-            }), alert('You have swiped out');
-            this.$router.replace({ path: '/' });
-        },
-
 
         /**
          * Perform the registration of the journey when the submit button is pressed.
@@ -102315,17 +102345,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     Event.$emit('journeyregistered', txHash);
 
                     // the transaction was submitted and the journey will be redirected to the
-                    // profile page once the block will be mined
-                    _this2.redirectWhenBlockMined();
+                    // confirmation page once the block will be mined
+                    //this.redirectWhenBlockMined()
                 }
             });
         },
 
 
         /**
-         * Check if the journey visitng this page is registered: if the journey is already
-         * registered they will be redirected to the Home page.
-         */
+        * Check to see if the journey has been registered and if it has then
+        * you will be redirected to the confirmation page.
+        */
         redirectIfJourneyRegistered: function redirectIfJourneyRegistered() {
             var _this3 = this;
 
@@ -102338,24 +102368,42 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     // calling the smart contract
                     window.bc.contract().isRegistered.call(function (error, res) {
                         if (res) {
-                            // redirecting to the home page
-                            _this3.$router.replace({ path: '/confirmation' });
+                            // redirecting to the confirmation page
+                            //alert('You are on the BlockTrain');
+
+                            //this.$router.replace({ path: '/confirmation' })
                         }
                     });
                 }
             }, 500);
         },
+        submitNewJourney: function submitNewJourney() {
+            this.$store.dispatch('addJourney', {
+                user_id: this.user_id,
+                from: this.from,
+                startingCity: this.startingCity,
+                to: this.to,
+                endingCity: this.endingCity,
+                description: this.description,
+                type: this.type,
+                passengerType: this.passengerType,
+                mode: this.mode,
+                endingFare: this.endingFare
+
+            });
+        },
 
 
         /**
-         * Once the journey submitted this funciton checks every 1000 ms
-        * if the registration is successful. Once the journey is registered he will be
-        * redirected to the home page.
+         * Once the journey submitted this funciton checks every 1000 ms to see if
+         * if the journey registration to the blockchain is successful. 
+         * Once the journey has been registered you will be redirected to the
+         * confirmation page.
          *
          * NOTE: in order to check if the user has been registered successfully the
          * function has to check several time because the block can take several
          * minutes to be mined (depending on the configuration of the blockchain you
-        * are using).
+         * are using).
          */
         redirectWhenBlockMined: function redirectWhenBlockMined() {
             var _this4 = this;
@@ -102368,8 +102416,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                         } else if (res) {
                             // stopping the setInterval
                             clearInterval(_this4.tmoReg);
-
-                            //this.$router.push("home")
                             //this.$router.replace({ path: '/confirmation' })
                         }
                     });
@@ -102381,7 +102427,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 356 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -102659,93 +102705,103 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("div", { staticClass: "row" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-primary btn-lg",
-                          attrs: {
-                            disabled: _vm.errors.any(),
-                            type: "submit",
-                            id: "submit"
+                      _c("div", { staticClass: "col-8" }, [
+                        _c("h6", [_vm._v("Step 2: Leave The Station")]),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-primary btn-lg",
+                            attrs: {
+                              type: "submit",
+                              disabled: !_vm.isComplete,
+                              id: "submit"
+                            },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.submitNewJourney($event)
+                              }
+                            }
                           },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.submitNewJourney($event)
-                            }
-                          }
-                        },
-                        [_vm._v("Exit")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-primary",
-                          attrs: { disabled: _vm.disableSubmit },
-                          on: { click: _vm.performSubmit }
-                        },
-                        [_vm._v("BlockChain")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "strong",
-                        {
-                          directives: [
-                            {
-                              name: "show",
-                              rawName: "v-show",
-                              value: _vm.submitting,
-                              expression: "submitting"
-                            }
+                          [_vm._v("Leave")]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-6" }, [
+                        _c("h6", [_vm._v("Step 3: Add To BlockChain")]),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-primary",
+                            attrs: { disabled: _vm.disableSubmit },
+                            on: { click: _vm.performSubmit }
+                          },
+                          [_vm._v("BlockChain")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "strong",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.submitting,
+                                expression: "submitting"
+                              }
+                            ]
+                          },
+                          [_vm._v("Submitting...")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "strong",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.errorSubmit,
+                                expression: "errorSubmit"
+                              }
+                            ],
+                            staticClass: "text-danger"
+                          },
+                          [_vm._v("Error occurred!")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.successMessage,
+                                expression: "successMessage"
+                              }
+                            ],
+                            staticClass: "text-success"
+                          },
+                          [
+                            _c("strong", [_vm._v("You've been registered!")]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(
+                              "\n                                            You will be redirected to the confirmation page "
+                            ),
+                            _c("strong", [
+                              _vm._v("once the block will be mined!")
+                            ])
                           ]
-                        },
-                        [_vm._v("Submitting...")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "strong",
-                        {
-                          directives: [
-                            {
-                              name: "show",
-                              rawName: "v-show",
-                              value: _vm.errorSubmit,
-                              expression: "errorSubmit"
-                            }
-                          ],
-                          staticClass: "text-danger"
-                        },
-                        [_vm._v("Error occurred!")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        {
-                          directives: [
-                            {
-                              name: "show",
-                              rawName: "v-show",
-                              value: _vm.successMessage,
-                              expression: "successMessage"
-                            }
-                          ],
-                          staticClass: "text-success"
-                        },
-                        [
-                          _c("strong", [_vm._v("You've been registered!")]),
-                          _vm._v(" "),
-                          _c("br"),
-                          _vm._v(
-                            "\n                                                You will be redirected to the home page "
-                          ),
-                          _c("strong", [
-                            _vm._v("once the block will be mined!")
-                          ])
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-sm" })
+                        )
+                      ])
                     ])
                   ])
                 ])
@@ -102788,7 +102844,7 @@ if (false) {
 }
 
 /***/ }),
-/* 357 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -102827,15 +102883,15 @@ if (false) {
 }
 
 /***/ }),
-/* 358 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(359)
+var __vue_script__ = __webpack_require__(358)
 /* template */
-var __vue_template__ = __webpack_require__(360)
+var __vue_template__ = __webpack_require__(359)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -102874,12 +102930,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 359 */
+/* 358 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__libs_mixinViews__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_SideMenu_vue__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Users_SideMenu_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Users_SideMenu_vue__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -102934,12 +102997,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // importing common function
 
 
+
 /**
  * Profile view component: this component shows the journey profile.
  * In this page the journey can update his own profile and he can
  * view other details like his wallet address and balance.
  */
 /* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: { SideMenu: __WEBPACK_IMPORTED_MODULE_1__Users_SideMenu_vue___default.a },
     mixins: [__WEBPACK_IMPORTED_MODULE_0__libs_mixinViews__["a" /* default */]],
 
     data: function data() {
@@ -102960,17 +103026,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
 
-
-    computed: {
-        /**
-         * It disables the submit button when the the from or to are not filled
-         * or the submit button is pressed or the connection with the blockchin is
-         * not established.
-         */
-        disableSubmit: function disableSubmit() {
-            return !this.from.length || !this.to.length || !this.endingFare.length || this.submitting || !this.blockchainIsConnected();
-        }
-    },
 
     methods: {
 
@@ -103091,7 +103146,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 360 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -103099,173 +103154,184 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", { staticClass: "title" }, [_vm._v("Transaction Confirmation")]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-3" }, [
-        _c("h3", [_vm._v("Confirmation")]),
-        _c("hr"),
-        _vm._v(" "),
-        _c("h4", [
-          _vm._v(
-            "\n                Your Journey Number is: " +
-              _vm._s(_vm.journeyId) +
-              "\n            "
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "description" } }, [_vm._v("From")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.from,
-                expression: "from"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { placeholder: "Origin", type: "text" },
-            domProps: { value: _vm.from },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.from = $event.target.value
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "description" } }, [_vm._v("To")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.to,
-                expression: "to"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { placeholder: "Destination", type: "text" },
-            domProps: { value: _vm.to },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.to = $event.target.value
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "description" } }, [
-            _vm._v("Ending Fare")
+    _c("div", { staticClass: "container" }, [
+      _c(
+        "div",
+        { staticClass: "row" },
+        [
+          _c("div", { staticClass: "col-8" }, [
+            _c("div", { staticClass: "lead-form" }, [
+              _c("br"),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("h1", { staticClass: "title" }, [_vm._v("Your Journey")]),
+              _vm._v(" "),
+              _c("h4", [_vm._v("Journey ID: " + _vm._s(_vm.journeyId))]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "description" } }, [
+                  _vm._v("From")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.from,
+                      expression: "from"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { placeholder: "Origin", type: "text" },
+                  domProps: { value: _vm.from },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.from = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "description" } }, [_vm._v("To")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.to,
+                      expression: "to"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { placeholder: "Destination", type: "text" },
+                  domProps: { value: _vm.to },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.to = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "description" } }, [
+                  _vm._v("Ending Fare")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.endingFare,
+                      expression: "endingFare"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { placeholder: "EndingFare", type: "text" },
+                  domProps: { value: _vm.endingFare },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.endingFare = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  on: { click: _vm.performSubmit }
+                },
+                [_vm._v("Save")]
+              ),
+              _vm._v(" "),
+              _c(
+                "strong",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.submitting,
+                      expression: "submitting"
+                    }
+                  ]
+                },
+                [_vm._v("Submitting...")]
+              ),
+              _vm._v(" "),
+              _c(
+                "strong",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.errorSubmit,
+                      expression: "errorSubmit"
+                    }
+                  ],
+                  staticClass: "text-danger"
+                },
+                [_vm._v("Error occurred!")]
+              ),
+              _vm._v(" "),
+              _c(
+                "strong",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.successSave,
+                      expression: "successSave"
+                    }
+                  ],
+                  staticClass: "text-success"
+                },
+                [_vm._v("Tx submitted!")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-8" }, [
+              _c("h3", [_vm._v("Info")]),
+              _c("hr"),
+              _vm._v(" "),
+              _c("p", [
+                _c("strong", [_vm._v("Transaction Address")]),
+                _vm._v(": " + _vm._s(_vm.coinbase) + "\n                    ")
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _c("strong", [_vm._v("Balance")]),
+                _vm._v(
+                  ": " + _vm._s(_vm.balance) + " ETH\n                    "
+                )
+              ])
+            ])
           ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.endingFare,
-                expression: "endingFare"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { placeholder: "EndingFare", type: "text" },
-            domProps: { value: _vm.endingFare },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.endingFare = $event.target.value
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary",
-            attrs: { disabled: _vm.disableSubmit },
-            on: { click: _vm.performSubmit }
-          },
-          [_vm._v("Save")]
-        ),
-        _vm._v(" "),
-        _c(
-          "strong",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.submitting,
-                expression: "submitting"
-              }
-            ]
-          },
-          [_vm._v("Submitting...")]
-        ),
-        _vm._v(" "),
-        _c(
-          "strong",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.errorSubmit,
-                expression: "errorSubmit"
-              }
-            ],
-            staticClass: "text-danger"
-          },
-          [_vm._v("Error occurred!")]
-        ),
-        _vm._v(" "),
-        _c(
-          "strong",
-          {
-            directives: [
-              {
-                name: "show",
-                rawName: "v-show",
-                value: _vm.successSave,
-                expression: "successSave"
-              }
-            ],
-            staticClass: "text-success"
-          },
-          [_vm._v("Tx submitted!")]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-md-3" }, [
-      _c("h3", [_vm._v("Info")]),
-      _c("hr"),
-      _vm._v(" "),
-      _c("p", [
-        _c("strong", [_vm._v("Transaction Address")]),
-        _vm._v(": " + _vm._s(_vm.coinbase) + "\n            ")
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _c("strong", [_vm._v("Balance")]),
-        _vm._v(": " + _vm._s(_vm.balance) + " ETH\n            ")
-      ])
+          _c("SideMenu")
+        ],
+        1
+      )
     ])
   ])
 }
@@ -103280,19 +103346,19 @@ if (false) {
 }
 
 /***/ }),
-/* 361 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(362)
+  __webpack_require__(361)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(364)
+var __vue_script__ = __webpack_require__(363)
 /* template */
-var __vue_template__ = __webpack_require__(365)
+var __vue_template__ = __webpack_require__(364)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -103331,13 +103397,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 362 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(363);
+var content = __webpack_require__(362);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -103357,7 +103423,7 @@ if(false) {
 }
 
 /***/ }),
-/* 363 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(5)(false);
@@ -103371,12 +103437,14 @@ exports.push([module.i, "\n.btn-top {\n\tmargin-top: 10px;\n}\n", ""]);
 
 
 /***/ }),
-/* 364 */
+/* 363 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__libs_mixinViews__ = __webpack_require__(21);
+//
+//
 //
 //
 //
@@ -103505,7 +103573,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 365 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -103593,6 +103661,13 @@ var render = function() {
           })
         )
       ]
+    ),
+    _vm._v(" "),
+    _c(
+      "a",
+      { staticClass: "btn btn-primary btn-lg", attrs: { role: "button" } },
+      [_c("router-link", { attrs: { to: "/users" } }, [_vm._v("Dashboard")])],
+      1
     )
   ])
 }
@@ -103630,7 +103705,7 @@ if (false) {
 }
 
 /***/ }),
-/* 366 */
+/* 365 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -103659,13 +103734,13 @@ function initialise(store, router) {
 }
 
 /***/ }),
-/* 367 */
+/* 366 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return store; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_journey_js__ = __webpack_require__(368);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_user_js__ = __webpack_require__(370);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_journey_js__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_user_js__ = __webpack_require__(369);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex__ = __webpack_require__(33);
@@ -103681,7 +103756,7 @@ __WEBPACK_IMPORTED_MODULE_2_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_3_vuex
 /*
   Adds the promise polyfill for IE 11
 */
-__webpack_require__(372).polyfill();
+__webpack_require__(371).polyfill();
 
 var store = new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store({
 
@@ -103693,12 +103768,12 @@ var store = new __WEBPACK_IMPORTED_MODULE_3_vuex__["a" /* default */].Store({
 });
 
 /***/ }),
-/* 368 */
+/* 367 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return journeys; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_journey_js__ = __webpack_require__(369);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_journey_js__ = __webpack_require__(368);
 /*
 |-------------------------------------------------------------------------------
 | VUEX modules/modules.js
@@ -103912,7 +103987,7 @@ var journeys = {
 };
 
 /***/ }),
-/* 369 */
+/* 368 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -103975,12 +104050,12 @@ var journeys = {
 });
 
 /***/ }),
-/* 370 */
+/* 369 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return users; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_user_js__ = __webpack_require__(371);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_user_js__ = __webpack_require__(370);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers_auth__ = __webpack_require__(27);
 
 
@@ -104303,7 +104378,7 @@ var users = {
 };
 
 /***/ }),
-/* 371 */
+/* 370 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -104336,7 +104411,7 @@ var users = {
 });
 
 /***/ }),
-/* 372 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {/*!

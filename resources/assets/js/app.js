@@ -12,7 +12,7 @@ import VeeValidate from 'vee-validate';
 import VueResource from 'vue-resource';
 import Vuex from 'vuex';
 import Vue2Filters from 'vue2-filters';
- 
+import VueDisabled from 'vue-disabled'; 
 
 
 window.Vue = require('vue');
@@ -34,6 +34,7 @@ Vue.use(VeeValidate);
 Vue.use(VueResource);
 Vue.use(Vuex);
 Vue.use(Vue2Filters);
+Vue.use(VueDisabled);
 
 import App from './views/App'
 

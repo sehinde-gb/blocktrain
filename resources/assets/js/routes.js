@@ -1,9 +1,9 @@
 
-import HomePage from './views/Home/Home'
+
 import OriginalPage from './views/Original/OriginalPage'
 import Login from './views/Auth/Login'
 import Register from './views/Auth/Register'
-import Users from './views/Users/UserListing'
+import Dashboard from './views/Users/Dashboard'
 import UserDetail from './views/Users/UserDetail'
 import UserRegister from './views/Users/UserRegister'
 import JourneyListings from './views/Journeys/JourneyListings'
@@ -17,9 +17,9 @@ import BlockListings from './views/Block/Listings'
 export const routes = [
 
     {
-        path: '/',
-        name: 'home',
-        component: HomePage,
+        path: '/dashboard',
+        name: 'dashboard',
+        component: Dashboard,
         meta: {
             requiresAuth: true
         }
@@ -53,17 +53,7 @@ export const routes = [
         },
     },
 
-    {
-
-        path: '/users',
-        name: 'users',
-        component: Users,
-        meta: {
-            requiresAuth: true
-        },
-
-    },
-
+    
 
     {   path: '/users/:id',
         name: 'user.detail',
@@ -134,7 +124,7 @@ export const routes = [
             requiresAuth: true
         }
 
-    }
+    } 
 
     
 

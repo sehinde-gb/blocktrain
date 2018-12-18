@@ -1,49 +1,54 @@
 <template>
     <div>
-        <h1 class="title">Transaction Confirmation</h1>
+        
 
 
-        <div class="row">
-            <div class="col-md-3">
-                <h3>Confirmation</h3><hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <div class="lead-form">
+                        <br>
+                      
+                            <hr/>
+                            <h1 class="title">Your Journey</h1>
+                            <h4>Journey ID: {{ journeyId }}</h4>
 
-                <h4>
-                    Your Journey Number is: {{ journeyId }}
-                </h4>
-                 <div class="form-group">
-                    <label for="description">From</label>
-                    <input class="form-control" placeholder="Origin" type="text" v-model="from">
-                </div>
+                             <div class="form-group">
+                                <label for="description">From</label>
+                                <input class="form-control" placeholder="Origin" type="text" v-model="from">
+                             </div>
 
-                <div class="form-group">
-                    <label for="description">To</label>
-                    <input class="form-control" placeholder="Destination" type="text" v-model="to">
-                </div>
+                            <div class="form-group">
+                                <label for="description">To</label>
+                                <input class="form-control" placeholder="Destination" type="text" v-model="to">
+                            </div>
 
-                <div class="form-group">
-                    <label for="description">Ending Fare</label>
-                    <input class="form-control" placeholder="EndingFare" type="text" v-model="endingFare">
-                </div>
+                            <div class="form-group">
+                                <label for="description">Ending Fare</label>
+                                <input class="form-control" placeholder="EndingFare" type="text" v-model="endingFare">
+                            </div>
 
-                <button class="btn btn-primary" :disabled="disableSubmit" @click="performSubmit">Save</button>
-                <strong v-show="submitting">Submitting...</strong>
-                <strong v-show="errorSubmit" class="text-danger">Error occurred!</strong>
-                <strong v-show="successSave" class="text-success">Tx submitted!</strong>
-            </div>
+                            <button class="btn btn-primary"  @click="performSubmit">Save</button>
+                            <strong v-show="submitting">Submitting...</strong>
+                            <strong v-show="errorSubmit" class="text-danger">Error occurred!</strong>
+                            <strong v-show="successSave" class="text-success">Tx submitted!</strong>
+                    </div>
 
-            </div>
-                
-            <div class="col-md-3">
-                <h3>Info</h3><hr>
+                        <br>
+                        <div class="col-8">
+                        <h3>Info</h3><hr>
 
-                <p>
-                    <strong>Transaction Address</strong>: {{ coinbase }}
-                </p>
-                <p>
-                    <strong>Balance</strong>: {{ balance }} ETH
-                </p>
-            </div>
-        </div>
+                        <p>
+                            <strong>Transaction Address</strong>: {{ coinbase }}
+                        </p>
+                        <p>
+                            <strong>Balance</strong>: {{ balance }} ETH
+                        </p>
+                        </div>     
+                </div><!-- end of .row -->
+               <SideMenu></SideMenu>
+            </div> <!-- end of .row -->
+        </div> <!-- end of .container -->
 
     </div>
 </template>
@@ -51,6 +56,7 @@
 <script>
     // importing common function
     import mixin from '../../../../../libs/mixinViews';
+    import SideMenu from '../Users/SideMenu.vue';
 
     /**
      * Profile view component: this component shows the journey profile.
@@ -58,6 +64,8 @@
      * view other details like his wallet address and balance.
      */
     export default {
+
+        components: { SideMenu},
         mixins: [mixin],
 
         data() {
@@ -78,16 +86,7 @@
             }
         },
 
-        computed: {
-            /**
-             * It disables the submit button when the the from or to are not filled
-             * or the submit button is pressed or the connection with the blockchin is
-             * not established.
-             */
-            disableSubmit() {
-                return (!this.from.length || !this.to.length || !this.endingFare.length || this.submitting || !this.blockchainIsConnected())
-            }
-        },
+       
 
         methods: {
 

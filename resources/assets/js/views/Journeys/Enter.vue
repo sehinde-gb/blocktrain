@@ -31,7 +31,9 @@
                                 <hr/>
                             </div><!-- /.form-group -->
                         
+                        <h6>Step 1: Enter Your Station Gates</h6>
                         <div class="row">
+                            
                             <div class="col-sm"><button @click.prevent="stationEnter" :disabled="errors.any()"  class="btn btn-primary btn-lg">Enter</button></div>
                             <div class="col-sm"></div><!-- .col-sm -->
                         </div><!-- /.row -->
@@ -74,7 +76,7 @@ export default {
     watch: {
         from: function () {
             this.startingCity = ''
-            if (this.from.length == 8) {
+            if (this.from.length == 6) {
                 this.lookupStartingFrom()
             }
         }
@@ -87,7 +89,7 @@ export default {
                 EventBus.$emit('firststation', this.startingCity)
                 alert('You have swiped in');
                 this.complete = false;
-                //this.$router.push('journey.travel')
+                
         },
         
         lookupStartingFrom: _.debounce(function () {
