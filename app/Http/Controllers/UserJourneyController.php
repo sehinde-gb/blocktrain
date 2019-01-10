@@ -45,23 +45,25 @@ class UserJourneyController extends Controller
      * @param Request $request
      *
      * @return JourneyResource
-     */
+    */
     public function store(Request $request)
-    {
-        $journey = $request->isMethod('put') ? Journey::findOrFail($request->journey_id) : new Journey;
-        $journey->user_id = $request->input('user_id');
-        $journey->from = $request->input('from');
-        $journey->startingCity = $request->input('startingCity');
-        $journey->to = $request->input('to');
-        $journey->endingCity = $request->input('endingCity');
-        $journey->description = $request->input('description');
-        $journey->type = $request->input('type');
-        $journey->passengerType = $request->input('passengerType');
-        $journey->mode = $request->input('mode');
-        $journey->endingFare = $request->input('endingFare');
+     {
+          $journey = $request->isMethod('put') ? Journey::findOrFail($request->journey_id) : new Journey;
+          $journey->user_id = $request->input('user_id');
+          $journey->from = $request->input('from');
+          $journey->startingCity = $request->input('startingCity');
+          $journey->to = $request->input('to');
+          $journey->endingCity = $request->input('endingCity');
+          $journey->description = $request->input('description');
+          $journey->type = $request->input('type');
+          $journey->passengerType = $request->input('passengerType');
+          $journey->mode = $request->input('mode');
+          $journey->endingFare = $request->input('endingFare');
 
-        if ($journey->save()) {
-            return new JourneyResource($journey);
-        }
+          if ($journey->save()) {
+           return new JourneyResource($journey);
+            }
     }
+
+    
 }

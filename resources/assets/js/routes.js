@@ -9,9 +9,12 @@ import UserRegister from './views/Users/UserRegister'
 import JourneyListings from './views/Journeys/JourneyListings'
 import JourneyDetail from './views/Journeys/JourneyDetail'
 import Update from './views/Users/BalanceUpdate.vue'
+import Enter from './views/Journeys/Enter'
+import Leave from './views/Journeys/Leave'
 import Parent from './views/Journeys/Parent'
 import Confirmation from './views/Block/Confirmation'
 import BlockListings from './views/Block/Listings'
+
 
 
 export const routes = [
@@ -72,8 +75,6 @@ export const routes = [
         }
     },
 
-
-
     {
         path: '/users/:id/journeys',
         name: 'journey.listings',
@@ -94,16 +95,25 @@ export const routes = [
         }
     },
 
-
-    {   path: '/users/:id/make/journey',
-        name: 'journey.make',
+    {   path: '/users/:id/new/start',
+        name: 'journey.start',
         props: true,
-        component: Parent,
+        component: Enter,
+        meta: {
+            requiresAuth: true
+        }
+},
+    
+    {   path: '/users/:id/new/journey',
+        name: 'journey.new',
+        props: true,
+        component: Leave,
         meta: {
             requiresAuth: true
         }
     },
 
+    
     {
         path: '/users/:id/blockchain',
         name: 'block.chain',

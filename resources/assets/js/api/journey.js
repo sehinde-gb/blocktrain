@@ -14,7 +14,7 @@ export default {
     },
 
     /*
-        POST  /api/user/{user}/make/journey/
+        POST  /api/user/{user}/new/journey/
     */
     AddNewJourney: function( user_id, from,  startingCity, to, endingCity, description, type, passengerType, mode, endingFare) {
         return axios.post('/api/user/' + this.user_id + '/journey',
@@ -34,10 +34,10 @@ export default {
     },
 
     /*
-        POST  /api/user/{user}/make/journey/
+        POST  /api/user/{user}/new/start/
     */
-    postAddNewEntrance: function( user_id,   startingCity) {
-        return axios.post('/api/user/' + this.user_id + '/journey',
+    AddNewEntrance: function( user_id,   startingCity) {
+        return axios.post('/api/user/' + this.user_id + '/journey/start',
         {
             user_id: user_id,
             startingCity: startingCity

@@ -50,7 +50,7 @@ export const users = {
         },
         
         /*
-          Load the tickets from the API
+          Load the users from the API
         */
         loadUsers( { commit }, data) {
             commit('setUsersLoadStatus', 1);    

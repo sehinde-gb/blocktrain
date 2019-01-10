@@ -14,7 +14,7 @@
 
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
-                                        <h5 class="card-title"><router-link class="card-link" v-bind:to="  '/users/' + user.id + '/make/journey'"><i class="fa fa-plus" aria-hidden="true"></i><h6>New Journey</h6></router-link></h5>
+                                        <h5 class="card-title"><router-link class="card-link" v-bind:to="  '/users/' + user.id + '/new/start'"><i class="fa fa-plus" aria-hidden="true"></i><h6>New Journey</h6></router-link></h5>
                                         <p class="card-text">Start Your New Journey Here</p>
                                     </div>
                                 </div>     

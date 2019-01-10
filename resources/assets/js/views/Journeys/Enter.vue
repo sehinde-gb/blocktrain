@@ -5,21 +5,16 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="lead-form">
-                            <h1 class="text-center">Enter Station</h1>
+                            <h1 class="text-center">New Journey</h1>
                             <hr/>
-                            <h4 class="text-center">Place Card on Reader</h4>
+                            <h4 class="text-center">Enter Origin Station</h4>
                             <hr />
                             
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="" alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div><!-- end of .card-body -->
-                            </div><!-- end of .card -->
+                            
                         </div><!-- end of .lead-form -->
                             <br>
                             <div class="form-group">
-                                <label for="from">From</label>
+                               
                                 <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Origin Station (Min. 6 characters)" v-model="from" id="from">
                                 <p class="help is-danger" v-show="errors.has('from')">
                                     {{ errors.first('from') }}
@@ -31,7 +26,7 @@
                                 <hr/>
                             </div><!-- /.form-group -->
                         
-                        <h6>Step 1: Enter Your Station Gates</h6>
+                       
                         <div class="row">
                             
                             <div class="col-sm"><button @click.prevent="stationEnter" :disabled="errors.any()"  class="btn btn-primary btn-lg">Enter</button></div>
@@ -81,15 +76,27 @@ export default {
             }
         }
     },
-    
+    computed: {
+        
+        users() {
+                return this.$store.getters.getUsers;
+        },
+
+        
+
+        isComplete () {
+            return this.from && this.startingCity;
+               
+        },
+    },    
 
     methods: {
             
         stationEnter() {
                 EventBus.$emit('firststation', this.startingCity)
-                alert('You have swiped in');
+                //alert('You have swiped in');
                 this.complete = false;
-                
+                //this.$router.push('/');      
         },
         
         lookupStartingFrom: _.debounce(function () {
@@ -108,7 +115,16 @@ export default {
         }, 500)
 
         
-    }
+    },
+    submitNewJourney() {
+             this.$store.dispatch('addJourney', {
+                 user_id: this.user_id,
+                 from: this.from,
+                 startingCity: this.startingCity
+                 
+                
+            })
+    }     
 }
 </script>
 

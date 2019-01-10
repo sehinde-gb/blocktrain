@@ -80,12 +80,12 @@ export const journeys = {
 
 
         /*
-            Adds a journey to the API
+            Adds the from to  to the API
         */
 
         addEntrance({ commit, state, dispatch }, data){
             commit( 'setJourneyAddedStatus', 1);
-            JourneyAPI.postAddNewEntrance(data.user_id, data.startingCity)
+            JourneyAPI.AddNewEntrance(data.user_id, data.startingCity)
             .then( function(response){
                 commit('setJourneyAddedStatus', 2);
                 //dispatch('loadJourneys');

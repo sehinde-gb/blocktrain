@@ -6,8 +6,7 @@
                        <enter></enter>
                     </div><!-- /.col -->
                    
-                    
-                    
+                       
                 </div><!-- /.row -->
 
                 <div>
@@ -34,7 +33,6 @@
 
 <script>
     import Enter from './Enter.vue';
-    //import Travel from './Travel.vue';
     import Leave from './Leave.vue';
 
     
