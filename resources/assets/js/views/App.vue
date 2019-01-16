@@ -5,8 +5,6 @@
            
             <app-header></app-header>
 
-            
-
             <transition name="slide">
                 <router-view :key="$route.fullPath"></router-view>
             </transition>

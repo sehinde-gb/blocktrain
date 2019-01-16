@@ -87291,8 +87291,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -87414,6 +87412,8 @@ exports.push([module.i, "\nheader[data-v-11ad97a0] {\n   background: lightgreen;
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__libs_mixinViews__ = __webpack_require__(21);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -87471,7 +87471,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // importing common function
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (_defineProperty({
 
     mixins: [__WEBPACK_IMPORTED_MODULE_0__libs_mixinViews__["a" /* default */]],
 
@@ -87562,7 +87562,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         this.checkJourneyIsRegistered();
     }
-});
+}, 'data', function data() {
+    return {
+        journeyIsRegistered: ''
+    };
+}));
 
 /***/ }),
 /* 216 */
@@ -96578,7 +96582,7 @@ var render = function() {
           [
             _c(
               "router-link",
-              { staticClass: "navbar-brand", attrs: { to: "/" } },
+              { staticClass: "navbar-brand", attrs: { to: "/dashboard" } },
               [_vm._v("Block Train")]
             ),
             _vm._v(" "),
@@ -96700,7 +96704,7 @@ var render = function() {
                                 "router-link",
                                 {
                                   staticClass: "nav-link",
-                                  attrs: { to: "/users" }
+                                  attrs: { to: "/dashboard" }
                                 },
                                 [_vm._v("Dashboard")]
                               )
@@ -96993,13 +96997,6 @@ if (false) {
 
 
 var routes = [{
-    path: '/dashboard',
-    name: 'dashboard',
-    component: __WEBPACK_IMPORTED_MODULE_3__views_Users_Dashboard___default.a,
-    meta: {
-        requiresAuth: true
-    }
-}, {
     path: '/login',
     name: 'login',
     component: __WEBPACK_IMPORTED_MODULE_1__views_Auth_Login___default.a
@@ -97008,6 +97005,13 @@ var routes = [{
     name: 'register',
     component: __WEBPACK_IMPORTED_MODULE_2__views_Auth_Register___default.a
 
+}, {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: __WEBPACK_IMPORTED_MODULE_3__views_Users_Dashboard___default.a,
+    meta: {
+        requiresAuth: true
+    }
 }, {
     path: '/original',
     name: 'original',
@@ -97047,17 +97051,10 @@ var routes = [{
     meta: {
         requiresAuth: true
     }
-}, { path: '/users/:id/new/start',
-    name: 'journey.start',
-    props: true,
-    component: __WEBPACK_IMPORTED_MODULE_9__views_Journeys_Enter___default.a,
-    meta: {
-        requiresAuth: true
-    }
 }, { path: '/users/:id/new/journey',
     name: 'journey.new',
     props: true,
-    component: __WEBPACK_IMPORTED_MODULE_10__views_Journeys_Leave___default.a,
+    component: __WEBPACK_IMPORTED_MODULE_11__views_Journeys_Parent___default.a,
     meta: {
         requiresAuth: true
     }
@@ -99141,7 +99138,7 @@ var render = function() {
                                 {
                                   staticClass: "card-link",
                                   attrs: {
-                                    to: "/users/" + user.id + "/new/start"
+                                    to: "/users/" + user.id + "/new/journey"
                                   }
                                 },
                                 [
@@ -101672,6 +101669,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -101688,7 +101686,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             startingCity: '',
             firstStations: [],
             user_id: this.$route.params.id,
-            complete: true
+            complete: true,
+            finished: false,
+            seen: true
 
         };
     },
@@ -101712,10 +101712,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         stationEnter: function stationEnter() {
-            __WEBPACK_IMPORTED_MODULE_0__app_js__["EventBus"].$emit('firststation', this.startingCity);
-            //alert('You have swiped in');
-            this.complete = false;
-            //this.$router.push('/');      
+            this.complete = true;
+            this.finished = false;
+            __WEBPACK_IMPORTED_MODULE_0__app_js__["EventBus"].$emit('firststation', this.startingCity, this.complete, this.finished);
+            alert('You have swiped in');
         },
 
 
@@ -101752,133 +101752,142 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.complete,
-            expression: "complete"
-          }
-        ],
-        staticClass: "test"
-      },
-      [
-        _c("div", { staticClass: "container" }, [
+    _vm.seen
+      ? _c("div", { staticClass: "test" }, [
           _c(
             "div",
-            { staticClass: "row" },
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.complete,
+                  expression: "complete"
+                }
+              ],
+              staticClass: "wrap"
+            },
             [
-              _c("div", { staticClass: "col-8" }, [
-                _vm._m(0),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "validate",
-                        rawName: "v-validate",
-                        value: "required|min:6",
-                        expression: "'required|min:6'"
-                      },
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.from,
-                        expression: "from"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: {
-                      name: "from",
-                      type: "text",
-                      placeholder: "Origin Station (Min. 6 characters)",
-                      id: "from"
-                    },
-                    domProps: { value: _vm.from },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.from = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "p",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.errors.has("from"),
-                          expression: "errors.has('from')"
-                        }
-                      ],
-                      staticClass: "help is-danger"
-                    },
-                    [
-                      _vm._v(
-                        "\n                                " +
-                          _vm._s(_vm.errors.first("from")) +
-                          "\n                            "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    {
-                      staticClass: "city-span",
-                      model: {
-                        value: _vm.startingCity,
-                        callback: function($$v) {
-                          _vm.startingCity = $$v
-                        },
-                        expression: "startingCity"
-                      }
-                    },
-                    [_vm._v(_vm._s(_vm.startingCity))]
-                  ),
-                  _vm._v(" "),
-                  _c("hr")
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-sm" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-primary btn-lg",
-                        attrs: { disabled: _vm.errors.any() },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.stationEnter($event)
+              _c("div", { staticClass: "container" }, [
+                _c(
+                  "div",
+                  { staticClass: "row" },
+                  [
+                    _c("div", { staticClass: "col-8" }, [
+                      _vm._m(0),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "validate",
+                              rawName: "v-validate",
+                              value: "required|min:6",
+                              expression: "'required|min:6'"
+                            },
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.from,
+                              expression: "from"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            name: "from",
+                            type: "text",
+                            placeholder: "Origin Station (Min. 6 characters)",
+                            id: "from"
+                          },
+                          domProps: { value: _vm.from },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.from = $event.target.value
+                            }
                           }
-                        }
-                      },
-                      [_vm._v("Enter")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-sm" })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("SideMenu")
-            ],
-            1
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.errors.has("from"),
+                                expression: "errors.has('from')"
+                              }
+                            ],
+                            staticClass: "help is-danger"
+                          },
+                          [
+                            _vm._v(
+                              "\n                                    " +
+                                _vm._s(_vm.errors.first("from")) +
+                                "\n                                "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "city-span",
+                            model: {
+                              value: _vm.startingCity,
+                              callback: function($$v) {
+                                _vm.startingCity = $$v
+                              },
+                              expression: "startingCity"
+                            }
+                          },
+                          [_vm._v(_vm._s(_vm.startingCity))]
+                        ),
+                        _vm._v(" "),
+                        _c("hr")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-sm" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-primary btn-lg",
+                              attrs: { disabled: _vm.errors.any() },
+                              on: {
+                                click: [
+                                  function($event) {
+                                    $event.preventDefault()
+                                    return _vm.stationEnter($event)
+                                  },
+                                  function($event) {
+                                    _vm.seen = !_vm.seen
+                                  }
+                                ]
+                              }
+                            },
+                            [_vm._v("Enter")]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-sm" })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("SideMenu")
+                  ],
+                  1
+                )
+              ])
+            ]
           )
         ])
-      ]
-    )
+      : _vm._e()
   ])
 }
 var staticRenderFns = [
@@ -102061,7 +102070,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -102081,6 +102089,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         __WEBPACK_IMPORTED_MODULE_0__app_js__["EventBus"].$on('firststation', function (message) {
             _this.startingCity = message;
             _this.from = message;
+            _this.complete = message;
+            _this.finished = message;
         }),
 
         // it checks every 500ms if the journey is registered until the connection is established
@@ -102096,13 +102106,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             description: '',
             type: '',
             passengerType: '',
+            complete: '',
+            isShown: false,
             mode: '',
             endingFare: '',
             submitting: false, // true once the submit button is pressed
             successMessage: false, // true when the journey has been registered successfully
             tmoConn: null, // contain the intervalID given by setInterval
             tmoReg: null, // contain the intervalID given by setInterval
-            errorSubmit: false // it shows the erro message
+            errorSubmit: false,
+            display: false,
+            shine: false
 
         };
     },
@@ -102217,7 +102231,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     window.bc.contract().isRegistered.call(function (error, res) {
                         if (res) {
                             // redirecting to the confirmation page
-                            //alert('You are on the BlockTrain');
+                            alert('You are on the BlockTrain');
 
                             //this.$router.replace({ path: '/confirmation' })
                         }
@@ -102236,7 +102250,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 type: this.type,
                 passengerType: this.passengerType,
                 mode: this.mode,
-                endingFare: this.endingFare
+                endingFare: this.endingFare,
+                complete: false,
+                finished: true,
+                shine: true
 
             });
         },
@@ -102286,376 +102303,396 @@ var render = function() {
     _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-8" }, [
-          _c("div", { staticClass: "lead-form" }, [
-            _c(
-              "form",
-              {
-                attrs: { method: "post" },
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    return _vm.submitNewJourney($event)
-                  }
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.complete,
+                  expression: "complete"
                 }
-              },
-              [
-                _c("hr"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-8" }, [
-                    _c("h1", { staticClass: "text-center" }, [
-                      _vm._v("Approach Barrier")
-                    ]),
-                    _vm._v(" "),
+              ],
+              staticClass: "wrap"
+            },
+            [
+              _c("div", { staticClass: "lead-form" }, [
+                _c(
+                  "form",
+                  {
+                    attrs: { method: "post" },
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.submitNewJourney($event)
+                      }
+                    }
+                  },
+                  [
                     _c("hr"),
-                    _vm._v(" "),
-                    _c("h3", { staticClass: "text-center" }, [
-                      _vm._v("Place Card on Reader")
-                    ]),
-                    _vm._v(" "),
-                    _c("hr"),
-                    _vm._v(" "),
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c("hr"),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form group row" }, [
-                      _c("label", { attrs: { for: "to" } }, [_vm._v("To")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "validate",
-                            rawName: "v-validate",
-                            value: "required|min:6",
-                            expression: "'required|min:6'"
-                          },
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.to,
-                            expression: "to"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          name: "to",
-                          type: "text",
-                          placeholder:
-                            "Destination Station (Min. 6 Characters)",
-                          id: "to",
-                          autocomplete: "nope"
-                        },
-                        domProps: { value: _vm.to },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.to = $event.target.value
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "city-span" }, [
-                        _vm._v(_vm._s(_vm.endingCity))
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form group row" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.endingFare,
-                            expression: "endingFare"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Fares",
-                          readonly: "readonly",
-                          id: "endingFare"
-                        },
-                        domProps: { value: _vm.endingFare },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.endingFare = $event.target.value
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "city-span" }, [
-                        _vm._v(_vm._s(_vm.endingFare))
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form group row" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.description,
-                            expression: "description"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Description",
-                          readonly: "readonly"
-                        },
-                        domProps: { value: _vm.description },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.description = $event.target.value
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "city-span" }, [
-                        _vm._v(_vm._s(_vm.description))
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form group row" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.passengerType,
-                            expression: "passengerType"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Passenger Type",
-                          readonly: "readonly"
-                        },
-                        domProps: { value: _vm.passengerType },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.passengerType = $event.target.value
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "city-span" }, [
-                        _vm._v(_vm._s(_vm.passengerType))
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form group row" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.mode,
-                            expression: "mode"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Mode",
-                          readonly: "readonly"
-                        },
-                        domProps: { value: _vm.mode },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.mode = $event.target.value
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "city-span" }, [
-                        _vm._v(_vm._s(_vm.mode))
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form group row" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.type,
-                            expression: "type"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Type",
-                          readonly: "readonly"
-                        },
-                        domProps: { value: _vm.type },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.type = $event.target.value
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "city-span" }, [
-                        _vm._v(_vm._s(_vm.type))
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      {
-                        staticClass: "city-span",
-                        model: {
-                          value: _vm.startingCity,
-                          callback: function($$v) {
-                            _vm.startingCity = $$v
-                          },
-                          expression: "startingCity"
-                        }
-                      },
-                      [_vm._v(_vm._s(_vm.startingCity))]
-                    ),
                     _vm._v(" "),
                     _c("div", { staticClass: "row" }, [
                       _c("div", { staticClass: "col-8" }, [
-                        _c("h6", [_vm._v("Step 2: Leave The Station")]),
+                        _c("h1", { staticClass: "text-center" }, [
+                          _vm._v("Approach Barrier")
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-primary btn-lg",
+                        _c("hr"),
+                        _vm._v(" "),
+                        _c("h3", { staticClass: "text-center" }, [
+                          _vm._v("Place Card on Reader")
+                        ]),
+                        _vm._v(" "),
+                        _c("hr"),
+                        _vm._v(" "),
+                        _vm._m(0),
+                        _vm._v(" "),
+                        _c("hr"),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form group row" }, [
+                          _c("label", { attrs: { for: "to" } }, [_vm._v("To")]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "validate",
+                                rawName: "v-validate",
+                                value: "required|min:6",
+                                expression: "'required|min:6'"
+                              },
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.to,
+                                expression: "to"
+                              }
+                            ],
+                            staticClass: "form-control",
                             attrs: {
-                              type: "submit",
-                              disabled: !_vm.isComplete,
-                              id: "submit"
+                              name: "to",
+                              type: "text",
+                              placeholder:
+                                "Destination Station (Min. 6 Characters)",
+                              id: "to",
+                              autocomplete: "nope"
                             },
+                            domProps: { value: _vm.to },
                             on: {
-                              click: function($event) {
-                                $event.preventDefault()
-                                return _vm.submitNewJourney($event)
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.to = $event.target.value
                               }
                             }
-                          },
-                          [_vm._v("Leave")]
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-6" }, [
-                        _c("h6", [_vm._v("Step 3: Add To BlockChain")]),
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "city-span" }, [
+                            _vm._v(_vm._s(_vm.endingCity))
+                          ])
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-primary",
-                            attrs: { disabled: _vm.disableSubmit },
-                            on: { click: _vm.performSubmit }
-                          },
-                          [_vm._v("BlockChain")]
-                        ),
+                        _c("br"),
                         _vm._v(" "),
-                        _c(
-                          "strong",
-                          {
+                        _c("div", { staticClass: "form group row" }, [
+                          _c("input", {
                             directives: [
                               {
-                                name: "show",
-                                rawName: "v-show",
-                                value: _vm.submitting,
-                                expression: "submitting"
-                              }
-                            ]
-                          },
-                          [_vm._v("Submitting...")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "strong",
-                          {
-                            directives: [
-                              {
-                                name: "show",
-                                rawName: "v-show",
-                                value: _vm.errorSubmit,
-                                expression: "errorSubmit"
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.endingFare,
+                                expression: "endingFare"
                               }
                             ],
-                            staticClass: "text-danger"
-                          },
-                          [_vm._v("Error occurred!")]
-                        ),
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "text",
+                              placeholder: "Fares",
+                              readonly: "readonly",
+                              id: "endingFare"
+                            },
+                            domProps: { value: _vm.endingFare },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.endingFare = $event.target.value
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "city-span" }, [
+                            _vm._v(_vm._s(_vm.endingFare))
+                          ])
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "p",
-                          {
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form group row" }, [
+                          _c("input", {
                             directives: [
                               {
-                                name: "show",
-                                rawName: "v-show",
-                                value: _vm.successMessage,
-                                expression: "successMessage"
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.description,
+                                expression: "description"
                               }
                             ],
-                            staticClass: "text-success"
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "text",
+                              placeholder: "Description",
+                              readonly: "readonly"
+                            },
+                            domProps: { value: _vm.description },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.description = $event.target.value
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "city-span" }, [
+                            _vm._v(_vm._s(_vm.description))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form group row" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.passengerType,
+                                expression: "passengerType"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "text",
+                              placeholder: "Passenger Type",
+                              readonly: "readonly"
+                            },
+                            domProps: { value: _vm.passengerType },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.passengerType = $event.target.value
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "city-span" }, [
+                            _vm._v(_vm._s(_vm.passengerType))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form group row" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.mode,
+                                expression: "mode"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "text",
+                              placeholder: "Mode",
+                              readonly: "readonly"
+                            },
+                            domProps: { value: _vm.mode },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.mode = $event.target.value
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "city-span" }, [
+                            _vm._v(_vm._s(_vm.mode))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form group row" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.type,
+                                expression: "type"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "text",
+                              placeholder: "Type",
+                              readonly: "readonly"
+                            },
+                            domProps: { value: _vm.type },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.type = $event.target.value
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "city-span" }, [
+                            _vm._v(_vm._s(_vm.type))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          {
+                            staticClass: "city-span",
+                            model: {
+                              value: _vm.startingCity,
+                              callback: function($$v) {
+                                _vm.startingCity = $$v
+                              },
+                              expression: "startingCity"
+                            }
                           },
-                          [
-                            _c("strong", [_vm._v("You've been registered!")]),
+                          [_vm._v(_vm._s(_vm.startingCity))]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-8" }, [
+                            _c("h6", [_vm._v("Step 2: Leave The Station")]),
                             _vm._v(" "),
-                            _c("br"),
-                            _vm._v(
-                              "\n                                            You will be redirected to the confirmation page "
-                            ),
-                            _c("strong", [
-                              _vm._v("once the block will be mined!")
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-primary btn-lg",
+                                attrs: {
+                                  type: "submit",
+                                  disabled: !_vm.isComplete,
+                                  id: "submit"
+                                },
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.submitNewJourney($event)
+                                  }
+                                }
+                              },
+                              [_vm._v("Leave")]
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _vm.shine
+                          ? _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-6" }, [
+                                _c("h6", [_vm._v("Step 3: Add To BlockChain")]),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-primary",
+                                    attrs: { disabled: _vm.disableSubmit },
+                                    on: { click: _vm.performSubmit }
+                                  },
+                                  [_vm._v("BlockChain")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "strong",
+                                  {
+                                    directives: [
+                                      {
+                                        name: "show",
+                                        rawName: "v-show",
+                                        value: _vm.submitting,
+                                        expression: "submitting"
+                                      }
+                                    ]
+                                  },
+                                  [_vm._v("Submitting...")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "strong",
+                                  {
+                                    directives: [
+                                      {
+                                        name: "show",
+                                        rawName: "v-show",
+                                        value: _vm.errorSubmit,
+                                        expression: "errorSubmit"
+                                      }
+                                    ],
+                                    staticClass: "text-danger"
+                                  },
+                                  [_vm._v("Error occurred!")]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  {
+                                    directives: [
+                                      {
+                                        name: "show",
+                                        rawName: "v-show",
+                                        value: _vm.successMessage,
+                                        expression: "successMessage"
+                                      }
+                                    ],
+                                    staticClass: "text-success"
+                                  },
+                                  [
+                                    _c("strong", [
+                                      _vm._v("You've been registered!")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("br"),
+                                    _vm._v(
+                                      "\n                                                    You will be redirected to the confirmation page "
+                                    ),
+                                    _c("strong", [
+                                      _vm._v("once the block will be mined!")
+                                    ])
+                                  ]
+                                )
+                              ])
                             ])
-                          ]
-                        )
+                          : _vm._e()
                       ])
                     ])
-                  ])
-                ])
-              ]
-            )
-          ])
+                  ]
+                )
+              ])
+            ]
+          )
         ])
       ])
     ])
@@ -102825,6 +102862,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -102838,8 +102879,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             thecardtitle: 'Parent component',
-            origin: '',
-            complete: false
+            origin: ''
+
         };
     }
 });
@@ -102862,7 +102903,9 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-sm" }, [_c("leave")], 1)
-      ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-sm" })
     ])
   ])
 }

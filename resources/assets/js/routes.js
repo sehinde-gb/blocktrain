@@ -19,14 +19,7 @@ import BlockListings from './views/Block/Listings'
 
 export const routes = [
 
-    {
-        path: '/dashboard',
-        name: 'dashboard',
-        component: Dashboard,
-        meta: {
-            requiresAuth: true
-        }
-    },
+    
 
     {
         path: '/login',
@@ -39,6 +32,15 @@ export const routes = [
         name: 'register',
         component: Register
 
+    },
+
+    {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: Dashboard,
+        meta: {
+            requiresAuth: true
+        }
     },
 
     {
@@ -95,25 +97,16 @@ export const routes = [
         }
     },
 
-    {   path: '/users/:id/new/start',
-        name: 'journey.start',
-        props: true,
-        component: Enter,
-        meta: {
-            requiresAuth: true
-        }
-},
     
     {   path: '/users/:id/new/journey',
         name: 'journey.new',
         props: true,
-        component: Leave,
+        component: Parent,
         meta: {
             requiresAuth: true
         }
     },
 
-    
     {
         path: '/users/:id/blockchain',
         name: 'block.chain',

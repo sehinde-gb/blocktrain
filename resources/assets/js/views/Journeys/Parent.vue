@@ -13,7 +13,7 @@
                 
                 <div class="col-sm">
                     
-                    </div><!-- /.col -->
+                </div><!-- /.col-sm -->
                    
                 
                 </div>
@@ -21,9 +21,13 @@
                 <div class="row">
                     <div class="col-sm">
                         <leave></leave>
-                    </div><!--  -->
-                </div>
-                <!-- /.row -->
+                    </div><!--.col-sm -->
+                </div><!-- /.row -->
+
+                <div class="col-sm">
+                    
+                </div><!-- /.col-sm -->
+
                
             </div><!-- /.container -->
             
@@ -45,8 +49,8 @@
         data() {
             return {
                 thecardtitle: 'Parent component',
-                origin: '',
-                complete: false
+                origin: ''
+                
             }
         }
     }

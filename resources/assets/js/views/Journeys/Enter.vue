@@ -1,47 +1,48 @@
 <template>
     <div>
-        <div class="test" v-show="complete">
-            <div class="container">
-                <div class="row">
-                    <div class="col-8">
-                        <div class="lead-form">
-                            <h1 class="text-center">New Journey</h1>
-                            <hr/>
-                            <h4 class="text-center">Enter Origin Station</h4>
-                            <hr />
-                            
-                            
-                        </div><!-- end of .lead-form -->
-                            <br>
-                            <div class="form-group">
-                               
-                                <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Origin Station (Min. 6 characters)" v-model="from" id="from">
-                                <p class="help is-danger" v-show="errors.has('from')">
-                                    {{ errors.first('from') }}
-                                </p><!-- help is danger -->
-                                
-
-                                
-                                <span class="city-span" v-model="startingCity">{{startingCity}}</span>
+        <div class="test" v-if="seen">
+            <div class="wrap" v-show="complete">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="lead-form">
+                                <h1 class="text-center">New Journey</h1>
                                 <hr/>
-                            </div><!-- /.form-group -->
-                        
-                       
-                        <div class="row">
+                                <h4 class="text-center">Enter Origin Station</h4>
+                                <hr />
+                                
+                                
+                            </div><!-- end of .lead-form -->
+                                <br>
+                                <div class="form-group">
+                                
+                                    <input name="from" v-validate="'required|min:6'" type="text"  class="form-control" placeholder="Origin Station (Min. 6 characters)" v-model="from" id="from">
+                                    <p class="help is-danger" v-show="errors.has('from')">
+                                        {{ errors.first('from') }}
+                                    </p><!-- help is danger -->
+                                    
+
+                                    
+                                    <span class="city-span" v-model="startingCity">{{startingCity}}</span>
+                                    <hr/>
+                                </div><!-- /.form-group -->
                             
-                            <div class="col-sm"><button @click.prevent="stationEnter" :disabled="errors.any()"  class="btn btn-primary btn-lg">Enter</button></div>
-                            <div class="col-sm"></div><!-- .col-sm -->
-                        </div><!-- /.row -->
-                    
-                    </div> <!-- end of .col-8 -->
                         
-                         <SideMenu></SideMenu>
+                            <div class="row">
+                                
+                                <div class="col-sm"><button @click.prevent="stationEnter" :disabled="errors.any()"  class="btn btn-primary btn-lg" v-on:click="seen = !seen">Enter</button></div>
+                                <div class="col-sm"></div><!-- .col-sm -->
+                            </div><!-- /.row -->
+                        
+                        </div> <!-- end of .col-8 -->
+                            
+                            <SideMenu></SideMenu>
 
-                </div> <!-- end of .row -->
-            </div> <!-- end of .container -->
+                    </div> <!-- end of .row -->
+                </div> <!-- end of .container -->
 
-        </div><!-- end of .test -->
-    
+            </div><!-- end of .wrap -->
+       </div>
     </div>
 </template>
 
@@ -62,7 +63,9 @@ export default {
             startingCity: '',
             firstStations: [],
             user_id: this.$route.params.id,
-            complete: true
+            complete: true,
+            finished: false,
+            seen: true
                             
         }
     },
@@ -93,10 +96,12 @@ export default {
     methods: {
             
         stationEnter() {
-                EventBus.$emit('firststation', this.startingCity)
-                //alert('You have swiped in');
-                this.complete = false;
-                //this.$router.push('/');      
+                this.complete = true;
+                this.finished = false;
+                EventBus.$emit('firststation', this.startingCity, this.complete, this.finished)
+                alert('You have swiped in');
+             
+                    
         },
         
         lookupStartingFrom: _.debounce(function () {

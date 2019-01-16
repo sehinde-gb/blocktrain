@@ -2,7 +2,7 @@
     <div>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <router-link class="navbar-brand" to="/">Block Train</router-link>
+                <router-link class="navbar-brand" to="/dashboard">Block Train</router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,7 +32,7 @@
                             
                             
                             <li>
-                                <router-link to="/users" class="nav-link">Dashboard</router-link>
+                                <router-link to="/dashboard" class="nav-link">Dashboard</router-link>
                             </li>
 
                             <li class="nav-link"></li>
@@ -141,7 +141,12 @@
             Event.$on('journeyregistered', this.checkUntilJourneyIsRegistered);
 
             this.checkJourneyIsRegistered()
+        },
+            data() {
+        return {
+            journeyIsRegistered: ''
         }
+            }    
         
     }
 </script>

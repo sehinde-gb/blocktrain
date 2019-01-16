@@ -3,102 +3,101 @@
         <div class="container">
             <div class="row">
                 <div class="col-8">
-                    <div class="lead-form">
-                        <form method="post"  @submit.prevent="submitNewJourney">
-                                <hr/>
+                    <div class="wrap" v-show="complete">    
+                        <div class="lead-form">
+                            <form method="post"  @submit.prevent="submitNewJourney">    
+                                <hr/>               
+                                <div class="row">
+                                    <div class="col-8">
+                                        <h1 class="text-center">Approach Barrier</h1>
+                                        <hr/>
+                                        <h3 class="text-center">Place Card on Reader</h3>
+                                        
+                                        <hr />
+                                        <div class="card" style="width: 18rem;">
+                                            <img class="card-img-top" src="" alt="Card image cap">
+                                            <div class="card-body">
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div><!-- /.card-body -->
+                                        </div><!-- /.card -->               
+                                        <hr/>
+                                        <div class="form group row">
+                                            <label for="to">To</label>
+                                            <input name="to" v-validate="'required|min:6'" type="text" class="form-control" placeholder="Destination Station (Min. 6 Characters)" v-model="to" id="to" autocomplete="nope">
+                                            <span class="city-span">{{ endingCity}}</span>
+                                        </div><!-- /.form group row -->
+                                        <br/>
+                                                        
+                                        <div class="form group row">
+                                                <input type="text" class="form-control" placeholder="Fares" v-model="endingFare" readonly="readonly" id="endingFare">
+                                                <span class="city-span">{{ endingFare}}</span>
+                                        </div><!-- /.form group row -->
+                                        <br>
+                                        <div class="form group row">
+                                            <input type="text" class="form-control" placeholder="Description" v-model="description" readonly="readonly">
+                                            <span class="city-span">{{ description }}</span>
+                                        </div><!-- /.form group row -->
+                                        <br/>
+                                        <div class="form group row">
+                                            <input type="text" class="form-control" placeholder="Passenger Type" v-model="passengerType" readonly="readonly">
+                                            <span class="city-span">{{ passengerType}}</span>
+                                        </div><!-- /.form group row -->
+                                        <br/>
+                                        <div class="form group row">
+                                            <input type="text" class="form-control" placeholder="Mode" v-model="mode" readonly="readonly">
+                                            <span class="city-span">{{ mode}}</span>
+                                        </div><!-- /.form group row -->
+                                        <br/>
+                                        <div class="form group row">
+                                            <input type="text" class="form-control" placeholder="Type" v-model="type" readonly="readonly">
+                                            <span class="city-span">{{type}}</span>
+                                        </div><!-- /.form group row -->
+                                        <br/>
+
+                                        <br/>
+                                            <span class="city-span" v-model="startingCity">{{startingCity}}</span>
                                     
-                            <div class="row">
-                                <div class="col-8">
-                                    <h1 class="text-center">Approach Barrier</h1>
-                                    <hr/>
-                                    <h3 class="text-center">Place Card on Reader</h3>
-                                    
-                                    <hr />
-                                    <div class="card" style="width: 18rem;">
-                                        <img class="card-img-top" src="" alt="Card image cap">
-                                        <div class="card-body">
-                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        </div><!-- /.card-body -->
-                                    </div><!-- /.card -->
+                                            <div class="row">
+                                                <div class="col-8">
+                                                    <h6>Step 2: Leave The Station</h6>
                                                     
-                                    <hr/>
+                                                    <button type="submit" :disabled='!isComplete'   class="btn btn-primary btn-lg" id="submit"  @click.prevent="submitNewJourney" >Leave</button>
+                                                        
+                                                </div><!-- /.col-8 -->
+                                            </div><!-- /.row -->
+                                        <br>
 
-                                    <div class="form group row">
-                                        <label for="to">To</label>
-                                        <input name="to" v-validate="'required|min:6'" type="text" class="form-control" placeholder="Destination Station (Min. 6 Characters)" v-model="to" id="to" autocomplete="nope">
-                                        <span class="city-span">{{ endingCity}}</span>
-                                    </div><!-- /.form group row -->
-                                    <br/>
+                                        
 
-                                                    
-                                    <div class="form group row">
-                                            <input type="text" class="form-control" placeholder="Fares" v-model="endingFare" readonly="readonly" id="endingFare">
-                                            <span class="city-span">{{ endingFare}}</span>
-                                    </div><!-- /.form group row -->
-                                    <br>
-                                    <div class="form group row">
-                                        <input type="text" class="form-control" placeholder="Description" v-model="description" readonly="readonly">
-                                        <span class="city-span">{{ description }}</span>
-                                    </div><!-- /.form group row -->
-                                    <br/>
-                                    <div class="form group row">
-                                        <input type="text" class="form-control" placeholder="Passenger Type" v-model="passengerType" readonly="readonly">
-                                        <span class="city-span">{{ passengerType}}</span>
-                                    </div><!-- /.form group row -->
-                                    <br/>
-                                    <div class="form group row">
-                                        <input type="text" class="form-control" placeholder="Mode" v-model="mode" readonly="readonly">
-                                        <span class="city-span">{{ mode}}</span>
-                                    </div><!-- /.form group row -->
-                                    <br/>
-                                    <div class="form group row">
-                                        <input type="text" class="form-control" placeholder="Type" v-model="type" readonly="readonly">
-                                        <span class="city-span">{{type}}</span>
-                                    </div><!-- /.form group row -->
-                                    <br/>
+                                      
+                                            <div class="row" v-if="shine">
+                                                <div class="col-6">
+                                                    <h6>Step 3: Add To BlockChain</h6>
+                                                    <button class="btn btn-primary" :disabled="disableSubmit" @click="performSubmit">BlockChain</button>
+                                                    <strong v-show="submitting">Submitting...</strong>
+                                                    <strong v-show="errorSubmit" class="text-danger">Error occurred!</strong>
 
-                                            
-                                    <br/>
-                                        <span class="city-span" v-model="startingCity">{{startingCity}}</span>
+                                                    <p v-show="successMessage" class="text-success">
+                                                        <strong>You've been registered!</strong>
+                                                        <br>
+                                                        You will be redirected to the confirmation page <strong>once the block will be mined!</strong>
+                                                    </p>
+                                                </div><!-- /.col-6 -->                                
+                                            </div><!-- /.row --> 
+
+                                          
+                                    </div><!-- /.col-8 -->
+                                        
+                                </div><!-- /.row -->     
+                            </form>
                                 
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <h6>Step 2: Leave The Station</h6>
-                                            
-                                            <button  type="submit" :disabled='!isComplete' class="btn btn-primary btn-lg" id="submit"  @click.prevent="submitNewJourney">Leave</button>
-
-                                        </div><!-- /.col-8 -->
-                                    </div><!-- /.row -->
-
-                                    <br>
-
-                                    <div class="row">
-
-                                        <div class="col-6">
-                                                <h6>Step 3: Add To BlockChain</h6>
-                                                <button class="btn btn-primary" :disabled="disableSubmit" @click="performSubmit">BlockChain</button>
-                                            <strong v-show="submitting">Submitting...</strong>
-                                            <strong v-show="errorSubmit" class="text-danger">Error occurred!</strong>
-
-                                            <p v-show="successMessage" class="text-success">
-                                                <strong>You've been registered!</strong>
-                                                <br>
-                                                You will be redirected to the confirmation page <strong>once the block will be mined!</strong>
-                                            </p>
-                                        </div><!-- /.col-6 -->
-                                         
-                                    </div><!-- /.row -->    
-                                              
-                               </div><!-- /.col-8 -->
-                                    
-                            </div><!-- /.row -->
-                            
-                        </form>
-                        
-                    </div><!-- end of .lead-form -->
-                </div> <!-- end of .col-8 -->
+                        </div><!-- end of .lead-form -->
+                    </div><!-- end of .wrap -->
+                </div><!-- end of .col-8 -->
             </div> <!-- end of .row -->
         </div><!-- end of .container -->
+                        
+               
     </div>
 </template>
 
@@ -123,7 +122,10 @@ export default {
 
          EventBus.$on('firststation', (message) => {
             this.startingCity = message;
-             this.from = message;
+            this.from = message;
+            this.complete = message;
+            this.finished = message;
+             
         }),
 
           // it checks every 500ms if the journey is registered until the connection is established
@@ -141,13 +143,18 @@ export default {
                 description: '',
                 type: '',
                 passengerType: '',
+                complete: '',
+                isShown: false,
                 mode: '',
                 endingFare: '',
                 submitting: false, // true once the submit button is pressed
                 successMessage: false, // true when the journey has been registered successfully
                 tmoConn: null, // contain the intervalID given by setInterval
                 tmoReg: null, // contain the intervalID given by setInterval
-                errorSubmit: false, // it shows the erro message
+                errorSubmit: false,
+                display: false,
+                shine: false
+                
               
         }
     },
@@ -283,7 +290,7 @@ export default {
                     window.bc.contract().isRegistered.call((error, res) => {
                         if (res) {
                             // redirecting to the confirmation page
-                            //alert('You are on the BlockTrain');
+                            alert('You are on the BlockTrain');
         
                             //this.$router.replace({ path: '/confirmation' })
                         }
@@ -303,7 +310,10 @@ export default {
                  type: this.type,
                  passengerType: this.passengerType,
                  mode: this.mode,
-                 endingFare: this.endingFare
+                 endingFare: this.endingFare,
+                 complete: false,
+                 finished: true,
+                 shine: true
                 
             })
         },     
