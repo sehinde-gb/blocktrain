@@ -18,9 +18,7 @@ import BlockListings from './views/Block/Listings'
 
 
 export const routes = [
-
     
-
     {
         path: '/login',
         name: 'login',
