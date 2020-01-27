@@ -1,4 +1,4 @@
-# blocktrain
+# Blocktrain Instructions
 A blockchain application built as a dapp with laravel infrastructure on the backend that uses TFL api data to create journey data that is placed on the blockchain
 
 
